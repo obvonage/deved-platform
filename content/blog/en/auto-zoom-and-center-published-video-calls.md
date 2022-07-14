@@ -1,11 +1,12 @@
 ---
-title: Auto Zoom and Center Published Video Calls
+title: Auto Zoom and Center Published Video Call with Vonage Video API
 description: Learn how to automatically focus faces in video calls using the
   Vonage Video API and machine learning libraries.
+thumbnail: /content/blog/auto-zoom-and-center-published-video-call-with-vonage-video-api/auto-zoom-center.png
 author: iu-jie-lim
-published: false
-published_at: 2022-07-13T15:56:19.482Z
-updated_at: 2022-07-13T15:56:19.495Z
+published: true
+published_at: 2022-07-14T11:13:59.514Z
+updated_at: 2022-07-14T11:14:00.284Z
 category: tutorial
 tags:
   - video-api
@@ -26,13 +27,11 @@ Therefore, the use of Vonage ml-transformers and media-processor libraries to zo
 
 This article is going to show you how to integrate Vonage Video API with Vonage ml-transformers and media-processor libraries to create a video call that will automatically zoom and center the publisher.
 
-
 ## Prerequisites
 
 1. A Vonage Video API account. If you don’t have one already, you can create an account in the [Video Dashboard](https://www.tokbox.com/account/user/signup).
 2. Node.js version >= 16.8
 3. Vite.js version >= 2.9
-
 
 ## Join a session
 
@@ -57,14 +56,11 @@ session = OT.initSession(apiKey, sessionId);
      layout.layout();
    }
  });
-
 ```
-
 
 You may want to add `streamCreated`, `streamDestroyed`, and `streamPropertyChanged` event listeners for the session since you might need to do some layout changes on the browser to have a better layout appearance during your video call.
 
 `StreamCreated` event is triggered if another user (AKA subscriber) joins the same session. On the other hand, the `streamDestroyed` event informs you that a subscriber has left the session. While the `streamPropertyChange` event tells you that the video property, such as video dimension, audio state, or, video state of the subscriber has been changed.
-
 
 ## ML transformers
 
@@ -96,7 +92,6 @@ Once the library completes the detection process, it will pass the result to the
           }
        }}]
     });
-
 ```
 
 The result is a bounding box that contains information on the detected face dimension which has been converted into normalized dimensions. The actual value can be obtained by multiplying the result with video dimensions. 
@@ -135,7 +130,6 @@ First, initialize and set the media processor with a transform function by calli
        videoFrame.close();
        controller.enqueue(cropVideo);
     }
-
 ```
 
 ## Publish Stream
@@ -158,5 +152,5 @@ To publish the video, you should create a publisher object using the generated v
 Now you are ready to publish a face-focused video in a video call! Hopefully, you get the idea of how a face-focused video can be quickly created using the ml-transformers and media-processor libraries.
 
 Further details and code samples are available on our [GitHub repo](https://github.com/nexmo-se/zoom-and-center-publisher).
- 
-**If you have any questions come to join our [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).**
+
+If you have any questions come to join our [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
