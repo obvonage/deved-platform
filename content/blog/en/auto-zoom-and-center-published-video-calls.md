@@ -53,7 +53,7 @@ session = OT.initSession(apiKey, sessionId);
      console.log("SESSION CONNECT ERROR", error);
      handleError(error);
    } else {
-     console.log("SESSION CONNECT SUCCESS")
+     console.log("SESSION CONNECT SUCCESS");
      initializeStream();
      layout.layout();
    }
