@@ -2,6 +2,7 @@
 title: Vonage Video Express with Ruby on Rails Part 2
 description: A ruby on rails tutorial that implements the Video Express
   javascript library for fast and easy WebRTC video conferencing applications.
+thumbnail: /content/blog/vonage-video-express-with-ruby-on-rails-part-2/video-express-ruby_part-1.png
 author: benjamin-aronov
 published: true
 published_at: 2022-07-14T11:04:15.709Z
