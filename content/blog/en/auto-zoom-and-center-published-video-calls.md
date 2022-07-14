@@ -39,7 +39,7 @@ This article is going to show you how to integrate Vonage Video API with Vonage 
 
 To join a video call session, you need a session ID, JWT, and API key. You may generate a session id and a token under the project’s “Create Session ID” and “Generate Token” sections of your Vonage Video API account. 
 
-Then, use that information to initialize and connect to the generated session by calling `initSession` and `connect`. Do remember to add the [Vonage Video API library](https://static.opentok.com/v2/js/opentok.min.js) to your Html file. For more Vonage Video API library information, visit [Vonage Video API Client SDKs](https://tokbox.com/developer/sdks/js/).
+Then, use that information to initialize and connect to the generated session by calling `initSession` and `connect`. Do remember to add the [Vonage Video API library](https://static.opentok.com/v2/js/opentok.min.js) to your HTML file. For more Vonage Video API library information, visit [Vonage Video API Client SDKs](https://tokbox.com/developer/sdks/js/).
 
 ```
 session = OT.initSession(apiKey, sessionId);
