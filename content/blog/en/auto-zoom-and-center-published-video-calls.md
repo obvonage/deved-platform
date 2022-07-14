@@ -107,7 +107,7 @@ Cropped dimension is applied to zoom the video. Typically, the cropped dimension
 
 ## Media processor
 
-Traditionally, an intermediary, such as the <canvas> element, is needed to manipulate the video. In contrast, an insertable stream allows the developers to process video/audio streams directly, such as resizing video, adding virtual background, or voice effects. The [@vonage/media-processor](https://www.npmjs.com/package/@vonage/media-processor) library makes use of the insertable streams in the background to manipulate a video stream.
+Traditionally, an intermediary, such as the `<canvas>` element, is needed to manipulate the video. In contrast, an insertable stream allows the developers to process video/audio streams directly, such as resizing video, adding virtual background, or voice effects. The [@vonage/media-processor](https://www.npmjs.com/package/@vonage/media-processor) library makes use of the insertable streams in the background to manipulate a video stream.
 
 The library can process a bunch of transform functions during stream manipulation. In this case, only one transform function is needed to generate a new video stream with the desired dimensions.
 
