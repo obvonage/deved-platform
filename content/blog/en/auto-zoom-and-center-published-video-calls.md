@@ -160,4 +160,4 @@ Now you are ready to publish a face-focused video in a video call! Hopefully, yo
 
 Further details and code samples are available on our [GitHub repo](https://github.com/nexmo-se/zoom-and-center-publisher).
  
-**If you have any questions come to join our [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).**
+**If you have any questions, join our [Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).**
