@@ -1,5 +1,5 @@
 ---
-title: Auto Zoom and Center Published Video Calls
+title: Auto Zoom and Center Published Video Calls with Vonage Video API
 description: Learn how to automatically focus faces in video calls using the
   Vonage Video API and machine learning libraries.
 thumbnail: /content/blog/auto-zoom-and-center-published-video-calls/auto-zoom-center.png
