@@ -4,7 +4,7 @@ description: A ruby on rails tutorial that implements the Video Express
   javascript library for fast and easy WebRTC video conferencing applications.
 author: benjamin-aronov
 published: true
-published_at: 2022-07-04T05:14:04.412Z
+published_at: 2022-07-14T11:04:15.709Z
 updated_at: 2022-07-04T05:14:04.447Z
 category: tutorial
 tags:
