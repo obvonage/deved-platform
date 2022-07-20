@@ -107,14 +107,14 @@ Note: The Voice API application will be running on local port 8000, and the simp
 
 Go to [Your applications](https://dashboard.nexmo.com/applications), access an existing application or [+ Create a new application](https://dashboard.nexmo.com/applications/new).
 
-Under the Capabilities section (click on [Edit] if you do not see this Capabilities section):
+Under the Capabilities section (click on \[Edit] if you do not see this Capabilities section):
 
 Enable Voice
 
 * Under Answer URL, leave HTTP GET, and enter https://<host>:<port>/answer (replace <host> and <port> with the public hostname and, if necessary public port of the server where the sample Voice API application is running), e.g. <https://yyyyyyyy.ngrok.io/answer> or <https://myappname.herokuapp.com/answer> (see next sections) or <https://myserver2.mycompany.com:40000/answer> (deploying on your own servers)
 * Under Event URL, select HTTP POST (instead of HTTP GET), and enter https://<host>:<port>/event (replace <host> and <port> with the public hostname and, if necessary public port of the server where the sample Voice API application is running), e.g. <https://yyyyyyyy.ngrok.io/event>or <https://myappname.herokuapp.com/event> [ ](https://myappname.herokuapp.com/answer)(see next sections) or <https://myserver2.mycompany.com:40000/event> (deploying on your own servers)
-* Click on [Generate public and private key] if you did not yet create or want new ones, then save as `.private.key` file (note the leading dot in the file name) in the folder that will contain the Voice API application.
-  IMPORTANT: Do not forget to click on [Save changes] at the bottom of the screen if you have created a new key set.
+* Click on \[Generate public and private key] if you did not yet create or want new ones, then save as `.private.key` file (note the leading dot in the file name) in the folder that will contain the Voice API application.
+  IMPORTANT: Do not forget to click on \[Save changes] at the bottom of the screen if you have created a new key set.
 * Link a phone number to this application if none has yet been linked to the application.
 
 Please take note of your Application ID and the linked phone number (as they are needed in the very next section.) 
@@ -151,7 +151,9 @@ In the first phase, we are going to use and deploy the reference application voi
 
 Local deployment on your computer for both applications
 
- ![](https://lh5.googleusercontent.com/g-lhBEsQl6b2XH0PKKbecPRFwXKLcH8_qxG0qqC6cNCBhhhmOKklc77PKfP2x03hsWX-duCntoeakZWOAi9pkkrQCIN_4cXW5-Ks2PklQgimf9Swc-dC6RENI197tcRWu_PY0XyWFJT5T58VHv1GtxSvhCwDKhSt)
+ 
+
+![Architecture diagram](/content/blog/voice-enabling-a-text-only-chatbot/voice-enabling-text-only-chatbot-local-deployment.png "Voice enabling text-only chatbot. Local deployment for tests")
 
 Download the reference application code from the [repository](https://github.com/nexmo-se/voice-enabling-text-bot-application) to a local folder, then go to that folder.
 
@@ -232,7 +234,7 @@ Now, deploy the application:
 
 `git push heroku master`
 
-On your Heroku dashboard, where your application page is shown, click on the Open App button. That hostname is the one to be used under your corresponding [Vonage Voice API application Capabilities](https://dashboard.nexmo.com/applications) (click on the corresponding application, then [Edit]).
+On your Heroku dashboard, where your application page is shown, click on the Open App button. That hostname is the one to be used under your corresponding [Vonage Voice API application Capabilities](https://dashboard.nexmo.com/applications) (click on the corresponding application, then \[Edit]).
 
 For example, the respective links would be (replace myappname with actual value):
 
