@@ -68,45 +68,35 @@ To set up ngrok:
 * * Run ngrok config edit
   * * For a free ngrok account, add the following lines to the ngrok configuration file (under authoken line):
 
-\    tunnels:
-
-\    six:
-
-\    proto: http
-
-\    addr: 6000
-
-\    eight:
-
-\    proto: http
-
-\    addr: 8000 
+```
+  tunnels:
+  	six:
+  		proto: http
+  		addr: 6000
+  	eight:
+  		proto: http
+  		addr: 8000 
+```
 
 * For a [paid ngrok account](https://dashboard.ngrok.com/billing/subscription), you may set ngrok hostnames that will never change on each ngrok new launch; add the following lines to the ngrok configuration file (under authoken line) - set hostnames (they must be unique) to actual desired values:
 
-\    tunnels:
-
-\    six:
-
-\    proto: http
-
-\    addr: 6000
-
-\    hostname: youmustsetanamehere6.ngrok.io
-
-\    eight:
-
-\    proto: http
-
-\    addr: 8000
-
-\    hostname: youmustsetanamehere8.ngrok.io
+  ```
+   tunnels:
+    	six:
+    		proto: http
+    		addr: 6000
+    		hostname: youmustsetanamehere6.ngrok.io
+    	eight:
+    		proto: http
+    		addr: 8000
+    		hostname: youmustsetanamehere8.ngrok.io
+  ```
 
 Note: The Voice API application will be running on local port 8000, and the simple chatbot application will be running on local port 6000
 
 * Start both ngrok tunnels
 * * Run ngrok start six eight
-  * You will see lines like...\
+  * You will see lines like...
     Web Interface [http://127.0.0.1:4040](http://127.0.0.1:4040/) Forwarding [https://xxxxxxx.ngrok.io](https://xxxxxxx.ngrok.io/) -> [http://localhost:6000](http://localhost:6000/) Forwarding [https://yyyyyyy.ngrok.io](https://yyyyyyy.ngrok.io/) -> [http://localhost:8000](http://localhost:8000/)
   * Make a note of xxxxxxx.ngrok.io (without the leading https://), the one associated with local port 6000, as it will be set as `BOT_SERVER` in the next steps below,
   * Make a note of [https://yyyyyyy.ngrok.io](https://yyyyyyy.ngrok.io/) (with the leading https://), the one associated with local port 8000, as it will be needed in the next steps below.
@@ -117,14 +107,14 @@ Note: The Voice API application will be running on local port 8000, and the simp
 
 Go to [Your applications](https://dashboard.nexmo.com/applications), access an existing application or [+ Create a new application](https://dashboard.nexmo.com/applications/new).
 
-Under the Capabilities section (click on \[Edit] if you do not see this Capabilities section):
+Under the Capabilities section (click on [Edit] if you do not see this Capabilities section):
 
 Enable Voice
 
 * Under Answer URL, leave HTTP GET, and enter https://<host>:<port>/answer (replace <host> and <port> with the public hostname and, if necessary public port of the server where the sample Voice API application is running), e.g. <https://yyyyyyyy.ngrok.io/answer> or <https://myappname.herokuapp.com/answer> (see next sections) or <https://myserver2.mycompany.com:40000/answer> (deploying on your own servers)
 * Under Event URL, select HTTP POST (instead of HTTP GET), and enter https://<host>:<port>/event (replace <host> and <port> with the public hostname and, if necessary public port of the server where the sample Voice API application is running), e.g. <https://yyyyyyyy.ngrok.io/event>or <https://myappname.herokuapp.com/event> [ ](https://myappname.herokuapp.com/answer)(see next sections) or <https://myserver2.mycompany.com:40000/event> (deploying on your own servers)
-* Click on \[Generate public and private key] if you did not yet create or want new ones, then save as `.private.key` file (note the leading dot in the file name) in the folder that will contain the Voice API application.\
-  IMPORTANT: Do not forget to click on \[Save changes] at the bottom of the screen if you have created a new key set.
+* Click on [Generate public and private key] if you did not yet create or want new ones, then save as `.private.key` file (note the leading dot in the file name) in the folder that will contain the Voice API application.
+  IMPORTANT: Do not forget to click on [Save changes] at the bottom of the screen if you have created a new key set.
 * Link a phone number to this application if none has yet been linked to the application.
 
 Please take note of your Application ID and the linked phone number (as they are needed in the very next section.) 
@@ -214,7 +204,7 @@ If you do not yet have a local git repository, create one:
 
 `git add .`
 
-\`git commit -am "initial"`
+`git commit -am "initial"`
 
 Start by creating this application on Heroku from the command line using the Heroku CLI: Note: In the following command, replace "myappname" with a unique name on the whole Heroku platform
 
@@ -242,7 +232,7 @@ Now, deploy the application:
 
 `git push heroku master`
 
-On your Heroku dashboard, where your application page is shown, click on the Open App button. That hostname is the one to be used under your corresponding [Vonage Voice API application Capabilities](https://dashboard.nexmo.com/applications) (click on the corresponding application, then \[Edit]).
+On your Heroku dashboard, where your application page is shown, click on the Open App button. That hostname is the one to be used under your corresponding [Vonage Voice API application Capabilities](https://dashboard.nexmo.com/applications) (click on the corresponding application, then [Edit]).
 
 For example, the respective links would be (replace myappname with actual value):
 
@@ -258,7 +248,7 @@ If you do not yet have a local git repository, create one:
 
 go to this simple bot application folder
 
-\`git init`
+`git init`
 
 `git add .`
 
