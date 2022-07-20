@@ -42,7 +42,7 @@ You will need:
 
 Each prerequisite item setup is detailed as follows.
 
-## Node.js installation
+## Node.js Installation
 
 * [Install nvm](https://github.com/nvm-sh/nvm) (Node Version Manager); if you are using Windows OS, look at these [important notes](https://github.com/nvm-sh/nvm#important-notes)
 * Install Node.js version 16 with the command: nvm install 16
@@ -151,8 +151,6 @@ In the first phase, we are going to use and deploy the reference application voi
 
 Local deployment on your computer for both applications
 
- 
-
 ![Architecture diagram](/content/blog/voice-enabling-a-text-only-chatbot/voice-enabling-text-only-chatbot-local-deployment.png "Voice enabling text-only chatbot. Local deployment for tests")
 
 Download the reference application code from the [repository](https://github.com/nexmo-se/voice-enabling-text-bot-application) to a local folder, then go to that folder.
@@ -190,7 +188,7 @@ Launch the application:
 
 `node very-simple-bot.js`
 
-To interact via voice calls with the very simple bot, call the phone number linked to your application, the one listed as SERVICE_NUMBER.
+To interact via voice calls with the very simple bot, call the phone number linked to your application, the one listed as `SERVICE_NUMBER`.
 
 ### Deploy to Heroku
 
@@ -208,7 +206,7 @@ If you do not yet have a local git repository, create one:
 
 `git commit -am "initial"`
 
-Start by creating this application on Heroku from the command line using the Heroku CLI: Note: In the following command, replace "myappname" with a unique name on the whole Heroku platform
+Start by creating this application on Heroku from the command line using the Heroku CLI: Note: In the following command, replace "myappname" with a unique name on the whole Heroku platform.
 
 `heroku create myappname`
 
@@ -234,7 +232,7 @@ Now, deploy the application:
 
 `git push heroku master`
 
-On your Heroku dashboard, where your application page is shown, click on the Open App button. That hostname is the one to be used under your corresponding [Vonage Voice API application Capabilities](https://dashboard.nexmo.com/applications) (click on the corresponding application, then \[Edit]).
+On your Heroku dashboard, where your application page is shown, click on the Open App button. That hostname is the one to be used under your corresponding [Vonage Voice API application Capabilities](https://dashboard.nexmo.com/applications) (click on the corresponding application, then [Edit]).
 
 For example, the respective links would be (replace myappname with actual value):
 
@@ -264,7 +262,7 @@ Note: In the following command, replace "mysimplebotname" with a unique name on 
 
 or `heroku create mysimplebotname --team <xxxxx>` (if your Heroku account uses teams)
 
-### Deploy the application:
+### Deploy the application
 
 `git push heroku master`
 
