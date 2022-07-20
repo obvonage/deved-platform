@@ -165,9 +165,8 @@ Local deployment on your computer for both applications
 
 Download the reference application code from the [repository](https://github.com/nexmo-se/voice-enabling-text-bot-application) to a local folder, then go to that folder.
 
-Copy the \`env.example\` file over to a new file called .env (with a leading dot):
-
-\`cp env.example .env\`
+Copy the `env.example` file over to a new file called .env (with a leading dot):
+`cp env.example .env`
 
 Edit the .env file, and set the five parameter values (see previous sections):
 
@@ -185,19 +184,19 @@ SERVICE_NUMBER=
 
 Install dependencies once:
 
-\`npm install\`
+`npm install`
 
 Make sure ngrok has been started with both tunnels as explained in previous sections.
 
 Launch the application:
 
-\`node voice-on-text-bot-app-with-simple-bot.js\`
+`node voice-on-text-bot-app-with-simple-bot.js`
 
 Download the simple chatbot application code from the [repository](https://github.com/nexmo-se/voice-enabling-text-bot-simple-chatbot) to a local folder, then go to that folder.
 
 Launch the application:
 
-\`node very-simple-bot.js\`
+`node very-simple-bot.js`
 
 To interact via voice calls with the very simple bot, call the phone number linked to your application, the one listed as SERVICE_NUMBER.
 
@@ -211,15 +210,15 @@ Go to the folder where you have the Voice API application,
 
 If you do not yet have a local git repository, create one:
 
-\`git init\`
+`git init`
 
-\`git add .\`
+`git add .`
 
-\`git commit -am "initial"\`
+\`git commit -am "initial"`
 
 Start by creating this application on Heroku from the command line using the Heroku CLI: Note: In the following command, replace "myappname" with a unique name on the whole Heroku platform
 
-\`heroku create myappname\`
+`heroku create myappname`
 
 or `heroku create myappname --team <xxxxx>` (if your Heroku account uses teams)
 
@@ -241,7 +240,7 @@ PRIVATE_KEY_FILE with the value ./.private.key
 
 Now, deploy the application:
 
-\`git push heroku master\`
+`git push heroku master`
 
 On your Heroku dashboard, where your application page is shown, click on the Open App button. That hostname is the one to be used under your corresponding [Vonage Voice API application Capabilities](https://dashboard.nexmo.com/applications) (click on the corresponding application, then \[Edit]).
 
@@ -259,25 +258,25 @@ If you do not yet have a local git repository, create one:
 
 go to this simple bot application folder
 
-\`git init\`
+\`git init`
 
-\`git add .\`
+`git add .`
 
-\`git commit -am "initial"\`
+`git commit -am "initial"`
 
 Create this application on Heroku from the command line using the Heroku CLI:
 
 Note: In the following command, replace "mysimplebotname" with a unique name on the whole Heroku platform.
 
-\`heroku create mysimplebotname\`
+`heroku create mysimplebotname`
 
 or `heroku create mysimplebotname --team <xxxxx>` (if your Heroku account uses teams)
 
 ### Deploy the application:
 
-\`git push heroku master\`
+`git push heroku master`
 
-In this case, when setting up the Voice API application, the parameter \`BOT_SERVER\` argument for the other Heroku deployment will be mysimplebotname.herokuapp.com (replace mysimplebotname with its actual value, there is no leading https://, no trailing /)
+In this case, when setting up the Voice API application, the parameter `BOT_SERVER` argument for the other Heroku deployment will be mysimplebotname.herokuapp.com (replace mysimplebotname with its actual value, there is no leading https://, no trailing /)
 
 To interact via voice calls with the very simple bot, call the phone number linked to your application, the one listed as SERVICE_NUMBER.
 
@@ -308,10 +307,10 @@ The application voice-on-text-bot-app-with-simple-bot.js:
   * The (Voice API) call leg is identified by its UUID value,
   * The application returns an [NCCO](https://developer.vonage.com/voice/voice-api/ncco-reference#ncco-reference) where:
 
-    * A greeting is played to the remote party, with [“action”: “talk”](https://developer.vonage.com/voice/voice-api/ncco-reference#talk),
+    * A greeting is played to the remote party with [“action”: “talk”](https://developer.vonage.com/voice/voice-api/ncco-reference#talk),
     * It starts an ASR (Automatic Speech Recognition) cycle with [“action”: “input”](https://developer.vonage.com/voice/voice-api/ncco-reference#input),
 
-The Voice API platform will call the webhook URL as specified in the \`eventUrl\` parameter (route /asr) whether speech has been detected or not.
+The Voice API platform will call the webhook URL as specified in the `eventUrl` parameter (route /asr) whether speech has been detected or not.
 
 * ‘/event
 
@@ -319,7 +318,7 @@ The Voice API platform will call the webhook URL as specified in the \`eventUrl\
   * In this application, there are no actions in reply to this webhook route apart from returning the HTTP code 200 (ok). 
 * ‘/asr’
 
-  * This webhook route is called by the Vonage Voice API platform on ASR (Automatic Speech Recognition) results whether a transcript has been successfully returned or not, e.g. there could have been noises instead of actual spoken words or timed out if no sound has been detected (the time out duration corresponds to the parameter \`startTimeout\` value)
+  * This webhook route is called by the Vonage Voice API platform on ASR (Automatic Speech Recognition) results whether a transcript has been successfully returned or not, e.g. there could have been noises instead of actual spoken words or timed out if no sound has been detected (the time out duration corresponds to the parameter `startTimeout` value)
   * It starts a new ASR cycle by returning an [NCCO](https://developer.vonage.com/voice/voice-api/ncco-reference#input) with "action": "input"
 * ‘/botreply’
 
@@ -334,7 +333,7 @@ The application very-simple-bot.js:
 * This sample very simple chatbot supports English and French languages as examples
 * The only supported requests are listed in the respective dictionaries botKbEn and botKbFr,
 * This very simple chatbot does not do Natural Language Processing for testing. You must exactly say one of the expected supported requests. Otherwise, the reply will be the default one for unknown requests,
-* It handles the webhook ‘/bot’ to receive requests, it will call back the webhook URL as listed in the incoming request to provide the corresponding text reply,
+* It handles the webhook ‘/bot’ to receive requests; it will call back the webhook URL as listed in the incoming request to provide the corresponding text reply,
 * Both last code lines allow this Node.js application to listen on local port 6000 for a local deployment or on a different local port for a hosted deployment (automatically set with a Heroku deployment).
 
 ### Second phase
