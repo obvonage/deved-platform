@@ -330,7 +330,7 @@ The application very-simple-bot.js:
 
 ### Second phase
 
- ![](https://lh5.googleusercontent.com/Sc2Hi-c-dU9s-ruc6YgXibYgfsGb7ZJT_62gUQeMU_GoPiMyF-KayYvdSo6d9GbAJNZ79xUnaYXkadrKYAaqWkTlmY9T5trOH-1OF-_UBexOPdDwvg5MT1KXUxY3X0zA6M-t8sVi1M-RSEV5V_AwtovKSqSng4Co)
+![Production architecture](/content/blog/voice-enabling-a-text-only-chatbot/voice-enabling-text-only-chatbot-hosted-deployment.png "Voice Enabling text-only chatbot. Hosted/ Production deployment.")
 
 In the second phase, you are going to update (where indicated inside) the source code voice-on-text-bot-app-generic.js to interact with your actual chatbot for text requests/responses and use voice-on-text-bot-app-with-simple-bot.js as a reference, both from the [application repository](https://github.com/nexmo-se/voice-enabling-text-bot-application).
 
