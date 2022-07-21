@@ -1,6 +1,6 @@
 ---
 title: Voice Enabling a Text-only Chatbot
-description: Learn here how to add voice interaction with your existing text-only chatbot.
+description: Learn here how to add voice interaction to your existing text-only chatbot.
 author: tony-chan
 published: true
 published_at: 2022-07-18T18:48:45.538Z
@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 ## Overview
 
-Learn here how to add voice interaction with your existing text-only chatbot.
+Learn here how to add voice interaction to your existing text-only chatbot.
 
 This application uses Vonage Voice API for speech recognition and text-to-speech capabilities to enable your chatbot to listen to callers' spoken requests and playback replies.
 
