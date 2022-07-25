@@ -50,7 +50,7 @@ This seems somewhat elegant from a user's perspective, given the absence of name
 protected abstract static class Builder<M extends MmsRequest, B extends Builder<? extends M, ? extends B>> extends MessageRequest.Builder<M, B>
 ```
 
-## The `<M>` parameter
+## The `<M>` Parameter
 
 The base Builder class in `MessageRequest` takes as parameters the type of `MessageRequest` to be constructed, and the type of `Builder`. The former (`M`) is easy to explain: `public abstract M build()` in `MessageRequest.Builder` is what the user calls once they have finished setting the parameters, returning them the appropriate concrete `MessageRequest` subclass. Of course, this could be omitted since Java inheritance supports covariant return types. That is, we could omit `M` if we wanted to and achieve the same outcome from the user's perspective. Then, `MessageRequest.Builder` becomes as follows:
 
