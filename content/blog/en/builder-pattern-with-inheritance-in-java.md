@@ -1,5 +1,5 @@
 ---
-title: Builder Pattern with Inheritance in Java
+title: Builder Pattern With Inheritance in Java
 description: This article demonstrates the Builder pattern within a class
   hierarchy, using the Messages API as an example
 author: sina-madani
@@ -30,7 +30,7 @@ To model the various types of messages that can be sent via the [Messages API](h
   - `MmsRequest`
     - `MmsVcardRequest`
 
-`MessageRequest` and `MmsRequest` are abstract classes, and `MmsVcardRequest` is the class which represents the combination of sending a vCard over MMS. The base class `MessageRequest` takes as arguments the channel and message type in its constructor, which are set by subclasses. It also takes a Builder as a parameter, which is where the message's main details are set. Some parameters are optional, such as `clientRef`, and all messages have a sender and recipient, hence these are declared in the base `MessageRequest`. However, this inheritance hierarchy is transparent to the user when constructing an `MmsVcardRequest`, which looks like this:
+`MessageRequest` and `MmsRequest` are abstract classes, and `MmsVcardRequest` is the class which represents the combination of sending a vCard over MMS. The base class `MessageRequest` takes as arguments the channel and message type in its constructor, which are set by subclasses. It also takes a `Builder` as a parameter, which is where the message's main details are set. Some parameters are optional, such as `clientRef`, and all messages have a sender and recipient, hence these are declared in the base `MessageRequest`. However, this inheritance hierarchy is transparent to the user when constructing an `MmsVcardRequest`, which looks like this:
 ```java
 MmsVcardRequest message = MmsVcardRequest.builder()
         .from("447900090000").to("447900090001")
@@ -40,13 +40,13 @@ MmsVcardRequest message = MmsVcardRequest.builder()
 ```
 Complete examples are available from the [code samples repo](https://github.com/Vonage/vonage-java-code-snippets/tree/master/src/main/java/com/vonage/quickstart/messages).
 
-This seems somewhat elegant from a user's perspective, given the absence of named and optional method/constructor parameters in Java. Behind the scenes however, making the code above possible with an inheritance hierarchy requires a design that is not immediately obvious or intuitive from the SDK developer's perspective. The complications relate to the nested Builder classes associated with each subclass of [`MessageRequest`](https://github.com/Vonage/vonage-java-sdk/blob/main/src/main/java/com/vonage/client/messages/MessageRequest.java). Let's look at [`MmsRequest`](https://github.com/Vonage/vonage-java-sdk/blob/main/src/main/java/com/vonage/client/messages/mms/MmsRequest.java) as an example. It's still abstract since we're only setting the Channel. But what about that intimidating Builder declaration?
+This seems somewhat elegant from a user's perspective, given the absence of named and optional method/constructor parameters in Java. Behind the scenes however, making the code above possible with an inheritance hierarchy requires a design that is not immediately obvious or intuitive from the SDK developer's perspective. The complications relate to the nested Builder classes associated with each subclass of [`MessageRequest`](https://github.com/Vonage/vonage-java-sdk/blob/main/src/main/java/com/vonage/client/messages/MessageRequest.java). Let's look at [`MmsRequest`](https://github.com/Vonage/vonage-java-sdk/blob/main/src/main/java/com/vonage/client/messages/mms/MmsRequest.java) as an example. It's still abstract since we're only setting the `Channel`. But what about that intimidating `Builder` declaration?
 
 ```java
 protected abstract static class Builder<M extends MmsRequest, B extends Builder<? extends M, ? extends B>> extends MessageRequest.Builder<M, B>
 ```
 
-The base Builder class in MessageRequest takes as parameters the type of MessageRequest to be constructed, and the type of Builder. The former (`M`) is easy to explain: `public abstract M build()` in `MessageRequest.Builder` is what the user calls once they have finished setting the parameters, returning to them the appropriate concrete MessageRequest subclass. Of course, this could be omitted since Java inheritance supports covariant return types. That is, we could omit `M` if we wanted to and achieve the same outcome from the user's perspective. Then, `MessageRequest.Builder` becomes as follows:
+The base Builder class in `MessageRequest` takes as parameters the type of `MessageRequest` to be constructed, and the type of `Builder`. The former (`M`) is easy to explain: `public abstract M build()` in `MessageRequest.Builder` is what the user calls once they have finished setting the parameters, returning them the appropriate concrete `MessageRequest` subclass. Of course, this could be omitted since Java inheritance supports covariant return types. That is, we could omit `M` if we wanted to and achieve the same outcome from the user's perspective. Then, `MessageRequest.Builder` becomes as follows:
 
 ```java
 public abstract static class Builder<B extends Builder<? extends B>> {
