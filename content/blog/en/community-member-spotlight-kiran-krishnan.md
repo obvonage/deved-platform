@@ -21,7 +21,7 @@ Vonage Communications APIs are enabling developers to connect people. Through th
 
 For our first Community Member Spotlight, we caught up with Kiran Krishnan, an open-source enthusiast from Kerala, India. We want to recognize Kiran for his awesome job integrating [Vonage into Supabase](https://dev.to/devkiran/my-open-source-contribution-to-supabase-4i1p).
 
-Follow Kiran on [Twitter](https://twitter.com/tokirankrishnan) or [Github](https://github.com/devkiran).
+Follow Kiran on [Twitter](https://twitter.com/tokirankrishnan) or [GitHub](https://github.com/devkiran).
 
 ## Please Introduce Yourself
 
