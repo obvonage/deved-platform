@@ -22,11 +22,11 @@ replacement_url: ""
 
 The typical way we instantiate objects is through a constructor, passing in the parameters required directly. For brevity, we may group related parameters into a class and construct an instance of that class separately, passing it to the main object as a parameter. This has the advantage of reducing the number of parameters required for object construction by breaking it down into multiple steps. However, there are several downsides to using a constructor. For one, the order in which parameters are passed is significant, which can be daunting when there are many parameters, and even more error-prone when these parameters are of the same type (e.g. String). There may also be optional parameters. Whilst we can work around this by having multiple constructors with varying signatures, this adds a lot of boilerplate and cognitive load for the user and developer. It also becomes infeasible when multiple optional parameters are of the same type.
 
-The Builder pattern is a well-known design pattern in object-oriented languages for controlling object construction. Like many (perhaps most) design patterns, it exists to address a deficiency in the language. In languages with named parameters (such as Kotlin, Scala, Python, C#, Ruby and many others), the need for builders is diminished in many cases. Using the builder pattern is a recommendation in Effective Java, but for languages with named arguments, its value becomes questionable (see for example [this article](https://blog.kotlin-academy.com/effective-java-in-kotlin-item-2-consider-a-builder-when-faced-with-many-constructor-parameters-1927e69608e1), which explores its utility in Kotlin).
+The Builder pattern is a well-known design pattern in object-oriented languages for controlling object construction. Like many (perhaps most) design patterns, it exists to address a deficiency in the language. In languages with named parameters (such as Kotlin, Scala, Python, C#, Ruby and many others), the need for builders is diminished in many cases. Using the builder pattern is a recommendation in Effective Java, but for languages with named arguments, its value becomes questionable (see, for example [this article which explores its utility in Kotlin](https://blog.kotlin-academy.com/effective-java-in-kotlin-item-2-consider-a-builder-when-faced-with-many-constructor-parameters-1927e69608e1)).
 
 Discussion on the extent to which optional parameters obsolete the builder pattern is beyond the scope of this article. Instead, the purpose is to explain the rationale for what appears to be a complicated application of the builder pattern in the recently released [Messages API implementation in the Vonage Java SDK](https://github.com/Vonage/vonage-java-sdk/tree/main/src/main/java/com/vonage/client/messages). 
 
-## `MessageRequest` classes
+## `MessageRequest` Classes
 
 To model the various types of messages that can be sent via the [Messages API](https://developer.vonage.com/messages/overview), an object-oriented approach is used, where a class is created for every valid combination of message type and service. There is a three-level inheritance hierarchy. Take the following example:
 
@@ -142,7 +142,7 @@ with error message:
 
 This is only because we remembered to manually override the signature of the method in `MmsRequest.Builder`. If we didn't do that, there would be no error. By parameterising the return type, we are forced to declare the correct type, and we don't need to override the `build()` method in subclasses of `MessageRequest` - the compiler takes care of that for us.
 
-## The `<B>` parameter
+## The `<B>` Parameter
 
 Let us return to the latter Builder parameter - `B`. If you're familiar with the builder pattern, you'll know that each method call on the builder returns the builder itself, so that you can fluently chain method calls to set parameters easily. This works well when there is no inheritance, but we want the user to be able to set parameters in any order - after all, isn't that one of the main reasons for using the builder pattern? Thus, we need to ensure that the most specific concrete Builder class is returned regardless of which methods are called first. Otherwise, we lose the ability to chain method calls and would have to resort to casting the return value every time - which ruins the fluency we're trying to achieve by using a builder. To make this clearer, let's consider the case where we naively return the current builder:
 
@@ -259,4 +259,4 @@ But this defeats the whole point of inheritance since we're repeating informatio
 
 I hope this article has taught you a somewhat useful (although perhaps seemingly convoluted) pattern for using the Builder pattern when there are  abstract classes and inheritance involved. Perhaps one day, such patterns will become obsolete when the language adds better ways to instantiate objects. Until then, at least we have generics to help us, as daunting as they can be to work with sometimes!
 
-We always welcome community involvement. Please feel free to join us on the Vonage Community Slack or send us a message on Twitter. If you have any suggestions for improvements, enhancements or you spot a bug, do not hesitate to raise an issue on GitHub.
+We always welcome community involvement. Please feel free to join us on the [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev). If you have any suggestions for improvements, enhancements or you spot a bug, do not hesitate to raise an issue on GitHub.
