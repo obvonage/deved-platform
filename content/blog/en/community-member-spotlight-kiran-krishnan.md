@@ -53,7 +53,7 @@ I've used the Vonage SMS and Messages API to send SMS to users in different scen
 
 ## Which Tech Stack Did You Use?
 
-I've integrated Vonage APIs into both JavaScript and Golang code. I mostly use the following tech stack for my projects: Next.js, Golang, Tailwind CSS, Postgres, React, TypeScript, and Prisma. I'm also learning and using other technologies like GraphQL, Remix.run, and more. 
+I've integrated Vonage APIs into both JavaScript and Golang code. I mostly use the following tech stack for my projects: Next.js, Golang, Tailwind CSS, PostgreSQL, React, TypeScript, and Prisma. I'm also learning and using other technologies like GraphQL, Remix.run, and more. 
 
 ## How Did You End up Integrating Vonage Into Supabase?
 
