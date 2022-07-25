@@ -18,11 +18,15 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+## Introduction
+
 The typical way we instantiate objects is through a constructor, passing in the parameters required directly. For brevity, we may group related parameters into a class and construct an instance of that class separately, passing it to the main object as a parameter. This has the advantage of reducing the number of parameters required for object construction by breaking it down into multiple steps. However, there are several downsides to using a constructor. For one, the order in which parameters are passed is significant, which can be daunting when there are many parameters, and even more error-prone when these parameters are of the same type (e.g. String). There may also be optional parameters. Whilst we can work around this by having multiple constructors with varying signatures, this adds a lot of boilerplate and cognitive load for the user and developer. It also becomes infeasible when multiple optional parameters are of the same type.
 
 The Builder pattern is a well-known design pattern in object-oriented languages for controlling object construction. Like many (perhaps most) design patterns, it exists to address a deficiency in the language. In languages with named parameters (such as Kotlin, Scala, Python, C#, Ruby and many others), the need for builders is diminished in many cases. Using the builder pattern is a recommendation in Effective Java, but for languages with named arguments, its value becomes questionable (see for example [this article](https://blog.kotlin-academy.com/effective-java-in-kotlin-item-2-consider-a-builder-when-faced-with-many-constructor-parameters-1927e69608e1), which explores its utility in Kotlin).
 
 Discussion on the extent to which optional parameters obsolete the builder pattern is beyond the scope of this article. Instead, the purpose is to explain the rationale for what appears to be a complicated application of the builder pattern in the recently released [Messages API implementation in the Vonage Java SDK](https://github.com/Vonage/vonage-java-sdk/tree/main/src/main/java/com/vonage/client/messages). 
+
+## `MessageRequest` classes
 
 To model the various types of messages that can be sent via the [Messages API](https://developer.vonage.com/messages/overview), an object-oriented approach is used, where a class is created for every valid combination of message type and service. There is a three-level inheritance hierarchy. Take the following example:
 
@@ -40,11 +44,13 @@ MmsVcardRequest message = MmsVcardRequest.builder()
 ```
 Complete examples are available from the [code samples repo](https://github.com/Vonage/vonage-java-code-snippets/tree/master/src/main/java/com/vonage/quickstart/messages).
 
-This seems somewhat elegant from a user's perspective, given the absence of named and optional method/constructor parameters in Java. Behind the scenes however, making the code above possible with an inheritance hierarchy requires a design that is not immediately obvious or intuitive from the SDK developer's perspective. The complications relate to the nested Builder classes associated with each subclass of [`MessageRequest`](https://github.com/Vonage/vonage-java-sdk/blob/main/src/main/java/com/vonage/client/messages/MessageRequest.java). Let's look at [`MmsRequest`](https://github.com/Vonage/vonage-java-sdk/blob/main/src/main/java/com/vonage/client/messages/mms/MmsRequest.java) as an example. It's still abstract since we're only setting the `Channel`. But what about that intimidating `Builder` declaration?
+This seems somewhat elegant from a user's perspective, given the absence of named and optional method/constructor parameters in Java. Behind the scenes however, making the code above possible with an inheritance hierarchy requires a design that is not immediately obvious or intuitive from the SDK developer's perspective. The complications relate to the nested Builder classes associated with each subclass of [`MessageRequest`](https://github.com/Vonage/vonage-java-sdk/blob/main/src/main/java/com/vonage/client/messages/MessageRequest.java). Let's look at [`MmsRequest`](https://github.com/Vonage/vonage-java-sdk/blob/main/src/main/java/com/vonage/client/messages/mms/MmsRequest.java) as an example. It's still abstract since we're only setting the `Channel`. But what about that intimidating `Builder` declaration? The remainder of this article will attempt to help you understand this:
 
 ```java
 protected abstract static class Builder<M extends MmsRequest, B extends Builder<? extends M, ? extends B>> extends MessageRequest.Builder<M, B>
 ```
+
+## The `<M>` parameter
 
 The base Builder class in `MessageRequest` takes as parameters the type of `MessageRequest` to be constructed, and the type of `Builder`. The former (`M`) is easy to explain: `public abstract M build()` in `MessageRequest.Builder` is what the user calls once they have finished setting the parameters, returning them the appropriate concrete `MessageRequest` subclass. Of course, this could be omitted since Java inheritance supports covariant return types. That is, we could omit `M` if we wanted to and achieve the same outcome from the user's perspective. Then, `MessageRequest.Builder` becomes as follows:
 
@@ -135,6 +141,8 @@ with error message:
 *'build()' in 'com.vonage.client.messages.mms.MmsVcardRequest.Builder' clashes with 'build()' in 'com.vonage.client.messages.mms.MmsRequest.Builder'; attempting to use incompatible return type*.
 
 This is only because we remembered to manually override the signature of the method in `MmsRequest.Builder`. If we didn't do that, there would be no error. By parameterising the return type, we are forced to declare the correct type, and we don't need to override the `build()` method in subclasses of `MessageRequest` - the compiler takes care of that for us.
+
+## The `<B>` parameter
 
 Let us return to the latter Builder parameter - `B`. If you're familiar with the builder pattern, you'll know that each method call on the builder returns the builder itself, so that you can fluently chain method calls to set parameters easily. This works well when there is no inheritance, but we want the user to be able to set parameters in any order - after all, isn't that one of the main reasons for using the builder pattern? Thus, we need to ensure that the most specific concrete Builder class is returned regardless of which methods are called first. Otherwise, we lose the ability to chain method calls and would have to resort to casting the return value every time - which ruins the fluency we're trying to achieve by using a builder. To make this clearer, let's consider the case where we naively return the current builder:
 
@@ -247,4 +255,8 @@ public static final class Builder extends MmsRequest.Builder<MmsVcardRequest> {
 
 But this defeats the whole point of inheritance since we're repeating information! That is why we parameterise the builder type. The compiler ensures that the most concrete subtype is always returned. However, because our builder classes can be extended, we need to encode this in the parameter declarations too, hence the bound `B extends Builder<? extends M, ? extends B>` as opposed to `B extends Builder<M, B>`. Unfortunately, we still have to cast the return type of the builder to `B` every time we call `return this`, but from what I can tell, that's a limitation of the compiler. Thankfully the casting only needs to happen in the abstract Builder classes, not the concrete types.
 
+## Conclusion
+
 I hope this article has taught you a somewhat useful (although perhaps seemingly convoluted) pattern for using the Builder pattern when there are  abstract classes and inheritance involved. Perhaps one day, such patterns will become obsolete when the language adds better ways to instantiate objects. Until then, at least we have generics to help us, as daunting as they can be to work with sometimes!
+
+We always welcome community involvement. Please feel free to join us on the Vonage Community Slack or send us a message on Twitter. If you have any suggestions for improvements, enhancements or you spot a bug, do not hesitate to raise an issue on GitHub.
