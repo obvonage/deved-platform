@@ -49,7 +49,7 @@ I prefer to use my MacBook Pro.
 
 ## What Have You Built With Vonage APIs?
 
-I've used Vonage SMS APIs to send SMS to users in different scenarios and also developed some WhatsApp chatbots using the WhatsApp Business API. It was a fun and new experience working with those APIs. Vonage APIs are just about the easiest thing I've ever used. It's one of the reasons why I recommend Vonage to anyone for SMS and Voice.
+I've used the Vonage SMS and Messages API to send SMS to users in different scenarios and also developed some WhatsApp chatbots using the WhatsApp Business API. It was a fun and new experience working with those APIs. Vonage APIs are just about the easiest thing I've ever used. It's one of the reasons why I recommend Vonage to anyone for SMS and Voice.
 
 ## Which Tech Stack Did You Use?
 
