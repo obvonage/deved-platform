@@ -65,7 +65,7 @@ Without previous experience with Go and Gotrue, I thought it would be hard to un
 
 It took roughly 6 hours to understand the code and finish the Vonage SMS API integration. My previous experience with authentication libraries and APIs helped me to understand the code much faster than I initially anticipated.
 
-So I made a PR in just a few days, and PR merged into the project successfully after a few days of testing and feedback from the team. Here is the link to the [PR](https://github.com/supabase/gotrue/pull/333).
+So I made a PR in just a few days, and PR merged into the project successfully after a few days of testing and feedback from the team. Here is [the link to the PR](https://github.com/supabase/gotrue/pull/333).
 
 ## What Resources Helped You Along the Way?
 
