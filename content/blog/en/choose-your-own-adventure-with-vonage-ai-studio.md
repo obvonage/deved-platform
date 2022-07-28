@@ -37,7 +37,7 @@ When first creating an agent, there are several settings to set, such as the Age
 
 For Voice agents, you additionally need to choose the voice that your agent will use to 'speak' with, using AI Studio's text-to-speech capabilities. Though when creating the various elements in your conversational flow there is also the option to use audio recordings instead.
 
-![](https://lh5.googleusercontent.com/DW88q8Pwc-Ee6rAl8f2Z1R3MoomgAw53wpb2YlJvJCkj34L6uUFudqCcW6cbLcgr7oDwVUaEHeyn3yxdhl9fj6ZZWpavjw2-eYEBd6r1ISimfCd-PU9c5lju0DrF_m7hOHGWatOpjvtD0IFI6MWUaK8)
+![A screenshot of the Agent setup step in Vonage AI Studio showing the selection options: Agent Name, Time Zone](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/agent-setup-screenshot.png "AI Studio screenshot: Agent Set up")
 
 Find out more about [Agents](https://studio.docs.ai.vonage.com/ai-studio/create-a-new-agent).
 
@@ -45,7 +45,7 @@ Find out more about [Agents](https://studio.docs.ai.vonage.com/ai-studio/create-
 
 Flows are combinations of different conversation nodes connected together on the AI Studio drag-and-drop Canvas.
 
-![](https://lh6.googleusercontent.com/hqsJQHesmwlscSr7cajt0doGjKWAhVqw3_grLZa7N2Sm7LLPLfg76P1VGaKV8Udg2-dxCA8c8AoT42TWpiGY-PHHYpCga3ruSPVLXTWywNmE3y2BFkAA5tbv_bnlNdZdNNO3GIJUlbayyS-FXIGktA)
+![A screenshot of one of the flows (the intro flow) for my AI Studio agent. Shows various conversation nodes connected together on the AI Studio canvas to form a conversational flow](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/intro-flow-screenshot.png "AI Studio screenshot: Intro flow")
 
 You can place all the nodes for your entire flow on the same canvas. For large, complex flows though, it can be more manageable to split them up into sub-flows. This is the approach I took for my story, for which there are four main parts. There's a Main Flow that sets the scene for the adventure. At the end of this flow, the story reaches a 'fork in the road' and the adventurer has to choose which path to take. This is where I made created a couple of sub-flows, with the fork in the road leading to either a River Flow or a Forest Flow. These two sub-flows then converge again for the final part of the adventure in the Castle Flow.
 
