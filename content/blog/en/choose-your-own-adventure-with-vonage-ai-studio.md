@@ -69,7 +69,7 @@ As mentioned earlier, Flows are combinations of different conversation Nodes con
 
 All stories have a beginning, and all conversation flows in AI Studio need a Start Node. As well as acting as the starting point for your flow, Start Nodes allow you to set certain options for the overall flow. The exact options you can choose from here will depend on the type of flow you. For a Voice Call flow, you can choose to record the call, and also set up a webhook that responds to a call-disconnection event. Neither of these is necessary for my adventure story, so I used the node purely as a starting point.
 
-![](https://lh4.googleusercontent.com/A7WowN_0lhuZJmIk9a8ehXm0hQYJlRhe32fn3gkeTsc8mlvGMtvJnqkU1qzw-z0cg2JbOA9ky-aZ3LZpTuILrLwT3VQBO1-NLvoaCdM-05P_q58Oucdl2ivCaEu3YblvZ37kGzDZotYdcsFD-M3vUQ)
+![A screenshot of the setup options for the AI Studio Start node (Record Call, Call Disconnected Webhook)](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/start-node-setup-screenshot.png "AI Studio screenshot: Start Node setup")
 
 ### Speak Node
 
@@ -77,7 +77,7 @@ The purpose of the Speak Node is for providing information to the caller. When s
 
 Since my 'adventure flow' is primarily concerned with telling an exciting story, I relied on this node heavily at multiple points in the flow for scene setting and to describe various parts of the narrative.
 
-![](https://lh3.googleusercontent.com/qpGB717Yco4KLtJwKk_XpjPKsX3JD2ZkelIG1XactgL1BYNpkKQq0iJkS4_LqkuujA_2hnSAbnpZsgBE8uKV8oI3xBcy1oFxpL2lTvxaYjVDnF7v4I8s4FbGv1Hghg7uIpl97ThgxkAA1WkNQBhUMQ)
+![A screenshot showing an example of the AI Studio Speak node, showing the 'Text to Speech' tab with some text from the conversational flow.](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/speak-node-setup-screenshot.png "AI Studio screenshot: Speak Node")
 
 Find out more about the [Speak node](https://studio.docs.ai.vonage.com/voice/nodes/basic/speak).
 
