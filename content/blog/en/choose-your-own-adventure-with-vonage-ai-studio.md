@@ -195,7 +195,7 @@ Find out more about the [Context Switch node](https://studio.docs.ai.vonage.com/
 
 All stories, and calls, must come to an end at some point. The purpose of the End Call node is to terminate the call. For a Voice Call flow, you will need to place an End Call node at the end of each 'branch' of your flow.
 
-Find out more about the End Call node.
+Find out more about the [End Call node](https://studio.docs.ai.vonage.com/voice/nodes/actions/end-call).
 
 - - -
 
