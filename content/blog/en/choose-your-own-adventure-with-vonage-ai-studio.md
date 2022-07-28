@@ -39,7 +39,7 @@ For Voice agents, you additionally need to choose the voice that your agent will
 
 ![](https://lh5.googleusercontent.com/DW88q8Pwc-Ee6rAl8f2Z1R3MoomgAw53wpb2YlJvJCkj34L6uUFudqCcW6cbLcgr7oDwVUaEHeyn3yxdhl9fj6ZZWpavjw2-eYEBd6r1ISimfCd-PU9c5lju0DrF_m7hOHGWatOpjvtD0IFI6MWUaK8)
 
-Find out more about [Agents](https://studio.docs.ai.vonage.com/ai-studio/create-a-new-agent)
+Find out more about [Agents](https://studio.docs.ai.vonage.com/ai-studio/create-a-new-agent).
 
 ## Flows
 
