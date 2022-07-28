@@ -1,10 +1,11 @@
 ---
 title: Voice Enabling a Text-only Chatbot
 description: Learn here how to add voice interaction to your existing text-only chatbot.
+thumbnail: /content/blog/voice-enabling-a-text-only-chatbot/chatbots_voice-enable.png
 author: tony-chan
 published: true
-published_at: 2022-07-18T18:48:45.538Z
-updated_at: 2022-07-18T18:48:45.551Z
+published_at: 2022-07-28T09:13:14.224Z
+updated_at: 2022-07-28T09:13:15.356Z
 category: tutorial
 tags:
   - chatbot
