@@ -49,11 +49,11 @@ Flows are combinations of different conversation nodes connected together on the
 
 You can place all the nodes for your entire flow on the same canvas. For large, complex flows though, it can be more manageable to split them up into sub-flows. This is the approach I took for my story, for which there are four main parts. There's a Main Flow that sets the scene for the adventure. At the end of this flow, the story reaches a 'fork in the road' and the adventurer has to choose which path to take. This is where I made created a couple of sub-flows, with the fork in the road leading to either a River Flow or a Forest Flow. These two sub-flows then converge again for the final part of the adventure in the Castle Flow.
 
-![](https://lh5.googleusercontent.com/HIWzs1c9xlkSiDeFKpO02p_xPyb2oy4Bbx7GXwkVirJqxu0iqT_nPq24CuA9bIQQYP_BPEG76w_Mun7lozIq7hDhv3u9neteRmklThnQR9krYLGiUgJxPfCOFGRSteWA70Y8EN1Cbjvfkyek9XDIsg)
+![A screenshot of part of an AI Studio conversational flow, showing a conversation node linked to two sub-flow nodes](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/sub-flows-screenshot.png "AI Studio screenshot: sub-flows")
 
 You create and manage sub-flows in the Flows tab of the AI Studio menu.
 
-![](https://lh3.googleusercontent.com/8KisepQW-fVnFA0Y8vitZI6nkOv0_p9TppMvgTNDWNAwda0zQJn5z1Wq7HKeQZ8wQSnZji9J-6vmKhUUr-KPmkaWUNf2hFc5E0kIlBshg6xBSJFwJ0tUZ6f0n6ZxiWN_-So48yiFreS5_5IJpcmQqA)
+![A screenshot of the flows tab of the AI Studio menu showing the already created sub-flows (Forest Path, Castle, and River Road) as well as an 'Add flow' button](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/flows-menu-tab-screenshot.png "AI Studio screenshot: Flows tab of the menu")
 
 In a real-world scenario, you might create sub-flows for different business functions that a customer might want to access, such as sales, support, billing, and so on.
 
