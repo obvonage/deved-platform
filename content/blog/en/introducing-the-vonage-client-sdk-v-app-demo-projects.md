@@ -6,7 +6,7 @@ author: abdul-ajetunmobi
 published: true
 published_at: 2022-07-28T08:59:22.841Z
 updated_at: 2022-07-28T08:59:22.943Z
-category: release
+category: announcement
 tags:
   - conversation-api
   - client-sdk
