@@ -1,7 +1,7 @@
 ---
 title: Introducing the Vonage Client SDK V-App Demo Projects
 description: "To showcase the multi-platform functionality of the SDKs and the
-  Conversation API we have built the V-App! "
+  Conversation API we have built the V-App!"
 author: abdul-ajetunmobi
 published: true
 published_at: 2022-07-28T08:59:22.841Z
@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-The [Vonage Client SDKs](https://developer.nexmo.com/client-sdk/overview) for Android, iOS, and Web in conjunction with the [Conversation API](https://developer.vonage.com/conversation/overview) helps you build voice and messaging capabilities into your applications. To showcase the multi-platform functionality of the SDKs and the Conversation API we have built the V-App! The V-App is an end-to-end application on all 3 platforms, but we didn't stop there! To support the applications, we also built a backend using Node.JS. This blog will have a brief overview of how the different components are built, if you want to jump ahead you can check out the code on [GitHub](https://github.com/nexmo-community/clientsdk-the-v-app).
+The [Vonage Client SDKs](https://developer.nexmo.com/client-sdk/overview) for Android, iOS, and Web in conjunction with the [Conversation API](https://developer.vonage.com/conversation/overview) helps you build voice and messaging capabilities into your applications. To showcase the multi-platform functionality of the SDKs and the Conversation API we have built the V-App! The V-App is an end-to-end application on all 3 platforms, but we didn't stop there! To support the applications, we also built a backend using Node.JS. This blog will have a brief overview of how the different components are built, if you want to jump ahead you can check out [the code on GitHub](https://github.com/nexmo-community/clientsdk-the-v-app).
 
 ## The V-App Backend
 
