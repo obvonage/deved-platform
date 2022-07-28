@@ -169,11 +169,11 @@ The Custom Code node lets you use JavaScript code to produce a particular value,
 
 I used the Custom Code node in a couple of places in my adventure story. One of these was where I wanted to remove any leading zeros (if present) from the mobile number and country code provided by the user, and then combine them into a single value and assign it to an output parameter, which I could then use in the Send SMS node to send the secret password.
 
-![](https://lh4.googleusercontent.com/zeGKfjLUBTwVxtd8AZeKjUhnY5uC05n_XQgfh_Iuk-Pepz3BmnNqAuSi5g9I2h8403ui-pe5LUG3VZIFmExyBqQqzcXkgj7Eb9QTO4IzVB-7dcXm0BBtwiTjPYHxblSHvM2mKLI-35-40U8Brbl8tw)
+![A screenshot showing an the setup for a Custom Code Node, in this case the Set SMS Number part of the flow, which uses a regex to removing leading zeroes from the values of the $MOBILE_NUMBER and $COUNTRY_CODE paramters, and then combines them into a single ouput parameter SMS_TO_NUMBER](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/custom-code-node-screenshot.png "AI Studio screenshot: Custom Code Node")
 
 Another use of the Custom Code node in my flow was to mimic a dice roll during a battle with the dragon.
 
-![](https://lh5.googleusercontent.com/CJvy_XArZHvPwgIgaIKOSgHILKpfaTHWAmnNpw6gA80PgDS9tnEjV6ix2uT6eDiSUPoTeWopybKowBDTPCB13qb9Z8zhiTQ1zcrwm63ZsAvaxlXGCE6UidA9jFYUuxXVaJaLwh3WdA34Xyf9bJOHLjc)
+![A screenshot showing an the setup for a Custom Code Node, in this case the Roll Dice part of the flow, which uses Math.random to removing leading zeroes from the values of the $MOBILE_NUMBER and $COUNTRY_CODE paramters, and then sets the result as the new value of the ouput parameter DRAGON_HEALTH_POINTS](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/custom-code-node-screenshot-2.png "AI Studio screenshot: Custom Code Node")
 
 There are many other potential use-cases for the Custom Code node.
 
@@ -187,7 +187,7 @@ Like the Classification node, the Context Switch node works based on Intents.
 
 In my flow, I imagined a situation where travelling through scary forests, exploring abandoned buildings, or fighting dragons might become a little overwhelming, so at any point, the adventurer can choose to run away back to the safety of the village!
 
-![](https://lh5.googleusercontent.com/loHywfRXECc4pHTr4SsY54aJbhqNKJ0bJCID0KLx2LRMHZCbMWTO7pZ8HatVHAh5epIIqb2Wb6Di-hPxtuNr4Ta4BhvfcvAxjjFERhe2jHOeBy7ZpCHEWo2CDPsZZGKW8UiAIkJ7LTUoikGN8HeGUw)
+![A screenshot showing an example of a flow starting with a context switch node. In this case the flow begins with the 'Run away!' context switch node, followed by a Speak node and then an End Call node ](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/context-switch-node-screenshot.png "AI Studio screenshot: Context Switch Node")
 
 Find out more about the [Context Switch node](https://studio.docs.ai.vonage.com/voice/nodes/flow-control/coming-soon-context-switch).
 
