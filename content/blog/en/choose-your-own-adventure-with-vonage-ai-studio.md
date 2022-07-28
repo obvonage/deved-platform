@@ -57,7 +57,7 @@ You create and manage sub-flows in the Flows tab of the AI Studio menu.
 
 In a real-world scenario, you might create sub-flows for different business functions that a customer might want to access, such as sales, support, billing, and so on.
 
-Find out more about [Flows](https://studio.docs.ai.vonage.com/voice/nodes/flow-control/flows)
+Find out more about [Flows](https://studio.docs.ai.vonage.com/voice/nodes/flow-control/flows).
 
 ## Conversation Nodes
 
