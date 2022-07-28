@@ -23,13 +23,13 @@ AI Studio has been available for a while in Developer Preview. It recently becam
 
 In my younger days, I loved reading 'choose your own adventure' books. These books, rather than following a linear narrative structure, allowed you to make decisions at certain points in the story, and then turn to the appropriate page in the book based on your decision. I thought it might be cool to build my own 'choose your own adventure' story with AI Studio.
 
-![](https://lh5.googleusercontent.com/d6fUwNI6WUJFoNqulRgssIdCTpmUnCRLRvpyHKkljCpJYRRg10gDQ4GH-FssinNTN8BBp-6bFhmAk-KGrFjAHojiPle2xaibyH3EcTNRSbZUKy2vof2ocB6kybTX0kc9lHCc85ScJIcNkvzcBPwL_g)
+![Book cover from 'The Warlock of Firetop Mountain' depicting a dragon and a wizard](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/choose-your-own-adventure-book-cover.jpg "'The Warlock of Firetop Mountain' book cover")
 
 ## Agents
 
 Within the AI Studio interface, each conversation flow is created as an 'agent'. There are different types of agents available depending on your use cases, such as Voice, SMS, WhatsApp, and HTTP. 
 
-![](https://lh3.googleusercontent.com/o2Hzch9AHAA3YpZWFf2XSKrBdxBcqzL-KhzyDh6wrZDpbq638cbgAd6kjlOqafeKM6RHsRBwt64vlvsbaLQuTZpBDZOIukvbNR_3NE4fn_xRN6wKHcq0xB75bcFjKDlOol-SE5yOPjlDk-K1-0yyYVk)
+![A screenshot of the Agent Creation step in Vonage AI Studio showing the channel selection options: Telephony, WhatsApp, SMS, HTTP ](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/agent-creation-screenshot.png "AI Studio screenshot: Agent Creation")
 
 For my 'choose your own adventure' story, I decided to create a Voice agent. AI Studio’s Voice agents combine Vonage’s proprietary automated speech recognition (ASR) with its NLU capabilities to provide naturalistic voice interactions. 
 
@@ -198,8 +198,6 @@ All stories, and calls, must come to an end at some point. The purpose of the En
 Find out more about the End Call node.
 
 - - -
-
-
 
 Want to go on an adventure where you can wander through enchanted forests, encounter faeries, and fight dragons? Then try out my AI Studio voice flow by calling one of the following numbers:
 
