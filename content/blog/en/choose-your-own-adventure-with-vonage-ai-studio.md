@@ -143,7 +143,7 @@ We've briefly encountered parameters already in the context of Collect Input nod
 
 In my adventure flow, there are situations where the protagonist can pick up items to help them on their quest. For these situations, I used the Set Parameter node to record the fact that the item had been picked up.
 
-![](https://lh3.googleusercontent.com/V3FPGySJ2un_ZgumSHIS32a7GgiE6ifzmrx0BJn5z4A4fTDL_92NPAbPW4fnxZLTgqxe84BZ2cTAH680uCQ_2aBc0Sb_Zy4qbF4NK-c32b4FIuyNG0oDkxDDCy8KSgpzzPjWh64uP_6c9tsvhzqgjQ)
+![A screenshot showing an the setup for a Set Parameter node, in this case the 'Pick Up Bow' parameter with a Parameter name of 'QUEST_BOW' and a Value of 'True'](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/set-parameter-screenshot.png "AI Studio screenshot: Set Parameter Node")
 
 Find out more about [Set Parameter nodes](https://studio.docs.ai.vonage.com/voice/nodes/telephony/set-param).
 
@@ -155,7 +155,7 @@ In a real-world context, it can be useful for doing things like sending out link
 
 In my story, I used this node at a point where the adventurer needs a secret password to enter the castle. They get sent the password via SMS, which they then have to say in response to an input prompt to open the castle doors.
 
-![](https://lh6.googleusercontent.com/LfjO6ZsjszdYYfRwDGWs3R2XE9-Ay95DhKycjrQV0qNEbc0eDCwATxKMPgMifNS7w8G5Lmh-f1ORff3435cZuAZWymhvUm5ryzDBevPunK9YwzQGZVSJi02GMZxQ7iJVBlqsPStfZ65uudCxHsxU-w)
+![A screenshot showing an the setup for a Send SMS node, in this case the Send Secret Password part of the flow, showing the From, To, and Body fields](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/send-sms-node-screenshot.png "AI Studio screenshot: Send SMS Node")
 
 There's also a Send Email node, which has a similar purpose.
 
