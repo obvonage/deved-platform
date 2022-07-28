@@ -53,7 +53,7 @@ You can place all the nodes for your entire flow on the same canvas. For large, 
 
 You create and manage sub-flows in the Flows tab of the AI Studio menu.
 
-![A screenshot of the flows tab of the AI Studio menu showing the already created sub-flows (Forest Path, Castle, and River Road) as well as an 'Add flow' button](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/flows-menu-tab-screenshot.png "AI Studio screenshot: Flows tab of the menu")
+![A screenshot of the Flows tab of the AI Studio menu showing the already created sub-flows (Forest Path, Castle, and River Road) as well as an 'Add flow' button](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/flows-menu-tab-screenshot.png "AI Studio screenshot: Flows tab of the menu")
 
 In a real-world scenario, you might create sub-flows for different business functions that a customer might want to access, such as sales, support, billing, and so on.
 
@@ -63,7 +63,7 @@ Find out more about [Flows](https://studio.docs.ai.vonage.com/voice/nodes/flow-c
 
 As mentioned earlier, Flows are combinations of different conversation Nodes connected together. There are different types of conversation nodes, which each fulfill a specific purpose within the conversational overall flow. Let's take a look at some of them.
 
-![](https://lh5.googleusercontent.com/S5OP4K4yVqXz6gL84RmemEXCB6aQU9VIFnQD2JLLoKLrHH4jPXyfoyZn0o_TxfC-F30js10_jHk3vyqJQ_L5hzCmIfpnQKTuLtEpWd7ChT5BrKYILYH8XkAQWREpU6L8VFZKN_LCe6E5yvdFxPGZow)
+![A screenshot of the Conversation Nodes tab of the AI Studio menu with buttons for the different types of Conversation nodes (Classification, Collect Input, Speak, Conditions, Listen)](https://lh5.googleusercontent.com/S5OP4K4yVqXz6gL84RmemEXCB6aQU9VIFnQD2JLLoKLrHH4jPXyfoyZn0o_TxfC-F30js10_jHk3vyqJQ_L5hzCmIfpnQKTuLtEpWd7ChT5BrKYILYH8XkAQWREpU6L8VFZKN_LCe6E5yvdFxPGZow "AI Studio screenshot: Conversation Nodes tab")
 
 ### The Start Node
 
