@@ -4,7 +4,7 @@ description: Learn here how to add voice interaction to your existing text-only 
 thumbnail: /content/blog/voice-enabling-a-text-only-chatbot/chatbots_voice-enable.png
 author: tony-chan
 published: true
-published_at: 2022-07-28T09:13:14.224Z
+published_at: 2022-07-28T09:30:05.047Z
 updated_at: 2022-07-28T09:13:15.356Z
 category: tutorial
 tags:
