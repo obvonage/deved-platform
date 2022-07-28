@@ -89,7 +89,7 @@ This node essentially allows you to create a parameter and collect some input fr
 
 In my story, I used this node number of places where the protagonist has to make certain decisions, such as whether to accept the quest, which fork in the road to take, whether or not to explore an abandoned building, and so on. There are many real-world scenarios where you might want or need to gather input from a user, from asking why they are contacting your business, to obtaining specific information like an order, account number, or some contact details.
 
-![](https://lh3.googleusercontent.com/-hcQsxeAEY4VYYCTa-rGWTBzg_cFrEMMVdQJMf089zIMPkh1agkd-YiPhDMt7aOn-UZErMxQLwHHRIe68KN_O_cc3Qym6Gy8aETwk7rPt1kZKAqRI_YNHZrhsJAo-DlgZPZHwuo9RMeY5v1K2g21KQ)
+![A screenshot showing an example of the AI Studio Collect In node, showing Parameter field with 'QUEST_ACCEPTANCE' set as the parameter name, and the Prompts field with 'Are you ready to go on a quest?' set as the prompt text.](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/input-node-setup-screenshot.png "AI Studio screenshot: Collect Input Node")
 
 Find out more about the [Collect Input node](https://studio.docs.ai.vonage.com/voice/nodes/basic/collect-input).
 
