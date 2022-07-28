@@ -37,7 +37,7 @@ When first creating an agent, there are several settings to set, such as the Age
 
 For Voice agents, you additionally need to choose the voice that your agent will use to 'speak' with, using AI Studio's text-to-speech capabilities. Though when creating the various elements in your conversational flow there is also the option to use audio recordings instead.
 
-![A screenshot of the Agent setup step in Vonage AI Studio showing the selection options: Agent Name, Time Zone](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/agent-setup-screenshot.png "AI Studio screenshot: Agent Set up")
+![A screenshot of the Agent setup step in Vonage AI Studio showing the selection options: Region, Agent Name, Language, Voices, Time Zone](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/telephony-agent-creation-screnshot.png "AI Studio screenshot: Agent Set up")
 
 Find out more about [Agents](https://studio.docs.ai.vonage.com/ai-studio/create-a-new-agent).
 
