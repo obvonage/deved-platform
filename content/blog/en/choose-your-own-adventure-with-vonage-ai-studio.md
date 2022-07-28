@@ -211,4 +211,6 @@ Have fun and good luck on your adventure!
 
 Perhaps you'd like to create your own conversational flow with Vonage AI Studio. It's super easy to get started! Log into the [Vonage Dashboard](https://dashboard.nexmo.com/) and access the [AI Studio](https://studio.ai.vonage.com/).
 
-There are also several nodes and integrations that I didn't use in my flow, so I haven't discussed them in this article. For more information on these, and on using AI Studio in general, check out the [AI Studio documentation](https://studio.docs.ai.vonage.com/).
+There are also several nodes and integrations that I didn't use in my flow, so I haven't discussed them in this article. For more information on these and on using AI Studio in general, check out the [AI Studio documentation](https://studio.docs.ai.vonage.com/).
+
+We always welcome community involvement. Please feel free to join us on the [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
