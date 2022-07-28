@@ -183,7 +183,7 @@ Find out more about the [Custom Code node](https://studio.docs.ai.vonage.com/wha
 
 The Context Switch node does exactly what its name suggests -- it switches the context from the current one to a completely different one. A real-world use-case might be when a customer is going through an automated flow to track an order, or maybe update some details on their account, but at any point in these structured flows they can say "I want to speak to someone" and the flow can be interrupted and the customer's call instead routed through to an agent.
 
-Like the Classification node, the Context Switch node works based onIntents.
+Like the Classification node, the Context Switch node works based on Intents.
 
 In my flow, I imagined a situation where travelling through scary forests, exploring abandoned buildings, or fighting dragons might become a little overwhelming, so at any point, the adventurer can choose to run away back to the safety of the village!
 
