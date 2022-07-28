@@ -117,19 +117,19 @@ Find out more about [Classification nodes](https://studio.docs.ai.vonage.com/voi
 
 Conditions nodes are similar to Classification nodes in terms of their purpose -- they determine a course of action based on user input -- but they use a different underlying mechanism to do that: Entities.
 
-Entities
+#### Entities
 
 An entity is essentially a list of values and their synonyms. They are useful for situations where a user has to choose something from a group of specific things, but there are possibly different words for each thing. For example, if someone was providing their t-shirt size, they might say either 'big' or 'large' to mean the same thing, or similarly 'extra-large' and 'XL' are synonymous.
 
 For my adventure flow, I mostly used Classification nodes and Intents rather than Conditions nodes and Entities, since the situations my adventurer finds themself in are more open-ended and better served by Intents. I did, however, use Conditions nodes in a couple of places where it made sense to use them. One of these was in determining which options were available to attack the dragon.
 
-![](https://lh6.googleusercontent.com/2lozKg278jh5qOIbu3L-niFHAE-NQShvdbDpIDL6Rg2-6SumDrpxo3lfz9u1h5-KixzQHggDPPuAB-QFqillIxopexYeWHUxROn8BMhrt99s9DWtDRuaMk-L2yiU5y6lkor3uUF1JZ13ehvqrJ_G8Lg)
+![A screenshot showing an example of an AI Studio Conditions node, called 'Attack Option', with conditions such as 'User has bow' and 'User has Potion' branching off to different paths in the conversation flow](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/conditions-node-screenshot-1.png "AI Studio screenshot: Conditions Node")
 
 The logic for this node is based on conditions determined by the value of certain parameters for items that the user had picked up during the adventure.
 
-![](https://lh4.googleusercontent.com/0ZcrzRPwvw8dF9yMN2uQkdYjVzuDgfX3SmaSd30hkuvyvGZUshuFeBr4qYP50XSO8kzcnt22G4QPwa3_pICcsmdhqu2AKzyed9iGTY7m_vIDXe_30vxCW5S6Afr0lkiQmNhlDu-z761CUHkiZX0NFW4)
+![A screenshot showing an the setup step for the  'Attack Option' Conditions node, listing the 'User has bow' and 'User has Potion' Entities that make up this condition ](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/conditions-node-screenshot-2.png "AI Studio screenshot: Conditions Node setup")
 
-![](https://lh5.googleusercontent.com/RwbhXaVVqBaQ-L96R1umlcwnBsCBx8CqXFcsCzIds3RwyrRAHMqwGn7Md62czdMr3-ARAS-u1IeAKeYswEqkK7YvoCcg5UwQtPFERpjjogdkL6F9PR7Toy628aoN9_o4rjwMLw7hCf8vAm_23u7zEZ8)
+![A screenshot showing an the setup for the 'User has bow' Entity with a Parameter of 'QUEST_BOW' an Operation of 'is equal to' and a Value of 'True'](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/conditions-node-screenshot-3.png "AI Studio screenshot: Entity")
 
 Find out more about [Conditions nodes](https://studio.docs.ai.vonage.com/voice/nodes/basic/conditions) and [Entities](https://studio.docs.ai.vonage.com/properties-1/entities).
 
