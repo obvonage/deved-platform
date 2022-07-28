@@ -89,7 +89,7 @@ This node essentially allows you to create a parameter and collect some input fr
 
 In my story, I used this node number of places where the protagonist has to make certain decisions, such as whether to accept the quest, which fork in the road to take, whether or not to explore an abandoned building, and so on. There are many real-world scenarios where you might want or need to gather input from a user, from asking why they are contacting your business, to obtaining specific information like an order, account number, or some contact details.
 
-![A screenshot showing an example of the AI Studio Collect In node, showing Parameter field with 'QUEST_ACCEPTANCE' set as the parameter name, and the Prompts field with 'Are you ready to go on a quest?' set as the prompt text.](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/input-node-setup-screenshot.png "AI Studio screenshot: Collect Input Node")
+![A screenshot showing an example of the AI Studio Collect Input node, showing Parameter field with 'QUEST_ACCEPTANCE' set as the parameter name, and the Prompts field with 'Are you ready to go on a quest?' set as the prompt text.](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/input-node-setup-screenshot.png "AI Studio screenshot: Collect Input Node")
 
 Find out more about the [Collect Input node](https://studio.docs.ai.vonage.com/voice/nodes/basic/collect-input).
 
@@ -99,17 +99,17 @@ When you collect input as part of a conversation flow that represents some sort 
 
 The Classification node is one way of determining what to do in response to some user input. In your flow, it will generally follow a Collect Input node. Classification nodes are awesome for natural conversation flow because rather than constraining user choices to a very specific set of values (think of IVRs with options like "Say '1' for Sales, '2' for Support...", etc), they allow the user to speak in a natural way, such as saying "support", "customer support", "the customer support department", or even "I need help". It's the job of the Classification node to then figure out what to do, based on that user input. The way it does this is by using intents.
 
-Intents
+#### Intents
 
 One way to think about intents is as a general expectation of what a user might say in response to a certain question or situation. Each intent encompasses a particular use case or action and is made up of multiple user expressions or things that a user might say to suggest this action or use case.
 
 In my adventure story, I used Classification nodes and Intents quite heavily for the various decision points that occur during the narrative. For example, the adventurer has to decide whether to explore an abandoned building. Within the Classification node for this decision, I use a couple of intents: one to investigate the dwelling and one to stay on the road.
 
-![](https://lh3.googleusercontent.com/7rFdrdgM5xE3-CGLqaqr9XF3VlJzZoAduCVKLuJrNSoxr5pVlQk4M3_SzHi-ZawqeWf-CK9vgtfmAMcsHkXLb19XSlo8j4s7sE7kdx5uSBvJDngCp0hGtiwt26d2g3tnZWwT9AC0tBrmUAWh_y44Mg)
+![A screenshot showing an example of the AI Studio Classification Node, showing a Classification Parameter field with 'INVESTIGATE_DWELLING' set as the parameter name, and the Intents field with 'Investigate Dwelling' and 'Stay on Road' set as the intents..](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/classification-node-screenshot.png "AI Studio screenshot: Classification Node")
 
 This node contains the different intents that cover the potential user responses to the situation, and each intent contains various expressions that can suggest that intent.
 
-![](https://lh5.googleusercontent.com/L3XeqBVOop_acDUlkIASYirXBGIvaRCClnuPBrroSi87iMSOywqzCfHBWfJoYcmaZkvfeuUECh3DzyGp-Top_FTfsQ-OJk08FhoFVg3TBcaVbHIZPOFLxtXKnk9WUYIQsQpi3-u-69ZVObwXCphFIg)
+![A screenshot showing an example of an AI Studio Intent, showing the name of the Intent 'Investigate Dwelling' and various User Expressions that make up the intent such as 'Investigate building', 'Investigate house', 'Explore dwelling', etc.](/content/blog/choose-your-own-adventure-with-vonage-ai-studio/intent-screenshot.png "AI Studio screenshot: Intent setup")
 
 Find out more about [Classification nodes](https://studio.docs.ai.vonage.com/voice/nodes/basic/classification) and [Intents](https://studio.docs.ai.vonage.com/properties-1/intents).
 
