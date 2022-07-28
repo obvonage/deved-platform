@@ -149,7 +149,7 @@ Find out more about [Set Parameter nodes](https://studio.docs.ai.vonage.com/voic
 
 #### Send SMS Node
 
-The SMS node is used for sending a SMS message to a user. You need to provide it with a number (including country code) and a message to send.
+The SMS node is used for sending an SMS message to a user. You need to provide it with a number (including country code) and a message to send.
 
 In a real-world context, it can be useful for doing things like sending out links to help pages or documentation in response to certain queries.
 
