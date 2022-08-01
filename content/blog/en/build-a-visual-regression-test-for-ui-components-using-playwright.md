@@ -301,13 +301,13 @@ So if we have an HTML string like this:
 
 We will get the following result in the browser:
 
-![drawing](https://docs.google.com/drawings/d/12345/export/png)
+![A web browser with a modal dialog open. To the side the chrome dev tools are open showing the HTML we expected](/content/blog/how-to-build-a-visual-regression-test-system-using-playwright/visual-regression-test-3.png "The test page and the devtools")
 
 Showing our modal. To the right of the modal, you can see the HTML code we injected into the page.
 
 ## Screenshot Generation and Comparison in Playwright
 
-Now that our test page is ready, we can take our snapshot. We already went through that in the overview, but here’s a reminder:
+Now that our test page is ready, we can take our snapshot. We already went through that in the overview, but here's a reminder:
 
 ```
       const testWrapper = await page.locator('#wrapper');
