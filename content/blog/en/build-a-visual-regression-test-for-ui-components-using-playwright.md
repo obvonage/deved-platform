@@ -24,7 +24,7 @@ Let’s help Joe to make better use of his time by automating the visual test pr
 
 Just like Joe, you have an app running, or you created your components and want to share them with the world. On every change, you (or someone else in your team) spend hours going over the UI to make sure it is pixel perfect. Even then, sometimes things slip through the cracks in human attention. Let’s face it - machines are better than us at matching pixels. They also cost less and can do it over and over again.
 
-This is where our story begins. We have a [bunch of UI components](https://github.com/Vonage/vivid-3/tree/main/libs/components/src/lib). We also have [documentation for our components](<https://vivid.deno.dev>) in which we can “play” with them (a.k.a. manually test them).
+This is where our story begins. We have a [bunch of UI components](https://github.com/Vonage/vivid-3/tree/main/libs/components/src/lib). We also have [documentation for our components](https://vivid.deno.dev) in which we can “play” with them (a.k.a. manually test them).
 
 The documentation is created from readme files inside each component’s folder. [Here’s an example](https://github.com/Vonage/vivid-3/blob/main/libs/components/src/lib/icon/README.md).
 
@@ -96,9 +96,9 @@ The configuration above does the following:
 1. `testMatch`: Tells playwright where to get the test files. Note that the path is relative to the file’s location. In the vivid repository, the configuration file is located in the components folder, and all the components are inside the `src` folder.  We make the convention of calling the test files `*.test.ts` - so every file that follows this pattern will be included in the test run.
 2. `projects`: Tells playwright in what configurations to run the tests. In this case, we have 3 configurations for each of the major browsers we would like to test.
 
-There’s much more to the `playwright` configuration. You can read more about it [here](https://playwright.dev/docs/test-configuration).
+There’s much more to the `playwright` configuration. [You can read more about it here](https://playwright.dev/docs/test-configuration).
 
-Now that `playwright` “knows” where to get the files and on what browsers to run our tests, we can start setting up the tests themselves.
+Now that `playwright` "knows" where to get the files and on what browsers to run our tests, we can start setting up the tests themselves.
 
 ## How to Write Playwright Tests
 
@@ -174,7 +174,7 @@ In this case, we get the `modal` element and evoke its `showModal` method. This 
 
 ### Generate and Compare Snapshots
 
-The final line is the “magic” of visual regression in playwright: 
+The final line is the "magic" of visual regression in playwright: 
 
 ```
 expect(await testWrapper?.screenshot()).toMatchSnapshot(
@@ -276,7 +276,7 @@ We now have an HTML page with the needed scripts and styles injected into it. Ou
 
 Let’s say we want to test a button. We will create a string that looks like this: 
 
-`&lt;vwc-button label=”Click Me”>&lt;/vwc-button>`
+`<vwc-button label=”Click Me”></vwc-button>`
 
 We can add more flavors to the button like connotation or appearance or even choose a different component (I mean, if we wanted to test the dialog, creating a snippet of a button would be rather useless).
 
@@ -303,7 +303,7 @@ The function first wraps our template with a `div` string and then adds a script
 
 So if we have an HTML string like this:
 
-```
+```html
 <vwc-dialog id="modal"
 		icon="info" 
 		headline="Headline"
