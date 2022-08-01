@@ -96,7 +96,7 @@ Once that is done, we can run `bundle install` from the command line to install 
 
 ### Javascript Libraries
 
-We'll be using two Javascript libraries in the front end: Video Express and Vivid. Before we use them, let's get to know a little bit more about them.
+We'll be using two Javascript libraries in the front-end: Video Express and Vivid. Before we use them, let's get to know a little bit more about them.
 
 #### Video Express
 
@@ -106,26 +106,26 @@ I promised that Video Express makes a developer's life easier, but how? In prima
 
 Video Express' **Quality Manager** continuously optimizes stream resolution, framerate, and rendering sizes. This is very important as the number of streams in a classic video conference session grows quadratically fast! For instance, 2 people in a video call create 1 stream. 6 people in a video call create 36 streams. But 25 people in a video call mean that 625 streams are concurrently active!
 
-The quality manager works to upgrade and downgrade resolution as networks and CPU allow, pause non-visible video streams and muted audio streams, and request smaller video streams from media servers when displayed videos becomes smaller.
+The quality manager works to upgrade and downgrade resolution as networks and CPUs allow, pause non-visible video streams and muted audio streams, and request smaller video streams from media servers when displayed videos become smaller.
 
 This can result in **60% decreased Bandwith** usage for 10 participant sessions and **80% decreased Bandwith** usage for 25 participant sessions!
 
 ##### Design
 
-Since the beginning of COVID, the world has become intimately familiar with video conferencing. Everyone at this point more or less knows what to expect from a video conference. And for most applications, there's no need to reinvent the wheel. Video Express does the heavy lifting with its **Layout Manager** and **Experience Manager**.
+Since the beginning of COVID, the world has become intimately familiar with video conferencing. Everyone at this point more or less knows what to expect from a video conference and for most applications, there's no need to reinvent the wheel. Video Express does the heavy lifting with its **Layout Manager** and **Experience Manager**.
 
-The Layout Manager handles the responsiveness of the video call, automatically adjusting the video windows as participants leave and join, screenshare, and optimizes video resolutions and frame rates based on the rendering sizes.
+The Layout Manager handles the responsiveness of the video call, automatically adjusting the video windows as participants leave, join, screenshare, and optimizes video resolutions and frame rates based on the rendering size.
 
 The Experience Manager dynamically sets speaker priority and auto-mutes joiners for larger meetings.
 
-All of this heavy lifting means Video Express has a ton of features built that just need to be hooked up to a UI. Video Express gives you all of thes out of the box:
+All of this heavy lifting means Video Express has a ton of features built that just need to be hooked up to a UI. Video Express gives you all of these out of the box:
 
 * Detecting when users do actions like join/leave, activate their cameras/audio
 * Different layout options: grid vs active speaker
+* Active speaker detection
 * Changing the camera and microphone used
 * Setting the audio output device
 * Creating a preview publisher
-* Active speaker detection
 * Accessing the screen-sharing publisher's audio/video
 * Detecting when other clients publish screen-sharing streams
 * Enabling and disabling a screen-sharing subscriber's audio and video 
