@@ -18,9 +18,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Since 2004 Ruby on Rails has been beloved by developers and especially startup founders for it's ability to quickly build full scale web applications. [Kerry Doyle](https://www.techtarget.com/searchapparchitecture/tip/Programming-in-Ruby-A-critical-look-at-the-pros-and-cons) perfectly summed up the "Convention Over Configuration" philosophy that underpins Rails, (Ruby on Rails) attempts to decrease the number of decisions that a developer using the framework is required to make without necessarily losing flexibility and don't repeat yourself (DRY) principles. This philosophy makes Rails ideal for the [LEAN](https://en.wikipedia.org/wiki/Lean_software_development) mindest.
+Since 2004 Ruby on Rails has been beloved by developers and especially startup founders for its ability to quickly build full-scale web applications. [Kerry Doyle](https://www.techtarget.com/searchapparchitecture/tip/Programming-in-Ruby-A-critical-look-at-the-pros-and-cons) perfectly summed up the "Convention Over Configuration" philosophy that underpins Ruby on Rails, "\[it] attempts to decrease the number of decisions that a developer using the framework is required to make without necessarily losing flexibility and don't repeat yourself (DRY) principles". This philosophy makes Rails ideal for the [LEAN](https://en.wikipedia.org/wiki/Lean_software_development) mindest.
 
-Last year Vonage released [Video Express](https://tokbox.com/developer/video-express/). This Javascript library which sits ontop of Vonage's [Video API](https://tokbox.com/developer/guides/basics/) is like the "Convention Over Configuration" extension to make building Video Call Applications easier and faster. Any developer can now spin up powerful, robust Video Meetings without knowing all the nuts and bolts.
+Last year Vonage released [Video Express](https://tokbox.com/developer/video-express/). This Javascript library which sits on top of Vonage's [Video API](https://tokbox.com/developer/guides/basics/) is like the "Convention Over Configuration" extension to make the process of building Video Call Applications easier and faster. Any developer can now spin up powerful, robust Video Meetings without knowing all the nuts and bolts.
 
 In this tutorial, I'll show you how to combine these powerful technologies to build a modern, fullstack application with all the video conferencing features that users have come to expect. I'll use Ruby on Rails, Vonage Video Express, and Vonage's new UI Toolkit [Vivid](https://vivid.vonage.com/).
 
@@ -361,7 +361,6 @@ Secondly, the form doesn't help us actually pass the data to the server. So we n
     </div>
   </vwc-card>
 </div>
-
 ```
 
 So now if we run our server we should have a beautiful home page like in the picture right? So try it! Run `rails s` from your command line and open `localhost:3000` in your browser.
@@ -469,7 +468,6 @@ The Vonage Video API gives developers full control of customizing their video la
 
 1. Include the library. Add this script at the top of the file:
    `<script src="https://static.opentok.com/v1/js/video-express.js"></script>`
- 
 2. Now run create the room with the sample code from the Video Express documentation. Note that we pass the additional parameter `participantName`. Video Express is lightweight but comes with some options, explore the docs!
 
 ```
@@ -596,8 +594,6 @@ Let's add some CSS from the Video Express boilerplate for the video screen. We t
 ```
 
  **Boom!** Now we have a video session. Try joining from multiple tabs/different names.  **Boom!** You have video conferencing in Rails!
-
-
 
 ## Next Steps
 
