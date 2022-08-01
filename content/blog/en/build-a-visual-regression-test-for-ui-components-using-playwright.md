@@ -24,13 +24,13 @@ Let’s help Joe to make better use of his time by automating the visual test pr
 
 Just like Joe, you have an app running, or you created your components and want to share them with the world. On every change, you (or someone else in your team) spend hours going over the UI to make sure it is pixel perfect. Even then, sometimes things slip through the cracks in human attention. Let’s face it - machines are better than us at matching pixels. They also cost less and can do it over and over again.
 
-This is where our story begins. We have our [bunch of UI components](https://github.com/Vonage/vivid-3/tree/main/libs/components/src/lib). We also have documentation for our components in which we can “play” with them (a.k.a. manually test them): [https://vivid.deno.dev](https://vivid.deno.dev).
+This is where our story begins. We have a [bunch of UI components](https://github.com/Vonage/vivid-3/tree/main/libs/components/src/lib). We also have documentation for our components in which we can “play” with them (a.k.a. manually test them): <https://vivid.deno.dev>.
 
-The documentation is created from readme files inside each component’s folder. [Here’s an example][https://github.com/Vonage/vivid-3/blob/main/libs/components/src/lib/icon/README.md](https://github.com/Vonage/vivid-3/blob/main/libs/components/src/lib/icon/README.md)).
+The documentation is created from readme files inside each component’s folder. \[Here’s an example](https://github.com/Vonage/vivid-3/blob/main/libs/components/src/lib/icon/README.md)).
 
 Notice that the examples are simple HTML snippets:
 
-```html preview
+```html
 <vwc-icon type='heart-solid' connotation='accent'></vwc-icon>
 <vwc-icon type='heart-solid' connotation='announcement'></vwc-icon>
 <vwc-icon type='heart-solid' connotation='cta'></vwc-icon>
@@ -93,7 +93,6 @@ export default config;
 The configuration above does the following:
 
 1. `testMatch`: Tells playwright where to get the test files. Note that the path is relative to the file’s location. In the vivid repository, the configuration file is located in the components folder, and all the components are inside the `src` folder.  We make the convention of calling the test files `*.test.ts` - so every file that follows this pattern will be included in the test run.
-
 2. `projects`: Tells playwright in what configurations to run the tests. In this case, we have 3 configurations for each of the major browsers we would like to test.
 
 There’s much more to the `playwright` configuration. You can read more about it [here](https://playwright.dev/docs/test-configuration).
@@ -134,7 +133,7 @@ test('should show the component', async ({ page }: { page: Page }) => {
 });
 ```
 
-For the full file, [click here](https://github.com/Vonage/vivid-3/blob/main/libs/components/src/lib/dialog/ui.test.ts)
+[For the full file, click here](https://github.com/Vonage/vivid-3/blob/main/libs/components/src/lib/dialog/ui.test.ts).
 
 Let’s break it down.
 
@@ -171,7 +170,6 @@ In this case, we get the `modal` element and evoke its `showModal` method. This 
 ### Generate and Compare Snapshots
 
 The final line is the “magic” of visual regression in playwright: 
-
 
 ```
 	expect(await testWrapper?.screenshot()).toMatchSnapshot(
@@ -223,7 +221,6 @@ For this, we can look at the utility function we saw in the test file example - 
 
 `loadComponents` is a function that accepts an array with components names and uses playwright’s `addScriptTag` method to add the components’:
 
-
 ```
 export async function loadComponents({
 	page,
@@ -266,7 +263,6 @@ Bear in mind we also have templates loaded:
 
 Whoopy - JS and CSS are loaded!
 
-
 ### How to Show the Components on the HTML Page?
 
 We now have an HTML page with the needed scripts and styles injected to it. Our remaining task is to inject the HTML that will actually use our components.  
@@ -303,7 +299,6 @@ So if we have an HTML string like this:
 								</vwc-dialog>
 ```
 
-
 We will get the following result in the browser:
 
 ![drawing](https://docs.google.com/drawings/d/12345/export/png)
@@ -331,7 +326,6 @@ Now that our test page is ready, we can take our snapshot. We already went throu
 	);
 ```
 
-
 ### Step 1: Wait for the Page to be Ready
 
 We wait for the wrapper and modal to be on the page using the `page.locator` method and to the `networkidle` event to make sure all of our assets are loaded. 
@@ -340,7 +334,6 @@ We wait for the wrapper and modal to be on the page using the `page.locator` met
 
 Once the page is ready, we evaluate the script that uses the `showModal` API on the modal element.
 
-
 ### Step 3: Take a Screenshot and Validate it
 
 Now, if all is working correctly, we get to our `expect` row that takes the snapshot and compares it to a former snapshot. 
@@ -348,7 +341,6 @@ Now, if all is working correctly, we get to our `expect` row that takes the snap
 The `testWrapper.screenshot` method is part of the `playwright.locator` API. It takes a screenshot of the element and allows us to use the `toMatchSnapshot` expectation API. In this case, we match it to a file path (the `match path`) - this is where the screenshot is saved.
 
 In case this is the first time we run the test, a screenshot is generated in the `match path`. All the changes we make will be compared to the original result, making sure that changing how our component looks will fail the test and we will not ship unwanted visual changes.
-
 
 ### Step 4: Update the Screenshots
 
