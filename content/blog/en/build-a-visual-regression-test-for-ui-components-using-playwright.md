@@ -45,7 +45,7 @@ So… we have around 50 components and a way to see them visually while developi
 
 Some of these components are composed of multiple atomic components. That means changing the “button” component might affect multiple complex components that are using the button.
 
-### How to Setup Playwright in a Project?
+## How to Setup Playwright in a Project?
 
 The first step is to run: 
 
@@ -58,7 +58,6 @@ This is going to do a bunch of things:
 3. Install `playwright`’s browsers locally.
 
 We’ll also need to set up a `playwright.config` file. For this introduction (and because this is what I personally do), we will use the `typescript` version, but you can use plain javascript. We will create a `playwright.config.ts` file with the following content:
-
 
 ```
 import type { PlaywrightTestConfig } from '@playwright/test';
@@ -94,17 +93,16 @@ export default config;
 The configuration above does the following:
 
 1. `testMatch`: Tells playwright where to get the test files. Note that the path is relative to the file’s location. In the vivid repository, the configuration file is located in the components folder, and all the components are inside the `src` folder.  We make the convention of calling the test files `*.test.ts` - so every file that follows this pattern will be included in the test run.
-2. `projects`: Tells playwright in what configurations to run the tests. In this case, we have 3 configurations for each of the major browsers we would like to test. \
 
+2. `projects`: Tells playwright in what configurations to run the tests. In this case, we have 3 configurations for each of the major browsers we would like to test.
 
 There’s much more to the `playwright` configuration. You can read more about it [here](https://playwright.dev/docs/test-configuration).
 
 Now that `playwright` “knows” where to get the files and on what browsers to run our tests, we can start setting up the tests themselves.
 
-### How to Write Playwright Tests
+## How to Write Playwright Tests
 
 To create a test, we need to create a file that will be found by the `testMatches`. That’s why in our repository, we create a file `ui.test.ts` for every component. Here’s a test file example:
-
 
 ```
 test('should show the component', async ({ page }: { page: Page }) => {
@@ -140,26 +138,25 @@ For the full file, [click here](https://github.com/Vonage/vivid-3/blob/main/libs
 
 Let’s break it down.
 
-#### Playwright Test Block
+### Playwright Test Block
 
 The first thing we notice after all the imports are done is that we have a `test` block. The function sent to the `test` block accepts a test object. One of the object’s properties is the `page` property. This `page` is the actual `page` representation in playwright. We use it to manipulate and observe the tested page.
 
-#### Preparing the Test Page
+### Preparing the Test Page
 
 In this file, we have a test that generates a template (the `template` variable). It then loads the needed components and the template to the test page using utility functions we’ve built (more on that later).
 
-#### Waiting for the HTML to Load
+### Waiting for the HTML to Load
 
 The next lines use the `page.locator` method to get the elements we are looking for. Another “side effect” of using the locator is that it resolves when our elements are visible on the page. This makes sure that when we run the tests, our elements are already in the DOM. 
 
-#### Waiting for Resources to be Fetched
+### Waiting for Resources to be Fetched
 
 Another wait below is to wait until all the network traffic is idle. This is important for us because we sometimes want to wait until icons or images load from a CDN.
 
-#### Trigger DOM Elements Programmatic API
+### Trigger DOM Elements Programmatic API
 
 Eventually, there’s the `evaluate` method of the `page` object. This method evaluates JavaScript code inside the page. In this case, this is the code evaluated:
-
 
 ```
 	await page.evaluate(() => {
@@ -169,11 +166,9 @@ Eventually, there’s the `evaluate` method of the `page` object. This method ev
 	});
 ```
 
-
 In this case, we get the `modal` element and evoke its `showModal` method. This way, we can test the programmatic API of DOM elements.
 
-
-#### Generate and Compare Snapshots
+### Generate and Compare Snapshots
 
 The final line is the “magic” of visual regression in playwright: 
 
@@ -184,13 +179,12 @@ The final line is the “magic” of visual regression in playwright:
 	);
 ```
 
-
 The `locator` resolved object `testWrapper` has a `screenshot` method. When we invoke this method and use the `toMatchSnapshot` expectation, it does one of the following:
 
 1. If there’s a snapshot in the path given to `toMatchSnapshot`, it compares the snapshot taken to the one that exists in the file system. If they don’t match, the test fails.
 2. If there’s no snapshot in the path, it generates a new one.
 
-### How to Load the Test Page During a Test?
+## How to Load the Test Page During a Test?
 
 In the last section, we saw an example of how tests can be written. We used a `page` object to manipulate our test page, but it begs a few questions - what is this mysterious page? Where does the HTML/CSS/JS content come from?
 
@@ -208,7 +202,7 @@ test('should show text hello world', async ({page}) => {
 
 We `goto` the app or test page, manipulate it in some way and then expect some feature to exist or equal something.
 
-#### How do we serve single components for snapshot comparison?
+### How do we serve single components for snapshot comparison?
 
 In `vivid`, as in other UI components libraries, there is no real app to test. We have our documentation - but testing it would also test other things that are not related to our components. Actually, most of the visual data in the documentation is not component related.
 
@@ -221,7 +215,7 @@ That means we build our components, serve the repository and hence our build and
 
 This file is an empty HTML file. We could create a manual HTML file for every test - but what’s the fun in that? Let’s see how we start to automate our test page generation from our code.
 
-#### How to Inject JS Files and Styles into our page with Playwright?
+### How to Inject JS Files and Styles into our page with Playwright?
 
 We now have an HTML page to `goto`. It is still useless because we need to be able to inject our components’ code.
 
@@ -264,22 +258,16 @@ This way, in every test, we take the same blank page and load the components we 
 
 Our network traffic is going to look like this in case we had our array set like this: `[icon, button, focus, dialog, text-field,layout]`:
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline drawings not supported directly from Docs. You may want to copy the inline drawing to a standalone drawing and export by reference. See <a href="https://github.com/evbacher/gd2md-html/wiki/Google-Drawings-by-reference">Google Drawings by reference</a> for details. The img URL below is a placeholder. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
 ![drawing](https://docs.google.com/drawings/d/12345/export/png)
 
 Bear in mind we also have templates loaded:
-
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline drawings not supported directly from Docs. You may want to copy the inline drawing to a standalone drawing and export by reference. See <a href="https://github.com/evbacher/gd2md-html/wiki/Google-Drawings-by-reference">Google Drawings by reference</a> for details. The img URL below is a placeholder. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
 
 ![drawing](https://docs.google.com/drawings/d/12345/export/png)
 
 Whoopy - JS and CSS are loaded!
 
 
-#### How to Show the Components on the HTML Page?
+### How to Show the Components on the HTML Page?
 
 We now have an HTML page with the needed scripts and styles injected to it. Our remaining task is to inject the HTML that will actually use our components.  
 
@@ -318,15 +306,11 @@ So if we have an HTML string like this:
 
 We will get the following result in the browser:
 
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline drawings not supported directly from Docs. You may want to copy the inline drawing to a standalone drawing and export it by reference. See <a href="https://github.com/evbacher/gd2md-html/wiki/Google-Drawings-by-reference">Google Drawings by reference</a> for details. The `img` URL below is a placeholder. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![drawing](https://docs.google.com/drawings/d/12345/export/png)
 
 Showing our modal. To the right of the modal, you can see the HTML code we injected into the page.
 
-### Screenshot Generation and Comparison in Playwright
+## Screenshot Generation and Comparison in Playwright
 
 Now that our test page is ready, we can take our snapshot. We already went through that in the overview, but here’s a reminder:
 
@@ -348,17 +332,16 @@ Now that our test page is ready, we can take our snapshot. We already went throu
 ```
 
 
-#### Step 1: Wait for the Page to be Ready
+### Step 1: Wait for the Page to be Ready
 
 We wait for the wrapper and modal to be on the page using the `page.locator` method and to the `networkidle` event to make sure all of our assets are loaded. 
 
-
-#### Step 2: Manipulate the Page
+### Step 2: Manipulate the Page
 
 Once the page is ready, we evaluate the script that uses the `showModal` API on the modal element.
 
 
-#### Step 3: Take a Screenshot and Validate it
+### Step 3: Take a Screenshot and Validate it
 
 Now, if all is working correctly, we get to our `expect` row that takes the snapshot and compares it to a former snapshot. 
 
@@ -367,13 +350,13 @@ The `testWrapper.screenshot` method is part of the `playwright.locator` API. It 
 In case this is the first time we run the test, a screenshot is generated in the `match path`. All the changes we make will be compared to the original result, making sure that changing how our component looks will fail the test and we will not ship unwanted visual changes.
 
 
-#### Step 4: Update the Screenshots
+### Step 4: Update the Screenshots
 
 In the case we do want to change the look, `playwright` has an `update-snapshots` flag that updates the snapshot. For this, we have an `update` task in our repository, but in playwright, it works like this:
 
 `npx playwright test --update-snapshots`
 
-### Summary
+## Summary
 
 We now have a fully working visual regression system for UI components. Building these kinds of tests for UI components is a tad more complicated than testing an application.
 
@@ -392,4 +375,4 @@ But there’s much more we can improve:
 * How do we integrate and optimize our tests in GitHub actions? 
 * And what about the development and debugging mode for the visual tests?
 
-I will go over these topics in the next article. In the meantime, you can take a look at our [repository](https://github.com/Vonage/vivid-3), our [playwright configuration](https://github.com/Vonage/vivid-3/blob/main/libs/components/playwright.config.ts) and [UI tests documentation](https://github.com/Vonage/vivid-3/tree/main/docs/ui-test) to see it in action.
+I will go over these topics in the next article. In the meantime, you can take a look at [our Vivid repository](https://github.com/Vonage/vivid-3), our [playwright configuration](https://github.com/Vonage/vivid-3/blob/main/libs/components/playwright.config.ts) and [UI tests documentation](https://github.com/Vonage/vivid-3/tree/main/docs/ui-test) to see it in action.
