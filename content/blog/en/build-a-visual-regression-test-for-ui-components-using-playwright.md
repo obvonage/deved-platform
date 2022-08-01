@@ -24,9 +24,9 @@ Let’s help Joe to make better use of his time by automating the visual test pr
 
 Just like Joe, you have an app running, or you created your components and want to share them with the world. On every change, you (or someone else in your team) spend hours going over the UI to make sure it is pixel perfect. Even then, sometimes things slip through the cracks in human attention. Let’s face it - machines are better than us at matching pixels. They also cost less and can do it over and over again.
 
-This is where our story begins. We have a [bunch of UI components](https://github.com/Vonage/vivid-3/tree/main/libs/components/src/lib). We also have documentation for our components in which we can “play” with them (a.k.a. manually test them): <https://vivid.deno.dev>.
+This is where our story begins. We have a [bunch of UI components](https://github.com/Vonage/vivid-3/tree/main/libs/components/src/lib). We also have [documentation for our components](<https://vivid.deno.dev>) in which we can “play” with them (a.k.a. manually test them).
 
-The documentation is created from readme files inside each component’s folder. \[Here’s an example](https://github.com/Vonage/vivid-3/blob/main/libs/components/src/lib/icon/README.md)).
+The documentation is created from readme files inside each component’s folder. [Here’s an example](https://github.com/Vonage/vivid-3/blob/main/libs/components/src/lib/icon/README.md).
 
 Notice that the examples are simple HTML snippets:
 
@@ -60,31 +60,32 @@ This is going to do a bunch of things:
 We’ll also need to set up a `playwright.config` file. For this introduction (and because this is what I personally do), we will use the `typescript` version, but you can use plain javascript. We will create a `playwright.config.ts` file with the following content:
 
 ```
-import type { PlaywrightTestConfig } from '@playwright/test';
+import type {
+  PlaywrightTestConfig
+} from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
-	testMatch: 'src/**/*.test.ts',
-	projects: [
-		{
-			name: 'Chrome Stable',
-			use: {
-				browserName: 'chromium',
-				channel: 'chrome',
-			},
-		},
-		{
-			name: 'Desktop Safari',
-			use: {
-				browserName: 'webkit',
-			}
-		},
-		{
-			name: 'Desktop Firefox',
-			use: {
-				browserName: 'firefox',
-			}
-		},
-	]
+  testMatch: 'src/**/*.test.ts',
+  projects: [{
+      name: 'Chrome Stable',
+      use: {
+        browserName: 'chromium',
+        channel: 'chrome',
+      },
+    },
+    {
+      name: 'Desktop Safari',
+      use: {
+        browserName: 'webkit',
+      }
+    },
+    {
+      name: 'Desktop Firefox',
+      use: {
+        browserName: 'firefox',
+      }
+    },
+  ]
 };
 
 export default config;
@@ -104,32 +105,36 @@ Now that `playwright` “knows” where to get the files and on what browsers to
 To create a test, we need to create a file that will be found by the `testMatches`. That’s why in our repository, we create a file `ui.test.ts` for every component. Here’s a test file example:
 
 ```
-test('should show the component', async ({ page }: { page: Page }) => {
-	const template = `...`;
-	
-	await loadComponents({
-		page,
-		components,
-	});
-	await loadTemplate({
-		page,
-		template,
-	});
+test('should show the component', async ({
+  page
+}: {
+  page: Page
+}) => {
+  const template = `...`;
 
-	const testWrapper = await page.locator('#wrapper');
-	await page.locator('#modal');
+  await loadComponents({
+    page,
+    components,
+  });
+  await loadTemplate({
+    page,
+    template,
+  });
 
-	await page.waitForLoadState('networkidle');
+  const testWrapper = await page.locator('#wrapper');
+  await page.locator('#modal');
 
-	await page.evaluate(() => {
-		const modal = (document.getElementById('modal') as Dialog);
-		modal.showModal();
-		return modal;
-	});
+  await page.waitForLoadState('networkidle');
 
-	expect(await testWrapper?.screenshot()).toMatchSnapshot(
-		'./snapshots/dialog.png'
-	);
+  await page.evaluate(() => {
+    const modal = (document.getElementById('modal') as Dialog);
+    modal.showModal();
+    return modal;
+  });
+
+  expect(await testWrapper?.screenshot()).toMatchSnapshot(
+    './snapshots/dialog.png'
+  );
 });
 ```
 
@@ -158,11 +163,11 @@ Another wait below is to wait until all the network traffic is idle. This is imp
 Eventually, there’s the `evaluate` method of the `page` object. This method evaluates JavaScript code inside the page. In this case, this is the code evaluated:
 
 ```
-	await page.evaluate(() => {
-		const modal = (document.getElementById('modal') as Dialog);
-		modal.showModal();
-		return modal;
-	});
+await page.evaluate(() => {
+  const modal = (document.getElementById('modal') as Dialog);
+  modal.showModal();
+  return modal;
+});
 ```
 
 In this case, we get the `modal` element and evoke its `showModal` method. This way, we can test the programmatic API of DOM elements.
@@ -172,9 +177,9 @@ In this case, we get the `modal` element and evoke its `showModal` method. This 
 The final line is the “magic” of visual regression in playwright: 
 
 ```
-	expect(await testWrapper?.screenshot()).toMatchSnapshot(
-		'./snapshots/dialog.png'
-	);
+expect(await testWrapper?.screenshot()).toMatchSnapshot(
+  './snapshots/dialog.png'
+);
 ```
 
 The `locator` resolved object `testWrapper` has a `screenshot` method. When we invoke this method and use the `toMatchSnapshot` expectation, it does one of the following:
@@ -223,27 +228,29 @@ For this, we can look at the utility function we saw in the test file example - 
 
 ```
 export async function loadComponents({
-	page,
-	components,
-	styleUrls = defaultStyles,
+    page,
+    components,
+    styleUrls = defaultStyles,
 }: {
-	page: Page,
-	components: string[],
-	styleUrls?: string[]
+    page: Page,
+    components: string[],
+    styleUrls ? : string[]
 }) {
-	await page.goto('http://127.0.0.1:8080/scripts/visual-tests/index.html');
+    await page.goto('http://127.0.0.1:8080/scripts/visual-tests/index.html');
 
-	(async function () {
-		for (const component of components) {
-			await page.addScriptTag({
-				url: `http://127.0.0.1:8080/dist/libs/components/${component}/index.js`,
-				type: 'module',
-			});
-		}
-	})();
+    (async function() {
+        for (const component of components) {
+            await page.addScriptTag({
+                url: `http://127.0.0.1:8080/dist/libs/components/${component}/index.js`,
+                type: 'module',
+            });
+        }
+    })();
 
-	const styleTags$ = styleUrls.map(url => page.addStyleTag({url}));
-	await Promise.all(styleTags$);
+    const styleTags$ = styleUrls.map(url => page.addStyleTag({
+        url
+    }));
+    await Promise.all(styleTags$);
 }
 ```
 
@@ -255,7 +262,7 @@ This way, in every test, we take the same blank page and load the components we 
 
 Our network traffic is going to look like this in case we had our array set like this: `[icon, button, focus, dialog, text-field,layout]`:
 
-![The JavaScript files loaded in the test page as shown in the network tab of chrome dev tools](/content/blog/how-to-build-a-visual-regression-test-system-using-playwright/visual-regression-test-2.png "A list of js file from the network tab")
+![The JavaScript files loaded in the test page as shown in the network tab of chrome dev tools](/content/blog/how-to-build-a-visual-regression-test-system-using-playwright/visual-regression-test-2.png "A list of JS files from the network tab")
 
 Bear in mind we also have templates loaded:
 
@@ -265,7 +272,7 @@ Whoopy - JS and CSS are loaded!
 
 ### How to Show the Components on the HTML Page?
 
-We now have an HTML page with the needed scripts and styles injected to it. Our remaining task is to inject the HTML that will actually use our components.  
+We now have an HTML page with the needed scripts and styles injected into it. Our remaining task is to inject the HTML that will actually use our components.  
 
 Let’s say we want to test a button. We will create a string that looks like this: 
 
@@ -276,13 +283,19 @@ We can add more flavors to the button like connotation or appearance or even cho
 Now we want this HTML shown on our test page. For this, we are going to use a trick with playwright’s `page.addScriptTag`. In the utility function `loadTemplate`, we are going to accept the page and the template string. We will then add a script to the page that inserts the HTML template to the page:
 
 ```
-export async function loadTemplate({page, template}: { page: Page, template: string }) {
-	const wrappedTemplate = `<div id="wrapper">${template}</div>`;
-	await page.addScriptTag({
-		content: `
+export async function loadTemplate({
+    page,
+    template
+}: {
+    page: Page,
+    template: string
+}) {
+    const wrappedTemplate = `<div id="wrapper">${template}</div>`;
+    await page.addScriptTag({
+        content: `
             document.body.innerHTML = \`${wrappedTemplate}\`;
         `,
-	});
+    });
 }
 ```
 
@@ -295,8 +308,8 @@ So if we have an HTML string like this:
 		icon="info" 
 		headline="Headline"
 		text="This is the content that I want to show, and I will show it!!!"
-								>				
-								</vwc-dialog>
+>				
+</vwc-dialog>
 ```
 
 We will get the following result in the browser:
@@ -310,20 +323,20 @@ Showing our modal. To the right of the modal, you can see the HTML code we injec
 Now that our test page is ready, we can take our snapshot. We already went through that in the overview, but here's a reminder:
 
 ```
-      const testWrapper = await page.locator('#wrapper');
-	await page.locator('#modal');
+const testWrapper = await page.locator('#wrapper');
+await page.locator('#modal');
 
-	await page.waitForLoadState('networkidle');
+await page.waitForLoadState('networkidle');
 
-	await page.evaluate(() => {
-		const modal = (document.getElementById('modal') as Dialog);
-		modal.showModal();
-		return modal;
-	});
+await page.evaluate(() => {
+  const modal = (document.getElementById('modal') as Dialog);
+  modal.showModal();
+  return modal;
+});
 
-	expect(await testWrapper?.screenshot()).toMatchSnapshot(
-		'./snapshots/dialog.png'
-	);
+expect(await testWrapper?.screenshot()).toMatchSnapshot(
+  './snapshots/dialog.png'
+);
 ```
 
 ### Step 1: Wait for the Page to be Ready
@@ -344,7 +357,7 @@ In case this is the first time we run the test, a screenshot is generated in the
 
 ### Step 4: Update the Screenshots
 
-In the case we do want to change the look, `playwright` has an `update-snapshots` flag that updates the snapshot. For this, we have an `update` task in our repository, but in playwright, it works like this:
+In this case, we do want to change the look, `playwright` has an `update-snapshots` flag that updates the snapshot. For this, we have an `update` task in our repository, but in playwright, it works like this:
 
 `npx playwright test --update-snapshots`
 
