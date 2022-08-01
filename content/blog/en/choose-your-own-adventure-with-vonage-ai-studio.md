@@ -4,7 +4,7 @@ description: Exploring the tools and features of Vonage AI Studio by creating a
   fun adventure game
 thumbnail: /content/blog/choose-your-own-adventure-with-vonage-ai-studio/cyoa_vonageaistuido-1.png
 author: karl-lingiah
-published: true
+published: false
 published_at: 2022-08-02T14:11:14.333Z
 updated_at: 2022-08-02T09:52:26.475Z
 category: inspiration
