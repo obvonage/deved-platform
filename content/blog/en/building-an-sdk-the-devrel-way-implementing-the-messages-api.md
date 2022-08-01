@@ -2,10 +2,11 @@
 title: How an SDK Can Add Value to REST APIs
 description: This article provides an inside look into the design of the Java
   SDK's implementation of the Vonage Messages v1 API.
+thumbnail: /content/blog/how-an-sdk-can-add-value-to-rest-apis/sdk_rest-apis.png
 author: sina-madani
-published: true
-published_at: 2022-07-04T11:48:15.975Z
-updated_at: 2022-07-04T11:48:16.003Z
+published: false
+published_at: 2022-08-04T11:48:15.975Z
+updated_at: 2022-08-04T11:48:16.003Z
 category: release
 tags:
   - java
