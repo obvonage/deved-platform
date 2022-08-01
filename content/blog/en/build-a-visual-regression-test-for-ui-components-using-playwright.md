@@ -219,7 +219,7 @@ We now have an HTML page to `goto`. It is still useless because we need to be ab
 
 For this, we can look at the utility function we saw in the test file example - `loadComponents`.
 
-`loadComponents` is a function that accepts an array with components names and uses playwright’s `addScriptTag` method to add the components’:
+`loadComponents` is a function that accepts an array with components names and uses playwright’s `addScriptTag` method to add the components:
 
 ```
 export async function loadComponents({
@@ -255,7 +255,7 @@ This way, in every test, we take the same blank page and load the components we 
 
 Our network traffic is going to look like this in case we had our array set like this: `[icon, button, focus, dialog, text-field,layout]`:
 
-![drawing](https://docs.google.com/drawings/d/12345/export/png)
+![The JavaScript files loaded in the test page as shown in the network tab of chrome dev tools](/content/blog/how-to-build-a-visual-regression-test-system-using-playwright/visual-regression-test-2.png "A list of js file from the network tab")
 
 Bear in mind we also have templates loaded:
 
