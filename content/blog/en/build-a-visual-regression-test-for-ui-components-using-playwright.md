@@ -259,7 +259,7 @@ Our network traffic is going to look like this in case we had our array set like
 
 Bear in mind we also have templates loaded:
 
-![drawing](https://docs.google.com/drawings/d/12345/export/png)
+![The CSS files loaded in the test page as shown in the network tab of chrome dev tools](/content/blog/how-to-build-a-visual-regression-test-system-using-playwright/visual-regression-test-1.png "A list of css files from the network tab")
 
 Whoopy - JS and CSS are loaded!
 
