@@ -24,13 +24,13 @@ Last year Vonage released [Video Express](https://tokbox.com/developer/video-exp
 
 In this tutorial, I'll show you how to combine these powerful technologies to build a modern, fullstack application with all the video conferencing features that users have come to expect. I'll use Ruby on Rails, Vonage Video Express, and Vonage's new UI Toolkit [Vivid](https://vivid.vonage.com/).
 
-This post is inspired by [Create a Party With Ruby on Rails and the Vonage Video API](https://developer.vonage.com/blog/20/05/12/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1-building-the-backend-dr). I will largely recreate the functionality and afterwards you can see just how much much less code was required!
+This post is inspired by [Create a Party With Ruby on Rails and the Vonage Video API](https://developer.vonage.com/blog/20/05/12/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1-building-the-backend-dr). I will largely recreate the functionality of that post and afterward, you can see much much less code was required!
 
 ## What The App Will Do
 
 Back in 2020 Ben Greenberg built an app to allow his son to watch movies with his friends. This app will be essentially the same. Only I don't watch movies online with friends. But since moving across the world, it's been hard to find fans of my favorite ice hockey team, the Blues. So instead of watching movies with my friends, I'd love to watch the Blues or sports in general with friends from back home. Functionally, the app is the same and borrows heavily from Ben's movie app. This will make it easy to compare the pros/cons between using Video Express and writing in native Vonage Video API.
 
-This app will have two pages; a landing page with a login form and a "party" page. When users login they will be taken to a "Chill Zone" to hang out. Here they will be displayed in equal size. Then when the game is beginning, the "moderator" who owns the session will trigger a screenshare to display the game. In the "Watch Mode", the shared screen of the moderator will be dominant and take up most of the video call. Because the best part of watching sports with friends is the banter, I will still see and hear the other participants. But if my friends are being too loud, I still want the ability to mute them. We'll also allow participants to mute themselves, turn off their video camera, and select their video/audio inputs and outputs.
+This app will have two pages: a landing page with a login form and a "party" page. When users login they will be taken to a "Chill Zone" to hang out; where they will be displayed in equal size. Then when the game is beginning, the "moderator" who owns the session will trigger a screenshare to display the game. In the "Watch Mode", the shared screen of the moderator will be dominant and take up most of the video call. Because the best part of watching sports with friends is the banter, I will still see and hear the other participants. But if my friends are being too loud, I still want the ability to mute them. We'll also allow participants to mute themselves, turn off their video camera, and select their video/audio inputs and outputs.
 
 In part one we will build out the Rails app, using a few Vivid components, and get the Video Express to run. In part two, we will take it to the next level by building out components combining Video Express functionality with Vivid UI.
 
@@ -46,7 +46,7 @@ In part one we will build out the Rails app, using a few Vivid components, and g
 
 ## Vonage Video API Setup
 
-It is free to create a Vonage Video API account. You need to do so in order to obtain your API key and secret, which are essential to making the app functional.
+It is free to create a Vonage Video API account. You need to do so in order to obtain your API key and secret, which are essential to make the app functional.
 
 ### Credentials
 
@@ -68,16 +68,16 @@ To use Video Express, be sure to activate the Video Express add-on for your acco
 
 ## Setting Up The Rails App
 
-Before we can add the frontend magic with Video Express and Vivid, we need to do a bit of work to get our Rails app created and ready with Vonage Video API on the backend.
+Before we can add the frontend magic with Video Express and Vivid, we need to do a bit of work to create our Rails app and running with Vonage Video API on the backend.
 
 ### Installation
 
 Create a new rails app using postgresql as the database.
 
-`rails new video-express-rails –database=postgresql`
+`rails new video-express-rails --database=postgresql`
 
 Move into the project:
-`cd video-express`
+`cd video-express-rails`
 
 Now open up the project with your favorite text editor.
 
