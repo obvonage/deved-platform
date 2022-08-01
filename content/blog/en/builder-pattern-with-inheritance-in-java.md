@@ -2,10 +2,11 @@
 title: Builder Pattern With Inheritance in Java
 description: This article demonstrates the Builder pattern within a class
   hierarchy, using the Messages API as an example
+thumbnail: /content/blog/builder-pattern-with-inheritance-in-java/pattern.png
 author: sina-madani
 published: false
-published_at: 2022-07-13T11:25:38.518Z
-updated_at: 2022-07-13T11:25:38.530Z
+published_at: 2022-08-03T11:25:38.518Z
+updated_at: 2022-08-03T10:03:31.114Z
 category: tutorial
 tags:
   - java
