@@ -1,5 +1,5 @@
 ---
-title: Build a Visual Regression Test System for Components using Playwright
+title: How to Build a Visual Regression Test System using Playwright
 description: How to create your own DIY visual regression system for your web
   application? Here’s how to do it with Playwright, rollup and GitHub actions.
 author: yonatankra
