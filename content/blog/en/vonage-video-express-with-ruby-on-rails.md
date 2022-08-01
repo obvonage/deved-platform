@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Since 2004 Ruby on Rails has been beloved by developers and especially startup founders for its ability to quickly build full-scale web applications. [Kerry Doyle](https://www.techtarget.com/searchapparchitecture/tip/Programming-in-Ruby-A-critical-look-at-the-pros-and-cons) perfectly summed up the "Convention Over Configuration" philosophy that underpins Ruby on Rails, "\[it] attempts to decrease the number of decisions that a developer using the framework is required to make without necessarily losing flexibility and don't repeat yourself (DRY) principles". This philosophy makes Rails ideal for the [LEAN](https://en.wikipedia.org/wiki/Lean_software_development) mindest.
+Since 2004, Ruby on Rails has been beloved by developers and especially startup founders for its ability to quickly build full-scale web applications. [Kerry Doyle](https://www.techtarget.com/searchapparchitecture/tip/Programming-in-Ruby-A-critical-look-at-the-pros-and-cons) perfectly summed up the "Convention Over Configuration" philosophy that underpins Ruby on Rails, "\[it] attempts to decrease the number of decisions that a developer using the framework is required to make without necessarily losing flexibility and don't repeat yourself (DRY) principles". This philosophy makes Rails ideal for the [LEAN](https://en.wikipedia.org/wiki/Lean_software_development) mindest.
 
 Last year Vonage released [Video Express](https://tokbox.com/developer/video-express/). This Javascript library which sits on top of Vonage's [Video API](https://tokbox.com/developer/guides/basics/) is like the "Convention Over Configuration" extension to make the process of building Video Call Applications easier and faster. Any developer can now spin up powerful, robust Video Meetings without knowing all the nuts and bolts.
 
@@ -132,7 +132,7 @@ All of this heavy lifting means Video Express has a ton of features built that j
 
 #### Vivid
 
-As I said Video Express has all the front-end functionality built out, it just needs a developer to build out a UI for the end user. Vonage Does That! We've been building a gorgeous UI toolkit called Vivid which makes building applications with communications features much faster.
+As I said Video Express has all the front-end functionality built out, it just needs a developer to craft a UI for the end user. Vonage Does That! We've been building a gorgeous UI toolkit called Vivid which makes building applications with communications features much faster.
 
 Vivid is built using Web Components so they will work in any framework or even vanilla HTML/JS like Rails. And they look great! And they're [web accessible](https://developer.vonage.com/blog/21/11/11/wcag-how-to-implement-web-accessibility-1)!
 
@@ -146,11 +146,11 @@ Let's install Vivid and get going:
 
 ### Model Generation
 
-Next, we will generate a model to hold and manipulate the watch party information. In order to connect to users to the same video call, we will need to pass Vonage Video API the `session_id`. From the command line execute the following:
+Next, we will generate a model to hold and manipulate the watch party information. This will also create an associated `watch_parties` table in our database. In order to connect to users to the same video call, we will need to pass Vonage Video API the `session_id`. From the command line execute the following:
 
 `rails g model WatchParty session_id:string`
 
-Before we run the migration to create this data type in our database, we'll need to update in the migration to ensure that sessions don't default to null when need to retrieve them.
+Before we run the migration to create this column in our database, we'll need to update in the migration to ensure that sessions don't default to null when need to retrieve them.
 
 Open the `db/migrate` directory and find the file called:  TIMESTAMP_create_watch_parties.rb
 
@@ -174,7 +174,7 @@ You can now commit this database migration to the schema by running from the com
 
 This command will create the PostgreSQL database and the sessions table with the session_id column.
 
-### Creating the Model Methods
+### Creating the Class Methods
 
 Now let's implement our watch party logic which will use the Vonage Video API to connect users to a video call session.
 
@@ -190,38 +190,33 @@ First, we need to access our Vonage Video API functionality by instantiating an 
 
 ```
 require 'opentok'
-@opentok = OpenTok::OpenTok.new ENV['OPENTOK_API_KEY'], ENV['OPENTOK_API_SECRET']
+@opentok = OpenTok::OpenTok.new(ENV['OPENTOK_API_KEY'], ENV['OPENTOK_API_SECRET'])
 ```
 
-Now we can add those model methods. The Session#create_or_load_session_id method will check to see if there already is a session ID. If there is an ID, it will use that ID. If not, it will generate a new one.
+Now we can add those Class methods. The Session#create_or_load_session_id method will check to see if there already is a session ID. If there is an ID, it will use that ID. If not, it will generate a new one.
 
 ```
 def self.create_or_load_session_id
-  if WatchParty.any?
+  unless WatchParty.any? 
+    return @session_id = create_new_session
+  else
     last_session = WatchParty.last
     if last_session
       @session_id = last_session.session_id
-      @session_id
     elsif !last_session
       @session_id = create_new_session
     else
       raise 'Something went wrong with the session creation!'
     end
-  else
-    @session_id = create_new_session
   end
 end
 ```
 
-The above method also references an additional method we need to create called Session#create_new_session that does the work of creating a new session if one does not exist:
+The above method also references an additional method we need to create called `create_new_session` that does the work of creating a new session if one does not exist:
 
-```def
+```def create_new_session
   session = @opentok.create_session
-  record = WatchParty.new
-  record.session_id = session.session_id
-  record.save
   @session_id = session.session_id
-  @session_id
 end
 ```
 
@@ -259,11 +254,7 @@ class WatchParty < ApplicationRecord
 
   def self.create_new_session
     session = @opentok.create_session
-    record = WatchParty.new
-    record.session_id = session.session_id
-    record.save
     @session_id = session.session_id
-    @session_id
   end
 
   def self.create_token(user_name, moderator_name, session_id)
@@ -280,7 +271,7 @@ Create the `.env` file from the root of the `video-express` project:
 
 `touch .env`
 
-Inside define our ENV varialbes:
+Inside define our ENV variables:
 
 ```
 OPENTOK_API_KEY=''
@@ -302,14 +293,14 @@ The user will see two pages: home and party. But we also need to catch the info 
 Rails.application.routes.draw do
   get '/', to: 'watch_party#home'
   get '/party', to: 'watch_party#party'
-  post 'login', to: 'watch_party#login'
+  post '/login', to: 'watch_party#login'
 end
 ```
 ````
 
 ### Creating The Controller
 
-With Rails "Convention over Configuration" we already know what actions we'll need for our controller, the same as the routes!
+With Rails "Convention over Configuration" we already know which actions we'll need for our controller, the same as the routes!
 
 From the command line generate the WatchParty controller with home, login, and party actions.
 
@@ -332,7 +323,7 @@ If we look at the Vivid documentation we see that we have all the components we 
 * [Forms](https://vivid.vonage.com/?path=/story/components-textfield--login-form)
 * [Buttons](https://vivid.vonage.com/?path=/story/components-button--basic&args=label:Basic;layout:text)
 
-So with bit of Rails magic with some Vivid magic, we have everything we need. There are only two tricky things here. One, you'll notice that cards can have titles and subtitles in Vivid. So why do we need to use the vwc-text component? Because Vivid makes use of slots in their web components and when using the `slot="main"` to have content in the card, this overrides the slots of the title and subtitle.
+So with a bit of Rails magic with some Vivid magic, we have everything we need. There are only two tricky things here. One, you'll notice that cards can have titles and subtitles in Vivid. So why do we need to use the vwc-text component? Because Vivid makes use of slots in their web components and when using the `slot="main"` to have content in the card, this overrides the slots of the title and subtitle.
 
 Secondly, the form doesn't help us actually pass the data to the server. So we need to make use of the Rails helper `form_with`. Altogether it looks like this:
 
@@ -376,15 +367,15 @@ Now if you open the page it will work. But it's still pretty ugly. So let's styl
 ```
 // Home Page Styles
 
-.card-wrapper{
+.card-wrapper {
   display: flex;
 }
-vwc-card{
+vwc-card {
   margin: auto;
   padding: 10%;
 }
 
-#box{
+#box {
   padding: 50px 100px;
 }
 
@@ -402,7 +393,7 @@ form {
 Before we move on, let's add the beautiful Vonage background in `app/assets/stylesheets/application.scss`
 
 ```
-body{
+body {
   background: linear-gradient(90deg, #9DD2FE 4.86%, #8728FB 96.11%);
   margin: 0px;
 }
@@ -445,7 +436,7 @@ First, let's take a look at what we're building. This is the Party page in the "
 
 ![Party Page: Chill Mode, Non Moderator](/content/blog/vonage-video-express-with-ruby-on-rails/macbook-pro-16_-10.png "Party Page: Chill Mode, Non Moderator")
 
-Let's start with the bones of the page, the HTML. We have 3 components; a header, the video call, and a toolbar. But for now we'll just leave comments where the `header` and `toolbar` will go: Add this to your `app/views/video/party.html.erb`:
+Let's start with the bones of the page, the HTML. We have 3 components: a header, the video call, and a toolbar. But for now we'll just leave comments where the `header` and `toolbar` will go: Add this to your `app/views/video/party.html.erb`:
 
 ```
 <header>
@@ -512,7 +503,7 @@ The final code of the `party.html.erb` looks like this:
 </script>
 ```
 
-So now we should be able to run our server and see a beautiful video call site, right? You should know the answer is no by now 😆. What are we missing? Well we haven't used any of that OpenTok logic from the Video API to send to Video Express.
+So now we should be able to run our server and see a beautiful video call site, right? You should know the answer is "no" by now 😆. What are we missing? Well we haven't used any of that OpenTok logic from the Video API to send to Video Express.
 
 So we need to set our OpenTok variables in the `WatchParty Controller` and pass them through to our frontend.
 
@@ -536,15 +527,6 @@ class WatchPartyController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_opentok_vars
 
-  def set_opentok_vars
-    @api_key = ENV['OPENTOK_API_KEY']
-    @api_secret = ENV['OPENTOK_API_SECRET']
-    @session_id = WatchParty.create_or_load_session_id
-    @moderator_name = ENV['MODERATOR_NAME']
-    @name ||= params[:name]
-    @token = WatchParty.create_token(@name, @moderator_name, @session_id)
-  end
-
   def home
   end
 
@@ -561,6 +543,15 @@ class WatchPartyController < ApplicationController
   end
 
   private
+
+  def set_opentok_vars
+    @api_key = ENV['OPENTOK_API_KEY']
+    @api_secret = ENV['OPENTOK_API_SECRET']
+    @session_id = WatchParty.create_or_load_session_id
+    @moderator_name = ENV['MODERATOR_NAME']
+    @name ||= params[:name]
+    @token = WatchParty.create_token(@name, @moderator_name, @session_id)
+  end
 
   def login_params
     params.permit(:name, :password, :authenticity_token, :commit)
@@ -597,7 +588,7 @@ Let's add some CSS from the Video Express boilerplate for the video screen. We t
 
 ## Next Steps
 
-In the Part 2 we'll add some of the functionality you expect in modern video conferencing:
+In Part 2 we'll add some of the functionality you would expect in modern video conferencing:
 
 * Screensharing: will be scoped so that only our moderator can use it
 * Mute all other participants
