@@ -22,7 +22,8 @@ There are many times in development when a localhost server just won’t cut it.
 
 The use case we’re interested in this article is using ngrok with Ruby on Rails when building a project and allowing other users to access it from their browser. This allows for the most realistic simulation. Also, it’s pretty sweet to share something with friends, even if you never deploy it publicly.
 
-*Disclaimer: The Vonage Developer Relations Tooling team uses [LocalTunnel](https://github.com/localtunnel) for work with the Vonage Client SDKs as it doesn't require registration.*
+
+*Disclaimer: ngrok is free for non-commercial use, but requires a paid account if your product is commercial. An alternative to ngrok is [LocalTunnel](https://github.com/localtunnel) which is open source and covered by the MIT license. The Vonage Developer Relations Tooling team uses LocalTunnel for work with the Vonage Client SDKs. Use what is best for your needs.*
 
 ## Installing ngrok
 
@@ -44,7 +45,7 @@ For Linux, use Apt:
 
 <br>
 
-For Windows, use Chocolatey:
+For Windows, use [Chocolatey](https://chocolatey.org/):
 
 `choco install ngrok`
 
