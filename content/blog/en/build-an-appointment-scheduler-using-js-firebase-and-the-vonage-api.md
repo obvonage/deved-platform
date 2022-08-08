@@ -77,7 +77,7 @@ myAppointments.json
       "userId": "1234abcd"
     },
     "new_activity_7kh3a3a3z": {
-      "date": "2021-06-01T08:50",
+      "date": "2023-06-01T08:50",
       "userId": "_7kh3a3a3z"
     },
     "new_activity_etxen95x3": {
@@ -187,7 +187,7 @@ The user will be able to book slots every 5 minutes ending in 0 or 5 for instanc
             type="datetime-local"
             name="slotdate"
             min="2021-06-01T08:30"
-            max="2021-10-30T16:30"
+            max="2023-10-30T16:30"
             step="300"
             required
           />
@@ -284,6 +284,7 @@ const app = require('express')();
 const port = 3000; //setting the port to listen to as 3000
 const admin = require('firebase-admin');
 const Vonage = require('@vonage/server-sdk');
+const SMS = require("@vonage/server-sdk/lib/Messages/SMS");
 const { v4: uuidv4 } = require('uuid');
 
 app.use(express.static('public'));
@@ -427,33 +428,23 @@ Finally, once the slot is reserved, an SMS confirmation is sent back to the user
 * Add this below code snippet to your `server.js` to create the `sendSMStoUser()` function
 
 ```javascript
-  // Sends an SMS back to the user's phone using the Vonage Messages API
-  sendSMStoUser = async (code) => {
-    const from = process.env.VONAGE_FROM_NUMBER;
-    const to = phonenumber;
-    const text = `Meeting booked at ${time} on date: ${date}. Please save this code: ${code} in case you'd like to cancel your appointment.`;
-    const result = await new Promise((resolve, reject) => {
-      vonage.channel.send(
-        { type: 'sms', number: VONAGE_TO_NUMBER },
-        { type: 'sms', number: 'Vonage' },
-        {
-          content: {
-            type: 'text',
-            text: text,
-          },
-        },
-        (err, responseData) => {
-          if (err) {
-            console.log('Message failed with error:', err);
-          } else {
-            console.log(
-              `Message ${responseData.message_uuid} sent successfully.`
-            );
-          }
+// Sends an SMS back to the user's phone using the Vonage Messages API
+sendSMStoUser = async (code) => {
+  const to = phonenumber;
+  const text = `Meeting booked at ${time} on date: ${date}. Please save this code: ${code} in case you'd like to cancel your appointment.`;
+  const result = await new Promise((resolve, reject) => {
+    vonage.messages.send(
+      new SMS(text, process.env.VONAGE_TO_NUMBER, "Vonage"),
+      (err, data) => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log(data.message_uuid);
         }
-      );
-    });
-  };
+      }
+    );
+  });
+};
 ```
 
 ### Finalize the Business Logic
