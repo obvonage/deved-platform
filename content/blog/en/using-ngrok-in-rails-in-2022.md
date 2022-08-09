@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-There are many times in development when a localhost server just won’t cut it. That’s when we can use a nifty tool called Ngrok. Ngrok creates tunnels. These tunnels connect your local codebase with a public site, without having to do any annoying configuration. The main use case for Vonage developers is when using an API that relies on webhooks to send automated information. You can read more about that in [Testing with Ngrok](https://developer.vonage.com/getting-started/tools/ngrok) in our developer portal tools.
+There are many times in development when a localhost server just won’t cut it. That’s when we can use a nifty tool called [Ngrok](https://ngrok.com/). Ngrok creates tunnels. These tunnels connect your local codebase with a public site, without having to do any annoying configuration. The main use case for Vonage developers is when using an API that relies on webhooks to send automated information. You can read more about that in [Testing with Ngrok](https://developer.vonage.com/getting-started/tools/ngrok) in our developer portal tools.
 
 The use case we’re interested in this article is using ngrok with Ruby on Rails when building a project and allowing other users to access it from their browser. This allows for the most realistic simulation. Also, it’s pretty sweet to share something with friends, even if you never deploy it publicly.
 
