@@ -32,7 +32,7 @@ Back in 2020 Ben Greenberg built an app to allow his son to watch movies with hi
 
 This app will have two pages: a landing page with a login form and a "party" page. When users login they will be taken to a "Chill Zone" to hang out; where they will be displayed in equal size. Then when the game is beginning, the "moderator" who owns the session will trigger a screenshare to display the game. In the "Watch Mode", the shared screen of the moderator will be dominant and take up most of the video call. Because the best part of watching sports with friends is the banter, I will still see and hear the other participants. But if my friends are being too loud, I still want the ability to mute them. We'll also allow participants to mute themselves, turn off their video camera, and select their video/audio inputs and outputs.
 
-![GIF Preview Of Finished Video Conferencing App Built With Vonage Video Express](/content/blog/vonage-video-express-with-ruby-on-rails-part-1/ezgif.com-gif-maker.gif "GIF Preview Of Finished Video Conferencing App Built With Vonage Video Express")
+![GIF Preview Of Finished Video Conferencing App Built With Vonage Video Express](/content/blog/vonage-video-express-with-ruby-on-rails-part-1/ezgif.com-gif.gif "GIF Preview Of Finished Video Conferencing App Built With Vonage Video Express")
 
 In part one we will build out the Rails app, using a few Vivid components, and get the Video Express to run. In part two, we will take it to the next level by building out components combining Video Express functionality with Vivid UI.
 
