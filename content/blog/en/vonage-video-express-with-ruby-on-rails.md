@@ -5,8 +5,8 @@ description: A ruby on rails tutorial that implements the Video Express
 thumbnail: /content/blog/vonage-video-express-with-ruby-on-rails-part-1/video-express-ruby_part-1.png
 author: benjamin-aronov
 published: true
-published_at: 2022-06-29T21:18:46.378Z
-updated_at: 2022-06-29T21:18:46.409Z
+published_at: 2022-08-09T14:39:43.929Z
+updated_at: 2022-08-09T14:39:45.745Z
 category: tutorial
 tags:
   - video-api
