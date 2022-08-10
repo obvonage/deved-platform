@@ -382,7 +382,7 @@ toolbar {
   border-radius: 8px 8px 0 0;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
