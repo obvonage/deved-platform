@@ -29,7 +29,7 @@ Once we are done, we will have a watch party app that we can use to chat with ou
 
 A quick reminder, we are building a video-conferencing application that gives a toolbar to users for different audio/video controls. Additionally, the application gives the moderator the ability to send the Watch Party into different viewing modes.
 
-At this point, we have a working Video Express [Room](https://tokbox.com/developer/video-express/reference/room.html). This object gives us the ability to call different functions to trigger the actions in our toolbar. We want to give the user a way to trigger this functionality, we'll do that with Vivid components. We will organize both our HTML and JS into components. With Webpack, we'll then  `import` our Modules and `require` our components into `application.js` which will expose our Javascript in the client-side.
+At this point, we have a working Video Express [Room](https://tokbox.com/developer/video-express/reference/room.html). This object gives us the ability to call different functions that perform the actions in our toolbar. We want to give the user a way to trigger this functionality, we'll do that with Vivid components. We will organize both our HTML and JS into components. With Webpack, we'll then  `import` our Modules and `require` our components into `application.js` which will expose our Javascript to the client-side.
 
 ## Building Out Helper Components
 
@@ -458,7 +458,7 @@ toggleMuteAllButton(unmute_all_btn, "unmute", room.participants);
 
 ### Building The Mute Self And Disable Camera Buttons
 
-The Mute/Unmute Self and Disable/Enable Camera buttons follow the same logic as the MuteAll button. They will listen for a user action, check a state and trigger an action in VideoExpress. However they are much simpler because VideoExpress gives us functions to check the state. The two functions are `room.camera.isVideoEnabled` and `room.camera.isAudioEnabled`. Also we only need to trigger the action on a single user.
+The Mute/Unmute Self and Disable/Enable Camera buttons follow the same logic as the MuteAll button. They will listen for a user action, check a state and call an action in VideoExpress. However they are much simpler because VideoExpress gives us functions to check the state. The two functions are `room.camera.isVideoEnabled` and `room.camera.isAudioEnabled`. Also we only need to trigger the action on a single user.
 
 We can create this function `toggleInputButton` which will check the accept a condition, the boolean we receive from our Video Express functions, and call the corresponding Video Express action. It will also update the view with `toggleButtonView`.
 
