@@ -827,6 +827,8 @@ Now we can run our rails server:
 
 And now our app is up and running and you can invite friends to join your watch party by sending them the ngrok URL. And the password!
 
+![GIF Preview Of Finished Video Conferencing App Built With Vonage Video Express](https://s3.eu-west-1.amazonaws.com/developer.vonage.com/blog/blogposts/vonage-video-express-with-ruby-on-rails-part-1/ezgif.com-gif.gif "GIF Preview Of Finished Video Conferencing App Built With Vonage Video Express")
+
 ### Get In Touch
 
 How did you like this tutorial? Have questions or feedback about Video Express or Vivid? Join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack). And follow us on [Twitter](https://twitter.com/VonageDev) to keep up with the latest Vonage Developer updates.
