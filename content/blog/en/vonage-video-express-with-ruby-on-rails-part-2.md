@@ -21,7 +21,7 @@ replacement_url: ""
 ---
 This is the second part of a two-part series on creating a video watch party application using Ruby on Rails with Vonage Video API and the Video Express library.
 
-In the [Part 1](<>), we went through the steps of building the Rails app, showed how to use a few Vivid components, and got the Video Express video chat to run. If you have not read that post yet, it would be a good place to start.
+In the [Part 1](https://developer.vonage.com/blog/22/08/09/vonage-video-express-with-ruby-on-rails-part-1), we went through the steps of building the Rails app, showed how to use a few Vivid components, and got the Video Express video chat to run. If you have not read that post yet, it would be a good place to start.
 
 Once we are done, we will have a watch party app that we can use to chat with our friends and watch sports or videos together!
 
