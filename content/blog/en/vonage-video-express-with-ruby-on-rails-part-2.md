@@ -33,11 +33,11 @@ At this point, we have a working Video Express [Room](https://tokbox.com/develop
 
 ## Building Out Helper Components
 
-The rest of this tutorial will be building the components to users control their Video Express room. Each component will follow a similar structure: HTML with Vivid components and Javascript to trigger Video Express functions.
+The rest of this tutorial will be building the components that allow users to control their Video Express room. Each component will follow a similar structure: HTML with Vivid components and Javascript to trigger Video Express functions.
 
 ### Organizing the HTML
 
-Let's build out our partials where the HTML will live. From the command line, run:
+Let's build out our partials where the HTML will live. From the root of your application, using the command line, run:
 
 `mkdir app/views/components`
 
@@ -66,7 +66,7 @@ Just as we have a components folder in our Views, let's create a components fold
 
 Here we'll add our component files:
 `touch app/javascript/components/header.js`
-`touch app/javascript/components/header.js`
+`touch app/javascript/components/toolbar.js`
 
 And we'll need to tell Webpack to require them for our clientside. So add the following lines in Application.js belowe our module imports.
 
