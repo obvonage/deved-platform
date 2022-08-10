@@ -2,10 +2,11 @@
 title: "Community Member Spotlight: Kiran Krishnan"
 description: A community spotlight of Vonage API developer Kiran Krishnan. In
   this article we learn about Kiran and how he integrated Vonage with Supabase.
+thumbnail: /content/blog/community-member-spotlight-kiran-krishnan/community-spotlight_kiran.png
 author: benjamin-aronov
 published: true
-published_at: 2022-07-25T11:58:44.811Z
-updated_at: 2022-07-25T11:58:44.848Z
+published_at: 2022-08-18T14:02:36.329Z
+updated_at: 2022-08-18T14:02:38.537Z
 category: community
 tags:
   - opensource
