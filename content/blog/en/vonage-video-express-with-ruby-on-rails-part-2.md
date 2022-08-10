@@ -372,7 +372,7 @@ Before we build out the Javascript for the components, let's make the toolbar lo
 
 ```
 // toolbar styles
-toolbar{
+toolbar {
   display: flex;
   justify-content: space-around;
   margin: 0 auto;
@@ -415,7 +415,7 @@ let toggleButtonView = (buttonToHide, buttonToShow) => {
 
 ### Building The Mute Others Button
 
-To mute all the participants we need to listen for the user to trigger the action and then cycle through all the participants in this user's instance of the room. This is important to note that the room is local to each user. So do actions on the room is only local to their own browser.
+To mute all the participants we need to listen for the user to trigger the action and then cycle through all the participants in this user's instance of the room. *This is important to note that the room is local to each user.*
 
 So to disable the audio, we need to iterate through all the participants in the room and use the `.camera.disable()` function. You'll notice that we call this on participant\[1] because the participant object returns an array; [`id`, participantObject]. Additionally room.participants does not include the local user, only all the other participants. **this isn't true. Lets try to make this work with the other function** So we 
 **Try to clean this up to use listenForToggle below, don't think need to do room.camera.disableAudio()** 
