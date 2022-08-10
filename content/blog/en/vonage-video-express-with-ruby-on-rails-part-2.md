@@ -386,12 +386,12 @@ toolbar {
   display: none;
 }
 
-.white-border{
+.white-border {
   border: 2px solid white;
   border-radius: 50%;
 }
 
-.select-max-width{
+.select-max-width {
   max-width: 130px;
 }
 
