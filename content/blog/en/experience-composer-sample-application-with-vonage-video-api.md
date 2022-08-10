@@ -22,11 +22,13 @@ replacement_url: ""
 ---
 ## Introduction
 
-[Experience Composer (EC) API](https://tokbox.com/developer/guides/experience-composer/) is a powerful tool that allows one to capture their website’s layout as a stream published to a Vonage Video API/OpenTok session. The website needs to be a publicly accessible URL which the Experience Composer will access and create a stream. 
+The [Experience Composer (EC) API](https://tokbox.com/developer/guides/experience-composer/) is a powerful tool that allows you to capture your website’s layout as a stream published to a Vonage Video API (formerly OpenTok) session. The website needs to be a publicly accessible URL that the Experience Composer will access and from which it will generate a stream. 
 
-For example, below you can see a Vonage Video API session with myself as the host and an Experience Composer stream of a youtube video published to the session. It is streaming the youtube website, along with the video and audio of the youtube video.
+For example, below you can see a Vonage Video API session with me as the host and an Experience Composer stream of a YouTube video published to the session. It is streaming the youtube website, along with the video and audio of the youtube video.
 
 ![Vonage Video API session with Experience Composer stream of Youtube](/content/blog/experience-composer-sample-application-with-vonage-video-api/screen-shot-2022-07-26-at-15.37.37.png "Vonage Video API session with Experience Composer stream of Youtube")
+
+### Experience Composer Use Cases
 
 This tool can be especially powerful for educational applications where there are components to share such as a whiteboard or slide. However, these components would not be captured by Vonage Video API’s archiving tool. This is where Experience Composer comes in, as it will publish the stream of the whiteboard, slides, custom layouts, dynamic components, and other web elements to the session allowing it to be captured in an archive.
 
@@ -39,7 +41,7 @@ This article will describe two applications of the many ways developers can use 
 
 The goal of my sample application is to help video streamers save time editing their videos and allow them to spend time elsewhere. By using Vonage’s Experience Composer tool, streamers can record their live stream and video recording of their reaction, along with their own custom layout in the same location at the same time. Experience Composer can be used to record the entire application including the layout of the host and stream videos, and after recording, it is ready to be published to their audience. 
 
-This sample application allows the streamer to join an OpenTok session and send the URL of their livestream in the submission box for starting an Experience Composer. This allows the streamer to act as the publisher with their video in the top left corner, and the livestream to be published in the center via Experience Composer.
+This sample application allows the streamer to join a Vonage Video API session and send the URL of their livestream in the submission box for starting an Experience Composer. This allows the streamer to act as the publisher with their video in the top left corner, and the livestream to be published in the center via Experience Composer.
 
 ![Vonage Video API session with Experience Composer](/content/blog/experience-composer-sample-application-with-vonage-video-api/screen-shot-2022-07-26-at-15.44.42.png "Vonage Video API session with Experience Composer")
 
@@ -61,7 +63,7 @@ Archiving allows one to record a video stream of the website using Experience Co
 
 Start by creating a folder for the client-side code and a folder for server-side code. I will be focusing on the server-side aspect of the application; however, feel free to reference my [client code](https://github.com/mbiederman12/GamerECSAMPLE/tree/main/client) and check out this article, [Implement a Video API Application With React Hooks](https://developer.vonage.com/blog/22/04/13/implement-a-video-api-application-with-react-hooks), to help build your client side application.
 
-In the server folder, create a server.js file and a package.json. Be sure to download both Node.js and Opentok to use for your project. All of the code written in this article will be included in the server.js file, unless specified elsewhere.
+In the server folder, create a server.js file and a package.json. Be sure to download both [Node.js](https://nodejs.org/en/download/) and the [Video Node SDK](https://tokbox.com/developer/sdks/node/#installation-using-npm-recommended-) to use for your project. All of the code written in this article will be included in the server.js file, unless specified elsewhere.
 
 ### Building an Express Server
 
@@ -80,14 +82,14 @@ const apiSecret = YOUR_API_SECRET;
 
 For convenience, I recommend using [Express.js](https://expressjs.com/) to help build your application’s server. However, feel free to check out this article, [5 Ways to Build a Node.js API](https://developer.vonage.com/blog/20/08/11/5-ways-to-build-a-node-js-api), to see other ways of building your application’s server. 
 
-Start by initializing your express app and instantiating a new \`opentok\` object.
+Start by initializing your Express app and instantiating a new `opentok` object.
 
 ```
 const app = express()
 var opentok = new OpenTok(apiKey, apiSecret);
 ```
 
-Then create a Vonage Video API session by making a call to \`createSession\`. (Note that in order to archive your session, it needs to be routed).
+Then create a Vonage Video API session by making a call to `createSession`. (Note that in order to archive your session, it needs to be routed).
 
 ```
 opentok.createSession({mediaMode:"routed"},function (err, session) {
@@ -126,7 +128,7 @@ To create an Experience Composer, you will need to make an HTTP POST request to 
 
 The request’s header should include the HTTP header `X-OPENTOK-AUTH` along with a valid JSON Web Token.
 
-The request’s body should include the `data` of the Vonage Video API session’s id, token, and other properties. These properties include the input URL from the client. The URL needs to be publicly accessible so that an Experience Composer can capture the entire page.
+The request’s body should include the `data` of the Vonage Video API session’s `id`, `token`, and other properties. These properties include the input URL from the client. The URL needs to be publicly accessible so that an Experience Composer can capture the entire page.
 
 **(Follow the [Experience Composer REST documentation](https://tokbox.com/developer/rest/#starting_experience_composer) for more information)**
 
@@ -193,7 +195,7 @@ To stop this Experience Composer stream, submit an HTTP Delete request to the fo
 
 `https://api.opentok.com/v2/project/<API_Key>/render/<ExperienceComposerId>/`
 
-This request will be very similar to the POST request made above, however the header method will be `DELETE` instead of `POST`, and the request’s body will only require the session id and token. 
+This request will be very similar to the POST request made above, however, the header method will be `DELETE` instead of `POST`, and the request’s body will only require the session `id` and `token`. 
 
 ```
 app.get('/stopEC', (req, res)=>{
@@ -236,7 +238,7 @@ This should stop your Experience Composer stream and remove it from your Vonage 
 
 To archive your current session and website layout, create a new session and token. 
 
-Make a call to the `createSession` and `generateToken` functions, and save the new session Id and token in your express app.
+Make a call to the `createSession` and `generateToken` functions, and save the new session `id` and `token` in your express app.
 
 ```
 opentok.createSession({mediaMode:"routed"},function (err, sessionECArchive) {
@@ -247,7 +249,7 @@ opentok.createSession({mediaMode:"routed"},function (err, sessionECArchive) {
  app.set('tokenECArchive', tokenECArchive);
 ```
 
-Now that we have a new session Id and token, make the same HTTP POST request call as above to start a new Experience Composer. The only changes required are getting the new session id and token that you saved above and changing the <host_link> to the URL that you are sharing your website to. (Remember the link needs to be publicly accessible, so I would recommend publishing your application to Heroku or ngrok). Additionally, you will need to store the Experience Composer Id under a different name in your express app so that you have access to this Experience Composer.
+Now that we have a new session `id` and `token`, make the same HTTP POST request call as above to start a new Experience Composer. The only changes required are getting the new session `id` and `token` that you saved above and changing the `<host_link>` to the URL that you are sharing your website to. (Remember the link needs to be publicly accessible, so I would recommend publishing your application to [Heroku](https://www.heroku.com/) or [ngrok](https://developer.vonage.com/getting-started/tools/ngrok)). Additionally, you will need to store the Experience Composer `id` under a different name in your express app so that you have access to this Experience Composer.
 
 ```
 app.post('/startArchivingEC', function(req, res){
@@ -296,7 +298,7 @@ app.post('/startArchivingEC', function(req, res){
  request.end();
 ```
 
-You should see in your console that you have successfully created a new Experience Composer in the new session. Now we can start archiving this session by calling the startArchive function with the new session Id. You will need to store the returned archive id in your express app to stop the archive when required. 
+You should see in your console that you have successfully created a new Experience Composer in the new session. Now we can start archiving this session by calling the `startArchive` function with the new session `id`. You will need to store the returned archive `id` in your express app to stop the archive when required. 
 
 ```
 setTimeout(() => {
@@ -368,4 +370,4 @@ Followed by a call to the `stopArchive` function.
 
 Experience Composer has a variety of applications. In this tutorial, we have shown that it can be used to create a stream of a website such as videos, documents, slides, whiteboards or other features and publish it to a Vonage Video API session. Additionally, it allows users to fully customize their own website with logos, web components, and formatted layouts to capture the full experience in the form of an Experience Composer stream.
 
-Now that you have completed this tutorial, hopefully it helped you learn the use cases of Experience Composer, and how it can be applied to your own projects! Take a look at my sample application [code](https://github.com/mbiederman12/GamerECSAMPLE) for more information. Let us know how you're enjoying Experience Composer on our [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
+Hopefully, this tutorial helped you learn the use cases of Experience Composer, and how it can be applied to your own projects! Take a look at my sample application [code](https://github.com/mbiederman12/GamerECSAMPLE) for more information. Let us know how you're enjoying Experience Composer on our [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
