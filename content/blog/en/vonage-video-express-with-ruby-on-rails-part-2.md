@@ -417,8 +417,7 @@ let toggleButtonView = (buttonToHide, buttonToShow) => {
 
 To mute all the participants we need to listen for the user to trigger the action and then cycle through all the participants in this user's instance of the room. *This is important to note that the room is local to each user.*
 
-So to disable the audio, we need to iterate through all the participants in the room and use the `.camera.disable()` function. You'll notice that we call this on participant\[1] because the participant object returns an array; [`id`, participantObject]. Additionally room.participants does not include the local user, only all the other participants. **this isn't true. Lets try to make this work with the other function** So we 
-**Try to clean this up to use listenForToggle below, don't think need to do room.camera.disableAudio()** 
+So to disable the audio, we need to iterate through all the participants in the room and use the `.camera.disableAudio()` function. You'll notice that we call this on participant\[1] because the participant object returns an array: [`id`, participantObject].
 
 ```
 // toggle Mute All / Unmute All
@@ -427,12 +426,9 @@ let toggleMuteAllButton = (button, state, participants) =>{
     Object.entries(participants).forEach(participant => {
       if (state === "mute"){
         toggleButtonView(mute_all_btn, unmute_all_btn)
-        // why need both here???
-        room.camera.disableAudio();
         participant[1].camera.disableAudio();
       } else if (state === "unmute") {
         toggleButtonView(unmute_all_btn, mute_all_btn)
-        room.camera.enableAudio();
         participant[1].camera.enableAudio();
       } else {
         console.log("Error in toggleMuteAll")
