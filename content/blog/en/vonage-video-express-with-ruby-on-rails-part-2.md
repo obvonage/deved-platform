@@ -176,7 +176,7 @@ const screenShare = document.createElement('div');
 const layoutContainerWrapper = document.querySelector('#layoutContainerWrapper');
 const mode_name = document.querySelector('#mode-name');
 
-let addModeratorCustomStyles = () => {
+let addModeratorCustomStyles = (layoutContainer, screenShare, layoutContainerWrapper, mode_name) => {
   mode_name.innerHTML = "Watch Mode";
   layoutContainerWrapper.firstElementChild.classList.add("moderator-screenshare");
   layoutContainerWrapper.classList.add("moderator-screenshare");
@@ -184,7 +184,7 @@ let addModeratorCustomStyles = () => {
   layoutContainer.appendChild(screenShare);
 }
 
-let removeModeratorCustomStyles = () => {
+let removeModeratorCustomStyles = (layoutContainer, screenShare, layoutContainerWrapper, mode_name) => {
   mode_name.innerHTML = "Chill Mode";
   layoutContainerWrapper.firstElementChild.classList.remove("moderator-screenshare");
   layoutContainerWrapper.classList.remove("moderator-screenshare");
@@ -195,11 +195,11 @@ let removeModeratorCustomStyles = () => {
 if (switch_btn !== null){
   switch_btn.addEventListener('change', (event) => {
     if (event.target.checked){
-      addModeratorCustomStyles();
+      addModeratorCustomStyles(layoutContainer, screenShare, layoutContainerWrapper, mode_name);
       room.startScreensharing('screenSharingContainer');
     } else if (!event.target.checked){
         room.stopScreensharing('screenSharingContainer');
-        removeModeratorCustomStyles();
+        removeModeratorCustomStyles(layoutContainer, screenShare, layoutContainerWrapper, mode_name);
     } else{
         console.log("Error in Switch Button Listener");
     }
@@ -452,7 +452,7 @@ toggleMuteAllButton(unmute_all_btn, "unmute", room.participants);
 
 The Mute/Unmute Self and Disable/Enable Camera buttons follow the same logic as the MuteAll button. They will listen for a user action, check a state and call an action in VideoExpress. However they are much simpler because VideoExpress gives us functions to check the state. The two functions are `room.camera.isVideoEnabled` and `room.camera.isAudioEnabled`. Also we only need to trigger the action on a single user.
 
-We can create this function `toggleInputButton` which will check the accept a condition, the boolean we receive from our Video Express functions, and call the corresponding Video Express action. It will also update the view with `toggleButtonView`.
+We can create this function `toggleInputButton` which will accept a condition, the boolean we receive from our Video Express functions, and then call the corresponding Video Express action. It will also update the view with `toggleButtonView`.
 
 ```
 // toggle button (display and functionality) of any audio and video input devices
@@ -492,7 +492,7 @@ const hide_self_btn = document.querySelector('#hide-self');
 const unhide_self_btn = document.querySelector('#unhide-self');
 ```
 
-Finally all together we can call our code by passing the conditions, the buttons, and the actions: 
+Finally, all together we can call our code by passing the conditions, the buttons, and the actions: 
 
 ```
 listenForToggle(room.camera.isVideoEnabled, hide_self_btn, unhide_self_btn, room.camera.disableVideo, room.camera.enableVideo);
@@ -506,7 +506,7 @@ Our select dropdowns for audio and video inputs are currently empty. Let's fill 
 We'll need to retrieve this list and then sort it so we can add audio devices to the microphone input and video devices to the camera input. We do so with this asynchronous function, which waits for the Promise to return from querying VideoExpress and then iterates on the devices and appends them to the select element.
 
 ```
-// retrieve available input devices from VideoExpress
+// Retrieve available input devices from VideoExpress
 // add retrieved input devices to select options
 async function getDeviceInputs(audioTarget, videoTarget){
   const audio = document.querySelector(`${audioTarget}`);
@@ -570,7 +570,7 @@ Retrieving the list of Audio Outputs from VideoExpress will look almost identica
 Because we are only listening for a single change, we can tie it all up nicely in a single function:
 
 ```
-// retrieve lists of auidoOutput
+// Retrieve lists of auidoOutput
 // add audioOutputs to select menu
 // On user select new option, update audio input
 async function audioOutputs() {
@@ -687,8 +687,8 @@ let listenForToggle = (condition, defaultBtn, altBtn, defaultAction, altAction) 
     })
 }
 
-// retrieve available input devices from VideoExpress
-// add retrieved input devices to select options
+// Retrieve available input devices from VideoExpress
+// Add retrieved input devices to select options
 async function getDeviceInputs(audioTarget, videoTarget){
   const audio = document.querySelector(`${audioTarget}`);
   const video = document.querySelector(`${videoTarget}`);
@@ -733,8 +733,8 @@ let listenInputChange = (target) => {
 }
 
 
-// retrieve lists of auidoOutput
-// add audioOutputs to select menu
+// Retrieve lists of auidoOutput
+// Add audioOutputs to select menu
 // On user select new option, update audio input
 async function audioOutputs() {
   var audioOutputs = await VideoExpress.getAudioOutputDevices();
@@ -813,7 +813,7 @@ In your terminal you'll see a window that looks like this:
 
 ![ngrok server screenshot](/content/blog/vonage-video-express-with-ruby-on-rails-part-2/screen-shot-2022-07-01-at-16.32.41.png "ngrok server screenshot")
 
-You'll want to copy the line that ends in ngrok.io. This is the temporarily accessible URL that ngrok will forward your Rails server to. We need Rails to give permission to ngrok to be a host. In our \`config/environments/development.rb\` file, inside the `Rails.application.configure do` we need to add the following line:
+You'll want to copy the line that ends in ngrok.io. This is the temporarily accessible URL that ngrok will forward your Rails server to. We need Rails to give permission to ngrok to be a host. In our `config/environments/development.rb` file, inside the `Rails.application.configure do` we need to add the following line:
 
 `config.hosts << "[ngrok url]"`
 
