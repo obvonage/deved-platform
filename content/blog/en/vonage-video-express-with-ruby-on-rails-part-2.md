@@ -209,7 +209,7 @@ if (switch_btn !== null){
 
 ### Building The Toolbar HTML
 
-Now we can add the last and most complicated component we have: the toolbar. But it won't be so bad, just building out the HTML with Vivid components and then adding some javascript to trigger Video Express functions. You know the drill!
+Now we can add the last and most complicated component we have: the toolbar. But it won't be so bad, just building out the HTML with Vivid components and then adding some Javascript to trigger Video Express functions. You know the drill!
 
 A reminder of the toolbar we want to build:
 
@@ -239,7 +239,7 @@ We can see in the toolbar that there are 3 groups of buttons that will toggle on
 
 #### Building Dropdown Selects
 
-We can see that the second and third sets of buttons are a little different though. They also should be accompanied by a dropdown which will allow the user to select the associated input; microphone or camera. This is possible with Vivid's [`<vwc-action-group` element](https://vivid.vonage.com/?path=/story/alpha-components-actiongroup--split-button). The left side of the action group comes straight from documentation with a button and a separator. On the right side, we'll make use of the Vivid `vwc-select` component to generate a `select` element which we can target with the different options we receive from VideoExpress. We also pass the `vwc-select` two options: selected and disabled to tell it to show and disable the default `vwc-list-item` which will act as a label.
+We can see that the second and third sets of buttons are a little different though. They also should be accompanied by a dropdown which will allow the user to select the associated input: microphone or camera. This is possible with Vivid's [`<vwc-action-group` element](https://vivid.vonage.com/?path=/story/alpha-components-actiongroup--split-button). The left side of the action group comes straight from documentation with a button and a separator. On the right side, we'll make use of the Vivid `vwc-select` component to generate a `select` element which we can target with the different options we receive from VideoExpress. We also pass the `vwc-select` two options: selected and disabled to tell it to show and disable the default `vwc-list-item` which will act as a label.
 
 Our two action groups with buttons now look like this:
 
@@ -364,10 +364,9 @@ With the Tooltips added, our full `_toolbar.html.erb` looks like this:
     </vwc-list-item>
   </vwc-select>
 </vwc-action-group>
-
+```
 
 #### Styling The Toolbar
-```
 
 Before we build out the Javascript for the components, let's make the toolbar look like our mockup:
 
