@@ -68,7 +68,7 @@ Here we'll add our component files:
 `touch app/javascript/components/header.js`
 `touch app/javascript/components/toolbar.js`
 
-And we'll need to tell Webpack to require them for our clientside. So add the following lines in Application.js belowe our module imports.
+To require them for our clientside via Webpack, add the following lines in Application.js below our module imports.
 
 ```
 require("components/header");
@@ -134,10 +134,9 @@ if (switch_btn !== null){
     else if (!event.target.checked){
       <!-- Stop Screen Share -->
       <!-- Remove Custome Styles From Moderator --->
-    }
-    else{
-      console.log("Error in Switch Button Listener");
-    }
+    } else{
+        console.log("Error in Switch Button Listener");
+      }
   });
 }
 ```
@@ -198,13 +197,11 @@ if (switch_btn !== null){
     if (event.target.checked){
       addModeratorCustomStyles();
       room.startScreensharing('screenSharingContainer');
-    }
-    else if (!event.target.checked){
-      room.stopScreensharing('screenSharingContainer');
-      removeModeratorCustomStyles();
-    }
-    else{
-      console.log("Error in Switch Button Listener");
+    } else if (!event.target.checked){
+        room.stopScreensharing('screenSharingContainer');
+        removeModeratorCustomStyles();
+    } else{
+        console.log("Error in Switch Button Listener");
     }
   });
 }
@@ -220,7 +217,7 @@ A reminder of the toolbar we want to build:
 
 #### Building The Toggle Buttons
 
-We can see in the toolbar that there are 3 groups of buttons that will toggle on/off some functionality in the room: mute/unmute all, disable/enable microphone, and disable/enable video camera. For all three we will use two buttons from Vivd and then use Javascript to hide the inactive button.
+We can see in the toolbar that there are 3 groups of buttons that will toggle on/off some features in the room: mute/unmute all, disable/enable microphone, and disable/enable video camera. For all three we will use two buttons from Vivid and then use Javascript to hide the inactive button.
 
 ```
 <!-- Mute all / Unmute all -->
