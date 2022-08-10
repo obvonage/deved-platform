@@ -5,7 +5,7 @@ description: To showcase the multi-platform functionality of the SDKs and the
 thumbnail: /content/blog/introducing-the-vonage-client-sdk-v-app-demo-projects/v-app-demo.png
 author: abdul-ajetunmobi
 published: true
-published_at: 2022-08-25T14:25:27.524Z
+published_at: 2022-08-25T15:08:48.246Z
 updated_at: 2022-08-25T08:59:22.943Z
 category: announcement
 tags:
