@@ -1,11 +1,12 @@
 ---
 title: Introducing the Vonage Client SDK V-App Demo Projects
-description: "To showcase the multi-platform functionality of the SDKs and the
-  Conversation API we have built the V-App!"
+description: To showcase the multi-platform functionality of the SDKs and the
+  Conversation API we have built the V-App!
+thumbnail: /content/blog/introducing-the-vonage-client-sdk-v-app-demo-projects/v-app-demo.png
 author: abdul-ajetunmobi
 published: true
-published_at: 2022-07-28T08:59:22.841Z
-updated_at: 2022-07-28T08:59:22.943Z
+published_at: 2022-08-25T14:25:27.524Z
+updated_at: 2022-08-25T08:59:22.943Z
 category: announcement
 tags:
   - conversation-api
