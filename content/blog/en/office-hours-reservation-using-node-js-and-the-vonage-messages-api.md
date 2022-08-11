@@ -264,7 +264,7 @@ Let’s begin by creating an \`index.html\` file that includes our page title, C
 
 In our example, we include a reservation date input field, a reservation time radio group, a dropdown box to choose professor options, along with student name, student cell phone, and a comments field. 
 
-![](https://lh3.googleusercontent.com/QY6LuLhrgbgkOs9_J3Yq6KASVEQBYbBztHIgSJwq4k1AvkRogZm18lvkOE_r9wGG34B3-IAvKfj16Pj7VmG6lp7rDvi_7lXL_eNkhrNE-HDHxkdwJEJm2fEMFfeYU6kFpLal-tLD-gTM9xkC8tH7kl8)
+![](/content/blog/office-hours-reservation-using-node-js-and-the-vonage-messages-api/sample-reservationform-screenshot.png)
 
 Finally, create a submission button called "Book Now" to submit the contents of the form. We are posting this form to our web server at this URL: `/postschedule`, which we will discuss further in our tutorial. 
 
@@ -410,7 +410,7 @@ In the event the user enters invalid data, or there was an error processing the 
 
 Our rendered Error page will look like this:
 
-![](https://lh6.googleusercontent.com/EwBdAmNmxRPOmbOHQQfEzfovFXwZoZUDU-bZ67JpWMFf2AQf_bKWa6ZvTp-stnBlQzsP1szhjIMa7sPk-9UytFNqMkSasqjeNmXxID3eQ1Wq9iAB2EOLyQKI0mXRTn-RecQXAxifVrs5zVzg2bavVP4)
+![Error page](/content/blog/office-hours-reservation-using-node-js-and-the-vonage-messages-api/sample-error-screenshot.png "Error page")
 
 The variables enclosed by double brackets, for example: `{{AppointmentDate}}`, are the server-side variables that echo out through Node.js. We will discuss this setup later on in this tutorial. Finally, we will create a return button. This button would return the user back to the homepage if there was an error processing their reservation request.
 
@@ -538,7 +538,7 @@ Our rendered Confirmation page will look like this:
 
 Please note that our server-side variables will be derived from the student submitted form, and they are as follows: AppointmentDate, AppointmentTime, ProfessorName, StudentName, StudentPhoneNumber, and StudentNotes. Finally, we will create a return button. This button will return the user back to the homepage if the user wishes to create another reservation request. 
 
-## Backend 
+## Backend
 
 ### Mechanics Option: Dotenv
 
