@@ -27,7 +27,7 @@ Looking for the true Developer experience? Head to the Trailblazer section and v
 
 At both of these locations you can get on the list for the Vonage Hub - the real place to be for API innovation and discovery. Plus, you can skip the monster food queues at the event and join us for super tasty snack in quick time. Based on the 3rd floor of the nearby InterContinental Hotel, at the Hub you can network, relax, collect your personalized bag, unlock even more great swag and perhaps even spot your hologram. Plus, each day Vonage Senior Dev Relations Engineer Chris Tankersley will be running a live workshop to help you get going with Vonage APIs. Stay tuned for dates, times and topics. No Dreamforce ticket? The Hub is free for all to attend and enjoy so come on down. 
 
-Finally don’t miss the Vonage Party, the best way to get your night started before Dreamfest - the mega Dreamforce event party. Join us at the Vonage Hub, for good music, great drinks and network with some of the best folk around (maybe we’re biased).  
+Finally don’t miss the Vonage Party, the best way to get your night started before Dreamfest - the mega Dreamforce event party. Join us at the Vonage Hub for good music, great drinks and network with some of the best folk around (maybe we’re biased).  
 
 **What’s in it for me?**
 
