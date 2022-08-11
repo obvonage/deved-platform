@@ -30,7 +30,7 @@ In this tutorial, we are creating a web application using Node.js, Express, SQLi
 
 We will need to create three HTML templates to serve as our Input form (the Homepage), Error page, and Confirmation page. After we create these templates, we will move on to the "engine" that drives this web application in Node.js. To begin, we will start with creating a homepage where a user can input information such as their name, their phone number, their date of choice, their time preference, and any notes or comments they have using a basic web form. This form will be posted to our web application for processing.
 
-Let’s begin by creating an `index.html` file that includes our page title, CSS styles, and a basic web form to gather student information. It should look like this:
+Let’s begin by creating an `index.html` file that includes our page title, imports our CSS styling, and a basic web form to gather student information. It should look like this:
 
 ```html
 <html>
