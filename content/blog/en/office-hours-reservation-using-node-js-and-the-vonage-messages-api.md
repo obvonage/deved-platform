@@ -412,7 +412,7 @@ Our rendered Error page will look like this:
 
 ![Error page](/content/blog/office-hours-reservation-using-node-js-and-the-vonage-messages-api/sample-error-screenshot.png "Error page")
 
-The variables enclosed by double brackets, for example: `{{AppointmentDate}}`, are the server-side variables that echo out through Node.js. We will discuss this setup later on in this tutorial. Finally, we will create a return button. This button would return the user back to the homepage if there was an error processing their reservation request.
+The variables enclosed by double brackets, for example: `{{AppointmentDate}}`, are the server-side variables that echo out through Node.js. We will discuss this setup later on in this tutorial. Finally, we will create a return button. This button would return the user back to the homepage if there were an error processing their reservation request.
 
 ### Confirmation Page
 
@@ -534,7 +534,7 @@ Now that we have an error response, we must also set up a confirmation response.
 
 Our rendered Confirmation page will look like this:
 
-![](https://lh4.googleusercontent.com/sCJiqigqbIi_epG6NfrN2wjjonfWEKYYs-Zcjt5FlRU52XxMnwVHO23wbnYnvsEyTIHEmt6ANpqTRYkQb15E67FUDdwoNAQMN4MWbwb51m4W7L3rC1spmeoa08278ac7loBIvmcMkeE1v4oHTzLx2_A)
+![Confirmation page](/content/blog/office-hours-reservation-using-node-js-and-the-vonage-messages-api/sample-confirmation-screenshot.png "Confirmation page")
 
 Please note that our server-side variables will be derived from the student submitted form, and they are as follows: AppointmentDate, AppointmentTime, ProfessorName, StudentName, StudentPhoneNumber, and StudentNotes. Finally, we will create a return button. This button will return the user back to the homepage if the user wishes to create another reservation request. 
 
@@ -544,7 +544,11 @@ Please note that our server-side variables will be derived from the student subm
 
 Before we can start our backend implementation, we must create a file called `.env`. This file is extremely important as it stores our private API Secret and API Key. These variables allow us to send our confirmation text using the Vonage Messages API. Start by creating A new file called `.env` and placing it in the root directory of your project. Now, add the following variables with your specific Vonage account information: `VONAGE_API_KEY`, `VONAGE_API_SECRET`, and `FROM_PHONE_NUMBER`.
 
-![](https://lh3.googleusercontent.com/h0aQM6yQxSaw4dWbVKyQGXwfl6LsVkzN6V5H_Bfvlx1isMUE3UEfHyj-LKNIr2_WcyXzBoAC9fdJPzforf1sYQ9R-WdHEd0Pej6dBx94fpW_wTlvETb7BU8syoOiAuWESPuu307NKt_uPcy_wSniykc)
+```
+VONAGE_API_KEY=
+VONAGE_API_SECRET=
+FROM_PHONE_NUMBER=
+```
 
 ### Setting up Node.JS as a Web Application Server
 
@@ -561,7 +565,7 @@ npm install sqlite3
 
 npm install dotenv 
 
-npm install @vonage/server-sdk@beta 
+npm install @vonage/server-sdk
 ```
 
 We set up our `index.js` file to use the newly installed libraries and give our application the ability to serve web pages on port 3000. The start of our `index.js` file looks like this: 
@@ -575,9 +579,9 @@ const nunjucks = require("nunjucks");
 
 const webserver = express();
 
-const Vonage = require('@vonage/server-sdk')
+const Vonage = require("@vonage/server-sdk")
 
-const SMS = require('@vonage/server-sdk/lib/Messages/SMS');
+const SMS = require("@vonage/server-sdk/lib/Messages/SMS");
 
 const fetch = (...args) =>
 
@@ -617,7 +621,7 @@ A few notes about the code:
 * We have set SQLite to use a database called `reservations.db` which will be in the root directory of this web application. 
 * We are hiding the API Key and API Secret variables that were given to us by Vonage Messages API in a `.env` file, but you will need to substitute these variables with your own secured credentials. 
 
-We are setting the web server to listen to web requests on port 3000. This means that to run this application, you will need to specify this port, for example: http://localhost:3000.
+We are setting the web server to listen to web requests on port 3000. This means that to run this application, you will need to specify this port, for example, http://localhost:3000.
 
 ### Using Node.js as a Web Application Server 
 
