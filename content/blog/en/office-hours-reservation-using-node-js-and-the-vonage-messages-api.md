@@ -22,13 +22,13 @@ replacement_url: ""
 ---
 ## Introduction
 
-In this tutorial, we are creating a web application using Node.js, Express, SQLite,  and the Vonage Messages API. The GitHub repository for this project is also available; feel free to clone it here <https://github.com/Vonage-Community/blog-messages_api-node_office-hours-reservation>.  
+In this tutorial, we are creating a web application using Node.js, Express, SQLite, and the Vonage Messages API. The [GitHub repository for this project is also available](https://github.com/Vonage-Community/blog-messages_api-node_office-hours-reservation).
 
 ## Creating a web application: Homepage 
 
-We will need to create three HTML templates to serve as our Input form (the Homepage), Error page, and Confirmation page. After we create these templates, we will move on to the “engine” that drives this web application in Node.js. To begin, we will start with creating a simple homepage where a user can input information such as their name, their phone number, their date of choice, their time preference, and any notes or comments they have using a basic web form. This form will be posted to our web application for processing.  
+We will need to create three HTML templates to serve as our Input form (the Homepage), Error page, and Confirmation page. After we create these templates, we will move on to the "engine" that drives this web application in Node.js. To begin, we will start with creating a simple homepage where a user can input information such as their name, their phone number, their date of choice, their time preference, and any notes or comments they have using a basic web form. This form will be posted to our web application for processing.
 
-Let’s begin by creating a simple index.html file that includes our page title, CSS styles,  and a basic web form to gather student information. It should look like this:
+Let’s begin by creating an \`index.html\` file that includes our page title, CSS styles, and a basic web form to gather student information. It should look like this:
 
 ```html
 <html>
@@ -264,9 +264,9 @@ In our example, we include a reservation date input field, a reservation time ra
 
 ![](https://lh3.googleusercontent.com/QY6LuLhrgbgkOs9_J3Yq6KASVEQBYbBztHIgSJwq4k1AvkRogZm18lvkOE_r9wGG34B3-IAvKfj16Pj7VmG6lp7rDvi_7lXL_eNkhrNE-HDHxkdwJEJm2fEMFfeYU6kFpLal-tLD-gTM9xkC8tH7kl8)
 
-Finally, create a submission button called "Book Now" to submit the contents of the form. We are posting this form to our web server at this URL: `/postschedule`,  which we will discuss further in our tutorial. 
+Finally, create a submission button called "Book Now" to submit the contents of the form. We are posting this form to our web server at this URL: `/postschedule`, which we will discuss further in our tutorial. 
 
-```
+```html
 <form
 
       id="scheduleform"
@@ -280,7 +280,7 @@ Finally, create a submission button called "Book Now" to submit the contents of 
 \>
 ```
 
-Creating a web application: Error Page 
+## Creating a web application: Error Page 
 
 In the event the user enters invalid data, or there was an error processing the request, we will display an HTML Error page informing the user what went wrong. This is a simple HTML page that will be processed by Node.js and display specific server-side variables (via Nunjucks) that we set depending on what issue occurred. Here is an example of what our error.html page looks like:
 
@@ -406,15 +406,15 @@ In the event the user enters invalid data, or there was an error processing the 
 </html>
 ```
 
-Our rendered Error page will look like this:
+## Our rendered Error page will look like this:
 
 ![](https://lh6.googleusercontent.com/EwBdAmNmxRPOmbOHQQfEzfovFXwZoZUDU-bZ67JpWMFf2AQf_bKWa6ZvTp-stnBlQzsP1szhjIMa7sPk-9UytFNqMkSasqjeNmXxID3eQ1Wq9iAB2EOLyQKI0mXRTn-RecQXAxifVrs5zVzg2bavVP4)
 
-The variables enclosed by double brackets, for example: {{AppointmentDate}}, are the server-side variables that echo out through Node.js. We will discuss this setup later on in this tutorial. Finally, we will create a return button. This button would return the user back to the homepage if there was an error processing their reservation request.  
+The variables enclosed by double brackets, for example: {{AppointmentDate}}, are the server-side variables that echo out through Node.js. We will discuss this setup later on in this tutorial. Finally, we will create a return button. This button would return the user back to the homepage if there was an error processing their reservation request.
 
 ## Creating a web application: Confirmation Page 
 
-Now that we have an error response, we must also set up a confirmation response. This page will be displayed only if the request is successful. Similarly, this page will display all user input information. To begin, we will create a confirmation.html file and set it up similar to our error.html file with server-side (Nunjucks) variables. Here is an example of what our  confirmation.html page looks like: 
+Now that we have an error response, we must also set up a confirmation response. This page will be displayed only if the request is successful. Similarly, this page will display all user input information. To begin, we will create a confirmation.html file and set it up similar to our error.html file with server-side (Nunjucks) variables. Here is an example of what our confirmation.html page looks like: 
 
 ```html
 <html>
@@ -534,19 +534,19 @@ Our rendered Confirmation page will look like this:
 
 ![](https://lh4.googleusercontent.com/sCJiqigqbIi_epG6NfrN2wjjonfWEKYYs-Zcjt5FlRU52XxMnwVHO23wbnYnvsEyTIHEmt6ANpqTRYkQb15E67FUDdwoNAQMN4MWbwb51m4W7L3rC1spmeoa08278ac7loBIvmcMkeE1v4oHTzLx2_A)
 
-Please note that our server-side variables will be derived from the student submitted form, and they are as follows: AppointmentDate, AppointmentTime, ProfessorName, StudentName,  StudentPhoneNumber, and StudentNotes. Finally, we will create a return button. This button will return the user back to the homepage if the user wishes to create another reservation request. 
+Please note that our server-side variables will be derived from the student submitted form, and they are as follows: AppointmentDate, AppointmentTime, ProfessorName, StudentName, StudentPhoneNumber, and StudentNotes. Finally, we will create a return button. This button will return the user back to the homepage if the user wishes to create another reservation request. 
 
 ## Backend Mechanics Option: dotenv 
 
-Before we can start our backend implementation, we must create a file called `.env`. This file is extremely important as it stores our private API Secret and API Key. These variables allow us to send our confirmation text using the Vonage Messages API.  Start by creating A new file called `.env` and placing it in the root directory of your project. Now, add the following variables with your specific Vonage account information: `VONAGE_API_KEY`, `VONAGE_API_SECRET`, and `FROM_PHONE_NUMBER`.
+Before we can start our backend implementation, we must create a file called `.env`. This file is extremely important as it stores our private API Secret and API Key. These variables allow us to send our confirmation text using the Vonage Messages API. Start by creating A new file called `.env` and placing it in the root directory of your project. Now, add the following variables with your specific Vonage account information: `VONAGE_API_KEY`, `VONAGE_API_SECRET`, and `FROM_PHONE_NUMBER`.
 
 ![](https://lh3.googleusercontent.com/h0aQM6yQxSaw4dWbVKyQGXwfl6LsVkzN6V5H_Bfvlx1isMUE3UEfHyj-LKNIr2_WcyXzBoAC9fdJPzforf1sYQ9R-WdHEd0Pej6dBx94fpW_wTlvETb7BU8syoOiAuWESPuu307NKt_uPcy_wSniykc)
 
 ## The Backend: Setting Up Node.js as a Web Application Server 
 
-To complete our web application, we will be adding functionality to our HTML files by using Node.js, Express, and SQLite. For simplicity, we will place all our web application functionality in a single file called `index.js. Once we have Node.js successfully installed on our system, we will need to add a few more packages to the configuration: Express, Nunjucks, Fetch, and SQLite. 
+To complete our web application, we will be adding functionality to our HTML files by using Node.js, Express, and SQLite. For simplicity, we will place all our web application functionality in a single file called `index.js`. Once we have Node.js successfully installed on our system, we will need to add a few more packages to the configuration: Express, Nunjucks, Fetch, and SQLite. 
 
-
+```
 npm install express 
 
 npm install nunjucks 
@@ -558,9 +558,9 @@ npm install sqlite3
 npm install dotenv 
 
 npm install @vonage/server-sdk@beta 
+```
 
-
-We set up our index.js file to use the newly installed libraries and give our application the ability to serve web pages on port 3000. The start of our index.js file looks like this: 
+We set up our `index.js` file to use the newly installed libraries and give our application the ability to serve web pages on port 3000. The start of our index.js file looks like this: 
 
 ```javascript
 require("dotenv").config();
@@ -609,19 +609,19 @@ webserver.listen(3000);
 A few notes about the code:
 
 * We are calling the Express instance web server 
-* We place our three HTML files (index.html, error.html, confirmation.html) in a  subdirectory called HTML that Nunjucks is configured to look at.  
+* We place our three HTML files (index.html, error.html, confirmation.html) in a subdirectory called HTML that Nunjucks is configured to look at.
 * We have set SQLite to use a database called `reservations.db` which will be in the root directory of this web application. 
 * We are hiding the API Key and API Secret variables that were given to us by Vonage Messages API in a \`.env\` file, but you will need to substitute these variables with your own secured credentials. 
 
-We are setting the webserver to listen to web requests on port 3000. This means that to run this application, you will need to specify this port, for example:  http://localhost:3000.
+We are setting the web server to listen to web requests on port 3000. This means that to run this application, you will need to specify this port, for example: http://localhost:3000.
 
 The Backend: Using Node.js as a Web Application Server 
 
-We set our index.js code to provide three functions:  
+We set our index.js code to provide three functions:
 
 * Setup the database to store reservation requests (`reservations.db`) 
 * Display a homepage where a student can submit an appointment request (index.html)
-* Process the student reservation request sent to /schedule and upon review of the  submission, respond with either success (confirmation.html) or error (error.html)
+* Process the student reservation request sent to /schedule and upon review of the submission, respond with either success (confirmation.html) or error (error.html)
 
 SetUpDatabase();
 
@@ -629,9 +629,9 @@ DisplayHomePage();
 
 PostSchedule();
 
-The Backend: Setting Up the Database 
+## The Backend: Setting Up the Database 
 
-In this project, we are using SQLite as the backend database to store our information. However, you may use any database that works with Node.js.  
+In this project, we are using SQLite as the backend database to store our information. However, you may use any database that works with Node.js.
 
 ```javascript
 function SetUpDatabase() {
@@ -650,13 +650,13 @@ function SetUpDatabase() {
 A few notes about this function: 
 
 * This will look to see if an appointments table exists in the `reservations.db` database; if the table does not exist, it will create it.
-* Depending on the database system you decide to use with Node.js, you will want to  change the appointment date and appointment time to work with that engine’s  
+* Depending on the database system you decide to use with Node.js, you will want to change the appointment date and appointment time to work with that engine's  
 
 datetime functions.
 
 ## The Backend: Setting Up the Homepage 
 
-Our DisplayHomePage() function simply listens for the request at the root of the directory  (‘/’) and then renders our index.html file found in the HTML directory. You’ll remember we already set up the index.html file to be the office hours reservation form.
+Our DisplayHomePage() function simply listens for the request at the root of the directory (‘/’) and then renders our index.html file found in the HTML directory. You’ll remember we already set up the index.html file to be the office hours reservation form.
 
 ```javascript
 function DisplayHomePage() {
@@ -674,10 +674,10 @@ function DisplayHomePage() {
 
 ## The Backend: Setting Up the Post Schedule Function 
 
-PostSchedule() is the workhorse of our web application. This process will listen for the  /schedule handler and do some basic error checking of user input. If the submission data passes our rudimentary error checking process, we will save this information into our appointments table in the `reservations.db` database. We then encapsulate this information into a JSON object that we send to the backend Vonage Messages API for texting a confirmation message. 
+PostSchedule() is the workhorse of our web application. This process will listen for the `/schedule` handler and do some basic error checking of user input. If the submission data passes our rudimentary error checking process, we will save this information into our appointments table in the `reservations.db` database. We then encapsulate this information into a JSON object that we send to the backend Vonage Messages API for texting a confirmation message. 
 
 ```javascript
-// Student fills in info -> info sent to database -> Student receives text  message with info
+// Student fills in info -> info sent to database -> Student receives text message with info
 
 function PostSchedule() {
 
@@ -786,8 +786,8 @@ function PostSchedule() {
 
 A few notes about this code:
 
-* Our Express instance named webserver is listening for a post sent to /schedule and only executes should this condition arise.  
-* We have created the following Node.js variables to the corresponding HTML request  form name/value pairs:  
+* Our Express instance named webserver is listening for a post sent to /schedule and only executes should this condition arise.
+* We have created the following Node.js variables to the corresponding HTML request form name/value pairs:
 * professorname = req.body.ProfessorName 
 * appointmentdate = req.body.AppointmentDate 
 * appointmenttime = req.body.AppointmentTime 
@@ -796,7 +796,7 @@ A few notes about this code:
 * studentphonenumber = req.body.studentphonenumber 
 * studentnotes = req.body.studentnotes 
 * Our Boolean ValidationCheck variable tests for empty string data and is set to false on failure. You’ll want to do additional error checking for other bad data scenarios such as invalid appointment dates and times. 
-* If an error is encountered, we render the error.html page, which includes setting the  Nunjucks variable {{ErrorMessage}} with a description of the problem.  
+* If an error is encountered, we render the error.html page, which includes setting the Nunjucks variable {{ErrorMessage}} with a description of the problem.
 * Upon ValidationCheck success (returning: true), we will continue to add the appointment data to the appointments table and send the text confirmation using Vonage’s Messaging API.
 
 Upon successful input validation, we now encapsulate the message into a JSON object that we will send to Vonage. We create a todo() data structure containing the text phone number, the to text phone number, the message text, and our API Key and API Secret. We then use fetch to post this object to the Vonage backend API servers for text sending. 
@@ -877,7 +877,7 @@ Upon successful input validation, we now encapsulate the message into a JSON obj
   }); // End Webserver POST
 
 }
-``
+```
 
 We then build our SQL insert statement using the variables we set from the HTML submission form, and we run that statement using the `db.run` function. Finally, we render the confirmation.html page setting the Nunjucks variables to be displayed. 
 
