@@ -28,9 +28,9 @@ In this tutorial, we are creating a web application using Node.js, Express, SQLi
 
 ### Homepage
 
-We will need to create three HTML templates to serve as our Input form (the Homepage), Error page, and Confirmation page. After we create these templates, we will move on to the "engine" that drives this web application in Node.js. To begin, we will start with creating a simple homepage where a user can input information such as their name, their phone number, their date of choice, their time preference, and any notes or comments they have using a basic web form. This form will be posted to our web application for processing.
+We will need to create three HTML templates to serve as our Input form (the Homepage), Error page, and Confirmation page. After we create these templates, we will move on to the "engine" that drives this web application in Node.js. To begin, we will start with creating a homepage where a user can input information such as their name, their phone number, their date of choice, their time preference, and any notes or comments they have using a basic web form. This form will be posted to our web application for processing.
 
-Let’s begin by creating an \`index.html\` file that includes our page title, CSS styles, and a basic web form to gather student information. It should look like this:
+Let’s begin by creating an `index.html` file that includes our page title, CSS styles, and a basic web form to gather student information. It should look like this:
 
 ```html
 <html>
@@ -536,7 +536,7 @@ Our rendered Confirmation page will look like this:
 
 ![Confirmation page](/content/blog/office-hours-reservation-using-node-js-and-the-vonage-messages-api/sample-confirmation-screenshot.png "Confirmation page")
 
-Please note that our server-side variables will be derived from the student submitted form, and they are as follows: AppointmentDate, AppointmentTime, ProfessorName, StudentName, StudentPhoneNumber, and StudentNotes. Finally, we will create a return button. This button will return the user back to the homepage if the user wishes to create another reservation request. 
+Please note that our server-side variables will be derived from the student submitted form, and they are as follows: `AppointmentDate`, `AppointmentTime`, `ProfessorName`, `StudentName`, `StudentPhoneNumber`, and `StudentNotes`. Finally, we will create a return button. This button will return the user back to the homepage if the user wishes to create another reservation request. 
 
 ## Backend
 
@@ -544,13 +544,13 @@ Please note that our server-side variables will be derived from the student subm
 
 Before we can start our backend implementation, we must create a file called `.env`. This file is extremely important as it stores our private API Secret and API Key. These variables allow us to send our confirmation text using the Vonage Messages API. Start by creating A new file called `.env` and placing it in the root directory of your project. Now, add the following variables with your specific Vonage account information: `VONAGE_API_KEY`, `VONAGE_API_SECRET`, and `FROM_PHONE_NUMBER`.
 
-```
+```bash
 VONAGE_API_KEY=
 VONAGE_API_SECRET=
 FROM_PHONE_NUMBER=
 ```
 
-### Setting up Node.JS as a Web Application Server
+### Setting up Node.js as a Web Application Server
 
 To complete our web application, we will be adding functionality to our HTML files by using Node.js, Express, and SQLite. For simplicity, we will place all our web application functionality in a single file called `index.js`. Once we have Node.js successfully installed on our system, we will need to add a few more packages to the configuration: Express, Nunjucks, Fetch, and SQLite. 
 
@@ -625,7 +625,7 @@ We are setting the web server to listen to web requests on port 3000. This means
 
 ### Using Node.js as a Web Application Server 
 
-We set our index.js code to provide three functions:
+We set our `index.js` code to provide three functions:
 
 * Setup the database to store reservation requests (`reservations.db`) 
 * Display a homepage where a student can submit an appointment request (`index.html`)
@@ -657,12 +657,12 @@ function SetUpDatabase() {
 
 A few notes about this function: 
 
-* This will look to see if an appointments table exists in the `reservations.db` database; if the table does not exist, it will create it.
-* Depending on the database system you decide to use with Node.js, you will want to change the appointment date and appointment time to work with that engine's datetime functions.
+* This will look to see if an appointments table exists in the `reservations.db` database; if the table does not exist, it will create it
+* Depending on the database system you decide to use with Node.js, you will want to change the appointment date and appointment time to work with that engine's datetime functions
 
 ### Setting up the Homepage
 
-Our DisplayHomePage() function simply listens for the request at the root of the directory (‘/’) and then renders our index.html file found in the HTML directory. You’ll remember we already set up the index.html file to be the office hours reservation form.
+Our `DisplayHomePage()` function simply listens for the request at the root of the directory ('/') and then renders our `index.html` file found in the HTML directory. You’ll remember we already set up the `index.html` file to be the office hours reservation form.
 
 ```javascript
 function DisplayHomePage() {
@@ -787,7 +787,7 @@ function PostSchedule() {
 
       });
 
-    } else {:  
+    } else {:
 ```
 
 A few notes about this code:
@@ -805,11 +805,11 @@ A few notes about this code:
   studentnotes = req.body.studentnotes
 ```
 
-* Our Boolean ValidationCheck variable tests for empty string data and is set to false on failure. You’ll want to do additional error checking for other bad data scenarios such as invalid appointment dates and times. 
-* If an error is encountered, we render the error.html page, which includes setting the Nunjucks variable `{{ErrorMessage}}` with a description of the problem.
-* Upon `ValidationCheck` success (returning: `true`), we will continue to add the appointment data to the appointments table and send the text confirmation using Vonage’s Messaging API.
+* Our Boolean `ValidationCheck` variable tests for empty string data and is set to false on failure. You’ll want to do additional error checking for other bad data scenarios such as invalid appointment dates and times
+* If an error is encountered, we render the `error.html` page, which includes setting the Nunjucks variable `{{ErrorMessage}}` with a description of the problem
+* Upon `ValidationCheck` success (returning: `true`), we will continue to add the appointment data to the appointments table and send the text confirmation using Vonage's Messaging API
 
-Upon successful input validation, we now encapsulate the message into a JSON object that we will send to Vonage. We create a todo() data structure containing the text phone number, the to text phone number, the message text, and our API Key and API Secret. We then use fetch to post this object to the Vonage backend API servers for text sending. 
+Upon successful input validation, we now encapsulate the message into a JSON object that we will send to Vonage. We create a `todo()` data structure containing the text phone number, the to text phone number, the message text, and our API Key and API Secret. We then use fetch to post this object to the Vonage backend API servers for text sending. 
 
 ```javascript
 } else {
@@ -888,8 +888,8 @@ Upon successful input validation, we now encapsulate the message into a JSON obj
 }
 ```
 
-We then build our SQL insert statement using the variables we set from the HTML submission form, and we run that statement using the `db.run` function. Finally, we render the confirmation.html page setting the Nunjucks variables to be displayed. 
+We then build our SQL insert statement using the variables we set from the HTML submission form, and we run that statement using the `db.run` function. Finally, we render the `confirmation.html` page setting the Nunjucks variables to be displayed. 
 
 ## Next Steps
 
-We always welcome community involvement. Please feel free to [join us on GitHub](https://github.com/Vonage/) and the [Vonage Community Slack](https://developer.nexmo.com/community/slack). Come join the conversation on our [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
+We always welcome community involvement. Please feel free to [join us on GitHub](https://github.com/Vonage/) and the [Vonage Community Slack](https://developer.nexmo.com/community/slack), or send us a message on [Twitter](https://twitter.com/VonageDev).
