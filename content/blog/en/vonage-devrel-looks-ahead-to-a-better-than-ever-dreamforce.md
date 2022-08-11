@@ -21,7 +21,7 @@ Not attending Dreamforce this year? Read on, because you can still take part in 
 
 **Where can you find us?**
 
-Those familiar with Dreamforce know to head to the Campground to visit stands and collect swag from a huge range of innovators from all over the world, so be sure to check out the Vonage Stand there as your first port of call - number 1107. Meet the team, experience API demos, book a meeting with us or chat to us about potential API use cases. Here you can also collect exclusive Vonage swag - including the opportunity to design your own personalised backpack (don’t miss the developer friendly add on…). And that’s not even all - ever wanted to be a hologram? Now's your chance…
+Those familiar with Dreamforce know to head to the Campground to visit stands and collect swag from a huge range of innovators from all over the world, so be sure to check out the Vonage Stand there as your first port of call - number 1107. Meet the team, experience API demos, book a meeting with us or chat to us about potential API use cases. Here you can also collect exclusive Vonage swag - including the opportunity to design your own personalised backpack (don’t miss the developer friendly add on). And that’s not even all - ever wanted to be a hologram? Now's your chance…
 
 Looking for the true Developer experience? Head to the Trailblazer section and visit the Vonage Kiosk to unlock an exclusive shirt designed for our dev friends. Again here you can chat to one of the team about what we can do with our APIs, watch a demo and get your hands on our swag. 
 
