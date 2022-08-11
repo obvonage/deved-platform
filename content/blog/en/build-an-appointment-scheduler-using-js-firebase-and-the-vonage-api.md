@@ -284,7 +284,7 @@ const app = require('express')();
 const port = 3000; //setting the port to listen to as 3000
 const admin = require('firebase-admin');
 const Vonage = require('@vonage/server-sdk');
-const SMS = require("@vonage/server-sdk/lib/Messages/SMS");
+const SMS = require('@vonage/server-sdk/lib/Messages/SMS';
 const { v4: uuidv4 } = require('uuid');
 
 app.use(express.static('public'));
@@ -296,12 +296,12 @@ app.use(express.urlencoded({ extended: true }));
 
 ### Add the Service Account
 
-A Firebase service account can be used to authenticate various Firebase features, for our project we will use the Firebase Admin SDK to access our Database URL.
+A Firebase service account can be used to authenticate various Firebase features; for our project, we will use the Firebase Admin SDK to access our Database URL.
 
-* From the Firebase Console click on the gear and select the Service Account tab
+* From the Firebase Console, click on the gear and select the Service Account tab
 * Click on the button to `generate key`
 * Add the generated file to the root of your project and rename it to `serviceAccountKey.json`
-* Copy and paste the Admin SDK configuration snippet to your project, as you can see in the following step of this tutorial, to initialize Firebase. We are using `${process.env.FIREBASE_DATABASE_URL` to read the URL from the `.env` file but it's the same Database URL found on the Firebase Admin SDK configuration.
+* Copy and paste the Admin SDK configuration snippet to your project, as you can see in the following step of this tutorial, to initialize Firebase. We are using `${process.env.FIREBASE_DATABASE_URL` to read the URL from the `.env` file, but it's the same Database URL found on the Firebase Admin SDK configuration.
 
 ![Admin SDK configuration](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/screenshot-2022-01-04-at-17.52.49.png "Admin SDK configuration")
 
@@ -341,7 +341,7 @@ const vonage = new Vonage({
 ### Create the getDateTime() Function
 
 The HTML input type `datetime-local` is formatted as **YYYY-MM-DDThh:mm**.
-So we will write a function to separate the date from the hour by splitting it on the character `T`. For instance in the example `2018-06-12T19:30` we'd have `2018-06-12` for the date and  `19:30` for the hour.
+So we will write a function to separate the date from the hour by splitting it on the character `T`. For instance, in the example `2018-06-12T19:30`, we'd have `2018-06-12` for the date and  `19:30` for the hour.
 
 * Add this below code snippet to your `server.js` to add the `getDateTime()` function
 
@@ -449,7 +449,7 @@ sendSMStoUser = async (code) => {
 
 ### Finalize the Business Logic
 
-The piece of code below is responsible to call the previously created helper functions. If the slot is available, the user will have their slot added to the database and have the SMS sent back to them. Otherwise, they will be requested to choose a different time slot.
+The piece of code below is responsible for calling the previously created helper functions. If the slot is available, the user will have their slot added to the database and have the SMS sent back to them. Otherwise, they will be requested to choose a different time slot.
 
 ```javascript
 let available = await checkIfAvailable(slot);
@@ -468,7 +468,7 @@ if (available) {
 
 ### Cancel the Appointment `/cancelAppointment`
 
-Let's create the `/cancelAppointment` endpoint handling the POST requests for canceling an appointment from the database by using a code provided by the user that they received upon scheduling their appointment. 
+Let's create the `/cancelAppointment` endpoint handling the POST requests for cancelling an appointment from the database by using a code provided by the user that they received upon scheduling their appointment. 
 
 ```javascript
 app.post('/cancelAppointment', async (request, response) => {
@@ -486,7 +486,7 @@ app.post('/cancelAppointment', async (request, response) => {
 
 ### Listen to the Port
 
-Finally, the app will be listening on the specified port, if run locally this will be accessible on `https://localhost:${port}`. In this URL you can interact with the UI of this demo application and check the slots being added/ removed on the Firebase console web page.
+Finally, the app will be listening on the specified port; if run locally, this will be accessible on `https://localhost:${port}`. In this URL, you can interact with the UI of this demo application and check the slots being added/ removed on the Firebase console web page.
 
 ```javascript
 app.listen(port, () => {
@@ -510,10 +510,10 @@ app.listen(port, () => {
 * Navigate to `http://localhost:3000`
 * Add and remove appointment slots and see them being added and removed from the Firebase Realtime Database
 
-![Example adding a slot and it being shown on the Firebase Realtime database](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/10testitout.gif "Example adding a slot and it being shown on the Firebase Realtime database")
+![Example adding a slot and it is shown on the Firebase Realtime database](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/10testitout.gif "Example adding a slot and it being shown on the Firebase Realtime database")
 
 ## Conclusion and Next Steps
 
 Today you saw how to build an appointment scheduler demo web app. Now you can go ahead and add fancier styling and other functionalities. You can take what you learned here to create many appointment schedulers may it be for a gym or for a vaccination slot - let the creativity flow!
 
-[Reach out to us on Twitter](https://twitter.com/VonageDev) and [join our community on Slack](https://app.slack.com/client/T24SLSN21/C24QZH6E7).
+[Reach out to us on Twitter](https://twitter.com/VonageDev) and [join our community on Slack](https://developer.vonage.com/community/slack).
