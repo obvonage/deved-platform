@@ -19,7 +19,7 @@ Vonage has a couple of APIs that allow you to send and receive a high volume of 
 
 In this article, you will learn how to send and receive SMS messages with [Node.js](https://nodejs.org/) and [Express](https://expressjs.com/).
 
-We will first send an SMS with Node.js and the new [Vonage Messages API](https://developer.vonage.com/messages/overview).\
+We will first send an SMS with Node.js and the new [Vonage Messages API](https://developer.vonage.com/messages/overview).
 We'll then build a Webhook that can receive SMS messages using Express. We'll focus in this article on sending and receiving SMS messages. Still, if you want to send and receive messages with Facebook Messenger, Viber, or WhatsApp, you can do that as well with the [Messages API](https://developer.vonage.com/messages/overview).
 
 You can extend the application we're building here to reply to incoming SMS messages or include more complex, interactive elements and give you a head start building autoresponders for your SMS needs.
@@ -61,13 +61,13 @@ After ngrok runs, it will give you a random-looking URL that we'll use as the ba
 
 ### Create a Messages-Enabled Vonage Application
 
-To interact with the Messages API, we'll need to create a Vonage API application to authenticate our requests. Think of applications more like containers, metadata to group all your data on the Vonage platform. We'll [create one using the Vonage API Dashboard](https://dashboard.nexmo.com/applications/new). 
+To interact with the Messages API, we'll need to create a Vonage API application to authenticate our requests. Think of applications more like containers, and metadata to group all your data on the Vonage platform. We'll [create one using the Vonage API Dashboard](https://dashboard.nexmo.com/applications/new). 
 
-Give it a name and click on *Generate public and private key*.
-You'll be prompted to save a keyfile to disk—the private key. It's usually a good call to keep it in your project folder, as you'll need it later.\
-Applications work on a public / private key system, so when you create an application, a public key is generated and kept with Vonage, and a private key is generated, not kept with Vonage, and returned to you via the creation of the application. We'll use the private key to authenticate our library calls later on.
+Give it a name and click on *Generate public and private keys*.
+You'll be prompted to save a key file to disk—the private key. It's usually a good call to keep it in your project folder, as you'll need it later.
+Applications work on a public/private key system, so when you create an application, a public key is generated and kept with Vonage, and a private key is generated, not kept with Vonage, and returned to you via the creation of the application. We'll use the private key to authenticate our library calls later on.
 
-Next, you need to enable the *Messages* capability and provide an inbound URL and a status URL.\
+Next, you need to enable the *Messages* capability and provide an inbound URL and a status URL.
 Use the ngrok URL you got in the previous step and fill in the fields, appending `/webhooks/inbound` and `/webhooks/status`, for the respective fields. When a message reaches the Messages API, the data about it is sent to the *inbound URL*. When you send a message using the API, the data about the message status gets sent to the *status URL*.
 
 Finally, link one or more of your virtual numbers to this application. Any messages received on these numbers will be passed along to your *inbound URL*.
@@ -96,7 +96,7 @@ Replace the values in all caps with the application id for the Vonage applicatio
 
 ### Send the SMS Message
 
-To send an SMS message with the Messages API, we'll use the `vonage.messages.send` method of the Vonage node library. This method accepts objects as parameters, with information about the recipient, sender, and content. They vary for the different channels, so you'll need to check the [API documentation](https://developer.nexmo.com/api/messages-olympus) for the other channels mentioned.
+To send an SMS message with the Messages API, we'll use the `vonage.messages.send` method of the Vonage node library. This method accepts objects as parameters, with information about the recipient, sender, and content. They vary for the different channels, so you'll need to check the [API documentation](https://developer.vonage.com/api/messages-olympus) for the other channels mentioned.
 
 For SMS, the type of recipient and sender is `sms`, and the object has to contain a `number` property. The `content` object accepts a `type` of `text` and a text message. The callback returns an error and response object, and we'll log messages about the success or failure of the operation.
 
