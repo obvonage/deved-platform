@@ -33,9 +33,9 @@ Finally don’t miss the **Vonage Party**, the best way to get your night starte
 
 Below are the details of the sessions that our team is running at the Vonage Hub, hosted by Chris Tankersley, Senior PHP Developer Advocate at Vonage. Remember, you don't need a Dreamforce ticket to join us! Refreshments will be served too. 
 
-* Adding Video to your Website - Tuesday, September 20th from 1:00pm-1:30pm
-* Programmable Voice with Vonage - Wednesday, September 21st from 1:30pm-2:00pm
-* Vonage Number Insights - Thursday, September 22nd from 11:30pm-12:00pm
+* Adding Video to your Website - Tuesday September 20th, 1:00pm-1:30pm
+* Programmable Voice with Vonage - Wednesday September 21st, 1:30pm-2:00pm
+* Vonage Number Insights - Thursday September 22nd, 11:30pm-12:00pm
 
 **What’s in it for me?**
 
