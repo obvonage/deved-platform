@@ -29,6 +29,14 @@ At both of these locations you can get on the list for the **Vonage Hub** - the 
 
 Finally don’t miss the **Vonage Party**, the best way to get your night started before Dreamfest - the mega Dreamforce event party. Join us at the Vonage Hub for good music, great drinks and network with some of the best folk around (maybe we’re biased).  
 
+**Which sessions can I attend?**
+
+Below are the details of the sessions that our team is running at the Vonage Hub, hosted by Chris Tankersley, Senior PHP Developer Advocate at Vonage. Remember, you don't need a Dreamforce ticket to join us! Refreshments will be served too. 
+
+* Adding Video to your Website - Tuesday, September 20th from 1:00pm-1:30pm
+* Programmable Voice with Vonage - Wednesday, September 21st from 1:30pm-2:00pm
+* Vonage Number Insights - Thursday, September 22nd from 11:30pm-12:00pm
+
 **What’s in it for me?**
 
 Besides bundles of great swag, unlimited networking opportunities and free to access workshops and demos, anyone who registers for a free Vonage API Developer account at any of our three locations is automatically entered into a raffle to win a pair of RayBan Stories - their first generation smart wear technology. Terms and conditions apply. You can also unlock $10 free credit for your API account, to get your started with our products.
