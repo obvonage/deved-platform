@@ -1,6 +1,7 @@
 ---
 title: Vonage DevRel Looks Ahead to a Better Than Ever Dreamforce
 description: The low down on all you need to know about Vonage at Dreamforce 2022
+thumbnail: /content/blog/vonage-devrel-looks-ahead-to-a-better-than-ever-dreamforce/dreamforce-22.png
 author: lucinda-bone
 published: true
 published_at: 2022-08-15T07:25:40.342Z
