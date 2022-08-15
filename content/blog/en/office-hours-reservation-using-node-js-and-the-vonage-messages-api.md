@@ -34,231 +34,125 @@ Let’s begin by creating an `index.html` file that includes our page title, imp
 
 ```html
 <html>
-
-  <head>
-
-    <title>Office Hours Reservation</title>
-
-    <link type="text/css" rel="stylesheet" href="/assets/indexstyles.css" />
-
-  </head>
-
-  <body>
-
-    <h1>Office Hours Reservation Form</h1>
-
-    <div id="statusdiv">Current Status</div>
-
-    <form
-
-      id="scheduleform"
-
-      name="scheduleform"
-
-      method="post"
-
-      action="/schedule"
-
-\>
-
-      <div id="FormInfo">
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Select Date for Reservation:</div>
-
-          <div>
-
-            <script>
-
-              $(function () {
-
-                $("#datepicker").datepicker();
-
-              });
-
-            </script>
-
-            <input
-
-              type="text"
-
-              name="AppointmentDate"
-
-              value="7/15/2022"
-
-              id="datepicker"
-
-            />
-
-          </div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Select Professor:</div>
-
-          <div>
-
-            <select name="ProfessorName">
-
-              <option value="Professor Nimoy">Professor Nimoy</option>
-
-              <option value="Dr. Rory">Dr. Rory</option>
-
-              <option value="Professor Amanda">Professor Amanda</option>
-
-              <option value="Professor Dwane">Professor Dwane</option>
-
-              <option value="Dr. Zach">Dr. Zach</option>
-
-            </select>
-
-          </div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextAreaBox">
-
-          <div>Choose Appointment Time:</div>
-
-          <div>
-
-            <label>
-
-              <input type="radio" name="AppointmentTime" value="8" /> 8:00 AM
-
-            </label>
-
-            <label>
-
-              <input type="radio" name="AppointmentTime" value="9" /> 9:00 AM
-
-            </label>
-
-            <label>
-
-              <input type="radio" name="AppointmentTime" value="10" /> 10:00 AM
-
-            </label>
-
-            <label>
-
-              <input type="radio" name="AppointmentTime" value="11" /> 11:00 AM
-
-            </label>
-
-          </div>
-
-        </div>
-
-        <!--FormTextAreaBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Student First Name:</div>
-
-          <div>
-
-            <input
-
-              type="text"
-
-              name="studentfirstname"
-
-              id="studentfirstname_id"
-
-            />
-
-          </div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Student Last Name:</div>
-
-          <div>
-
-            <input type="text" name="studentlastname" id="studentlastname_id" />
-
-          </div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Student Phone Number:</div>
-
-          <div>
-
-            <input
-
-              type="text"
-
-              name="studentphonenumber"
-
-              id="studentphonenumber_id"
-
-            />
-
-          </div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextAreaBox">
-
-          <div>Comments, Questions, Notes...</div>
-
-          <div>
-
-            <textarea
-
-              name="studentnotes"
-
-              id="studentnotes_id"
-
-              style="width: 300px; height: 100px"
-
-\>
-
-            </textarea>
-
-          </div>
-
-        </div>
-
-        <!--FormTextAreaBox-->
-
-        <div style="text-align: center">
-
-          <button type="submit" name="booknowbutton" class="BigButton">
-
-            Book Now
-
-          </button>
-
-        </div>
-
-      </div>
-
-      <!--FormInfo-->
-
-    </form>
-
-  </body>
-
+  <head>
+    <title>Office Hours Reservation</title>
+    <link type="text/css" rel="stylesheet" href="/assets/indexstyles.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  </head>
+
+  <body>
+    <h1>Office Hours Reservation Form</h1>
+    <div id="statusdiv">Current Status</div>
+    <form
+      id="scheduleform"
+      name="scheduleform"
+      method="post"
+      action="/schedule"
+    >
+      <div id="FormInfo">
+        <div class="FormTextBox">
+          <div id="alignRight">Select Date for Reservation:</div>
+          <div>
+            <script>
+              $(function () {
+                $("#datepicker").datepicker();
+              });
+            </script>
+            <input
+              type="text"
+              name="AppointmentDate"
+              value="7/15/2022"
+              id="datepicker"
+            />
+          </div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Select Professor:</div>
+          <div>
+            <select name="ProfessorName">
+              <option value="Professor Nimoy">Professor Nimoy</option>
+              <option value="Dr. Rory">Dr. Rory</option>
+              <option value="Professor Amanda">Professor Amanda</option>
+              <option value="Professor Dwane">Professor Dwane</option>
+              <option value="Dr. Zach">Dr. Zach</option>
+            </select>
+          </div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextAreaBox">
+          <div>Choose Appointment Time:</div>
+          <div>
+            <label>
+              <input type="radio" name="AppointmentTime" value="8" /> 8:00 AM
+            </label>
+            <label>
+              <input type="radio" name="AppointmentTime" value="9" /> 9:00 AM
+            </label>
+            <label>
+              <input type="radio" name="AppointmentTime" value="10" /> 10:00 AM
+            </label>
+            <label>
+              <input type="radio" name="AppointmentTime" value="11" /> 11:00 AM
+            </label>
+          </div>
+        </div>
+        <!--FormTextAreaBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Student First Name:</div>
+          <div>
+            <input
+              type="text"
+              name="studentfirstname"
+              id="studentfirstname_id"
+            />
+          </div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Student Last Name:</div>
+          <div>
+            <input type="text" name="studentlastname" id="studentlastname_id" />
+          </div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Student Phone Number:</div>
+          <div>
+            <input
+              type="text"
+              name="studentphonenumber"
+              id="studentphonenumber_id"
+            />
+          </div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextAreaBox">
+          <div>Comments, Questions, Notes...</div>
+          <div>
+            <textarea
+              name="studentnotes"
+              id="studentnotes_id"
+              style="width: 300px; height: 100px"
+            >
+            </textarea>
+          </div>
+        </div>
+        <!--FormTextAreaBox-->
+        <div style="text-align: center">
+          <button type="submit" name="booknowbutton" class="BigButton">
+            Book Now
+          </button>
+        </div>
+      </div>
+      <!--FormInfo-->
+    </form>
+  </body>
 </html>
 ```
 
@@ -270,141 +164,85 @@ Finally, create a submission button called "Book Now" to submit the contents of 
 
 ```html
 <form
-
-      id="scheduleform"
-
+      id="scheduleform"
       name="scheduleform"
-
       method="post"
-
       action="/schedule"
-
 \>
 ```
 
 ### Error Page
 
-In the event the user enters invalid data, or there was an error processing the request, we will display an HTML Error page informing the user what went wrong. This is a simple HTML page that will be processed by Node.js and display specific server-side variables (via Nunjucks) that we set depending on what issue occurred. Here is an example of what our error.html page looks like:
+In the event the user enters invalid data, or there was an error processing the request, we will display an HTML Error page informing the user what went wrong. This is a simple HTML page that will be processed by Node.js and display specific server-side variables (via Nunjucks) that we set depending on what issue occurred. Here is an example of what our `error.html` page looks like:
 
 ```html
 <html>
+  <head>
+    <title>There is an Error processing your request</title>
 
-  <head>
+    <link type="text/css" rel="stylesheet" href="/assets/errorstyles.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  </head>
 
-    <title>There is an Error processing your request</title>
-
-    <link type="text/css" rel="stylesheet" href="/assets/errorstyles.css" />
-
-  </head>
-
-  <body>
-
-    <h1>There was an Error processing your request</h1>
-
-    <div
-
-      id="statusdiv"
-
-\>
-
-      Please correct the following:
-
-      <ul>
-
-        {{ErrorMessage}}
-
-      </ul>
-
-    </div>
-
-    <form
-
-      id="scheduleform"
-
-      name="scheduleform"
-
-      method="post"
-
-      action="/schedule"
-
-\>
-
-      <div id="FormInfo">
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Date for Reservation:</div>
-
-          <div class="readonlydata">{{AppointmentDate}}</div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Appointment Time:</div>
-
-          <div class="readonlydata">{{AppointmentTime}}</div>
-
-        </div>
-
-        <!--FormTextAreaBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Professor:</div>
-
-          <div class="readonlydata">{{ProfessorName}}</div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Student Name:</div>
-
-          <div class="readonlydata">{{StudentName}}</div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Student Phone Number:</div>
-
-          <div class="readonlydata">{{StudentPhoneNumber}}</div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextAreaBox">
-
-          <div>Comments, Questions, Notes...</div>
-
-          <div class="readonlydata">{{StudentNotes}}</div>
-
-        </div>
-
-        <!--FormTextAreaBox-->
-
-        <div id="returnButton">
-
-          <a href="/" class="BigButton"> Return to Reservation Form </a>
-
-        </div>
-
-      </div>
-
-      <!--FormInfo-->
-
-    </form>
-
-  </body>
-
+  <body>
+    <h1>There was an Error processing your request</h1>
+    <div
+      id="statusdiv"
+    >
+      Please correct the following:
+      <ul>
+        {{ErrorMessage}}
+      </ul>
+    </div>
+    <form
+      id="scheduleform"
+      name="scheduleform"
+      method="post"
+      action="/schedule"
+    >
+      <div id="FormInfo">
+        <div class="FormTextBox">
+          <div id="alignRight">Date for Reservation:</div>
+          <div class="readonlydata">{{AppointmentDate}}</div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Appointment Time:</div>
+          <div class="readonlydata">{{AppointmentTime}}</div>
+        </div>
+        <!--FormTextAreaBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Professor:</div>
+          <div class="readonlydata">{{ProfessorName}}</div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Student Name:</div>
+          <div class="readonlydata">{{StudentName}}</div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Student Phone Number:</div>
+          <div class="readonlydata">{{StudentPhoneNumber}}</div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextAreaBox">
+          <div>Comments, Questions, Notes...</div>
+          <div class="readonlydata">{{StudentNotes}}</div>
+        </div>
+        <!--FormTextAreaBox-->
+        <div id="returnButton">
+          <a href="/" class="BigButton"> Return to Reservation Form </a>
+        </div>
+      </div>
+      <!--FormInfo-->
+    </form>
+  </body>
 </html>
 ```
 
@@ -420,115 +258,66 @@ Now that we have an error response, we must also set up a confirmation response.
 
 ```html
 <html>
-
-  <head>
-
-    <title>Your Reservation has been confirmed</title>
-
-    <link
-
-      type="text/css"
-
-      rel="stylesheet"
-
-      href="/assets/confirmationstyles.css"
-
-    />
-
-  </head>
-
-  <body>
-
-    <h1>Your Reservation has been confirmed</h1>
-
-    <form
-
-      id="scheduleform"
-
-      name="scheduleform"
-
-      method="post"
-
-      action="/schedule"
-
-\>
-
-      <div id="FormInfo">
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Date for Reservation:</div>
-
-          <div class="readonlydata">{{AppointmentDate}}</div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Appointment Time:</div>
-
-          <div class="readonlydata">{{AppointmentTime}}</div>
-
-        </div>
-
-        <!--FormTextAreaBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Professor:</div>
-
-          <div class="readonlydata">{{ProfessorName}}</div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Student Name:</div>
-
-          <div class="readonlydata">{{StudentName}}</div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextBox">
-
-          <div id="alignRight">Student Phone Number:</div>
-
-          <div class="readonlydata">{{StudentPhoneNumber}}</div>
-
-        </div>
-
-        <!--FormTextBox-->
-
-        <div class="FormTextAreaBox">
-
-          <div>Comments, Questions, Notes...</div>
-
-          <div class="readonlydata">{{StudentNotes}}</div>
-
-        </div>
-
-        <!--FormTextAreaBox-->
-
-        <div id="returnButton">
-
-          <a href="/" class="BigButton"> Return to Reservation Form </a>
-
-        </div>
-
-      </div>
-
-      <!--FormInfo-->
-
-    </form>
-
-  </body>
-
+  <head>
+    <title>Your Reservation has been confirmed</title>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="/assets/confirmationstyles.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  </head>
+  <body>
+    <h1>Your Reservation has been confirmed</h1>
+    <form
+      id="scheduleform"
+      name="scheduleform"
+      method="post"
+      action="/schedule"
+    >
+      <div id="FormInfo">
+        <div class="FormTextBox">
+          <div id="alignRight">Date for Reservation:</div>
+          <div class="readonlydata">{{AppointmentDate}}</div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Appointment Time:</div>
+          <div class="readonlydata">{{AppointmentTime}}</div>
+        </div>
+        <!--FormTextAreaBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Professor:</div>
+          <div class="readonlydata">{{ProfessorName}}</div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Student Name:</div>
+          <div class="readonlydata">{{StudentName}}</div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextBox">
+          <div id="alignRight">Student Phone Number:</div>
+          <div class="readonlydata">{{StudentPhoneNumber}}</div>
+        </div>
+        <!--FormTextBox-->
+        <div class="FormTextAreaBox">
+          <div>Comments, Questions, Notes...</div>
+          <div class="readonlydata">{{StudentNotes}}</div>
+        </div>
+        <!--FormTextAreaBox-->
+        <div id="returnButton">
+          <a href="/" class="BigButton"> Return to Reservation Form </a>
+        </div>
+      </div>
+      <!--FormInfo-->
+    </form>
+  </body>
 </html>
 ```
 
@@ -572,20 +361,14 @@ We set up our `index.js` file to use the newly installed libraries and give our 
 
 ```javascript
 require("dotenv").config();
-
 const express = require("express");
-
 const nunjucks = require("nunjucks");
-
 const webserver = express();
-
-const Vonage = require("@vonage/server-sdk")
-
+const Vonage = require("@vonage/server-sdk");
 const SMS = require("@vonage/server-sdk/lib/Messages/SMS");
 
 const fetch = (...args) =>
-
-import("node-fetch").then(({ default: fetch }) => fetch(...args));
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
 webserver.use("/assets", express.static("assets"));
 
@@ -595,20 +378,13 @@ webserver.use(express.json());
 
 webserver.use(express.urlencoded({ extended: true }));
 
-// Set Database 
-
+// Global database
 const sqlite3 = require("sqlite3").verbose();
-
 const db = new sqlite3.Database("reservations.db");
 
-// Set Vonage Messages Object
-
 const vonage = new Vonage({
-
-apiKey: process.env.VONAGE_API_KEY,
-
-apiSecret: process.env.VONAGE_API_SECRET,
-
+  apiKey: process.env.VONAGE_API_KEY,
+  apiSecret: process.env.VONAGE_API_SECRET,
 });
 
 webserver.listen(3000);
@@ -643,16 +419,13 @@ In this project, we are using SQLite as the backend database to store our inform
 
 ```javascript
 function SetUpDatabase() {
+  db.serialize(() => {
+    db.run(
+      "CREATE TABLE if not exists Appointments (appointmentdate text,    appointmenttime text, professorname text, studentfirstname text, studentlastname text, studentphonenumber text, studentnotes text)"
+    );
+  });
+}
 
-    db.serialize(() => {
-
-      db.run(
-
-        "CREATE TABLE if not exists Appointments (appointmentdate text,    appointmenttime text, professorname text, studentfirstname text, studentlastname text, studentphonenumber text, studentnotes text)"
-
-      );
-
-    });
 ```
 
 A few notes about this function: 
@@ -666,16 +439,13 @@ Our `DisplayHomePage()` function simply listens for the request at the root of t
 
 ```javascript
 function DisplayHomePage() {
+  // Displaying Homepage after reading an HTML file locally
 
-  // Displaying Homepage after reading an HTML file locally
-
-  webserver.get("/", function (req, res) {
-
-    res.render("index.html");
-
-  });
-
+  webserver.get("/", function (req, res) {
+    res.render("index.html");
+  });
 }
+
 ```
 
 ### Setting up the Post Schedule Function
@@ -683,116 +453,68 @@ function DisplayHomePage() {
 `PostSchedule()` is the workhorse of our web application. This process will listen for the `/schedule` handler and do some basic error checking of user input. If the submission data passes our rudimentary error checking process, we will save this information into our appointments table in the `reservations.db` database. We then encapsulate this information into a JSON object that we send to the backend Vonage Messages API for texting a confirmation message. 
 
 ```javascript
-// Student fills in info -> info sent to database -> Student receives text message with info
-
 function PostSchedule() {
+  // POST /new Route Handler
+  webserver.post("/schedule", function (req, res) {
+    // Student info/variables collected from HTML form
 
-  // POST /new Route Handler
+    let professorname = req.body.ProfessorName;
+    let appointmentdate = req.body.AppointmentDate;
+    let appointmenttime = req.body.AppointmentTime;
+    let studentfirstname = req.body.studentfirstname;
+    let studentlastname = req.body.studentlastname;
+    let studentphonenumber = req.body.studentphonenumber;
+    let studentnotes = req.body.studentnotes;
 
-  webserver.post("/schedule", function (req, res) {
+    // Text message info sent to Student
+    let message =
+      "Dear " +
+      studentfirstname +
+      " " +
+      studentlastname +
+      "," +
+      " you have successfully booked your appointment! Here are your additional notes: " +
+      studentnotes;
 
-    // Student info/variables collected from HTML form
+    let ValidationCheck = true; // Assume success, prove otherwise
+    let ErrorMessage = "";
 
-    let professorname = req.body.ProfessorName;
+    if (appointmentdate == "") {
+      ValidationCheck = false;
+      ErrorMessage = ErrorMessage + "<li>Enter an appointment date</li>";
+    } else if (appointmenttime == "" || !appointmenttime) {
+      ValidationCheck = false;
+      ErrorMessage = ErrorMessage + "<li>Enter an appointment time</li>";
+    } else if (professorname == "") {
+      ValidationCheck = false;
+      ErrorMessage = ErrorMessage + "<li>Select a Professor</li>";
+    } else if (studentfirstname == "") {
+      ValidationCheck = false;
+      ErrorMessage = ErrorMessage + "<li>Enter a Student first name</li>";
+    } else if (studentlastname == "") {
+      ValidationCheck = false;
+      ErrorMessage = ErrorMessage + "<li>Enter a Student last name</li>";
+    } else if (studentphonenumber == "") {
+      ValidationCheck = false;
+      ErrorMessage = ErrorMessage + "<li>Enter a mobile phone number</li>";
+    }
 
-    let appointmentdate = req.body.AppointmentDate;
-
-    let appointmenttime = req.body.AppointmentTime;
-
-    let studentfirstname = req.body.studentfirstname;
-
-    let studentlastname = req.body.studentlastname;
-
-    let studentphonenumber = req.body.studentphonenumber;
-
-    let studentnotes = req.body.studentnotes;
-
-    // Text message info sent to Student
-
-    let message =
-
-      "Dear " +
-
-      studentfirstname +
-
-      " " +
-
-      studentlastname +
-
-      "," +
-
-      " you have successfully booked your appointment! Here are your additional notes: " +
-
-      studentnotes;
-
-    let ValidationCheck = true; // Assume success, prove otherwise
-
-    let ErrorMessage = "";
-
-    if (appointmentdate == "") {
-
-      ValidationCheck = false;
-
-      ErrorMessage = ErrorMessage + "<li>Enter an appointment date</li>";
-
-    } else if (appointmenttime == "" || !appointmenttime) {
-
-      ValidationCheck = false;
-
-      ErrorMessage = ErrorMessage + "<li>Enter an appointment time</li>";
-
-    } else if (professorname == "") {
-
-      ValidationCheck = false;
-
-      ErrorMessage = ErrorMessage + "<li>Select a Professor</li>";
-
-    } else if (studentfirstname == "") {
-
-      ValidationCheck = false;
-
-      ErrorMessage = ErrorMessage + "<li>Enter a Student first name</li>";
-
-    } else if (studentlastname == "") {
-
-      ValidationCheck = false;
-
-      ErrorMessage = ErrorMessage + "<li>Enter a Student last name</li>";
-
-    } else if (studentphonenumber == "") {
-
-      ValidationCheck = false;
-
-      ErrorMessage = ErrorMessage + "<li>Enter a mobile phone number</li>";
-
-    }
-
-    if (ValidationCheck == false) {
-
-      res.render("error.html", {
-
-        ProfessorName: professorname,
-
-        StudentName: studentfirstname + " " + studentlastname,
-
-        AppointmentDate: appointmentdate,
-
-        AppointmentTime: appointmenttime,
-
-        StudentNotes: studentnotes,
-
-        StudentPhoneNumber: studentphonenumber,
-
-        ErrorMessage: ErrorMessage,
-
-      });
-
-    } else {:
+    if (ValidationCheck == false) {
+      res.render("error.html", {
+        ProfessorName: professorname,
+        StudentName: studentfirstname + " " + studentlastname,
+        AppointmentDate: appointmentdate,
+        AppointmentTime: appointmenttime,
+        StudentNotes: studentnotes,
+        StudentPhoneNumber: studentphonenumber,
+        ErrorMessage: ErrorMessage,
+      });
+    } else {
 ```
 
 A few notes about this code:
 
-* Our Express instance named web server is listening for a post sent to `/schedule` and only executes should this condition arise.
+* Our Express instance named web server is listening for a post sent to `/schedule` and only executes should this condition arise
 * We have created the following Node.js variables to the corresponding HTML request form name/value pairs:
 
 ```javascript
@@ -807,89 +529,69 @@ A few notes about this code:
 
 * Our Boolean `ValidationCheck` variable tests for empty string data and is set to false on failure. You’ll want to make additional error checking for other bad data scenarios, such as invalid appointment dates and times
 * If an error is encountered, we render the `error.html` page, which includes setting the Nunjucks variable `{{ErrorMessage}}` with a description of the problem
-* Upon `ValidationCheck` success (returning: `true`), we will continue to add the appointment data to the appointments table and send the text confirmation using Vonage's Messaging API
+* Upon `ValidationCheck` success (returning: `true`) we will continue to add the appointment data to the appointments table and send the text confirmation using Vonage's Messaging API
 
 Upon successful input validation, we now encapsulate the message into a JSON object that we will send to Vonage. We created the instance of the Vonage client class, initialized it with the Vonage API Key and Secret that you have previously added to your .env file, and the variables needed are the phone number, the to text phone number, the message text, and our API Key and API Secret.
 
 ```javascript
-} else {
+else {
 
-      vonage.messages.send(
+    vonage.messages.send(
+      new SMS(message, studentphonenumber, process.env.FROM_PHONE_NUMBER),
+      (err, data) => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log(data.message_uuid);
+        }
+      }
+    );
 
-        new SMS(message, studentphonenumber, process.env.FROM_PHONE_NUMBER),
+    // Build SQL string --> insert string to add record to appointments table
+    let sqlstring =
+      "INSERT INTO Appointments (appointmentdate, appointmenttime, professorname, studentfirstname, studentlastname, studentphonenumber, studentnotes) " +
+      "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-        (err, data) => {
+    // Execute SQL string into database (Using paramaterized queries to prevent SQL injection)
+    db.run(
+      sqlstring,
+      appointmentdate,
+      appointmenttime,
+      professorname,
+      studentfirstname,
+      studentlastname,
+      studentphonenumber,
+      studentnotes
+    );
+    
+    // For testing purposes query all records in appointments table and display to console
+    // The last record shown should be the record we just inserted
+    db.each(
+      "SELECT appointmentdate, appointmenttime, professorname, studentfirstname, studentlastname info FROM Appointments",
+      (err, row) => {
+        console.log(
+          row.appointmentdate +
+            ": " +
+            row.appointmenttime +
+            ":" +
+            row.professorname
+        );
+      }
+    );
 
-          if (err) {
-
-            console.error(err);
-
-          } else {
-
-            console.log(data.message_uuid);
-
-          }
-
-        }
-
-      );
-
-      // Build SQL string --> insert string to add record to appointments table
-
-      let sqlstring =
-
-        "INSERT INTO Appointments (appointmentdate, appointmenttime, professorname, studentfirstname, studentlastname, studentphonenumber, studentnotes) " +
-
-        "VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-      // Execute SQL string into database (Using parameterized queries to prevent SQL injection)
-
-      db.run(
-
-        sqlstring,
-
-        appointmentdate,
-
-        appointmenttime,
-
-        professorname,
-
-        studentfirstname,
-
-        studentlastname,
-
-        studentphonenumber,
-
-        studentnotes
-
-      );
-
- 
-      res.render("confirmation.html", {
-
-        ProfessorName: professorname,
-
-        StudentName: studentfirstname + " " + studentlastname,
-
-        AppointmentDate: appointmentdate,
-
-        AppointmentTime: appointmenttime + ":00 AM",
-
-        StudentNotes: studentnotes,
-
-        StudentPhoneNumber: studentphonenumber,
-
-      });
-
-    }
-
-  }); // End Webserver POST
-
+    res.render("confirmation.html", {
+      ProfessorName: professorname,
+      StudentName: studentfirstname + " " + studentlastname,
+      AppointmentDate: appointmentdate,
+      AppointmentTime: appointmenttime + ":00 AM",
+      StudentNotes: studentnotes,
+      StudentPhoneNumber: studentphonenumber,
+    });
 }
 ```
 
-We then build our SQL insert statement using the variables we set from the HTML submission form, and we run that statement using the `db.run` function. Finally, we render the `confirmation.html` page setting the Nunjucks variables to be displayed. 
+We then build our SQL insert statement using the variables we set from the HTML submission form, and we run that statement using the `db.run` function. Finally, we render the `confirmation.html` page setting for the Nunjucks variables to be displayed. 
 
 ## Next Steps
 
-We always welcome community involvement. Please feel free to [join us on GitHub](https://github.com/Vonage/) and the [Vonage Community Slack](https://developer.nexmo.com/community/slack), or send us a message on [Twitter](https://twitter.com/VonageDev).
+We always welcome community involvement. Please feel free to [join us on GitHub](https://github.com/Vonage/) and the [Vonage Community Slack](https://developer.nexmo.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
