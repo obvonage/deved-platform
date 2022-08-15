@@ -25,11 +25,26 @@ If I could only give you one reason to upgrade, it would be security. Versions [
 
 Prior to v7.0.0, the SDK depended on a small in-house library for working with JWTs. This library [hadn't been updated for a few years and was still under the Nexmo brand](https://mvnrepository.com/artifact/com.nexmo/jwt). It has now moved to the Vonage org on GitHub(https://github.com/Vonage/vonage-jwt-jdk) and [Maven Central](https://search.maven.org/artifact/com.vonage/jwt), receiving a rebrand for consistency along with dependency updates for security.
 
-## Bug fixes
-TODO
+## New Features
+The most notable feature is the Messages API, which was added in 6.5.0 (read about the announcement [here](https://developer.vonage.com/blog/22/07/05/the-vonage-messages-api-is-now-in-our-server-sdks)). I recently wrote [a blog post about the Java SDK's implementation of Messages v1](https://developer.vonage.com/blog/22/08/04/how-an-sdk-can-add-value-to-rest-apis), so I hope some of you reading this already using it!
 
-## Features
-TODO
+
+
+## Deprecations & Removals
+Removals are a breaking change, hence the major version update. The [SMS Search API](https://developer.nexmo.com/api/developer/messages) had long been deprecated and finally completely removed, so naturally it has been removed from the SDK as well. [The legacy text-to-speech `voiceName` field](https://developer.vonage.com/voice/voice-api/guides/text-to-speech#legacy-voice-names) has also been removed to discourage its use as it was already deprecated. Some internal refactoring has also resulted in some classes that should never have been publicly accessible (such as classes ending with `Endpoint`) being made package-private as intended. `AbstractClient` was not intended to be a public-=facing feature and served no real purpose internally anyway, so it has also been removed. On the off chance that you were relying on Apache Commons (specifically, `lang3,` `io` and `logging`) libraries being added as an implicit dependency, they're gone too.
+
+The only deprecation to note is to do with the [Redact API](https://developer.vonage.com/api/redact). Whilst it has been part of the SDK for some time, it never left Developer Preview. As a policy, the Java SDK only supports APIs that are "General Availability" in mainline releases, so we're deprecating this with the intent of removal until we are confident in fully supporting it as a GA service.
+
+## Fixes & Enhancements
+As our APIs evolve, strongly typed SDKs need to be updated to reflect changes in the spec. We're on the lookout for instances where the SDK is not in sync with the API, but we don't always catch everything, so please do report any issues and we'll try to fix them in the next release!
+
+The `CallEvent` webhook was missing the `call_uuid` field, which was added in 6.4.2. The `com.vonage.client.sms.MessageStatus` enum was missing some of the error codes described [in the specification](https://developer.vonage.com/api-errors/sms), which has been rectified. There were some issues with the NCCO classes as well which were not compliant with [the specification](https://developer.vonage.com/voice/voice-api/ncco-reference). Most notably, the Actions were not properly defined in the object model, which meant deserialisation was not working as intended. `SipEndpoint` was missing the `headers` field and `WebSocketEndpoint` incorrectly restricted `headers` Map values to Strings. The NCCO endpoints now validate the `uri` fields using `java.net.URI`. The builders have also been made package-private so that you must acquire them from the static `builder()` method for consistency.
+
+Implementation of the [Number Insight API](https://developer.vonage.com/api/number-insight) in the Java SDK has been updated to be consistent with the specification. Issues were mostly around missing fields, or fields being in the wrong class (some functionality has moved from Advanced to Standard insight, for example). Validation and documentation has also been improved. Some of the inner enums (for example, in `AdvancedInsightResponse`) have been moved to their own file, so that if functionality is moved from e.g. Advanced to Standard, a breaking change won't be required in the future.
+
+Some fixes have been made to the Messages API. Most notably in `WhatsappTemplateRequest`'s `parameters` field, which [the specification](https://developer.vonage.com/api/messages-olympus) misleadingly presented as being a `List<Map, String, ?>>` when in fact it should be `List<String>`. Another fix is to the `policy` and `locale` fields. Since the former has a single valid value at this time, it is optional in the API. The latter was more fundamentally flawed in 6.5.0, since it prevented locales with less than 4 characters from being used. It was also not clear from the documentation what the valid values were. To avoid confusion, the full list of languages supported by WhatsApp has been added as an enum, so rather than passing in a potentially invalid String, you no longer have to search for what's supported - it's all enumerated for you in the SDK! More generally, the SDK's validation of sender numbers (i.e. the `from` field) was incorrect for SMS, MMS and WhatsApp. SMS and MMS senders may now contain alphanumeric characters (i.e. be IDs), whereas the WhatsApp sender must be a WhatsApp Business Account number.
+
+More generally, the SDK is a bit tidier internally (in terms of code quality, consistency etc.) and has higher test coverage. From a user's perspective the other miscellaneous enhancements are the setting of `Content-Type`, `Accept` and `User-Agent` headers in outbound requests.
 
 ## Roadmap
 TODO
