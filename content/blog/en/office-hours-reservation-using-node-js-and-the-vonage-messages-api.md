@@ -805,11 +805,11 @@ A few notes about this code:
   studentnotes = req.body.studentnotes
 ```
 
-* Our Boolean `ValidationCheck` variable tests for empty string data and is set to false on failure. You’ll want to do additional error checking for other bad data scenarios such as invalid appointment dates and times
+* Our Boolean `ValidationCheck` variable tests for empty string data and is set to false on failure. You’ll want to make additional error checking for other bad data scenarios, such as invalid appointment dates and times
 * If an error is encountered, we render the `error.html` page, which includes setting the Nunjucks variable `{{ErrorMessage}}` with a description of the problem
 * Upon `ValidationCheck` success (returning: `true`), we will continue to add the appointment data to the appointments table and send the text confirmation using Vonage's Messaging API
 
-Upon successful input validation, we now encapsulate the message into a JSON object that we will send to Vonage. We create a `todo()` data structure containing the text phone number, the to text phone number, the message text, and our API Key and API Secret. We then use fetch to post this object to the Vonage backend API servers for text sending. 
+Upon successful input validation, we now encapsulate the message into a JSON object that we will send to Vonage. We created the instance of the Vonage client class, initialized it with the Vonage API Key and Secret that you have previously added to your .env file, and the variables needed are the phone number, the to text phone number, the message text, and our API Key and API Secret.
 
 ```javascript
 } else {
