@@ -35,4 +35,4 @@ TODO
 TODO
 
 ## Signing off
-TODO
+That's all for now! If you do come across any issues or have suggestions for enhancements, feel free to [raise an issue on GitHub](https://github.com/Vonage/vonage-java-sdk/issues), reach out to us on [Twitter](https://twitter.com/VonageDev) or drop by our [Community Slack](https://developer.vonage.com/community/slack). I hope that you have a great experience of using the Vonage APIs with the latest version of the Java SDK!
