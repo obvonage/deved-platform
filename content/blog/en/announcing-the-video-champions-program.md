@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-## Understanding Customer Expectations Around Visual Engagement  
+## Understanding Customer Expectations Around Visual Engagement
 
 In the past two years, consumers’ expectations and attitudes towards turning on their cameras in business interactions have changed dramatically. We know because we’ve been asking consumers about their communications preferences for a long time–ten years and counting, and the [2021 Vonage Global Customer Engagement Report](https://www.vonage.com/resources/publications/global-customer-engagement-report-2021/) revealed a big shift:
 
@@ -28,11 +28,11 @@ In the past two years, consumers’ expectations and attitudes towards turning o
 35% expect integrated communications when interacting with organizations
 
 Here are four simple examples of how video makes your conversations more personal and effective:
+
 * Showcase Your Product
 * Build Trust with Users
 * Offer Visual Support
 * Help Solve a Problem
-
 
 ## Integrate Video Communication Into Your Apps With the Meetings API
 
@@ -40,36 +40,29 @@ With just a few lines of code, the Meetings API allows you to integrate high-qua
 
 ## Test the Meeting API for Free With the Video Champions Program
 
+### Vonage Video Champions Program
 
 
-
-### Three Months Free Use 
 Vonage is pleased to announce the launch of the Video API Champions Program, where each account will receive **three months free use** followed by a discounted rate for testing the Meetings API; further details on pricing can be found below. 
 
-### Discounted Rates
-
-
-
-As part of the Champions Program, each account will receive a discounted price for 50K participant minutes and 25K recording minutes per month at the following rate:
-1. For the first 3 months, there are no charges for use of the API.
-2. After that the charge will be:
-   - $0.00435 per participant per minute
-   - $0.025 per recording minute
-
-
-For example, it would cost $1.04 for a 1h call with 4 participants. If that call was recorded, those recording minutes would cost $1.50 for a total cost of $2.54. 
+As part of the Champions Program, each account will receive their first three month for free, limited to 50K participant minutes and 25K recording minutes per month. After the promotional period regular charges will apply.
 
 ### Join the Program
-To get started and begin using the API, please contact the Meetings API team by filling out [this form](https://forms.gle/p3vVbPAqaWiGdzbU8).
+The Vonage Video Champions program is the easiest way to introduce video to your customer conversations. If you are ready to get started - and get 3 months free usage - please complete the form below and we will get back to you shortly.
+
+To get started and begin using the API, please contact the Meetings API team by filling out [this form](https://forms.gle/p3vVbPAqaWiGdzbU8) and someone from our team will get in touch.
+
 
 ## Meetings API Pricing Outside the Champions Program
+
 The pricing is based on both participant and recording minutes. A participant minute is charged at $0.00475 per participant per minute in a session, while a recording minute is charged at $0.025 per minute that the session is recorded.
 
 For example, it would cost $1.14 for a 1h call with 4 participants. If that call was recorded, those recording minutes would cost $1.50 for a total cost of $2.64. 
 
-
 ## Resources
+
 When you’re ready to start coding, there are several resources you can look at to get stuck in:
+
 * [Introducing the Meetings API](https://developer.vonage.com/blog/22/03/29/introducing-the-meetings-api) - This article has a great high-level summary of the features available.
 * [The full Meetings API Documentation](https://developer.vonage.com/meetings/overview) is available on the Vonage Developer Portal, and includes information on room types, terminology, and code snippets.
 * The [API Specification](https://developer.vonage.com/api/meetings)
