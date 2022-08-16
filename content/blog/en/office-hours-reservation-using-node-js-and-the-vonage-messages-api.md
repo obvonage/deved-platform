@@ -4,10 +4,11 @@ description: A web application that allows students to reserve office hour time
   slots with their professors. Once an office hour reservation is booked, the
   student will receive a text message confirming the reservation using Vonage
   Messages API.
-author: amanda-cavallaro
+thumbnail: /content/blog/office-hours-reservation-using-node-js-and-the-vonage-messages-api/office-hours-reservation.png
+author: zoe-mithaug
 published: true
-published_at: 2022-08-11T10:38:35.873Z
-updated_at: 2022-08-11T10:38:35.889Z
+published_at: 2022-08-16T06:58:31.354Z
+updated_at: 2022-08-16T06:58:32.937Z
 category: tutorial
 tags:
   - javascript
