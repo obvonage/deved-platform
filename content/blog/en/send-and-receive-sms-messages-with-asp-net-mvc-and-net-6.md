@@ -35,15 +35,15 @@ OK, let's get started building the app!
 
 Begin by launching [Visual Studio](https://visualstudio.microsoft.com/vs/) (Community Edition or higher) and selecting **Create a New Project**, and selecting **ASP.NET Core Web App (Model-View-Controller)** as shown below. I'll provide more information about what MVC is very shortly.
 
-![Create a new project](../ASPNET-SMSAPI/Images/NewProject.png)
+![Create a new project](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/newproject.png)
 
 Give your project a name (example: RealEstateSalesLead) and press **Next**. For Framework, ensure it is set to **.NET 6.0** and leave the other options as their default settings and press the **Create** button.
 
-![Visual Studio - Additional Settings](../ASPNET-SMSAPI/Images/AdditionalInfo.png)
+![Visual Studio - Additional Settings](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/additionalinfo.png)
 
 In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet Packages**. Now select the **Browse** tab and search for **Vonage**. You'll see [Vonage](https://www.nuget.org/packages/Vonage/) appear and press **Install** on the latest stable release (6.03 at the time of this writing). 
 
-![Installing Vonage dependancies](../ASPNET-SMSAPI/Images/InstallVonage.png)
+![Installing Vonage dependencies](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/installvonage.png)
 
 # What is MVC, and why should we use it?
 
@@ -140,7 +140,7 @@ We need to store our **API Key and API Secret** for our application to use when 
 
 But first, you can get your current API Key and API Secret by visiting the [Vonage Developer Portal](https://developer.vonage.com) and copying and pasting the keys as shown below. 
 
-![Installing Vonage dependencies](../ASPNET-SMSAPI/Images/APIDashboard.png)
+![Installing Vonage dependencies](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/apidashboard.png)
 
 > Note: I added the secrets to this class for the ease of understanding the pattern. Please secure your secrets if you are publishing a production application using either environment variables or something such as Azure Key Vault. 
 
