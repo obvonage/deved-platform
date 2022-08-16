@@ -25,7 +25,7 @@ I believe that real-world scenarios are important in understanding how to work w
 
 So, in this case, I decided to build a web application that a real estate agent might need. For example, an end user might search a website and find a home they'd like more information on and could submit a form supplying their name, phone number and a message that would be sent directly to the agent. A simple user interface of the application is shown below:
 
-![The demo app that we will build](../ASPNET-SMSAPI/Images/demo.png)
+![The demo app that we will build](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/demo.png)
 
 OK, let's get started building the app!
 
@@ -33,7 +33,7 @@ OK, let's get started building the app!
 
 ## Creating the Project
 
-Begin by launching [Visual Studio](https://visualstudio.microsoft.com/vs/) (Community Edition or higher) and selecting **Create a New Project** and selecting **ASP.NET Core Web App (Model-View-Controller)** as shown below. I'll provide more information about what MVC is very shortly.
+Begin by launching [Visual Studio](https://visualstudio.microsoft.com/vs/) (Community Edition or higher) and selecting **Create a New Project**, and selecting **ASP.NET Core Web App (Model-View-Controller)** as shown below. I'll provide more information about what MVC is very shortly.
 
 ![Create a new project](../ASPNET-SMSAPI/Images/NewProject.png)
 
@@ -41,13 +41,13 @@ Give your project a name (example: RealEstateSalesLead) and press **Next**. For 
 
 ![Visual Studio - Additional Settings](../ASPNET-SMSAPI/Images/AdditionalInfo.png)
 
-In **Solution Explorer**, right click **Dependencies** and select **Manage NuGet Packages**. Now select the **Browse** tab and search for **Vonage**. You'll see [Vonage](https://www.nuget.org/packages/Vonage/) appear and press **Install** on the latest stable release (6.03 at the time of this writing). 
+In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet Packages**. Now select the **Browse** tab and search for **Vonage**. You'll see [Vonage](https://www.nuget.org/packages/Vonage/) appear and press **Install** on the latest stable release (6.03 at the time of this writing). 
 
 ![Installing Vonage dependancies](../ASPNET-SMSAPI/Images/InstallVonage.png)
 
 # What is MVC, and why should we use it?
 
-Before we jump into code, I wanted to provide a basic overview of MVC where you can better understand why we use this pattern for web applications today. In short, MVC stands for model-view-controller, and it is a design pattern that ensures applications are well architected and easy to test and maintain for future developers working in the code base.
+Before we jump into code, I wanted to provide a basic overview of MVC where you can better understand why we use this pattern for web applications today. In short, MVC stands for model-view-controller, a design pattern that ensures applications are well architected and easy to test and maintain for future developers working in the code base.
 
 **M**odels: Represent the data of the application.
 
@@ -55,11 +55,11 @@ Before we jump into code, I wanted to provide a basic overview of MVC where you 
 
 **C**ontrollers: Represent the Business Logic of the application.
 
-With a basic understanding of the pattern, let's begin to build our application. 
+With a basic understanding of the pattern, let's build our application. 
 
 # Beginning with the Model (Data)
 
-Right click **Models** in Solution Explorer and **Add** a new **Class Library**. We'll give the name **Lead.cs** and press **Add**. 
+Right-click **Models** in Solution Explorer and **Add** a new **Class Library**. We'll give the name **Lead.cs** and press **Add**. 
 
 We'll add in 4 pieces of information: The customer's name, phone number, the message they want to send as well as the result of submitting the form. This way, the end user knows if it was sent successfully or not.  
 
@@ -89,7 +89,7 @@ Select **Views** -> **Home** -> and then **Index.cshtml**.
 
 > What is cshtml? It is a C# HTML file that is used on the server side by Razor Markup engine to render the webpage files to the user's browser.
 
-We'll begin by defining the data model the template page will use, as shown in line #1 below. Next, we'll create a couple of divs so that our page looks nice once rendered (along with some boilerplate text about the house). Then we'll use ASP.NET's [BeginForm](https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.formextensions.beginform?view=aspnet-mvc-5.2) Extension method to easily construct a form. There are several features that are baked in, including an easy way to add  **Placeholder** text and marking the field as **required**. 
+We'll begin by defining the data model the template page will use, as shown in line #1 below. Next, we'll create a couple of divs so that our page looks nice once rendered (along with some boilerplate text about the house). Then we'll use ASP.NET's [BeginForm](https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.formextensions.beginform?view=aspnet-mvc-5.2) Extension method to easily construct a form. Several features are baked in, including an easy way to add  **Placeholder** text and mark the field as **required**. 
 
 ```csharp
 @model sales_leads.Models.Lead
@@ -129,6 +129,7 @@ We'll begin by defining the data model the template page will use, as shown in l
     </div>
 </div>
 ```
+
 We'll wrap up with a button to submit the data (via a POST request) as well as a place to output if the SMS message was sent successfully or not. 
 
 For bonus points: Add a sample image of your house in the following location at `~/Content/Images/house.jpg`. :)
@@ -139,11 +140,11 @@ We need to store our **API Key and API Secret** for our application to use when 
 
 But first, you can get your current API Key and API Secret by visiting the [Vonage Developer Portal](https://developer.vonage.com) and copying and pasting the keys as shown below. 
 
-![Installing Vonage dependancies](../ASPNET-SMSAPI/Images/APIDashboard.png)
+![Installing Vonage dependencies](../ASPNET-SMSAPI/Images/APIDashboard.png)
 
 > Note: I added the secrets to this class for the ease of understanding the pattern. Please secure your secrets if you are publishing a production application using either environment variables or something such as Azure Key Vault. 
 
-Right click the Solution and add a new folder called **Domain**; inside that folder, create a new **Class Library** called **Configuration.cs** with the following content.
+Right-click the Solution and add a new folder called **Domain**; inside that folder, create a new **Class Library** called **Configuration.cs** with the following content.
 
 ```csharp
 namespace RealEstateSalesLead.Domain
@@ -211,14 +212,15 @@ namespace sales_leads.Controllers
     }
 }
 ```
+
 The last **If...then** statement checks to see if the SMS was sent successfully and reports back to the client the status. 
 
 When you run the code above and enter a **Name, Phone Number and Message**, the text message will be sent to the mobile number you specified (which, in this case, would be hard coded to the realtor's cell phone).
 
 Below is the result of the SMS sent successfully! 
 
-![Sample Message sent successful](../ASPNET-SMSAPI/Images/result.png)
+![Sample Message sent successful](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/result.png)
 
 ## Conclusion
 
-I hope this tutorial helped you get started with Vonage's SMS APIs. If you have questions or feedback about our SMS API, then join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack) or send me a Tweet on [Twitter](https://twitter.com/mbcrump), and I'll get back to you. Thanks again for reading, and I'll catch you on the next one!
+I hope this tutorial helped you get started with Vonage's SMS APIs. If you have questions or feedback about our SMS API, join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack) or send me a Tweet on [Twitter](https://twitter.com/mbcrump), and I'll get back to you. Thanks again for reading, and I'll catch you on the next one!
