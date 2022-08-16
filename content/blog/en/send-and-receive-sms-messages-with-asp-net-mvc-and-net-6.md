@@ -19,11 +19,11 @@ replacement_url: ""
 
 ## Intro
 
-Hi everyone! Michael Crump here and what excites me about learning a new technology is uncovering the use cases that I might be able to use the technology in.  
+Hi everyone! Michael Crump here, and what excites me about learning a new technology is uncovering the use cases that I might be able to use the technology.  
 
-I believe that real world scenarios are important in understanding how to work with a product (or API in our case) is that they can demonstrate the complexity and unpredictability of real issues that we face to stimulate critical thinking in how we might solve them. 
+I believe that real-world scenarios are important in understanding how to work with a product (or API in our case) is that they can demonstrate the complexity and unpredictability of real issues that we face to stimulate critical thinking about how we might solve them. 
 
-So in this case, I decided to build a web application that a real estate agent might need. For example, an end user might search a web site and find a home that they'd like more information on and could submit a form supplying their name, phone number and a message that would be sent directly to the agent. A simple user interface of the application is shown below:
+So, in this case, I decided to build a web application that a real estate agent might need. For example, an end user might search a website and find a home they'd like more information on and could submit a form supplying their name, phone number and a message that would be sent directly to the agent. A simple user interface of the application is shown below:
 
 ![The demo app that we will build](../ASPNET-SMSAPI/Images/demo.png)
 
@@ -45,9 +45,9 @@ In **Solution Explorer**, right click **Dependencies** and select **Manage NuGet
 
 ![Installing Vonage dependancies](../ASPNET-SMSAPI/Images/InstallVonage.png)
 
-# What is MVC and why should we use it?
+# What is MVC, and why should we use it?
 
-Before we jump into code, I wanted to provide a very basic overview of MVC where you can better understand why we use this pattern for web application today. In short, MVC stands for model-view-controller and it is a design pattern that ensures applications are well architected, easy to test and maintain for future developers working in the code base.
+Before we jump into code, I wanted to provide a basic overview of MVC where you can better understand why we use this pattern for web applications today. In short, MVC stands for model-view-controller, and it is a design pattern that ensures applications are well architected and easy to test and maintain for future developers working in the code base.
 
 **M**odels: Represent the data of the application.
 
@@ -61,7 +61,7 @@ With a basic understanding of the pattern, let's begin to build our application.
 
 Right click **Models** in Solution Explorer and **Add** a new **Class Library**. We'll give the name **Lead.cs** and press **Add**. 
 
-We'll add in 4 pieces of information: The customer's name, phone number, the message they want to send as well as the result of submitting the form. This way the end user knows if it was sent successful or not.  
+We'll add in 4 pieces of information: The customer's name, phone number, the message they want to send as well as the result of submitting the form. This way, the end user knows if it was sent successfully or not.  
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -87,9 +87,9 @@ We will define the page that is presented to the end user now.
 
 Select **Views** -> **Home** -> and then **Index.cshtml**.
 
-> What is cshtml? It is a C# HTML file that is used at server side by Razor Markup engine to render the webpage files to user’s browser.
+> What is cshtml? It is a C# HTML file that is used on the server side by Razor Markup engine to render the webpage files to the user's browser.
 
-We'll begin by defining the data model the template page will use as shown in line #1 below. Next, we'll create a couple of divs so that our page looks nice once rendered (along with some boilerplate text about the house). Then we'll make use of ASP.NET's  [BeginForm](https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.formextensions.beginform?view=aspnet-mvc-5.2) Extension method to easily construct a form. There are several features that are baked in including an easy way to add  **Placeholder** text and marking the field as **required**. 
+We'll begin by defining the data model the template page will use, as shown in line #1 below. Next, we'll create a couple of divs so that our page looks nice once rendered (along with some boilerplate text about the house). Then we'll use ASP.NET's [BeginForm](https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.formextensions.beginform?view=aspnet-mvc-5.2) Extension method to easily construct a form. There are several features that are baked in, including an easy way to add  **Placeholder** text and marking the field as **required**. 
 
 ```csharp
 @model sales_leads.Models.Lead
@@ -129,21 +129,21 @@ We'll begin by defining the data model the template page will use as shown in li
     </div>
 </div>
 ```
-We'll wrap up with a button to submit the data (via a POST request) as well as a place to output if the SMS message was sent successful or not. 
+We'll wrap up with a button to submit the data (via a POST request) as well as a place to output if the SMS message was sent successfully or not. 
 
-For bonus points: Add a sample image of your house  in the following location at `~/Content/Images/house.jpg`. :)
+For bonus points: Add a sample image of your house in the following location at `~/Content/Images/house.jpg`. :)
 
 # Adding the Controller (Business Logic)
 
-We need to store our **API Key and API Secret** in order for our application to use it when sending an SMS message. We'll place this inside a Domain Controller.
+We need to store our **API Key and API Secret** for our application to use when sending an SMS message. We'll place this inside a Domain Controller.
 
 But first, you can get your current API Key and API Secret by visiting the [Vonage Developer Portal](https://developer.vonage.com) and copying and pasting the keys as shown below. 
 
 ![Installing Vonage dependancies](../ASPNET-SMSAPI/Images/APIDashboard.png)
 
-> Note: I added the secrets to this class for the ease of understanding the pattern. Please secure your secrets if you are publishing a production application using either enviroment variables or something such as Azure Key Vault. 
+> Note: I added the secrets to this class for the ease of understanding the pattern. Please secure your secrets if you are publishing a production application using either environment variables or something such as Azure Key Vault. 
 
-Right click the Solution and add a new folder called **Domain**, inside that folder create a new **Class Library** called **Configuration.cs** with the following content.
+Right click the Solution and add a new folder called **Domain**; inside that folder, create a new **Class Library** called **Configuration.cs** with the following content.
 
 ```csharp
 namespace RealEstateSalesLead.Domain
@@ -156,7 +156,6 @@ namespace RealEstateSalesLead.Domain
     }
 }
 ```
-
 
 Next, we will write the logic that sends the SMS Message.
 
@@ -212,14 +211,14 @@ namespace sales_leads.Controllers
     }
 }
 ```
-The last **If...then** statement checks to see if the SMS was sent sucessful and reports back to the client the status. 
+The last **If...then** statement checks to see if the SMS was sent successfully and reports back to the client the status. 
 
-When you run the code above, and enter a **Name, Phone Number and Message**, the text message will be sent to the mobile number that you specified (which in this case would be hardcoded to the realtor cell phone).
+When you run the code above and enter a **Name, Phone Number and Message**, the text message will be sent to the mobile number you specified (which, in this case, would be hard coded to the realtor's cell phone).
 
-Below is the result of SMS sent successfully! 
+Below is the result of the SMS sent successfully! 
 
 ![Sample Message sent successful](../ASPNET-SMSAPI/Images/result.png)
 
 ## Conclusion
 
-I hope this tutorial helped you get started with Vonage's SMS APIs. If you have questions or feedback about our SMS API, then join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack) or send me a Tweet on [Twitter](https://twitter.com/mbcrump) and I'll get back to you. Thanks again for reading and I'll catch you on the next one!
+I hope this tutorial helped you get started with Vonage's SMS APIs. If you have questions or feedback about our SMS API, then join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack) or send me a Tweet on [Twitter](https://twitter.com/mbcrump), and I'll get back to you. Thanks again for reading, and I'll catch you on the next one!
