@@ -1,5 +1,5 @@
 ---
-title: Send and receive SMS messages with ASP.NET MVC and .NET 6
+title: Send and Receive SMS Messages With ASP.NET MVC and .Net 6
 description: To be added
 author: michael-crump
 published: true
@@ -15,11 +15,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Send and receive SMS messages with ASP.NET MVC and .NET 6
-
 ## Intro
 
-Hi everyone! Michael Crump here, and what excites me about learning a new technology is uncovering the use cases that I might be able to use the technology.  
+Hi everyone! Michael Crump here, and what excites me about learning a new technology is uncovering the use cases that I might be able to use the technology.
 
 I believe that real-world scenarios are important in understanding how to work with a product (or API in our case) is that they can demonstrate the complexity and unpredictability of real issues that we face to stimulate critical thinking about how we might solve them. 
 
@@ -45,7 +43,7 @@ In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet
 
 ![Installing Vonage dependencies](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/installvonage.png)
 
-# What is MVC, and why should we use it?
+# What Is MVC, and Why Should We Use It?
 
 Before we jump into code, I wanted to provide a basic overview of MVC where you can better understand why we use this pattern for web applications today. In short, MVC stands for model-view-controller, a design pattern that ensures applications are well architected and easy to test and maintain for future developers working in the code base.
 
@@ -57,11 +55,11 @@ Before we jump into code, I wanted to provide a basic overview of MVC where you 
 
 With a basic understanding of the pattern, let's build our application. 
 
-# Beginning with the Model (Data)
+# Beginning With the Model (Data)
 
 Right-click **Models** in Solution Explorer and **Add** a new **Class Library**. We'll give the name **Lead.cs** and press **Add**. 
 
-We'll add in 4 pieces of information: The customer's name, phone number, the message they want to send as well as the result of submitting the form. This way, the end user knows if it was sent successfully or not.  
+We'll add in 4 pieces of information: The customer's name, phone number, the message they want to send as well as the result of submitting the form. This way, the end user knows if it was sent successfully or not.
 
 ```csharp
 using System.ComponentModel.DataAnnotations;
@@ -76,7 +74,7 @@ namespace RealEstateSalesLead.Models
         public string Phone { get; set; }
         [Display(Name = "How can we help?")]
         public string Message { get; set; }
-        public string Result {  get; set; }
+        public string Result { get; set; }
     }
 }
 ```
@@ -89,7 +87,7 @@ Select **Views** -> **Home** -> and then **Index.cshtml**.
 
 > What is cshtml? It is a C# HTML file that is used on the server side by Razor Markup engine to render the webpage files to the user's browser.
 
-We'll begin by defining the data model the template page will use, as shown in line #1 below. Next, we'll create a couple of divs so that our page looks nice once rendered (along with some boilerplate text about the house). Then we'll use ASP.NET's [BeginForm](https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.formextensions.beginform?view=aspnet-mvc-5.2) Extension method to easily construct a form. Several features are baked in, including an easy way to add  **Placeholder** text and mark the field as **required**. 
+We'll begin by defining the data model the template page will use, as shown in line #1 below. Next, we'll create a couple of divs so that our page looks nice once rendered (along with some boilerplate text about the house). Then we'll use ASP.NET's [BeginForm](https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.formextensions.beginform?view=aspnet-mvc-5.2) Extension method to easily construct a form. Several features are baked in, including an easy way to add **Placeholder** text and mark the field as **required**. 
 
 ```csharp
 @model sales_leads.Models.Lead
@@ -160,7 +158,7 @@ namespace RealEstateSalesLead.Domain
 
 Next, we will write the logic that sends the SMS Message.
 
-Select **Controllers** and then  **HomeController.cs** and use the following code snippet. You'll need to update the `using sales_leads.Models;` to whatever the name of your project is in order to pull in your **Model** data. 
+Select **Controllers** and then **HomeController.cs** and use the following code snippet. You'll need to update the `using sales_leads.Models;` to whatever the name of your project is in order to pull in your **Model** data. 
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
