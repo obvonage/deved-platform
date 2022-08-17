@@ -1,6 +1,7 @@
 ---
 title: Send and Receive SMS Messages With ASP.NET MVC and .Net 6
-description: To be added
+description: Learn how to use the Vonage SMS API with a real-world application
+  using ASP.NET MVC Application and .NET 6.0.
 author: michael-crump
 published: true
 published_at: 2022-08-16T09:13:00.123Z
@@ -17,11 +18,11 @@ replacement_url: ""
 ---
 ## Intro
 
-Hi everyone! Michael Crump here, and what excites me about learning a new technology is uncovering the use cases that I might be able to use the technology.
+Hi everyone! Michael Crump here, and what excites me about learning a new technology is understanding a potential scenario that an end-user would use it for and how to go about building the solution as a developer.
 
 I believe that real-world scenarios are important in understanding how to work with a product (or API in our case) is that they can demonstrate the complexity and unpredictability of real issues that we face to stimulate critical thinking about how we might solve them. 
 
-So, in this case, I decided to build a web application that a real estate agent might need. For example, an end user might search a website and find a home they'd like more information on and could submit a form supplying their name, phone number and a message that would be sent directly to the agent. A simple user interface of the application is shown below:
+With that in mind, I decided to build a web application that simulates an end-user finding a house they are interested in and submitted a form that a real estate agent would receive an SMS with the details. A simple user interface of the application is shown below:
 
 ![The demo app that we will build](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/demo.png)
 
