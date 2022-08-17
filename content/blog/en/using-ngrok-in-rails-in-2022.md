@@ -2,10 +2,11 @@
 title: Using ngrok in Rails in 2022
 description: A quick guide to using ngrok with Ruby on Rakils for tunneling in
   development environment.
+thumbnail: /content/blog/using-ngrok-in-rails-in-2022/ngrok_rails.png
 author: benjamin-aronov
 published: true
-published_at: 2022-07-25T12:32:43.833Z
-updated_at: 2022-07-25T12:32:43.870Z
+published_at: 2022-08-24T12:32:43.833Z
+updated_at: 2022-08-24T12:32:43.870Z
 category: tutorial
 tags:
   - ruby-on-rails
