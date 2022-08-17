@@ -4,10 +4,11 @@ description: "This article will describe two applications of the many ways
   developers can use Experience Composer: publishing to a Vonage Video API
   Session and capturing your website’s entire layout in an archived Vonage Video
   API stream."
-author: benjamin-aronov
+thumbnail: /content/blog/experience-composer-sample-application-with-vonage-video-api/video-stream-experience-composer.png
+author: megna-biederman
 published: true
-published_at: 2022-07-26T12:33:57.363Z
-updated_at: 2022-07-26T12:33:57.401Z
+published_at: 2022-08-17T07:19:49.815Z
+updated_at: 2022-08-17T07:19:50.663Z
 category: tutorial
 tags:
   - javascript
