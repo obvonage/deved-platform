@@ -2,6 +2,7 @@
 title: Announcing the Vonage Java SDK v7.0.0
 description: Version 7.0.0 of the Vonage Java SDK is now available! This post
   describes the changes and what to expect in the near future.
+thumbnail: /content/blog/announcing-the-vonage-java-sdk-v7-0-0/java-sdk-updates.png
 author: sina-madani
 published: true
 published_at: 2022-08-15T10:23:51.517Z
