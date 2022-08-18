@@ -28,6 +28,8 @@ With that in mind, I decided to build a web application that simulates an end-us
 
 OK, let's get started building the app!
 
+Note: The complete source code for this application can be found in our [Vonage Community repo](https://github.com/Vonage-Community/blog-sms-csharp-realestate). 
+
 # Getting Setup
 
 ## Creating the Project
@@ -218,4 +220,4 @@ Below is the result of the SMS sent successfully!
 
 ## Conclusion
 
-I hope this tutorial helped you get started with Vonage's SMS APIs. If you have questions or feedback about our SMS API, join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack) or send me a Tweet on [Twitter](https://twitter.com/mbcrump), and I'll get back to you. Thanks again for reading, and I'll catch you on the next one!
+I hope this tutorial helped you get started with Vonage's SMS APIs. If you have questions or feedback about our SMS API, join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack) or send me a Tweet on [Twitter](https://twitter.com/mbcrump), and I'll get back to you. Again, the full source code for this application can be found in our [Vonage Community repo](https://github.com/Vonage-Community/blog-sms-csharp-realestate). Thanks again for reading, and I'll catch you on the next one!
