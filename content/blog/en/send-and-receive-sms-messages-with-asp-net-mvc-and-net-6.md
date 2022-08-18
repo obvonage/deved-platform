@@ -143,18 +143,19 @@ But first, you can get your current API Key and API Secret by visiting the [Vona
 
 > Note: I added the secrets to this class for the ease of understanding the pattern. Please secure your secrets if you are publishing a production application using either environment variables or something such as Azure Key Vault. 
 
-Right-click the Solution and add a new folder called **Domain**; inside that folder, create a new **Class Library** called **Configuration.cs** with the following content.
+Right-click the Solution and add a new folder called **Domain**; inside that folder, create a new **Class Library** called **Credentials.cs** with the following content.
 
 ```csharp
 namespace RealEstateSalesLead.Domain
 {
-    public class Configuration
+     public class Credentials
     {
-        public static string APIKey => "YOUR_API_KEY";
-
-        public static string APISecret => "YOUR_API_SECRET";
+        public static string APIKey => "";
+        public static string APISecret => "";
     }
 }
+
+
 ```
 
 Next, we will write the logic that sends the SMS Message.
