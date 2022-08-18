@@ -36,7 +36,7 @@ Begin by launching [Visual Studio](https://visualstudio.microsoft.com/vs/) (Comm
 
 ![Create a new project](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/newproject.png)
 
-Give your project a name (example: RealEstateSalesLead) and press **Next**. For Framework, ensure it is set to **.NET 6.0** and leave the other options as their default settings and press the **Create** button.
+Give your project a name (example: SalesLeads) and press **Next**. For Framework, ensure it is set to **.NET 6.0** and leave the other options as their default settings and press the **Create** button.
 
 ![Visual Studio - Additional Settings](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/additionalinfo.png)
 
@@ -65,7 +65,7 @@ We'll add in 4 pieces of information: The customer's name, phone number, the mes
 ```csharp
 using System.ComponentModel.DataAnnotations;
 
-namespace RealEstateSalesLead.Models
+namespace SalesLeads.Models
 {
     public class Lead
     {
@@ -91,7 +91,7 @@ Select **Views** -> **Home** -> and then **Index.cshtml**.
 We'll begin by defining the data model the template page will use, as shown in line #1 below. Next, we'll create a couple of divs so that our page looks nice once rendered (along with some boilerplate text about the house). Then we'll use ASP.NET's [BeginForm](https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.formextensions.beginform?view=aspnet-mvc-5.2) Extension method to easily construct a form. Several features are baked in, including an easy way to add **Placeholder** text and mark the field as **required**. 
 
 ```csharp
-@model sales_leads.Models.Lead
+@model SalesLeads.Models.Lead
 
 <div class="row">
     <div class="col-sm-8">
@@ -143,27 +143,27 @@ But first, you can get your current API Key and API Secret by visiting the [Vona
 Right-click the Solution and add a new folder called **Domain**; inside that folder, create a new **Class Library** called **Credentials.cs** with the following content.
 
 ```csharp
-namespace RealEstateSalesLead.Domain
+namespace SalesLeads.Domain
 {
      public class Credentials
     {
-        public static string APIKey => "";
-        public static string APISecret => "";
+        public static string APIKey => "ENTER_API_KEY";
+        public static string APISecret => "ENTER_API_SECRET";
     }
 }
 ```
 
 Next, we will write the logic that sends the SMS Message.
 
-Select **Controllers** and then **HomeController.cs** and use the following code snippet. You'll need to update the `using sales_leads.Models;` to whatever the name of your project is in order to pull in your **Model** data. 
+Select **Controllers** and then **HomeController.cs** and use the following code snippet. You'll need to update the `using SalesLeads.Models;` to whatever the name of your project is in order to pull in your **Model** data. 
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
-using sales_leads.Models;
+using SalesLeads.Models;
 using Vonage;
 using Vonage.Request;
 
-namespace sales_leads.Controllers
+namespace SalesLeads.Controllers
 {
     public class HomeController : Controller
     {
