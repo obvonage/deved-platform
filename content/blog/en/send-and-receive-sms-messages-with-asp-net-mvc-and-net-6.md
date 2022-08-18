@@ -95,10 +95,7 @@ We'll begin by defining the data model the template page will use, as shown in l
 
 <div class="row">
     <div class="col-sm-8">
-        <h1>@ViewBag.Title</h1>
-        <h3>@ViewBag.Price</h3>
         <img src="~/Content/Images/house.jpg" class="img-responsive" alt="House" />
-        <p>@ViewBag.Description</p>
     </div>
     <div class="col-sm-2">
         <h4>Talk To A Real Estate Agent</h4>
@@ -154,8 +151,6 @@ namespace RealEstateSalesLead.Domain
         public static string APISecret => "";
     }
 }
-
-
 ```
 
 Next, we will write the logic that sends the SMS Message.
