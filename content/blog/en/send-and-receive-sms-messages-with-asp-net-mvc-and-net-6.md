@@ -20,7 +20,7 @@ replacement_url: ""
 
 Hi everyone! Michael Crump here, and what excites me about learning a new technology is understanding a potential scenario that an end-user would use it for and how to go about building the solution as a developer.
 
-I believe that real-world scenarios are important in understanding how to work with a product (or API in our case) is that they can demonstrate the complexity and unpredictability of real issues that we face to stimulate critical thinking about how we might solve them. 
+I believe that real-world scenarios are important in understanding how to work with a product (or API in our case) is that they can demonstrate the complexity and unpredictability of real issues that we face to stimulate critical thinking about how we might solve them.
 
 With that in mind, I decided to build a web application that simulates an end-user finding a house they are interested in and submitted a form that a real estate agent would receive an SMS with the details. A simple user interface of the application is shown below:
 
