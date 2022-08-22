@@ -90,7 +90,7 @@ Select **Views** -> **Home** -> and then **Index.cshtml**.
 
 > What is cshtml? It is a C# HTML file that is used on the server side by Razor Markup engine to render the webpage files to the user's browser.
 
-We'll begin by defining the data model the template page will use, as shown in line #1 below. Next, we'll create a couple of divs so that our page looks nice once rendered (along with some boilerplate text about the house). Then we'll use ASP.NET's [BeginForm](https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.formextensions.beginform?view=aspnet-mvc-5.2) Extension method to easily construct a form. Several features are baked in, including an easy way to add **Placeholder** text and mark the field as **required**. 
+We'll begin by defining the data model the template page will use, as shown in line #1 below. Next, we'll create a couple of divs so that our page looks nice once rendered (along with some boilerplate text about the house). Then we'll use ASP.NET's [BeginForm](https://docs.microsoft.com/en-us/dotnet/api/system.web.mvc.html.formextensions.beginform?view=aspnet-mvc-5.2) Extension method to easily construct a form. Several features are baked in, including an easy way to add **Placeholder** text and mark the field as **required**.
 
 ```csharp
 @model SalesLeads.Models.Lead
@@ -157,7 +157,7 @@ namespace SalesLeads.Domain
 
 Next, we will write the logic that sends the SMS Message.
 
-Select **Controllers** and then **HomeController.cs** and use the following code snippet. You'll need to update the `using SalesLeads.Models;` to whatever the name of your project is in order to pull in your **Model** data. 
+Select **Controllers** and then **HomeController.cs** and use the following code snippet. You'll need to update the `using SalesLeads.Models;` to whatever the name of your project is in order to pull in your **Model** data.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -214,7 +214,7 @@ The last **If...then** statement checks to see if the SMS was sent successfully 
 
 When you run the code above and enter a **Name, Phone Number and Message**, the text message will be sent to the mobile number you specified (which, in this case, would be hard coded to the realtor's cell phone).
 
-Below is the result of the SMS sent successfully! 
+Below is the result of the SMS sent successfully!
 
 ![Sample Message sent successful](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/result.png)
 
