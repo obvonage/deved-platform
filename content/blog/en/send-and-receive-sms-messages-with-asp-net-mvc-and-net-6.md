@@ -84,7 +84,7 @@ namespace SalesLeads.Models
 
 # Defining the View (UI)
 
-We will define the page that is presented to the end user now. 
+We will define the page that is presented to the end user now.
 
 Select **Views** -> **Home** -> and then **Index.cshtml**.
 
