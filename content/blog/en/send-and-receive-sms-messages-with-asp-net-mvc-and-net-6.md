@@ -128,7 +128,7 @@ We'll begin by defining the data model the template page will use, as shown in l
 </div>
 ```
 
-We'll wrap up with a button to submit the data (via a POST request) as well as a place to output if the SMS message was sent successfully or not. 
+We'll wrap up with a button to submit the data (via a POST request) as well as a place to output if the SMS message was sent successfully or not.
 
 For bonus points: Add a sample image of your house in the following location at `~/Content/Images/house.jpg`. :)
 
