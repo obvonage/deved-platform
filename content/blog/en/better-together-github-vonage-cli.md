@@ -100,7 +100,7 @@ To do so, you'll need to get your current API Key and API Secret by visiting the
 
 ![Keys from the portal](/content/blog/better-together-github-vonage-cli/apidashboard.png)
 
-**Quick tip:** If you don't have an [account](https://developer.vonage.com), then you can create one for free, and we'll give you some credits to get started. 
+**Quick tip:** If you don't have an [account](https://developer.vonage.com), you can create one for free, and we'll give you some credits to get started. 
 
 Head back to the command prompt, and we'll need to pass the ApiKey and APISecret with the following format: `vonage config:set --apiKey=XXXXXX --apiSecret=XXXXXX`
 
