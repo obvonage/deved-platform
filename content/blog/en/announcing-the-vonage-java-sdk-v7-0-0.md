@@ -10,7 +10,7 @@ updated_at: 2022-08-15T10:23:51.532Z
 category: release
 tags:
   - java
-  - ""
+  - SDK
 comments: true
 spotlight: false
 redirect: ""
