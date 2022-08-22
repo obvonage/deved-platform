@@ -28,7 +28,7 @@ With that in mind, I decided to build a web application that simulates an end-us
 
 OK, let's get started building the app!
 
-Note: The complete source code for this application can be found in our [Vonage Community repo](https://github.com/Vonage-Community/blog-sms-csharp-realestate). 
+Note: The complete source code for this application can be found in our [Vonage Community repo](https://github.com/Vonage-Community/blog-sms-csharp-realestate).
 
 # Getting Setup
 
