@@ -16,6 +16,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+# Crash Course: Create Virtual Agents for Whatsapp with Vonage AI Studio!
+
 Companies are increasingly looking at expanding the number of channels through which they communicate and keep in touch with customers. To help businesses meet the diverse communication needs of their client base, Vonage AI has begun to prioritize multi-channel offerings with their virtual assistants.
 
 In addition to our Voice and HTTP virtual assistants, the Vonage AI Studio platform (a low-code virtual agent builder) also offers you the ability to create agents for Whatsapp and SMS. Let's take a quick look at some of the nifty features available on our Whatsapp agent type.
@@ -30,7 +32,7 @@ In addition to the regular text input and output, our virtual assistants can als
 
 Images are a great way to share visual evidence to resolve customer issues. One use case could be when end users need to upload images of damaged belongings or property as part of an insurance claim workflow. It is also possible for images to be sent from the virtual agent side, for example when providing evidence of a delivered package.
 
-![Screenshot showing a WhatsApp conversation flow in Vonage AI Studio with the Speak node being edited and type image selected. The node is named 'Greeting' and the image is a of a puppy being held by an animal rescue agent](image url "Screenshot of AI Studio Speak node with an image message type selected")
+![Screenshot showing a WhatsApp Send Message flow in Vonage AI Studio with the Speak node being edited and type Image selected. The node is named 'Greeting' and the image is a of a puppy being held by an animal rescue agent](/content/blog/crash-course-create-virtual-agents-for-whatsapp-with-vonage-ai-studio/send-message-node-image-screenshot.png "Screenshot of AI Studio Send Message node with an Image message type selected")
 
 ### Audio
 
@@ -44,7 +46,7 @@ Your users can upload files if necessary through your Whatsapp virtual assistant
 
 You can either send locations to your end users or receive them without ever having to leave Whatsapp. Some use cases for this include sending out the location of the closest brick-and-mortar store, or knowing the exact location of your user to send roadside assistance.
 
-![Screenshot of AI Studio Input node with an location message type selected](image url "Screenshot of AI Studio Input node with an location message type selected")
+![Screenshot of AI Studio Collect Input node with a Location message type selected](/content/blog/crash-course-create-virtual-agents-for-whatsapp-with-vonage-ai-studio/collect-input-location-screenshot.png "Screenshot of AI Studio Collect Input node with a Location message type selected")
 
 💡 **Conversational Design Tip** 💡:  You can send out a predefined location to your end user by choosing 'map' once you have selected 'location' and entering the exact location you desire. Be sure to check if the location is correct before publishing the virtual agent since the maps are provided by Google Maps API.
 
@@ -52,9 +54,11 @@ You can either send locations to your end users or receive them without ever hav
 
 ## List messages and Reply buttons
 
-The virtual assistant can also send out both list messages and reply buttons to enhance the user experience. You can enable this feature by simply clicking on the message type in the [collect input node](https://studio.docs.ai.vonage.com/whatsapp-chatbot/whatsapp-chatbot/nodes/collect-input).
+The virtual assistant can also send out both list messages and reply buttons to enhance the user experience. You can enable this feature by simply clicking on the message type in the [Collect Input node](https://studio.docs.ai.vonage.com/whatsapp-chatbot/whatsapp-chatbot/nodes/collect-input).
 
-![Screenshot of a WhatsApp conversations showing reply buttons. The virtual agent asks a question 'What issue would you like to report today?' with the reply button options 'Sick Anima;', 'Injured or Trapped', and 'Cruelty or Neglect'](image url "Screenshot of a WhatsApp conversations showing reply buttons")
+![Screenshot of a WhatsApp conversations showing a Reply Button. The virtual agent asks a question 'What issue would you like to report today?' with the reply button options 'Sick Animal', 'Injured or Trapped', and 'Cruelty or Neglect'](/content/blog/crash-course-create-virtual-agents-for-whatsapp-with-vonage-ai-studio/whatsapp-reply-button-screenshot.jpg "Screenshot of a WhatsApp conversations showing reply buttons")
+
+![Screenshot of a WhatsApp conversations showing a List Message Button. The list category is 'Owner of Animal' with the list options 'My Pet', 'Stray or Abandoned', 'No Known Owner', and 'Owned by Someone Else'](/content/blog/crash-course-create-virtual-agents-for-whatsapp-with-vonage-ai-studio/whatsapp-list-message-screenshot.png "Screenshot of a WhatsApp conversations showing List Message")
 
 💡 **Conversational Design Tip** 💡 :  Make sure to access the [Vonage AI Studio documentation](https://studio.docs.ai.vonage.com/whatsapp-chatbot/whatsapp-chatbot/nodes/collect-input) to understand what kind of information to enter under the various headers for buttons and list messages.
 
