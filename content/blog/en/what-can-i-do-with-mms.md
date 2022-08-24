@@ -1,8 +1,8 @@
 ---
 title: What Can I Do With MMS?
 description: An overview of the MMS channel of the Vonage Messages API, with a
-  walkthrough of an example application which uses the Ruby SDK to send an MMS
-  image message.
+ walkthrough of an example application which uses the Ruby SDK to send an MMS
+ image message.
 author: karl-lingiah
 published: true
 published_at: 2022-08-23T18:59:07.162Z
@@ -32,8 +32,8 @@ Although it is mainly associated with sending images, the acronym MMS actually s
 The Vonage Messages API currently supports four different MMS message types:
 
 * Image: Supports sending `.jpg`, `.jpeg`, `.png` and `.gif` files
-* Audio: Supports sending  `.mp3` files
-* Video: Supports sending  `.mp4` files
+* Audio: Supports sending `.mp3` files
+* Video: Supports sending `.mp4` files
 * vCard: Supports sending `.vcf` files
 
 ## Why Use MMS?
@@ -86,7 +86,7 @@ The `from` number needs to be either a **USSC** (US short code), **10DLC** (10-d
 
 The best way to demonstrate using the Vonage Message API to send MMS messages is to walk through an example application.
 
-I don't have any products to promote via MMS, but I do love [xkcd comics](https://xkcd.com/), so I used the [Vonage Ruby SDK](#) to  build a small Ruby application that sends a daily MMS message containing a random comic from xkcd. If you're not a Rubyist though, you could use one of our other [Server SDKs](https://developer.vonage.com/tools), or work with the Messages API directly, to implement something similar.
+I don't have any products to promote via MMS, but I do love [xkcd comics](https://xkcd.com/), so I used the [Vonage Ruby SDK](#) to build a small Ruby application that sends a daily MMS message containing a random comic from xkcd. If you're not a Rubyist, though, you could use one of our other [Server SDKs](https://developer.vonage.com/tools), or work with the Messages API directly, to implement something similar.
 
 My Ruby app does two things:
 
