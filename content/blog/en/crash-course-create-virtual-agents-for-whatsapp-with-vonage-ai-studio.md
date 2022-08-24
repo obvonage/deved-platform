@@ -16,7 +16,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Crash Course: Create Virtual Agents for Whatsapp with Vonage AI Studio!
+# Crash Course: Create Virtual Agents for WhatsApp with Vonage AI Studio!
 
 Companies are increasingly looking at expanding the number of channels through which they communicate and keep in touch with customers. To help businesses meet the diverse communication needs of their client base, Vonage AI has begun to prioritize multi-channel offerings with their virtual assistants.
 
@@ -24,7 +24,7 @@ In addition to our Voice and HTTP virtual assistants, the Vonage AI Studio platf
 
 ## Message Types
 
-Taking full advantage of the features already available on Whatsapp, our virtual agents can process numerous message formats on the platform.
+Taking full advantage of the features already available on WhatsApp, our virtual agents can process numerous message formats on the platform.
 
 In addition to the regular text input and output, our virtual assistants can also handle images, text, audio, files, and location, as both agent utterances and user responses.
 
@@ -40,11 +40,11 @@ Audio files are an accepted input and output type. This file type can be particu
 
 ### Files
 
-Your users can upload files if necessary through your Whatsapp virtual assistants. This is useful in cases where user files are required to be uploaded and stored. By uploading the file directly on the agent, it saves your user the hassle of having to be redirected elsewhere to upload the file. It's also possible to send files to a user. You could, for example, you can send your user a movie ticket, restaurant menu, etc via the agent without leaving the conversation.
+Your users can upload files if necessary through your WhatsApp virtual assistants. This is useful in cases where user files are required to be uploaded and stored. By uploading the file directly on the agent, it saves your user the hassle of having to be redirected elsewhere to upload the file. It's also possible to send files to a user. You could, for example, you can send your user a movie ticket, restaurant menu, etc. via the agent without leaving the conversation.
 
 ### Location
 
-You can either send locations to your end users or receive them without ever having to leave Whatsapp. Some use cases for this include sending out the location of the closest brick-and-mortar store, or knowing the exact location of your user to send roadside assistance.
+You can either send locations to your end users or receive them without ever having to leave WhatsApp. Some use cases for this include sending out the location of the closest brick-and-mortar store or knowing the exact location of your user to send roadside assistance.
 
 ![Screenshot of AI Studio Collect Input node with a Location message type selected](/content/blog/crash-course-create-virtual-agents-for-whatsapp-with-vonage-ai-studio/collect-input-location-screenshot.png "Screenshot of AI Studio Collect Input node with a Location message type selected")
 
@@ -52,7 +52,7 @@ You can either send locations to your end users or receive them without ever hav
 
 💻Tech Tip💻: If you select "Audio", you can choose between a regular audio recording as well as the option to transcribe it to text. To transcribe the input, select the ASR symbol on the top right of the "Audio" box.
 
-## List messages and Reply buttons
+## List Messages and Reply Buttons
 
 The virtual assistant can also send out both list messages and reply buttons to enhance the user experience. You can enable this feature by simply clicking on the message type in the [Collect Input node](https://studio.docs.ai.vonage.com/whatsapp-chatbot/whatsapp-chatbot/nodes/collect-input).
 
@@ -77,9 +77,9 @@ The virtual assistant can also send out both list messages and reply buttons to 
 ]
 ```
 
-Our Whatsapp agents have been particularly effective in countries that already have a large number of users on the platform. It provides a convenient means of communicating with customers whilst also helping users come back to the same conversation to retrieve important details.
+Our WhatsApp agents have been particularly effective in countries that already have a large number of users on the platform. It provides a convenient means of communicating with customers whilst also helping users come back to the same conversation to retrieve important details.
 
-Note: To publish a WhatsApp Agent created on Vonage AI Studio, you need to have a functional Whatsapp Business Account along with a number linked to your account which supports Voice and SMS. For more information on how to build WhatsApp Agents on Vonage AI Studio please visit the [AI Studio documentation](https://studio.docs.ai.vonage.com/whatsapp-chatbot/whatsapp-chatbot/nodes/collect-input).
+Note: To publish a WhatsApp Agent created on Vonage AI Studio, you need to have a functional WhatsApp Business Account along with a number linked to your account which supports Voice and SMS. For more information on how to build WhatsApp Agents on Vonage AI Studio, please visit the [AI Studio documentation](https://studio.docs.ai.vonage.com/whatsapp-chatbot/whatsapp-chatbot/nodes/collect-input).
 
 Here's an example agent we built to record cases of animal sickness, injury, cruelty, and neglect. Go Ahead and send a “Hello” message on the number listed so you can try it out for yourself!
 
