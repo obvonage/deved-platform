@@ -87,6 +87,6 @@ Here's an example agent we built to record cases of animal sickness, injury, cru
 
 ## Conclusion and Next Steps
 
-In this blog post we learned about the capabilities and uses of WhatsApp conversation agents in the Vonage AI Studio  platform.
+In this blog post, we learned about the capabilities and uses of WhatsApp conversation agents in the Vonage AI Studio platform.
 
 We always welcome community involvement. Please feel free to join us on the [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
