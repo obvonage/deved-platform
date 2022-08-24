@@ -20,9 +20,11 @@ replacement_url: ""
 ---
 ## Introduction
 
-We're almost halfway through 2022, and the need for the [CLI (Command Line Interface)](https://en.wikipedia.org/wiki/Command-line_interface)) is more vital than ever. Traditionally, Command Line Interfaces are used by advanced users (such as a developer or power users), whereas GUIs (Graphical User Interface) is sought after by beginners as they are user-friendly and easy to learn. Let's step back to the beginning of computing to learn more.
+We're almost halfway through 2022, and the need for the [CLI (Command Line Interface)](https://en.wikipedia.org/wiki/Command-line_interface) is more vital than ever. Traditionally, Command Line Interfaces are used by advanced users (such as a developer or power users), whereas GUIs (Graphical User Interface) is sought after by beginners as they are user-friendly and easy to learn. Let's step back to the beginning of computing to learn more.
 
-With early computer systems, users only had a keyboard to input information, and screens (for the most part) would only display text. You could risk closing a program or removing important files if you entered a command incorrectly. Years later, there were mouse and color screens, and popular operating systems like Windows 3.11 or OS/2 Warp began providing users with a more friendly way to interact (through a GUI). But even with this decisive step forward, we continued to see advancements with CLIs with Window's Command Prompt and Apple's Terminal. Which leaves us with an important question, Why are we seeing more and more companies (and developers) still investing in CLI tooling for their customers when they could use modern hardware and software technologies?
+With early computer systems, users only had a keyboard to input information, and screens (for the most part) would only display text. You could risk closing a program or removing important files if you entered a command incorrectly. Years later, there were mouse and color screens, and popular operating systems like Windows 3.11 or OS/2 Warp began providing users with a more friendly way to interact (through a GUI). But even with this decisive step forward, we continued to see advancements with CLIs with the [Command Prompt in Windows](https://en.wikipedia.org/wiki/Cmd.exe) and the [Terminal for MacOS](https://en.wikipedia.org/wiki/Terminal_(macOS)). (Which originated in Apple's acquisition of NeXTSTEP and OPENSTEP.  
+
+Which leaves us with an important question, why are we seeing more and more companies (and developers) still investing in CLI tooling for their customers when they could use modern hardware and software technologies?
 
 I believe that we can sum up the purpose of CLIs in 2022 as follows: 
 
