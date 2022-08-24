@@ -22,7 +22,7 @@ replacement_url: ""
 
 We're almost halfway through 2022, and the need for the [CLI (Command Line Interface)](https://en.wikipedia.org/wiki/Command-line_interface) is more vital than ever. Traditionally, Command Line Interfaces are used by advanced users (such as a developer or power users), whereas GUIs (Graphical User Interface) is sought after by beginners as they are user-friendly and easy to learn. Let's step back to the beginning of computing to learn more.
 
-With early computer systems, users only had a keyboard to input information, and screens (for the most part) would only display text. You could risk closing a program or removing important files if you entered a command incorrectly. Years later, there were mouse and color screens, and popular operating systems like Windows 3.11 or OS/2 Warp began providing users with a more friendly way to interact (through a GUI). But even with this decisive step forward, we continued to see advancements with CLIs with the [Command Prompt in Windows](https://en.wikipedia.org/wiki/Cmd.exe) and the [Terminal for MacOS](https://en.wikipedia.org/wiki/Terminal_(macOS)). (Which originated in Apple's acquisition of NeXTSTEP and OPENSTEP.  
+With early computer systems, users only had a keyboard to input information, and screens (for the most part) would only display text. You could risk closing a program or removing important files if you entered a command incorrectly. Years later, there were mouse and color screens, and popular operating systems like Windows 3.11 or OS/2 Warp began providing users with a more friendly way to interact (through a GUI). But even with this decisive step forward, we continued to see advancements with CLIs with the [Command Prompt in Windows](https://en.wikipedia.org/wiki/Cmd.exe) and the [Terminal for MacOS](https://en.wikipedia.org/wiki/Terminal_(macOS)). (Which originated in Apple's acquisition of NeXTSTEP and OPENSTEP.)  
 
 Which leaves us with an important question, why are we seeing more and more companies (and developers) still investing in CLI tooling for their customers when they could use modern hardware and software technologies?
 
@@ -38,9 +38,9 @@ So if software developers and power users prefer these benefits over a GUI, then
 
 ## GitHub CLI
 
-The [GitHub CLI](https://cli.github.com/) allows you to work with GitHub in your terminal of choice. It is free and open source and could replace `git` if you use GitHub to store your source code.
+The [GitHub CLI](https://cli.github.com/) allows you to work with GitHub in your terminal of choice. It is free and open source but there are a few differences between the GitHub CLI and `git.` `git` is used for git operations in general such as using your locally hosted version of git, Bitbucket, GitLab, etc. Whereas, the Github CLI is specifically made for GitHub and allows you to manage a variety of GitHub features such as issue tracking, etc. 
 
-Installation is super easy. You head to the  [GitHub CLI docs](https://github.com/cli/cli#installation) and look for your Operating System and preferred package manager. Since this tutorial is about the CLI, I wouldn't advise you to download the GUI installer. :) 
+Installation is straightforward. You head to the  [GitHub CLI docs](https://github.com/cli/cli#installation) and look for your Operating System and preferred package manager. Since this tutorial is about the CLI, I wouldn't advise you to download the GUI installer. :) 
 
 ![The Windows GUI Installer](/content/blog/better-together-github-vonage-cli/windowsinstaller.png)
 
@@ -70,7 +70,7 @@ You can always check to see your authentication status by running `gh auth statu
 
 You can now create or clone a repo to begin work. If you'd like to make a brand new repo, use `gh repo create`. You'll now be in interactive mode, so select the option to **Create a new repository on GitHub from scratch**. Follow the on-screen prompts and be sure to clone the repository locally. Here is an example of what mine looks like:
 
-![Finished GitHub repo setup ](/content/blog/better-together-github-vonage-cli/gh-repo-create.png)
+![Finished GitHub repo setup](/content/blog/better-together-github-vonage-cli/gh-repo-create.png)
 
 If you want to clone a repo, you can use `gh repo clone <directory>`. Here is an example of cloning my Real Estate C# Example - `gh repo clone Vonage-Community/blog-sms-csharp-realestate`. Again, here is an example of what the output looks like:
 
@@ -82,7 +82,7 @@ Now that we know how to perform basic operations with the GitHub CLI let's see w
 
 The [Vonage CLI](https://github.com/Vonage/vonage-cli) allows you to manage your Vonage account and numbers and configure your applications from the command line. Like the GitHub CLI, it is also free and open source and could be considered an alternative to managing your Vonage account via the [Vonage Developer Dashboard](https://developer.vonage.com).
 
-Installation is simple, but it does require that you have [Node.js](https://nodejs.org/) installed. Once you have Node.js installed, you can use npm (Node Package Manager) to install it by typing `npm install -g @vonage/cli`. 
+Installation requires that you have [Node.js](https://nodejs.org/) installed. Once you have Node.js installed, you can use npm (Node Package Manager) to install it by typing `npm install -g @vonage/cli`. 
 
 Once installed, run `vonage help` to get a quick glimpse of the commands you can use along with a description. 
 
