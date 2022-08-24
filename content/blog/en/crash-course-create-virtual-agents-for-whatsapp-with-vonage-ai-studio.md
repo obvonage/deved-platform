@@ -84,3 +84,9 @@ Note: To publish a WhatsApp Agent created on Vonage AI Studio, you need to have 
 Here's an example agent we built to record cases of animal sickness, injury, cruelty, and neglect. Go Ahead and send a “Hello” message on the number listed so you can try it out for yourself!
 
 **Agent Phone number: +12012014995**
+
+## Conclusion and Next Steps
+
+In this blog post we learned about the capabilities and uses of WhatsApp conversation agents in the Vonage AI Studio  platform.
+
+We always welcome community involvement. Please feel free to join us on the [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
