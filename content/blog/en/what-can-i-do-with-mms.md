@@ -1,8 +1,8 @@
 ---
 title: What Can I Do With MMS?
 description: An overview of the MMS channel of the Vonage Messages API, with a
- walkthrough of an example application which uses the Ruby SDK to send an MMS
- image message.
+  walkthrough of an example application which uses the Ruby SDK to send an MMS
+  image message.
 author: karl-lingiah
 published: true
 published_at: 2022-08-23T18:59:07.162Z
@@ -86,7 +86,7 @@ The `from` number needs to be either a **USSC** (US short code), **10DLC** (10-d
 
 The best way to demonstrate using the Vonage Message API to send MMS messages is to walk through an example application.
 
-I don't have any products to promote via MMS, but I do love [xkcd comics](https://xkcd.com/), so I used the [Vonage Ruby SDK](#) to build a small Ruby application that sends a daily MMS message containing a random comic from xkcd. If you're not a Rubyist, though, you could use one of our other [Server SDKs](https://developer.vonage.com/tools), or work with the Messages API directly, to implement something similar.
+I don't have any products to promote via MMS, but I do love [xkcd comics](https://xkcd.com/), so I used the [Vonage Ruby SDK](https://github.com/Vonage/vonage-ruby-sdk) to build a small Ruby application that sends a daily MMS message containing a random comic from xkcd. If you're not a Rubyist, though, you could use one of our other [Server SDKs](https://developer.vonage.com/tools), or work with the Messages API directly, to implement something similar.
 
 My Ruby app does two things:
 
@@ -263,3 +263,9 @@ To update my system's `crontab` with this schedule, I then need to run `whenever
 And voila! Daily xkcd comics via MMS.
 
 ![Screenshot of xkcd comic issue 974 'The General Problem' in an MMS](/content/blog/what-can-i-do-with-mms/xkcd-mms-screenshot.png "Screenshot of xkcd comic in an MMS")
+
+## Conclusion and Next Steps
+
+In this blog post we learned a bit more MMS, what you can do with it, and how to use the Vonage Messages API to send an MMS message.
+
+We always welcome community involvement. Please feel free to join us on the [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
