@@ -22,7 +22,7 @@ replacement_url: ""
 
 We're almost halfway through 2022, and the need for the [CLI (Command Line Interface)](https://en.wikipedia.org/wiki/Command-line_interface) is more vital than ever. Traditionally, Command Line Interfaces are used by advanced users (such as a developer or power users), whereas GUIs (Graphical User Interface) is sought after by beginners as they are user-friendly and easy to learn. Let's step back to the beginning of computing to learn more.
 
-With early computer systems, users only had a keyboard to input information, and screens (for the most part) would only display text. You could risk closing a program or removing important files if you entered a command incorrectly. Years later, there were mouse and color screens, and popular operating systems like Windows 3.11 or OS/2 Warp began providing users with a more friendly way to interact (through a GUI). But even with this decisive step forward, we continued to see advancements with CLIs with the [Command Prompt in Windows](https://en.wikipedia.org/wiki/Cmd.exe) and the [Terminal for MacOS](https://en.wikipedia.org/wiki/Terminal_(macOS)). (Which originated in Apple's acquisition of NeXTSTEP and OPENSTEP.)  
+With early computer systems, users only had a keyboard to input information, and screens (for the most part) would only display text. You could risk closing a program or removing important files if you entered a command incorrectly. Years later, there were mouse and color screens, and popular operating systems like Windows 3.11 or OS/2 Warp began providing users with a more friendly way to interact (through a GUI). But even with this decisive step forward, we continued to see advancements with CLIs with the [Command Prompt in Windows](https://en.wikipedia.org/wiki/Cmd.exe) and the [Terminal for MacOS](https://en.wikipedia.org/wiki/Terminal_(macOS)). (Which originated in Apple's acquisition of NeXTSTEP and OPENSTEP.) 
 
 Which leaves us with an important question, why are we seeing more and more companies (and developers) still investing in CLI tooling for their customers when they could use modern hardware and software technologies?
 
@@ -40,7 +40,7 @@ So if software developers and power users prefer these benefits over a GUI, then
 
 The [GitHub CLI](https://cli.github.com/) allows you to work with GitHub in your terminal of choice. It is free and open source but there are a few differences between the GitHub CLI and `git.` `git` is used for git operations in general such as using your locally hosted version of git, Bitbucket, GitLab, etc. Whereas, the Github CLI is specifically made for GitHub and allows you to manage a variety of GitHub features such as issue tracking, etc. 
 
-Installation is straightforward. You head to the  [GitHub CLI docs](https://github.com/cli/cli#installation) and look for your Operating System and preferred package manager. Since this tutorial is about the CLI, I wouldn't advise you to download the GUI installer. :) 
+Installation is straightforward. You head to the [GitHub CLI docs](https://github.com/cli/cli#installation) and look for your Operating System and preferred package manager. Since this tutorial is about the CLI, I wouldn't advise you to download the GUI installer. :) 
 
 ![The Windows GUI Installer](/content/blog/better-together-github-vonage-cli/windowsinstaller.png)
 
