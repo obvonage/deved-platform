@@ -3,10 +3,11 @@ title: What Can I Do With MMS?
 description: An overview of the MMS channel of the Vonage Messages API, with a
   walkthrough of an example application which uses the Ruby SDK to send an MMS
   image message.
+thumbnail: /content/blog/what-can-i-do-with-mms/what-mms-can-do.png
 author: karl-lingiah
 published: true
-published_at: 2022-08-23T18:59:07.162Z
-updated_at: 2022-08-23T18:59:07.245Z
+published_at: 2022-08-30T09:27:46.549Z
+updated_at: 2022-08-30T09:27:47.191Z
 category: inspiration
 tags:
   - messages-api
