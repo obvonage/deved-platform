@@ -1,5 +1,5 @@
 ---
-title: Chuck (MANCHUCK) Reeves Joins the team at Vonage
+title: Chuck Reeves Joins the team at Vonage
 description: Chuck (MANCHUCK) Reeves Joins the team at Vonage
 thumbnail: ""
 author: chuck-reeves
