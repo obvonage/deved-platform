@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 ## Introduction
 
-Customer service had changed over the years from when the only option was to phone a call center during business hours to today, where customers expect 24/7 service via the telephone and other means. Some of those are SMS/MMS messages, social media, communications apps (such as WhatsApp), and even voice assistants. Customers today prefer to resolve most service issues independently without talking to someone and are used to getting answers instantly. So how does a business address customer demand in 2022 without hiring a development team to build these solutions? 
+Customer service had changed over the years from when the only option was to phone a call center during business hours to today, where customers expect 24/7 service via the telephone and other means. Some of those means are SMS/MMS messages, social media, communications apps (such as WhatsApp), and even voice assistants. Many customers today prefer to resolve most service issues independently without talking to someone and are used to getting answers instantly. So how does a business address customer demand in 2022 without hiring a development team to build these solutions? 
 
 Today, I wanted to bring to your attention [Vonage AI Studio](https://studio.ai.vonage.com/). It is a No Code / Low Code conversation AI platform that helps businesses handle complex customer interactions through voice and text. It starts with a friendly user interface where you can drag and drop modules to build a conversational Virtual Agent that your customers can use. No development team is required! 
 
