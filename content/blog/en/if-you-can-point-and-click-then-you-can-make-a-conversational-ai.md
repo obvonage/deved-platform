@@ -76,7 +76,7 @@ If we press the **Tester** button at the top right of the screen, then you can s
 
 ![Testing the Agent](/content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/agent-in-action-1.png "agent-in-action-1.png")
 
-While seeing the bot in action is terrific, it does not do much! We will fix that by dragging and dropping a **Collect Input** node.
+While seeing the bot in action is terrific, it does not do much yet! We will fix that by dragging and dropping a **Collect Input** node.
 
 ![The Collect Input Node as part of the Conversation Group](/content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/collect-input-node.png "collect-input-node.png")
 
