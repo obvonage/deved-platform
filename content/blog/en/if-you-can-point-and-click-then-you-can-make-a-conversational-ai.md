@@ -26,7 +26,7 @@ Today, I wanted to bring to your attention [Vonage AI Studio](https://studio.ai.
 
 ## What we are going to build
 
-We will build a Virtual Agent for a fictitious event called the **Video Game Convention 2022**. In this scenario, a customer would be able to ask questions to get help regarding the logistics, such as driving directions. Once the Virtual Agent is ready, we will test it via the built-in test tool and finally publish it to try it live. Below is a screenshot once the Virtual Agent was published, and I am interacting with it via my iPhone through SMS messaging.
+We will build a Virtual Agent for a fictitious event called the **Video Game Convention 2022**. In this scenario, a customer would be able to ask questions to get help regarding the logistics for the event, such as driving directions. Once the Virtual Agent is ready, we will test it via the built-in testing tool and finally publish it to try it live. Below is a screenshot once the Virtual Agent was published, and I am interacting with it via my iPhone through SMS messaging.
 
 ![The Virtual Agent Running on a mobile device ](/content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/iphone.jpg "iphone.jpg")
 
