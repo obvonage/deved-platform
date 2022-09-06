@@ -2,13 +2,15 @@
 title: Build an ASP.NET MVC App to Send SMS Messages
 description: Learn how to use the Vonage SMS API with a real-world application
   using ASP.NET MVC Application and .NET 6.0.
+thumbnail: /content/blog/build-an-asp-net-mvc-app-to-send-sms-messages/asp-net_mvc-app.png
 author: michael-crump
 published: true
-published_at: 2022-08-16T09:13:00.123Z
-updated_at: 2022-08-16T09:13:00.137Z
+published_at: 2022-09-06T09:07:03.688Z
+updated_at: 2022-09-06T09:07:04.673Z
 category: tutorial
 tags:
   - csharp
+  - sms-api
 comments: true
 spotlight: false
 redirect: ""
@@ -24,7 +26,7 @@ I believe that real-world scenarios are important in understanding how to work w
 
 With that in mind, I decided to build a web application that simulates an end-user finding a house they are interested in and submitted a form that a real estate agent would receive an SMS with the details. A simple user interface of the application is shown below:
 
-![The demo app that we will build](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/demo.png)
+![The demo app that we will build](/content/blog/build-an-asp-net-mvc-app-to-send-sms-messages/demo.png)
 
 OK, let's get started building the app!
 
@@ -40,11 +42,11 @@ Begin by launching [Visual Studio](https://visualstudio.microsoft.com/vs/) (Comm
 
 Give your project a name (example: SalesLeads) and press **Next**. For Framework, ensure it is set to **.NET 6.0** and leave the other options as their default settings and press the **Create** button.
 
-![Visual Studio - Additional Settings](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/additionalinfo.png)
+![Visual Studio - Additional Settings](/content/blog/build-an-asp-net-mvc-app-to-send-sms-messages/additionalinfo.png)
 
 In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet Packages**. Now select the **Browse** tab and search for **Vonage**. You'll see [Vonage](https://www.nuget.org/packages/Vonage/) appear and press **Install** on the latest stable release (6.03 at the time of this writing). 
 
-![Installing Vonage dependencies](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/installvonage.png)
+![Installing Vonage dependencies](/content/blog/build-an-asp-net-mvc-app-to-send-sms-messages/installvonage.png)
 
 # What Is MVC, and Why Should We Use It?
 
@@ -138,7 +140,7 @@ We need to store our **API Key and API Secret** for our application to use when 
 
 But first, you can get your current API Key and API Secret by visiting the [Vonage Developer Portal](https://developer.vonage.com) and copying and pasting the keys as shown below. 
 
-![Installing Vonage dependencies](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/apidashboard.png)
+![Installing Vonage dependencies](/content/blog/build-an-asp-net-mvc-app-to-send-sms-messages/apidashboard.png)
 
 > Note: I added the secrets to this class for the ease of understanding the pattern. Please secure your secrets if you are publishing a production application using either environment variables or something such as Azure Key Vault. 
 
@@ -216,7 +218,7 @@ When you run the code above and enter a **Name, Phone Number and Message**, the 
 
 Below is the result of the SMS sent successfully!
 
-![Sample Message sent successful](/content/blog/send-and-receive-sms-messages-with-asp-net-mvc-and-net-6/result.png)
+![Sample Message sent successful](/content/blog/build-an-asp-net-mvc-app-to-send-sms-messages/result.png)
 
 ## Conclusion
 
