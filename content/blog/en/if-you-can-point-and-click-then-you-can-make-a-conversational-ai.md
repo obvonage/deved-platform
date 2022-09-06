@@ -88,7 +88,7 @@ Select **Parameter** and click **Create Parameter**.
 
 ![Create a parameter](/content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/create-parameter.png "create-parameter.png")
 
-We will give it the REQUEST name and assign it to **@sys.any**, allowing any user input, such as numbers, characters, and more. 
+We will give it the REQUEST name and assign it to **@sys.any**, allowing any type of user input, such as numbers, characters, and more. 
 
 ![Supply a Custom parameter](/content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/custom-parameters.png "custom-parameters.png")
 
