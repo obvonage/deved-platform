@@ -128,7 +128,7 @@ Looking at the canvas now, you should note that the nodes are not connected, as 
 
 ![Canvas before connecting the nodes](/content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/before-canvas.png "before-canvas.png")
 
-Once disconnected, the Virtual Agent doesn't know what to do next. Let's go ahead and fix that by joining the nodes, as shown below.
+When nodes are disconnected, the Virtual Agent doesn't know what to do next. Let's go ahead and fix that by joining the nodes, as shown below.
 
 ![Canvas after connecting the nodes](/content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/after-canvas.png "after-canvas.png")
 
