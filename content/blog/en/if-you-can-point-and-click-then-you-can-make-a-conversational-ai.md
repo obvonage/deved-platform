@@ -32,7 +32,7 @@ We will build a Virtual Agent for a fictitious event called the **Video Game Con
 
 ## Getting Started
 
-We will start by going to the [Vonage AI Studio](https://studio.ai.vonage.com/) home page and pressing the button to **Create Agent**. You will see an option of what type of Agent you would like to create.
+To begin, you'll need to log into the [Vonage Developer Portal](https://developer.vonage.com) first. If you don't have one, you can create one, and we'll give you free credit to play around with our APIs. Next, navigate the [Vonage AI Studio](https://studio.ai.vonage.com/) home page and press the button to **Create Agent**. You will see an option of what type of Agent you would like to create. 
 
 ![The Agent Creation Screen](/content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/agent-creation.png "agent-creation.png")
 
