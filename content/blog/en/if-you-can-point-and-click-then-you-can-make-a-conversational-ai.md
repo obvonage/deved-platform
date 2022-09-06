@@ -42,7 +42,7 @@ We will need to fill in some details here:
 
 * Region: Where will your Agent be typically used in - The USA or in Europe
 * Agent Name: Give your Agent a unique name that is meaningful to you. In our case, we will use VideoGameEvent.
-* API Key: This shows your API Key associated with your account.
+* API Key: This shows your API Key associated with your Vonage developer account.
 * Language: Select the language of your Agent.
 * Time Zone: Choose the time zone where your Agent will operate.
 
