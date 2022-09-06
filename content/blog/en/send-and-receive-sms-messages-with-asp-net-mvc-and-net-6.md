@@ -1,5 +1,5 @@
 ---
-title: Send and Receive SMS Messages With ASP.NET MVC and .NET 6
+title: Build an ASP.NET MVC App to Send SMS Messages
 description: Learn how to use the Vonage SMS API with a real-world application
   using ASP.NET MVC Application and .NET 6.0.
 author: michael-crump
