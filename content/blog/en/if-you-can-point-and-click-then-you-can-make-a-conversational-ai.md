@@ -98,7 +98,7 @@ Next, under **Message**, you will see **Prompt**. This is where we will ask the 
 
 ![The Collect input dialog](/content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/collect-input-1.png "collect-input-1.png")
 
-We will now use the **Classifications** node to understand what the user is asking for help. 
+We will now use the **Classifications** node to understand what sort of help the user is asking for. 
 
 ![Conversation Group for the Classification Node](./Images/collect-input-node.png "collect-input-node.png")
 
