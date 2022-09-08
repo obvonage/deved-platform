@@ -1,11 +1,12 @@
 ---
-title: Chuck Reeves Joins the team at Vonage
-description: Chuck (MANCHUCK) Reeves Joins the team at Vonage
-thumbnail: ""
+title: Chuck Reeves Joins the Vonage Developer Relations Team
+description: Meet Chuck (MANCHUCK) Reeves, the new Senior JavaScript Developer
+  Advocate at Vonage
+thumbnail: /content/blog/chuck-reeves-joins-the-vonage-developer-relations-team/chuck-reeves.png
 author: chuck-reeves
 published: true
-published_at: 2022-08-31T15:10:52.244Z
-updated_at: 2022-08-31T15:10:52.261Z
+published_at: 2022-09-08T08:48:18.173Z
+updated_at: 2022-09-08T08:48:19.962Z
 category: team
 tags:
   - career
