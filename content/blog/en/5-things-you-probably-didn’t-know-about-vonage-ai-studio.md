@@ -17,8 +17,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-![Title](./Images/something.png)
-
 ## Introduction
 
 I've recently begun exploring [Vonage AI Studio](https://dashboard.nexmo.com/studio) and created a blog post, "[If You Can Point and Click, Then You Can Make a Conversational AI](http://linkhere)." In the post, I built a Virtual Agent for a fictitious event that allowed a customer to ask questions regarding the event's logistics. They would get a reply with the information requested. In doing so, I came across these five tips that I thought would help anyone get started with AI Studio!
@@ -31,11 +29,11 @@ Let's jump into the tips!
 
 Maybe you'd like to export your Virtual Agent after creation, keep it on your servers, or use your source control. Thankfully, it is straightforward to do. Navigate to your **Agents**  list, click on the three dots next to the agent name and select **Export Agent**. 
 
-![Title](./Images/export-Agent.png)
+![Export Agent Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/export-agent.png "export-agent.png")
 
 After a few minutes, you'll see an email from `ai.vonage.com` with the Subject, "Your Agent is ready!". Click on the download link to save your Agent to your local computer.
 
-![Title](./Images/export-Agent-email.png)
+![Export Agent Email Sample](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/export-agent-email.png "export-agent-email.png")
 
 Once you download your Vonage AI Agent, you can import it back into AI Studio anytime. If you are curious as to what the `.zip` file contains, you'll see the following structure:
 
@@ -54,7 +52,6 @@ C:.
 Below is a summary of what each file does:
 
 * The `Agent.json` contains information about the Agent that you specified during the Agent creation process. Items such as the Agent Name, Language, TimeZone, etc. 
-
 * The `nlu-application.zip` contains two files: the `<id>.json` and a `signature.sig`. The `<id>.json` contains application-specific information, `intents`, and `entities`, whereas the `signature.sig` is the application's signature.
 
 The `version.json` contain information specific to the different versions that your Agent has. There is more to come on this topic later. 
@@ -63,7 +60,7 @@ Now that we know how to **Export an Agent** let's cover **Importing** one.
 
 Thankfully, this is just as easy. Once logged into [AI Studio](https://studio.ai.vonage.com/Agents), you'll see an option to **Import Agent** besides the Create Agent button. 
 
-![Import Agent](./Images/import-Agent.png)
+![Import Agent Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/import-agent.png "import-agent.png")
 
 You'll see an option to upload an Agent, go ahead and upload the Agent that you downloaded from the step above and now you will have the opportunity to update the : 
 
@@ -71,11 +68,11 @@ You'll see an option to upload an Agent, go ahead and upload the Agent that you 
 * Region: Where will your Agent typically be used - The USA or Europe?
 * Time Zone: Choose the time zone where your Agent will operate.
 
-![Import Agent Dialog Box](./Images/import-Agent-dialog.png)
+![Import Agent Dialog Box](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/import-agent-dialog.png "import-agent-dialog.png")
 
 Finally, press **Import Agent** and your new Agent will be listed.
 
-![Import Agent Dialog Box](./Images/Agent-imported-successfully.png)
+![Imported Agent Successfully](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/agent-imported-successfully.png "agent-imported-successfully.png")
 
 **Note** - After creating your Agent, you need to set a phone number.
 
@@ -83,11 +80,11 @@ Finally, press **Import Agent** and your new Agent will be listed.
 
 Sometimes you need to view past SMS conversations between a user and your virtual Agent for reporting or troubleshooting purposes. Select the **Agent** from which you want to view the conversation data and click on **Reports** from the top menu navigation. 
 
-![Access Reports](./Images/reports.png)
+![Reports](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/reports.png "reports.png")
 
 You can filter reports by **Session ID** or the **Caller Number**. Regardless of which item is selected, you'll see a **Search** box where you can enter information. 
 
-![Filter Reports](./Images/filter-report.png)
+![Filter Reports](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/filter-report.png "filter-report.png")
 
 Before you search, you'll see a **Generate Report** option on the right-hand side that allows you to filter the data shown. You will have the following options:
 
@@ -98,15 +95,15 @@ Before you search, you'll see a **Generate Report** option on the right-hand sid
 * Time Zone: The time zone that you'd like to filter.
 * Report State: You can choose between **Success**, **Warning**, **Error**, or **All**.
 
-![Generate Report Filter Options](./Images/generate-report.png)
+![Generate Report Filter Options](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/generate-report.png "generate-report.png")
 
 Once you press **Apply**, you will see if the data exists, as shown below.
 
-![Reports Results](./Images/report-results.png)
+![Reports Results](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/report-results.png "report-results.png")
 
 If you click on the **ID**, you'll see details such as the **Caller phone**, **Agent phone**, **Session ID**, and a **Transcript** of the recorded conversation. 
 
-![Reports Details](./Images/report-details.png)
+![Reports Details](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/report-details.png "report-details.png")
 
 You can also view the **Parameters** data captured and review the **Flow Path** that the Virtual Agent took them through. Very cool!
 
@@ -114,73 +111,73 @@ You can also view the **Parameters** data captured and review the **Flow Path** 
 
 Let's say you'd like to look at a previous version of your Virtual Agent to revert a change. If you click on the three dots on the top of the page next to the Agent's name, you'll see  **Versions**.
 
-![Versions](./Images/versions.png)
+![Versions Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/versions.png "versions.png")
 
 You'll see a list of **Versions**; if you click on it, you can view it inside the designer. By default, the current view will be your most recent published version. 
 
-![Click on Versions](./Images/click-on-versions.png)
+![Click on Versions](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/click-on-versions.png "click-on-versions.png")
 
 If you want to revert to a previous version, you can click on the three dots next to the version and select "**Open in editor**." We'll do this for **Version 1** of our SMS Virtual Agent. 
 
-![Open in Editor](./Images/open-in-editor.png)
+![Open in Editor](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/open-in-editor.png "open-in-editor.png")
 
 You'll see a dialog box warning below that any unsaved changes will be lost if you proceed. 
 
-![Open in Editor](./Images/dialog-save-new-version.png)
+![Dialog to Save New Version](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/dialog-save-new-version.png "dialog-save-new-version.png")
 
  Click "Back to Editor" on the top left to begin working with the previous version. 
 
- ![Restored Version](./Images/restored-version.png)
+![Restored Version](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/restored-version.png "restored-version.png")
 
 ## Tip #4 - Would you prefer an actual voice vs. using text-to-speech?
 
 Sometimes you might prefer to give your customers a human voice vs. using text-to-speech for your conversation flow. You can do this simply by looking under **Properties**, then **Recordings**. 
 
-![Recordings](./Images/recordings.png)
+![Recordings Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/recordings.png "recordings.png")
 
 You can **Drag and Drop** an audio file on the **Recordings** dialog. 
 
-![Recordings](./Images/recordings-dialog.png)
+![Recordings Dialog](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/recordings-dialog.png "recordings-dialog.png")
 
 **Quick Tip:** Please note that the supported file types are wav, mp3, and ogg and that files may not be larger than four MB in file size.
 
 Once you've uploaded your file, you can preview it and see a **Transcript** of the audio. 
 
-![Recordings](./Images/uploaded-recording.png)
+![Uploaded Recording](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/uploaded-recording.png "uploaded-recording.png")
 
 Using a **Telephony** Agent, you'll see the **Speak** node under **Conversation**. Select this and drag and drop it onto the designer. 
 
-![Speak Node](./Images/speak-node.png)
+![Speak Node](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/speak-node.png "speak-node.png")
 
 Click on **Speak 1**, and you'll see an option to select **Audio**. Under **Use Recording**, you'll see the recording  you uploaded from the earlier step. 
 
-![Selecting an Audio Recording](./Images/selecting-audio-recording.png)
+![Selecting an Audio Recording](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/selecting-audio-recording.png "selecting-audio-recording.png")
 
 Select **Done** and then **Save & Exit**. 
 
-![Speak Node Connected](./Images/speak-1-connected.png)
+![Speak Node Connected](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/speak-1-connected.png "speak-1-connected.png")
 
 ## Tip #5 - Integrations
 
 Sometimes you will need a third-party service to send and receive data. Vonage AI Studio has several **Integration** nodes that you can use. 
 
-![Integrations](./Images/integrations.png)
+![Integrations](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/integrations.png "integrations.png")
 
 There are three main types at the time of this blog post: 
 
-1) Webhook - It supports multiple ways to send an API request, such as **GET, POST, PUT, DELETE, and PATCH**. It also provides support for **HTTP headers** and **Response Mapping**. 
+1. Webhook - It supports multiple ways to send an API request, such as **GET, POST, PUT, DELETE, and PATCH**. It also provides support for **HTTP headers** and **Response Mapping**. 
 
 A built-in way to test your Webhook is by clicking on **Test Request** on the top right of the node settings. 
 
-![WebHook](./Images/webhook.png)
+![WebHook](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/webhook.png "webhook.png")
 
-2) Salesforce Authentication - This node handles the required authentication to access your Salesforce domain.
+2. Salesforce Authentication - This node handles the required authentication to access your Salesforce domain.
 
-![Salesforce Authentication](./Images/salesforce-authentication.png)
+![Salesforce Authentication](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/salesforce-authentication.png "salesforce-authentication.png")
 
-3) Salesforce Actions - The Salesforce Action node allows you to retrieve, create and update a record via SOQL query.
+3. Salesforce Actions - The Salesforce Action node allows you to retrieve, create and update a record via SOQL query.
 
-![Salesforce Actions](./Images/salesforce-actions.png)
+![Salesforce Actions](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/salesforce-actions.png "salesforce-actions.png")
 
 ## Wrap-up
 
