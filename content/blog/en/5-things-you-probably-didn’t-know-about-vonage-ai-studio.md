@@ -1,6 +1,6 @@
 ---
 title: 5 Things You Probably Didn’t Know About Vonage AI Studio
-description: Five tips that I thought would help anyone get started with AI Studio!
+description: Five tips to help anyone to get started with Vonage AI Studio!
 author: michael-crump
 published: true
 published_at: 2022-09-08T19:39:24.124Z
