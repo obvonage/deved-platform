@@ -16,7 +16,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Diana joined Vonage as the youngest member on the DevRel team shortly after completing her masters in computer science at Northeastern University. Prior to grad school, she had never truly coded in her life. After interning with multiple companies and creating a **[YouTube series](https://www.youtube.com/watch?v=_PYRlXieg-E)** for one of them, Diana found her calling in devrel. Now she works on the Outreach team as a developer advocate - North America.
+Diana joined Vonage as the youngest member on the DevRel team shortly after completing her masters in computer science at Northeastern University. Prior to grad school, she had never truly coded in her life. After interning with multiple companies and creating a **[YouTube series](https://www.youtube.com/watch?v=_PYRlXieg-E)** for one of them, Diana found her calling in advocacy. Now she works on the Outreach team as a developer advocate - North America.
 
 Her career goals include becoming a better developer, improving her creativity through content creation, and learning how to properly use British lingo (e.g. “get on”) from her English coworkers.
 
