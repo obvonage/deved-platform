@@ -3,10 +3,11 @@ title: If You Can Point and Click Then You Can Make a Conversational AI
 description: Learn all about AI Studio, a No Code / Low Code approach to help
   businesses handle complex customer interactions through the use of a Virtual
   Agent.
+thumbnail: /content/blog/if-you-can-point-and-click-then-you-can-make-a-conversational-ai/point-click_conversationai.png
 author: michael-crump
 published: true
-published_at: 2022-08-25T17:28:48.719Z
-updated_at: 2022-08-25T17:28:48.785Z
+published_at: 2022-09-13T08:07:02.282Z
+updated_at: 2022-09-13T08:07:03.424Z
 category: tutorial
 tags:
   - ai-studio
