@@ -131,7 +131,7 @@ You'll see a dialog box warning below that any unsaved changes will be lost if y
 
 ## Tip #4 - Would you prefer an actual voice vs. using text-to-speech?
 
-Sometimes you might prefer to give your customers a human voice vs. using text-to-speech for your conversation flow. You can do this simply by looking under **Properties**, then **Recordings**. 
+AI Studio's text-to-speech feature is awesome, but sometimes you might prefer to give your customers a human voice vs. using text-to-speech for your conversation flow. You can do this simply by looking under **Properties**, then **Recordings**. 
 
 ![Recordings Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/recordings.png "recordings.png")
 
