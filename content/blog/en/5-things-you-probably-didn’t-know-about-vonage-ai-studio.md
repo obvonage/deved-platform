@@ -163,7 +163,7 @@ Sometimes you will need a third-party service to send and receive data. Vonage A
 
 ![Integrations](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/integrations.png "integrations.png")
 
-There are three main types at the time of this blog post: 
+There are three main types at the time of writing this blog post: 
 
 1. Webhook - It supports multiple ways to send an API request, such as **GET, POST, PUT, DELETE, and PATCH**. It also provides support for **HTTP headers** and **Response Mapping**. 
 
