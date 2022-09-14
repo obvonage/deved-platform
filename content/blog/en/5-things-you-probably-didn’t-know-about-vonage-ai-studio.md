@@ -70,7 +70,7 @@ You'll see an option to upload an Agent, go ahead and upload the Agent that you 
 
 ![Import Agent Dialog Box](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/import-agent-dialog.png "import-agent-dialog.png")
 
-Finally, press **Import Agent** and your new Agent will be listed.
+Finally, press **Import Agent**, and your new Agent will be listed.
 
 ![Imported Agent Successfully](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/agent-imported-successfully.png "agent-imported-successfully.png")
 
