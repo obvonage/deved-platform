@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 ## Introduction
 
-I've recently begun exploring [Vonage AI Studio](https://dashboard.nexmo.com/studio) and created a blog post, "[If You Can Point and Click, Then You Can Make a Conversational AI](http://linkhere)." In the post, I built a Virtual Agent for a fictitious event that allowed a customer to ask questions regarding the event's logistics. They would get a reply with the information requested. In doing so, I came across these five tips that I thought would help anyone get started with AI Studio!
+I've recently begun exploring [Vonage AI Studio](https://dashboard.nexmo.com/studio). Using AI Studio, I built a Virtual Agent for a fictitious event that allowed a customer to ask questions regarding the event's logistics. They would get a reply with the information requested. I wrote about my initial experiences in a blog post, "[If You Can Point and Click, Then You Can Make a Conversational AI](https://developer.vonage.com/blog/22/09/13/if-you-can-point-and-click-then-you-can-make-a-conversational-ai)." During that whole process, I came across a number of features that are super-useful. I thought it would be helpful to summarize these features as five tips for anyone getting started with AI Studio!
 
 But before we do that, for those that don't know, [Vonage AI Studio](https://dashboard.nexmo.com/studio) is a Low Code / No-code conversation designer that empowers developers and non-developers to design, create and deploy Virtual Assistants that operate in natural language. It uses your Vonage API account to create customer engagements over voice, HTTP, and WhatsApp channels.
 
