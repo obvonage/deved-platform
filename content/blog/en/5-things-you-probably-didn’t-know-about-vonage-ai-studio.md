@@ -27,7 +27,7 @@ Let's jump into the tips!
 
 ## Tip #1 - Learn how to easily Export and Import Agents
 
-Maybe you'd like to export your Virtual Agent after creation, keep it on your servers, or use your source control. Thankfully, it is straightforward to do. Navigate to your **Agents**  list, click on the three dots next to the agent name and select **Export Agent**. 
+Maybe you'd like to export your Virtual Agent after creation, keep it on your servers, or import it to a different account. Thankfully, this is straightforward to do. Navigate to your **Agents**  list, click on the three dots next to the agent name and select **Export Agent**. 
 
 ![Export Agent Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/export-agent.png "export-agent.png")
 
