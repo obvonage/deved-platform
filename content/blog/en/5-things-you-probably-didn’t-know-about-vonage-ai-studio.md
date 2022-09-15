@@ -1,11 +1,12 @@
 ---
 title: 5 Things You Probably Didn’t Know About Vonage AI Studio
 description: Five tips to help anyone to get started with Vonage AI Studio!
+thumbnail: /content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/5-things_ai-studio.png
 author: michael-crump
 published: true
-published_at: 2022-09-08T19:39:24.124Z
-updated_at: 2022-09-08T19:39:24.291Z
-category: tutorial
+published_at: 2022-09-20T07:10:00.000Z
+updated_at: 2022-09-20T19:39:24.291Z
+category: inspiration
 tags:
   - aistudio
   - lowcode
