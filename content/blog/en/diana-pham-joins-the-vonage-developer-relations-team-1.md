@@ -1,11 +1,11 @@
 ---
 title: Diana Pham Joins the Vonage Developer Relations Team
 description: Meet Diana (@dianasoyster)–the newest NA edition to the Outreach Team.
-thumbnail: /content/blog/diana-pham-joins-the-vonage-developer-relations-team/corona-del-mar-family-session-tess-laureen-photography-_tesslaureen-126_original.jpg
+thumbnail: /content/blog/diana-pham-joins-the-vonage-developer-relations-team/diana-pham.png
 author: diana-pham-1
 published: true
-published_at: 2022-09-09T18:17:42.826Z
-updated_at: 2022-09-09T18:17:42.839Z
+published_at: 2022-09-15T07:23:40.651Z
+updated_at: 2022-09-15T07:23:41.881Z
 category: team
 tags:
   - careers
