@@ -41,7 +41,7 @@ Vonage also sponsors VUX World, a side track on October 11 that runs from 11 am 
 
 ## What about this Hackathon?
 
-We want to see what awesome software you can make that utilizes the Vonage Communications Platforms and Symbl.ai. Vonage is a great choice for connecting with your customers while Symbl.ai can automatically provide additional information about those conversations. We want to see how you can use both to potentially make the next great product.
+We want to see what awesome software you can make that utilizes the Vonage Communications Platforms and Symbl.ai. Vonage is a great choice for connecting with your customers, while Symbl.ai can automatically provide additional information about those conversations. We want to see how you can use both to make a great product for your customers.
 
 We have four categories we are throwing out there to pique your interest:
 
