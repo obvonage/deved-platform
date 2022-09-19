@@ -37,7 +37,7 @@ If you are interested in attending VOICE 2022, head over to their website at [h
 
 ## VUX World at VOICE
 
-Vonage is also sponsoring VUX World, a side track on October 11 that runs from 11am until 5pm at VOICE 2022. Come join VUX and kore.ai to get an end-to-end story about call center AI automation. If you have had bad experiences with voice and chatbots in the past, learn from others how you can avoid the pitfalls others have made.
+Vonage also sponsors VUX World, a side track on October 11 that runs from 11 am until 5 pm at VOICE 2022. Join VUX and kore.ai to get an end-to-end story about call center AI automation. If you have had bad experiences with voice and chatbots in the past, learn from others how you can avoid the pitfalls others have made.
 
 ## What about this Hackathon?
 
