@@ -20,11 +20,13 @@ replacement_url: ""
 ---
 ## Introduction
 
-I've recently begun exploring [Vonage AI Studio](https://dashboard.nexmo.com/studio). Using AI Studio, I built a Virtual Agent for a fictitious event that allowed a customer to ask questions regarding the event's logistics. They would get a reply with the information requested. I wrote about my initial experiences in a blog post, "[If You Can Point and Click, Then You Can Make a Conversational AI](https://developer.vonage.com/blog/22/09/13/if-you-can-point-and-click-then-you-can-make-a-conversational-ai)." During that whole process, I came across a number of features that are super-useful. I thought it would be helpful to summarize these features as five tips for anyone getting started with AI Studio!
+I was recently introduced to [Studio by Vonage AI](https://dashboard.nexmo.com/studio). For the uninitiated, Studio is a Low/No code virtual assistant builder that allows developers and non-developers alike to design, create and deploy Virtual agents that operate with Natural language understanding. It uses your Vonage API account to create customer engagements over voice, SMS, HTTP and WhatsApp channels.
 
-But before we do that, for those that don't know, [Vonage AI Studio](https://dashboard.nexmo.com/studio) is a Low Code / No-code conversation designer that empowers developers and non-developers to design, create and deploy Virtual Assistants that operate in natural language. It uses your Vonage API account to create customer engagements over voice, SMS, HTTP, and WhatsApp channels.
+I built a Virtual Agent for a fictitious event that allowed customers to ask questions regarding event logistics. They would then get a reply with the information requested. 
 
-Let's jump into the tips! 
+I wrote about my initial experiences in a blog post, "[If You Can Point and Click, Then You Can Make a Conversational AI](https://developer.vonage.com/blog/22/09/13/if-you-can-point-and-click-then-you-can-make-a-conversational-ai)." During that whole process, I came across a number of features that are super-useful. I thought it would be helpful to summarize these features as five tips for anyone getting started with AI Studio!
+
+Let's jump into it! 
 
 ## Tip #1 - Learn how to easily Export and Import Agents
 
@@ -32,11 +34,11 @@ Maybe you'd like to export your Virtual Agent after creation, keep it on your se
 
 ![Export Agent Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/export-agent.png "export-agent.png")
 
-After a few minutes, you'll see an email from `ai.vonage.com` with the Subject, "Your Agent is ready!". Click on the download link to save your Agent to your local computer.
+After a few minutes, you'll receive an email from `ai.vonage.com` with the Subject, "Your Agent is ready!". Click on the download link to save your Agent to your local computer.
 
 ![Export Agent Email Sample](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/export-agent-email.png "export-agent-email.png")
 
-Once you download your Vonage AI Agent, you can import it back into AI Studio anytime. If you are curious as to what the `.zip` file contains, you'll see the following structure:
+Once you download your Agent, you can import it back into AI Studio anytime. If you are curious as to what the `.zip` file contains, you'll see the following structure:
 
 ```text
 C:\Vonage\ai-structure>tree /f
@@ -59,11 +61,11 @@ The `version.json` contain information specific to the different versions that y
 
 Now that we know how to **Export an Agent** let's cover **Importing** one. 
 
-Thankfully, this is just as easy. Once logged into [AI Studio](https://studio.ai.vonage.com/Agents), you'll see an option to **Import Agent** besides the Create Agent button. 
+Next, to import your agent, log into your desired Studio account and click on the Import agent button on the top right of your screen. It should be right next to the **Create Agent** button.
 
 ![Import Agent Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/import-agent.png "import-agent.png")
 
-You'll see an option to upload an Agent, go ahead and upload the Agent that you downloaded from the step above and now you will have the opportunity to update the : 
+You can now go ahead and upload the agent file that you previously downloaded here, You will also have the opportunity to update the following information:
 
 * Agent Name: Give your Agent a unique name you haven't used before.
 * Region: Where will your Agent typically be used - The USA or Europe?
@@ -71,15 +73,15 @@ You'll see an option to upload an Agent, go ahead and upload the Agent that you 
 
 ![Import Agent Dialog Box](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/import-agent-dialog.png "import-agent-dialog.png")
 
-Finally, press **Import Agent**, and your new Agent will be listed.
+Finally, click on the **Import Agent** button on the top right. Your new agent will now be listed on the Agents dashboard.
 
 ![Imported Agent Successfully](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/agent-imported-successfully.png "agent-imported-successfully.png")
 
-**Note** - After creating your Agent, you need to set a phone number.
+**Note** - After creating your Agent, you will need to assign a new phone number in order to publish it.
 
-## Tip #2 - See transcripts of past SMS conversations for reporting or troubleshooting
+## Tip #2 - Reporting features for past channel conversations
 
-Sometimes you need to view past SMS conversations between a user and your virtual Agent for reporting or troubleshooting purposes. Select the **Agent** from which you want to view the conversation data and click on **Reports** from the top menu navigation. 
+Sometimes you need to view past What's App, SMS, HTTP conversations between a user and your virtual Agent for reporting or troubleshooting purposes. Select the **Agent** from which you want to view the conversation data and click on **Reports** from the top menu navigation. 
 
 ![Reports](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/reports.png "reports.png")
 
@@ -110,19 +112,21 @@ You can also view the **Parameters** data captured and review the **Flow Path** 
 
 ## Tip #3 - You can quickly go back to previous versions of an Agent
 
-Let's say you'd like to look at a previous version of your Virtual Agent to revert a change. If you click on the three dots on the top of the page next to the Agent's name, you'll see  **Versions**.
+The canvas in AI studio is typically where you do a majority of your work and it is called the Editor mode. But once you are ready to connect your Agent to a live environment, you will have to publish the Agent.
+
+Sometimes after publishing your Agent, you might wish to go back to a previous version to revert a change. If you click on the three dots on the top of the page next to the Agent's name, you will see an option labeled **Versions**.
 
 ![Versions Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/versions.png "versions.png")
 
-You'll see a list of **Versions**; if you click on it, you can view it inside the designer. By default, the current view will be your most recent published version. 
+Once clicked the canvas will display all the different agent versions you have created so far. You will be able to see the differences between the published agent and draft versions. By default, the current view will be your most recent published version. 
 
 ![Click on Versions](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/click-on-versions.png "click-on-versions.png")
 
-If you want to revert to a previous version, you can click on the three dots next to the version and select "**Open in editor**." We'll do this for **Version 1** of our SMS Virtual Agent. 
+If you want to revert to a previous version, you can click on the three dots next to the version and select "**Open in editor**." We'll do this for **Version 1** (as shown in the previous screenshot) of our SMS Virtual Agent. 
 
 ![Open in Editor](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/open-in-editor.png "open-in-editor.png")
 
-You'll see a dialog box warning below that any unsaved changes will be lost if you proceed. 
+A warning will pop up notifying you that any unsaved changes will be lost if you proceed. 
 
 ![Dialog to Save New Version](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/dialog-save-new-version.png "dialog-save-new-version.png")
 
@@ -132,7 +136,9 @@ You'll see a dialog box warning below that any unsaved changes will be lost if y
 
 ## Tip #4 - Would you prefer an actual voice vs. using text-to-speech?
 
-AI Studio's text-to-speech feature is awesome, but sometimes you might prefer to give your customers a human voice vs. using text-to-speech for your conversation flow. You can do this simply by looking under **Properties**, then **Recordings**. 
+AI Studio's Text-to-speech (powered by Amazon Polly voices) offers a wide variety of human-sounding voices with different accents, however in the case that you would prefer to give your customers a human voice vs. using text-to-speech for your conversation flow. You can do this simply by looking under **Properties**, then **Recordings**. 
+
+NOTE: Recordings is only for telephony. 
 
 ![Recordings Option](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/recordings.png "recordings.png")
 
@@ -160,7 +166,7 @@ Select **Done** and then **Save & Exit**.
 
 ## Tip #5 - Integrations
 
-Sometimes you will need a third-party service to send and receive data. Vonage AI Studio has several **Integration** nodes that you can use. 
+Sometimes you will need to integrate with a third-party service to send and receive data. Vonage AI Studio has several **Integration** nodes that you can use. 
 
 ![Integrations](/content/blog/5-things-you-probably-didn’t-know-about-vonage-ai-studio/integrations.png "integrations.png")
 
