@@ -21,7 +21,7 @@ Vonage is pleased to share that it is partnering with [Symbl.ai](https://symbl.a
 
 ## Who is Symbl.ai?
 
-Symbl.ai is a conversational intelligence API that allows you to process audio, video, and raw text to pull out meaningful information. While you can do text transcription, their API also allows you to find topics that were discussed, questions that were asked, and contextual information about a conversation. Did you just have a meeting? You can send the video to Symbl.ai and have them pull out the important topics and questions to build meeting notes for you.
+Symbl.ai is a conversational intelligence API that allows you to process audio, video, and raw text to pull out meaningful information. While you can do text transcription, their API also enables you to find topics discussed, questions asked, and contextual information about a conversation. Suppose you just had a meeting. You can send the video to Symbl.ai and have them pull out the essential topics and questions to build meeting notes for you.
 
 The APIs can be used in real-time through streaming audio to their platform, or you can submit files and text asynchronously and let them process it. Just like Vonage's APIs, they utilize simple HTTP connections to interact with their API and also provide a JavaScript SDK for client applications as well as NodeJS and Python SDKs for server-side applications.
 
