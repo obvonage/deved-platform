@@ -25,7 +25,7 @@ Symbl.ai is a conversational intelligence API that allows you to process audio, 
 
 The APIs can be used in real-time through streaming audio to their platform, or you can submit files and text asynchronously and let them process it. Just like Vonage's APIs, they utilize simple HTTP connections to interact with their API and provide a JavaScript SDK for client applications and Node.js and Python SDKs for server-side applications.
 
-Find out more about Symbl.ai and its platform at <https://symbl.ai/>.
+Find out more about Symbl.ai and its platform at [https://symbl.ai](https://symbl.ai).
 
 ## What is VOICE 2022?
 
