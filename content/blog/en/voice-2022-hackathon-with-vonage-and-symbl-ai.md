@@ -33,7 +33,7 @@ VOICE 2022 brings together top industry leaders and innovators that work with co
 
 VOICE 2022 takes place in Arlington, VA, on October 10, 2022, until October 12, 2022. It will be three days with well-known companies providing valuable sessions and workshops to help you implement conversational AI into your workflows.
 
-If you are interested in attending VOICE 2022, head over to their website at <https://www.voicesummit.ai/>.
+If you are interested in attending VOICE 2022, head over to their website at [https://www.voicesummit.ai/](https://www.voicesummit.ai/).
 
 ## VUX World at VOICE
 
