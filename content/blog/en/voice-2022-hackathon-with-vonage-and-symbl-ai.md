@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Vonage is pleased to share that it is partnering with Symbl.ai, a conversational intelligence API, to run a hackathon from September 12, 2022, until October 10, 2022. This means it is running right now as a virtual hackathon, but we will be providing space at VOICE 2022 in Arlington, VA, as part of the VOICE 2022 conference! If that's all you need to know, head over to the [Hackathon page](https://www.voicesummit.ai/2022-hackathon) to register!
+Vonage is pleased to share that it is partnering with [Symbl.ai](https://symbl.ai/), a conversational intelligence API, to run a hackathon from September 12, 2022, until October 10, 2022. The hackathon is active right now, and we will be providing space at VOICE 2022 in Arlington, VA, as part of the VOICE 2022 conference! If that's all you need to know, head to the [Hackathon page](https://www.voicesummit.ai/2022-hackathon) to register!
 
 ## Who is Symbl.ai?
 
