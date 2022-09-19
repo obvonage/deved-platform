@@ -29,7 +29,7 @@ Find out more about Symbl.ai and its platform at <https://symbl.ai/>.
 
 ## What is VOICE 2022?
 
-VOICE 2022 brings together top industry leaders and innovators that work with conversation AI. As more and more interactions move to chat and automated systems, conversational AI is becoming a more important component of how companies interact with their customers. Conversational AI can be used to give customers topical, instant information without the need of talking to a human being and can be paired with a variety of software applications like virtual assistants.
+VOICE 2022 brings together top industry leaders and innovators that work with conversation AI. As more and more interactions move to chat and automated systems, conversational AI is becoming a more important component of how companies interact with their customers. Conversational AI can be used to give customers topical, instant information without the need to talk to a human being and can be paired with a variety of software applications like virtual assistants.
 
 VOICE 2022 is being held in Arlington, VA on October 10, 2022, until October 12, 2022. It will be three days filled with well-known companies providing useful sessions and workshops to help you implement conversational AI into your workflows.
 
