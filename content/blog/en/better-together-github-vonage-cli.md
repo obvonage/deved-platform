@@ -2,10 +2,11 @@
 title: "Better together: GitHub & Vonage CLI"
 description: Learn how you can take advantage of the GitHub & Vonage CLI to
   increase developer productivity with your upcoming apps.
+thumbnail: /content/blog/better-together-github-vonage-cli/github_vonage-cli-1-.png
 author: michael-crump
 published: true
-published_at: 2022-08-22T22:40:56.404Z
-updated_at: 2022-08-22T22:40:56.465Z
+published_at: 2022-09-20T08:39:30.063Z
+updated_at: 2022-09-20T08:39:31.572Z
 category: tutorial
 tags:
   - cli
