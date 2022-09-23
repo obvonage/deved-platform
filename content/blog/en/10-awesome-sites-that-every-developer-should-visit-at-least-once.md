@@ -36,7 +36,7 @@ Compile the application with `gcc -o donut donut.c`. Now run the executable with
 
 ![Donut](/content/blog/10-awesome-sites-that-every-developer-should-visit-at-least-once/donut.gif "donut.gif")
 
-All of this talk about Donuts is making me hungry. YUM! 
+All of this talk about donuts is making me hungry. YUM! 
 
 ### Number 9
 
