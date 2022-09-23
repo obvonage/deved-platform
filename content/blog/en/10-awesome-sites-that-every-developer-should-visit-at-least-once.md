@@ -116,7 +116,7 @@ If you [sign up](https://developer.vonage.com/) for an account, you also get fre
 
 ![HTML Tips](/content/blog/10-awesome-sites-that-every-developer-should-visit-at-least-once/htmltip.png "htmltip.png")
 
-He has also shared a list of [CSS](https://markodenic.com/css-tips/) and [JavaScript Tips](https://markodenic.com/javascript-tips/) on his blog that you might want to check out. 
+He has also shared a list of [CSS](https://markodenic.com/css-tips/) and [JavaScript Tips](https://markodenic.com/javascript-tips/) on his blog that you might want to check out.
 
 ### Number 3
 
