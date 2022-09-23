@@ -40,7 +40,7 @@ All of this talk about donuts is making me hungry. YUM!
 
 ### Number 9
 
-[Oh My Git!](https://blinry.itch.io/oh-my-git) is a way to learn the popular version control system "Git" by playing a game! It works on Windows, Linux, and macOS and the project is [open-source](https://github.com/git-learning-game/oh-my-git).
+[Oh My Git!](https://blinry.itch.io/oh-my-git) is a way to learn the popular version control system "Git" by playing a game! It works on Windows, Linux, and macOS and [the project](https://github.com/git-learning-game/oh-my-git) is open-source.
 
 Download your preferred operating system version, extract the zip and run the executable. That's it! You can now enjoy learning Git with an interactive game. How cool is that?
 
