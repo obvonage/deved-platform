@@ -87,7 +87,7 @@ It comes complete with:
 * Safari - Which lists the links to the author's pages
 * Bear App - This contains a biography, GitHub stats, and a list of the current projects the author is working on
 * Visual Studio Code - Which spins up an instance of the project located on [GitHub](https://github.com/Renovamen/playground-macos)
-* FaceTime - This allows you to take a photo of yourself which uses the browser's Camera APIs. 
+* FaceTime - This allows you to take a photo of yourself which uses the browser's Camera APIs.
 * Much more
 
 ![macOS](/content/blog/10-awesome-sites-that-every-developer-should-visit-at-least-once/macos.png "macos.png")
