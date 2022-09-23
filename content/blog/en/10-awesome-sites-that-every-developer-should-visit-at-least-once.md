@@ -70,7 +70,7 @@ After reviewing this list for this article, I found a few that I plan on using i
 
 ### Number 7
 
-[Readme.so](https://readme.so/) allow you to generate a `README.MD` file for your project with a drag-and-drop interface. The project is [open-source](https://github.com/octokatherine/readme.so) and available on GitHub. Pull requests are welcomed!
+[Readme.so](https://readme.so/) allows you to generate a `README.MD` file for your project with a drag-and-drop interface. [The project](https://github.com/octokatherine/readme.so) is open-source and available on GitHub. Pull requests are welcomed!
 
 To begin, choose from a list of sections, click to add them to your readme, edit the contents of each section, and finally, download the `README.MD` file.
 
