@@ -50,7 +50,7 @@ In the interactive game, you'll find everyday Git operations such as "merging" o
 
 ### Number 8
 
-[Stack on a budget (Free Tier Driven Development FTDD)](https://github.com/255kb/stack-on-a-budget) is a site that offers a collection of services with great free tiers for developers on a budget. The author created the site to help developers save money on app or database hosting for their projects or side gig. 
+[Stack on a budget (Free Tier Driven Development FTDD)](https://github.com/255kb/stack-on-a-budget) is a site that offers a collection of services with great free tiers for developers on a budget. The author created the site to help developers save money on app or database hosting for their projects or side gig.
 
 The list is extensive and covers some of the following categories:
 
