@@ -39,7 +39,7 @@ Attending Droidcon London the next day? Vonage are bronze sponsors there, so sto
 
 **I Love Bingo! How Do I Get Involved?**
 
-[Register FREE online here](https://events.vonage.com/event/192e9dfd-a405-4dbd-8ad9-6f96e0eda9b6/summary) Spaces are limited, so we encourage you to register now to avoid disappointment! Dabbers Social Bingo is located at 18-22 Houndsditch, London EC3A 7DB, within a convenient five-minute stroll of both Aldgate and Liverpool Street Stations.
+[Register FREE online here](https://events.vonage.com/event/192e9dfd-a405-4dbd-8ad9-6f96e0eda9b6/summary). Spaces are limited, so we encourage you to register now to avoid disappointment! Dabbers Social Bingo is located at 18-22 Houndsditch, London EC3A 7DB, within a convenient five-minute stroll of both Aldgate and Liverpool Street Stations.
 
 Be sure to [follow us on Twitter](https://twitter.com/VonageDev) for all the latest event updates, and join us on our [Vonage Community Slack](https://developer.vonage.com/slack) to join the conversation and keep the networking flowing. Feel free to share the invite with your Dev friends too!
 
