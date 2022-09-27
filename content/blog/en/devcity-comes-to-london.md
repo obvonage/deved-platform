@@ -35,13 +35,17 @@ On the mic will be Chris Tankersley, Vonage’s Senior Dev Relations Engineer, g
 
 After the talks, it's bingo time! With great prizes to be won and unique challenges to conquer, you’ll be grabbing your dabber and getting stuck in while the DJ blasts great tunes.
 
-Attending Droidcon London the next day? Vonage are bronze sponsors there, so stop by our stand to catch up with the team and get your hands on the Android Collectibles that were so popular in New York and Berlin.
-
 **I Love Bingo! How Do I Get Involved?**
 
-[Register FREE online here](https://events.vonage.com/event/192e9dfd-a405-4dbd-8ad9-6f96e0eda9b6/summary). Spaces are limited, so we encourage you to register now to avoid disappointment! Dabbers Social Bingo is located at 18-22 Houndsditch, London EC3A 7DB, within a convenient five-minute stroll of both Aldgate and Liverpool Street Stations.
+[Register FREE online here](https://events.vonage.com/event/192e9dfd-a405-4dbd-8ad9-6f96e0eda9b6/summary) Spaces are limited, so we encourage you to register now to avoid disappointment! Dabbers Social Bingo is located at 18-22 Houndsditch, London EC3A 7DB, within a convenient five-minute stroll of both Aldgate and Liverpool Street Stations.
 
-Be sure to [follow us on Twitter](https://twitter.com/VonageDev) for all the latest event updates, and join us on our [Vonage Community Slack](https://developer.vonage.com/slack) to join the conversation and keep the networking flowing. Feel free to share the invite with your Dev friends too!
+Be sure to [follow us on Twitter](https://twitter.com/VonageDev) [](https://twitter.com/VonageDev)for all the latest event updates, and join us on our [Vonage Community Slack](https://developer.vonage.com/slack) to join the conversation and keep the networking flowing. Feel free to share the invite with your Dev friends too!
+
+**C﻿atch The Team at Droidcon London**
+
+Attending Droidcon London the next day? Vonage are bronze sponsors there, so stop by our stand to catch up with the team!
+
+Zachary and Chris will be on hand to discuss your potential use cases, take you through a demo and answer any questions you might have about the APIs. We'll also be handing out great swag and giving you the chance to get your on the Android Collectibles that were so popular in New York and Berlin!
 
 **Where Will You Be Next?**
 
