@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-After an explosive launch at Dreamforce in San Francisco, the DevRel team at Vonage are excited to share that their DevCity event series is coming to London on Wednesday 26th October! Read on to find out how you can get involved in the latest Developer hangout on the block.
+After the launch of DevCity at Dreamforce in San Francisco, the Developer Relations team at Vonage are excited to share that the event series is coming to London on Wednesday 26th October! Read on to find out how you can get involved in the latest Developer hangout on the block. 
 
 **What Is DevCity?**
 
