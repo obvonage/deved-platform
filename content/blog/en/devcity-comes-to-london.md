@@ -31,7 +31,7 @@ Come for the tech, but stay for the party - we’ll be offering a unique range o
 
 DevCity London puts a new twist on an old favourite - bingo night! Join us at [Dabbers Social Bingo](https://dabbers.bingo/) from 6pm till 10 pm BST on Wednesday 26th October, where we’ll be serving up fresh content, delicious food and yummy cocktails. 
 
-On the mic will be Chris Tankersley, Vonage’s Senior Dev Relations Engineer, giving you the low down on the Vonage API’s, followed by Zachary Powell, Senior Android Developer Advocate and Ashley Arthur, Node.js Developer, who will be talking about how Vonage moved its Client SDKs to Kotlin Multiple Platform and saved the world (kind of). Stay tuned for a special customer story announcement too. 
+On the mic will be Chris Tankersley, Vonage’s Senior Dev Relations Engineer, giving you the low down on the Vonage APIs, followed by Zachary Powell, Senior Android Developer Advocate and Ashley Arthur, Node.js Developer, who will be talking about how Vonage moved its Client SDKs to Kotlin Multiple Platform and the benefits and challenges encountered along the way, as well as a special customer story. 
 
 After the talks, it's bingo time! With great prizes to be won and unique challenges to conquer, you’ll be grabbing your dabber and getting stuck in while the DJ blasts great tunes.
 
