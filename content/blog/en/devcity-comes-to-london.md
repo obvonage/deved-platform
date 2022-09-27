@@ -21,7 +21,7 @@ After an explosive launch at Dreamforce in San Francisco, the DevRel team at Von
 
 **What Is DevCity?**
 
-Hosted by the Vonage Developer Relations team, the DevCity event series brings together engaging content, international networking, exclusive swag and brilliant fun and games - all tailored for developers. Whether you’re new on the Dev scene or an experienced old timer, there is something for you. 
+Hosted by the Vonage Developer Relations team, the DevCity event series brings together engaging content, international networking, exclusive swag and lots of fun and games - all tailored for developers. Whether you’re new on the Dev scene or super experienced, there is something for you. 
 
 Featuring a mix of Vonage speakers and special guests, the DevCity content will equip you with everything you need to know about integrating our Communications APIs into your projects - be it voice, video, SMS or verify. We’ll also be meeting happy Vonage customers, analysing the latest trends and demonstrating first-hand how you can supercharge your communications. 
 
