@@ -25,7 +25,7 @@ Hosted by the Vonage Developer Relations team, the DevCity event series brings t
 
 Featuring a mix of Vonage speakers and special guests, the DevCity content will equip you with everything you need to know about integrating our Communications APIs into your projects - be it voice, video, SMS or verify. We’ll also be meeting happy Vonage customers, analysing the latest trends and demonstrating first-hand how you can supercharge your communications. 
 
-Come for the content, but stay for the party - we’ll be offering a unique range of activations, games and competitions, as well as the chance for you to get your hands on the latest swag that everyone’s talking about. 
+Come for the tech, but stay for the party - we’ll be offering a unique range of experiences, games and competitions, as well as the chance for you to get your hands on the latest swag that everyone’s talking about. 
 
 **Sounds Great! Here is the Plan for London:**
 
