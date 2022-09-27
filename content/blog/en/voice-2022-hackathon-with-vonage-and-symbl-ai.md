@@ -1,10 +1,11 @@
 ---
 title: VOICE 2022 Hackathon with Vonage and Symbl.ai
 description: Info about the hackathon Vonage and Symbl.ai are putting together for VOICE22
+thumbnail: /content/blog/voice-2022-hackathon-with-vonage-and-symbl-ai/voice-22-hackathon-1-.png
 author: christankersley
 published: true
-published_at: 2022-09-15T18:31:31.793Z
-updated_at: 2022-09-15T18:31:31.833Z
+published_at: 2022-09-27T08:43:07.328Z
+updated_at: 2022-09-27T08:43:08.875Z
 category: event
 tags:
   - voice-api
