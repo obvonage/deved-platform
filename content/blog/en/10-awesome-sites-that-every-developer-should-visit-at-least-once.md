@@ -2,10 +2,11 @@
 title: 10 Awesome Sites That Every Developer Should Visit (At Least Once)
 description: An awesome collection of 10 sites that EVERY developer should visit
   (at least once)
+thumbnail: /content/blog/10-awesome-sites-that-every-developer-should-visit-at-least-once/10-awesome-sites.png
 author: michael-crump
 published: true
-published_at: 2022-09-14T21:41:02.114Z
-updated_at: 2022-09-14T21:41:02.149Z
+published_at: 2022-09-29T11:05:49.337Z
+updated_at: 2022-09-29T11:05:50.311Z
 category: inspiration
 tags:
   - developer
