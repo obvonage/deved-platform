@@ -247,6 +247,12 @@ allprojects {
 }
 ```
 
+Then you will need to increase the memory allocation for the JVM by editing the `org.gradle.jvmargs` property in your `gradle.properties` file. We recommend this be set to at least 4GB:
+
+```
+org.gradle.jvmargs=-Xmx4096m -Dfile.encoding=UTF-8
+```
+
 Next, open your app-level `build.gradle` file which can be found at `android/app/build.gradle` and implement the Vonage SDK like so:
 
 ```
