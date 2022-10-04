@@ -49,6 +49,8 @@ Attending Droidcon London the next day? Vonage are bronze sponsors there, so sto
 
 Zachary and Chris will be on hand to discuss your potential use cases, take you through a demo and answer any questions you might have about the APIs. We'll also be handing out great swag and giving you the chance to get your on the Android Collectibles that were so popular in New York and Berlin!
 
+![Android Figurines](/content/blog/devcity-comes-to-london/fz0k7nixwamcjv6.png "Android Figurines")
+
 ![Android Figurines](/content/blog/devcity-comes-to-london/img_9982.jpg "Android Figurines")
 
 ## Where Will We Be Next?
