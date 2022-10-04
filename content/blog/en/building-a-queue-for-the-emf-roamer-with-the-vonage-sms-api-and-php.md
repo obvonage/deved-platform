@@ -1,15 +1,16 @@
 ---
 title: Building a Queue for the EMF Roamer with the Vonage SMS API and PHP
-description: draft
-author: michael-crump
+description: Learn about the EMF Roamer, a quarter-scale wooden Tesla Cybertruck
+  controlled by anyone over the internet!
+author: chris-stubbs
 published: true
-published_at: 2022-08-18T22:27:53.156Z
-updated_at: 2022-08-18T22:27:53.233Z
+published_at: 2022-09-08T22:27:53.156Z
+updated_at: 2022-09-08T22:27:53.233Z
 category: community
 tags:
   - PHP
 comments: true
-spotlight: false
+spotlight: true
 redirect: ""
 canonical: ""
 outdated: false
@@ -256,9 +257,10 @@ If you’d like to build upon this example further with some administrative tool
 
 We hope to see the EMF Roamer again at EMF Camp in 2024!
 
+
 ## Useful Resources
-[Vonage Developer Center - *free credits to get started!*](https://developer.vonage.com/)
-[Vonage Documentation](https://developer.vonage.com/documentation)
-[Vonage Client Library for PHP](https://github.com/vonage/vonage-php-sdk-core)
-[PHP Web User Queue on GitHub](https://github.com/chrisstubbs93/WebUserQueue)
-[Electromagnetic Field](https://www.emfcamp.org/)
+* [Vonage Developer Center - *free credits to get started!*](https://developer.vonage.com/)
+* [Vonage Documentation](https://developer.vonage.com/documentation) 
+* [Vonage Client Library for PHP](https://github.com/vonage/vonage-php-sdk-core)
+* [PHP Web User Queue on GitHub](https://github.com/chrisstubbs93/WebUserQueue)
+* [Electromagnetic Field](https://www.emfcamp.org/)
