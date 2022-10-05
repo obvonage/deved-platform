@@ -2,6 +2,7 @@
 title: Building a Queue for the EMF Roamer with the Vonage SMS API and PHP
 description: Learn about the EMF Roamer, a quarter-scale wooden Tesla Cybertruck
   controlled by anyone over the internet!
+thumbnail: /content/blog/building-a-queue-for-the-emf-roamer-with-the-vonage-sms-api-and-php/building-queue_roamer.png
 author: chris-stubbs
 published: true
 published_at: 2022-09-08T22:27:53.156Z
@@ -9,6 +10,7 @@ updated_at: 2022-09-08T22:27:53.233Z
 category: community
 tags:
   - PHP
+  - EMF-camp
 comments: true
 spotlight: true
 redirect: ""
