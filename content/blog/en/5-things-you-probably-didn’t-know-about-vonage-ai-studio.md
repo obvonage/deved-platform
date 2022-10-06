@@ -8,7 +8,7 @@ published_at: 2022-09-22T07:10:00.000Z
 updated_at: 2022-09-22T09:16:36.715Z
 category: inspiration
 tags:
-  - aistudio
+  - ai-studio
   - lowcode
   - nocode
 comments: true
