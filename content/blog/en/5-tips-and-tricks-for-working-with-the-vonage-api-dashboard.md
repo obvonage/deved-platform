@@ -1,11 +1,12 @@
 ---
-title: "5 Tips and Tricks for working with the Vonage API Dashboard "
+title: 5 Tips and Tricks for Working With the Vonage API Dashboard
 description: 5 quick tips everyone can use for the dashboard that includes
   analytics, managing team member access, and more.
+thumbnail: /content/blog/5-tips-and-tricks-for-working-with-the-vonage-api-dashboard/tips-and-tricks.png
 author: michael-crump
 published: true
-published_at: 2022-10-10T16:49:21.310Z
-updated_at: 2022-10-10T16:49:21.370Z
+published_at: 2022-10-13T08:58:42.161Z
+updated_at: 2022-10-13T08:58:43.498Z
 category: inspiration
 tags:
   - API
