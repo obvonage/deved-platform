@@ -17,9 +17,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-The biggest shift that we are seeing in web applications is the requirement for multi-channel communications. It isn't enough anymore for your e-commerce site to have _just_ a 'Contact Us' page, where you can email while also having a popup semi-instant messager. Now, you can choose to be ahead of the curve by changing the medium by which you communicate with customers; an example being that an email conversation can be switched to a live WhatsApp chat, or automated voice call queues that connect with real (human) agents.
+The biggest shift that we are seeing in web applications is the requirement for multi-channel communications. It isn't enough anymore for your e-commerce site to have _just_ a "Contact Us" page, where you can email while also having a popup semi-instant messager like Hotjar. Now, you can choose to be ahead of the curve by changing or promoting the medium by which you communicate with customers; an example being that an email conversation can be switched to a live WhatsApp chat, or automated voice call queues that connect with real (human) agents.
 
-It's time we demonstrated how these channels work, so without further ado (for my PHP developers), I would like to introduce *The Vonage Helpdesk*. In this article I'll show you how to fire it up locally and then dig into how the SMS aspect of the app works. As a sneak preview: keep an eye out for more articles in the series, including Voice capabilities, Laravel Livewire and Deepgram integrations. Anyway, enough with the teasers, let's get started.
+It's time we demonstrated how these channels work, so without further ado (for my PHP developers), I would like to introduce *The Vonage Helpdesk*. In this article I'll show you how to fire it up locally and then dig into how the SMS aspect of the app works to start us off.
 
 ### What is the Vonage Helpdesk?
 
@@ -31,6 +31,16 @@ Vonage Helpdesk is a PHP web application built in Laravel 9. It uses Laravel's S
 
 ### Installing
 
+#### Requirements
+
+Due to the application using Docker, the requirements are somewhat reduced. You'll need a Windows, Linux or Mac machine that can run Docker v20+ (the current version).
+
+First up, we need to download the repository. Head to ``
+
 ### The Ticket System
 
-### Part 1: SMS (how does it do that?)
+### How does it do that? Part 1: SMS
+
+### Coming Next...
+
+As a sneak preview: keep an eye out for more articles in the series, including Voice capabilities using Deepgram, realtime updates using Laravel Livewire, and building out the test suite with PEST.
