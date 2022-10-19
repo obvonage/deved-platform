@@ -46,10 +46,22 @@ First up, we need to download the repository. Type the following into the comman
 git clone git@github.com:Vonage-Community/sample-messages_voice-php-helpdesk.git
 ```
 
+Now, we should have the application in a new folder. Next up, we install the PHP dependencies. Do this by navigating into the folder (i.e. `sample-messages_voice-php-helpdesk`) and running Composer:
+
+```bash
+composer install
+```
+Laravel Sail should have been pulled into the `vendor` folder, so providing you have Docker installed, you can run the following command to boot up the application:
+
+```bash
+./vendor/bin/sail up
+```
+### Seeders, Vite and Migrations
+
 ### The Ticket System
 
 ### How does it do that? Part 1: SMS
 
 ### Coming Next...
 
-As a sneak preview: keep an eye out for more articles in the series, including Voice capabilities using Deepgram, realtime updates using Laravel Livewire, and building out the test suite with PEST.
+Aha! We're not done yet by a country mile! Keep an eye out for more articles in the series as we add to the app, including Voice capabilities using Deepgram, realtime updates using Laravel Livewire, and building out the test suite with PEST.
