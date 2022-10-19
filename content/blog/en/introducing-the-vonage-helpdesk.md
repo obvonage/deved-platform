@@ -33,9 +33,18 @@ Vonage Helpdesk is a PHP web application built in Laravel 9. It uses Laravel's S
 
 #### Requirements
 
-Due to the application using Docker, the requirements are somewhat reduced. You'll need a Windows, Linux or Mac machine that can run Docker v20+ (the current version).
+Due to the application using Docker, the requirements are somewhat reduced. You'll need:
 
-First up, we need to download the repository. Head to ``
+* A Windows, Linux, or Mac machine that can run Docker v20+ (the current version)
+* PHP8.0+
+* Composer
+* Git installed
+
+First up, we need to download the repository. Type the following into the command line:
+
+```bash
+git clone git@github.com:Vonage-Community/sample-messages_voice-php-helpdesk.git
+```
 
 ### The Ticket System
 
