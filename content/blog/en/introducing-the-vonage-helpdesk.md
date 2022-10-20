@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-The biggest shift that we are seeing in web applications is the requirement for multi-channel communications. It isn't enough anymore for your e-commerce site to have _just_ a "Contact Us" page, where you can email while also having a popup semi-instant messager like Hotjar. Now, you can choose to be ahead of the curve by changing or promoting the medium by which you communicate with customers; an example being that an email conversation can be switched to a live WhatsApp chat, or automated voice call queues that connect with real (human) agents.
+The biggest shift that we are seeing in web applications is the requirement for multi-channel communications. It isn't enough anymore for your e-commerce site to have *just* a "Contact Us" page, where you can email while also having a popup semi-instant messager like Hotjar. Now, you can choose to be ahead of the curve by changing or promoting the medium by which you communicate with customers; an example being that an email conversation can be switched to a live WhatsApp chat, or automated voice call queues that connect with real (human) agents.
 
 It's time we demonstrated how these channels work, so without further ado (for my PHP developers), I would like to introduce *The Vonage Helpdesk*. In this article I'll show you how to fire it up locally and then dig into how the SMS aspect of the app works to start us off.
 
@@ -58,13 +58,14 @@ Laravel Sail should have been pulled into the `vendor` folder, so providing you 
 ./vendor/bin/sail up
 ```
 
-### Migrations, Seeders and Vite
+\### Migrations, Seeders and Vite
 
 Next up we need to run the database migrations:
 
 ```bash
 ./vendor/bin/sail artisan migrate
 ```
+
 Our application needs a super user to login, so we run the database seeder:
 
 ```bash
@@ -76,6 +77,10 @@ Because the application uses Laravel Breeze scaffolding for authentication out-o
 ```bash
 npm run dev
 ```
+
+OK, we should all be set. Open a browser and navigate to `localhost` and hopefully you should see the splash screen:
+
+![](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-20-at-11.17.47.png)
 
 ### The Ticket System
 
