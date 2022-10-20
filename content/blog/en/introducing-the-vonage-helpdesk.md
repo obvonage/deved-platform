@@ -33,11 +33,11 @@ Vonage Helpdesk is a PHP web application built in Laravel 9. It uses Laravel's S
 
 #### Requirements
 
-Due to the application using Docker, the requirements are somewhat reduced. You'll need:
-
 * A Windows, Linux, or Mac machine that can run Docker v20+ (the current version)
-* PHP8.0+
-* Composer
+* PHP v8.0+
+* NodeJS v17+
+* npm v8.5+
+* Composer v2+
 * Git installed
 
 First up, we need to download the repository. Type the following into the command line:
@@ -51,12 +51,31 @@ Now, we should have the application in a new folder. Next up, we install the PHP
 ```bash
 composer install
 ```
+
 Laravel Sail should have been pulled into the `vendor` folder, so providing you have Docker installed, you can run the following command to boot up the application:
 
 ```bash
 ./vendor/bin/sail up
 ```
-### Seeders, Vite and Migrations
+
+### Migrations, Seeders and Vite
+
+Next up we need to run the database migrations:
+
+```bash
+./vendor/bin/sail artisan migrate
+```
+Our application needs a super user to login, so we run the database seeder:
+
+```bash
+./vendor/bin/sail artisan db:seed
+```
+
+Because the application uses Laravel Breeze scaffolding for authentication out-of-the box, we'll need to run the Vite development server outside of your Docker containers to compile your JavaScript (this now comes with Laravel pre-configured). To run Vite, open a new terminal in your application folder and run the following:
+
+```bash
+npm run dev
+```
 
 ### The Ticket System
 
