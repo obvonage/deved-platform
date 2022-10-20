@@ -84,6 +84,8 @@ OK, we should all be set. Open a browser and navigate to `localhost` and hopeful
 
 ### The Ticket System
 
+So, what have we got? The Vonage Helpdesk emulates a ticketing system where customers all have an account and can create a ticket, choosing a communication medium of choice. Admins can then view the tickets, and respond to them. The application will take the users' provided phone number and use that for ticket responses from the admin on the web application side.
+
 ### How does it do that? Part 1: SMS
 
 ### Coming Next...
