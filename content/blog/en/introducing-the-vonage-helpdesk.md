@@ -107,6 +107,10 @@ For reference, \`In-App Messaging\` is for using the Conversations API for realt
 
 ![newly created ticket with email. channel source and message](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.18.png)
 
+Success! Nothing has actually happened just yet over the communication channel, as you are the ticket creator. But, logging in as the administrator to respond to the ticket is where the magic comes in. You'll notice the ticket entry has \`web\` on it: this is where our multichannel communications come in. For this SMS chat, if the admin responds, it will be sent to the user via SMS, which they can then reply to using their phone. However, the user could **also** reply via the web application as well. So, we're already multichannel.
+
+If we log out, and re-login as the 
+
 ### Coming Next...
 
 Aha! We're not done yet by a country mile! Keep an eye out for more articles in the series as we add to the app, including Voice capabilities using Deepgram, realtime updates using Laravel Livewire, and building out the test suite with PEST.
