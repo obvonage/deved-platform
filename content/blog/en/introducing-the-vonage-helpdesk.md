@@ -39,6 +39,7 @@ Vonage Helpdesk is a PHP web application built in Laravel 9. It uses Laravel's S
 * npm v8.5+
 * Composer v2+
 * Git installed
+* A Vonage account in credit
 
 First up, we need to download the repository. Type the following into the command line:
 
@@ -80,13 +81,19 @@ npm run dev
 
 OK, we should all be set. Open a browser and navigate to `localhost` and hopefully you should see the splash screen:
 
-![](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-20-at-11.17.47.png)
+![Splash screen for helpdesk with Vonage logo](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-20-at-11.17.47.png)
 
 ### The Ticket System
 
 So, what have we got? The Vonage Helpdesk emulates a ticketing system where customers all have an account and can create a ticket, choosing a communication medium of choice. Admins can then view the tickets, and respond to them. The application will take the users' provided phone number and use that for ticket responses from the admin on the web application side.
 
 ### How does it do that? Part 1: SMS
+
+You can log in already now as the superuser (the seeded user is \`admin@vonage.com\` and the password is \`password\` - hey, it's a concept app so by all means change it to a not-awful password!). Now we need a new "customer" user.
+
+On the splash screen, navigate to the top right-hand link to register. We're going to be looking at the SMS interactions, so we're going to choose 'SMS' when the communication method. Make sure you choose a working phone number.
+
+![Filled out helpdesk sign up form](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-10.42.18.png)
 
 ### Coming Next...
 
