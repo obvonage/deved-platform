@@ -105,7 +105,7 @@ OK! Time to create a new ticket. Hit 'New Ticket' and fill out the details like 
 
 For reference, \`In-App Messaging\` is for using the Conversations API for realtime messaging, which we're not doing in this article, so leave that unchecked. Once you create the ticket, after hitting submit you'll be taken to the new ticket:
 
-![](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.18.png)
+![newly created ticket with email. channel source and message](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.18.png)
 
 ### Coming Next...
 
