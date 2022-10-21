@@ -91,9 +91,21 @@ So, what have we got? The Vonage Helpdesk emulates a ticketing system where cust
 
 You can log in already now as the superuser (the seeded user is \`admin@vonage.com\` and the password is \`password\` - hey, it's a concept app so by all means change it to a not-awful password!). Now we need a new "customer" user.
 
-On the splash screen, navigate to the top right-hand link to register. We're going to be looking at the SMS interactions, so we're going to choose 'SMS' when the communication method. Make sure you choose a working phone number.
+On the splash screen, navigate to the top right-hand link to register. We're going to be looking at the SMS interactions, so we're going to choose 'SMS' as the communication method. Make sure you choose a working phone number.
 
 ![Filled out helpdesk sign up form](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-10.42.18.png)
+
+Now log in with your new details, and you should see the dashboard:
+
+![Helpdesk dashboard with no tickets](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.15.46.png)
+
+OK! Time to create a new ticket. Hit 'New Ticket' and fill out the details like so:
+
+![creating a new ticket in the dashboard](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.01.png)
+
+For reference, \`In-App Messaging\` is for using the Conversations API for realtime messaging, which we're not doing in this article, so leave that unchecked. Once you create the ticket, after hitting submit you'll be taken to the new ticket:
+
+![](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.18.png)
 
 ### Coming Next...
 
