@@ -79,7 +79,27 @@ Because the application uses Laravel Breeze scaffolding for authentication out-o
 npm run dev
 ```
 
-OK, we should all be set. Open a browser and navigate to `localhost` and hopefully you should see the splash screen:
+<sign-up></sign-up>
+
+\### Hook up the app via. Ngrok
+
+In order to connect the application to Vonage's servers, we'll need a tunnel to our application. You can do this by using ngrok, a neat little tool for doing just this. It's also worth noting there is actually a PHP-written tool from Beyond Code called Expose that does the same thing, so well worth a look.
+
+Start the ngrok process like so:
+
+\`\``bash
+
+ngrok http 8080
+
+\`\``
+
+You should get back a new URL to tunnel into your application. The last thing to do here is to set up your keys - navigate to your Vonage dashboard, create a new application and enable SMS. Once this is done you can tell Vonage where incoming data should be routed: in this case, back to our local app. Edit your application in the dashboard, so that you can add the callback address for your local app. The form should look like this:
+
+![](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-24-at-12.07.16.png)
+
+The important part here is to use your ngrok URL, followed by \`tickets/webhook\` which is a route defined in the Laravel application.
+
+OK, we should all be set. Open a browser and navigate to `localhost` and hopefully, you should see the splash screen:
 
 ![Splash screen for helpdesk with Vonage logo](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-20-at-11.17.47.png)
 
