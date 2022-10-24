@@ -2,7 +2,7 @@
 title: Vonage Messages API Salesforce Marketing Cloud Custom Journey Activity
 description: Learn about a new starter template for creating a Vonage Messages
   API activity in the Salesforce Marketing Cloud Journey Builder
-author: michael-crump
+author: kitt-phi
 published: true
 published_at: 2022-10-19T19:03:44.449Z
 updated_at: 2022-10-19T19:03:44.580Z
@@ -18,7 +18,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Vonage Messages API Salesforce Marketing Cloud Custom Journey Activity
 
 ## Introduction
 
@@ -236,4 +235,3 @@ To take this further, you can use [Vonage AI Studio](https://studio.docs.ai.vona
 
 If you have questions or feedback, join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack) or reach the author via [email](mailto:kitt.phi@vonage.com) or [LinkedIn](https://www.linkedin.com/in/kitt-phi-22a875136/). If you'd like access to a [GitHub repository](https://github.com/nexmo-se/vonage-sfmc-blog) for this project, then feel free to email me with the link above. Then you could fork and clone the repository to explore further. I hope you enjoyed this and find it useful. Thanks for reading!
 
- \
