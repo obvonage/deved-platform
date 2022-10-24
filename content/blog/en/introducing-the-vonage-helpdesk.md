@@ -168,8 +168,24 @@ So, what is the code doing? Database-wise we have tables for `tickets`, `users` 
             }
 
 ```
-The important line here is the comparison: if it's not my ticket, I need to send a notification out. It pulls out the notification method from the ticket entry and, if it is `SMS`, it uses the native PHP Vonage SDK integration with Laravel to 
+The important line here is the comparison: if it's not my ticket, I need to send a notification out. It pulls out the notification method from the ticket entry and, if it is `SMS`, it uses the native PHP Vonage SDK integration with Laravel to boot up a new Client, autoconfigured and then uses the Messages API to fire off an SMS Notification.
+
+At the other end, when the customer replies to the text, Vonage sends a webhook to our app and the `IncomingSmsController` handles it:
+
+```php
+        $ticket = $user->latestTicket();
+
+        $entry = new TicketEntry([
+            'content' => $request->text,
+            'channel' => 'sms',
+        ]);
+
+        $entry->user()->associate($user);
+        $entry->ticket()->associate($ticket);
+        $entry->save();
+
+It has a limitation for now, in that it matches the incoming phone number to pull out the user, then gets the latest ticket. But, the joy of this app is what is...
 
 ### Coming Next...
 
-Aha! We're not done yet by a country mile! Keep an eye out for more articles in the series as we add to the app, including Voice capabilities using Deepgram, realtime updates using Laravel Livewire, and building out the test suite with PEST.
+We're not done yet by a country mile! Keep an eye out for more articles in the series as we add to the app, including Voice capabilities using Deepgram, realtime updates using Laravel Livewire, and building out the test suite with PEST.
