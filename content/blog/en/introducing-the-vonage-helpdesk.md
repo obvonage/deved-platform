@@ -168,6 +168,7 @@ So, what is the code doing? Database-wise we have tables for `tickets`, `users` 
             }
 
 ```
+The important line here is the comparison: if it's not my ticket, I need to send a notification out. It pulls out the notification method from the ticket entry and, if it is `SMS`, it uses the native PHP Vonage SDK integration with Laravel to 
 
 ### Coming Next...
 
