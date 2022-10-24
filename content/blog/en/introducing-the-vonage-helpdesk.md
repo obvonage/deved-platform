@@ -129,7 +129,11 @@ For reference, \`In-App Messaging\` is for using the Conversations API for realt
 
 Success! Nothing has actually happened just yet over the communication channel, as you are the ticket creator. But, logging in as the administrator to respond to the ticket is where the magic comes in. You'll notice the ticket entry has \`web\` on it: this is where our multichannel communications come in. For this SMS chat, if the admin responds, it will be sent to the user via SMS, which they can then reply to using their phone. However, the user could **also** reply via the web application as well. So, we're already multichannel.
 
-If we log out, and re-login as the 
+If we log out, and re-login as the admin we can respond to the ticket.
+
+This is where things get interesting. Once you respond, the application checks what notification channel has been selected for this ticket, then notifies the user of the response. The application has already 
+
+\### Under The Hood
 
 ### Coming Next...
 
