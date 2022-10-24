@@ -97,7 +97,7 @@ You should get back a new URL to tunnel into your application. The last thing to
 
 ![](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-24-at-12.07.16.png)
 
-The important part here is to use your ngrok URL, followed by \`tickets/webhook\` which is a route defined in the Laravel application.
+The important part here is to use your ngrok URL, followed by \`tickets/webhook\` which is a route defined in the Laravel application. You will also need to purchase a Vonage number in order to hook it up to the application that has just been created.
 
 OK, we should all be set. Open a browser and navigate to `localhost` and hopefully, you should see the splash screen:
 
@@ -127,13 +127,47 @@ For reference, \`In-App Messaging\` is for using the Conversations API for realt
 
 ![newly created ticket with email. channel source and message](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.18.png)
 
-Success! Nothing has actually happened just yet over the communication channel, as you are the ticket creator. But, logging in as the administrator to respond to the ticket is where the magic comes in. You'll notice the ticket entry has \`web\` on it: this is where our multichannel communications come in. For this SMS chat, if the admin responds, it will be sent to the user via SMS, which they can then reply to using their phone. However, the user could **also** reply via the web application as well. So, we're already multichannel.
+Success! Nothing has actually happened just yet over the communication channel, as you are the ticket creator. But, logging in as the administrator to respond to the ticket is where the magic comes in. You'll notice the ticket entry has `web` on it: this is where our multichannel communications come in. For this SMS chat, if the admin responds, it will be sent to the user via SMS, which they can then reply to using their phone. However, the user could **also** reply via the web application as well. So, we're already multichannel.
 
 If we log out, and re-login as the admin we can respond to the ticket.
 
-This is where things get interesting. Once you respond, the application checks what notification channel has been selected for this ticket, then notifies the user of the response. The application has already 
+This is where things get interesting. Once you respond, the application checks what notification channel has been selected for this ticket, then notifies the user of the response. The user is then able to respond via SMS. And there we go: a web and SMS multichannel conversation!
 
-\### Under The Hood
+### Under The Hood
+
+So, what is the code doing? Database-wise we have tables for `tickets`, `users` and \`ticket_entries\`, all wired together. each `ticket_entry` contains a user and ticket reference. Each update created locally first works out whether to send out a notification:
+
+```php
+        $validatedRequestData = $request->validate([
+            'content' => 'required',
+            'channel' => 'required'
+        ]);
+
+        $ticketEntry = new TicketEntry([
+            'content' => $validatedRequestData['content'],
+            'channel' => $validatedRequestData['channel'],
+        ]);
+
+        $ticketEntry->user()->associate(Auth::user());
+        $ticketEntry->ticket()->associate($ticket);
+        $ticketEntry->save();
+
+        $userTicket = $ticket->user()->get()->first();
+
+        // If this is not my ticket, I need to notify its creator
+        if ($userTicket->id !== Auth::id()) {
+
+            if ($userTicket->notification_method === 'sms') {
+                $sms = new SMSText(
+                    $userTicket->phone_number,
+                    config('vonage.sms_from'),
+                    $ticketEntry->content
+                );
+                $client = app(Client::class);
+                $client->messages()->send($sms);
+            }
+
+```
 
 ### Coming Next...
 
