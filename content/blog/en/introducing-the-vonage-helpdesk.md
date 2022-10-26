@@ -61,7 +61,7 @@ Laravel Sail should have been added into the `vendor` folder, so providing you h
 
 \### Migrations, Seeders and Vite
 
-Next up we need to run the database migrations:
+Next up, we need to run the database migrations:
 
 ```bash
 ./vendor/bin/sail artisan migrate
