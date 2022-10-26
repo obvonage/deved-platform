@@ -53,7 +53,7 @@ Now, we should have the application in a new folder. Next up, we install the PHP
 composer install
 ```
 
-Laravel Sail should have been pulled into the `vendor` folder, so providing you have Docker installed, you can run the following command to boot up the application:
+Laravel Sail should have been added into the `vendor` folder, so providing you have Docker installed, you can run the following command to boot up the application:
 
 ```bash
 ./vendor/bin/sail up
