@@ -135,7 +135,7 @@ This is where things get interesting. Once you respond, the application checks w
 
 ### Under The Hood
 
-So, what is the code doing? Database-wise we have tables for `tickets`, `users` and \`ticket_entries\`, all wired together. each `ticket_entry` contains a user and ticket reference. Each update created locally first works out whether to send out a notification:
+So, what is the code doing? Database-wise we have tables for `tickets`, `users`, and \`ticket_entries\`, all wired together. Each `ticket_entry` contains a user and ticket reference. Each update created locally first works out whether to send out a notification:
 
 ```php
         $validatedRequestData = $request->validate([
