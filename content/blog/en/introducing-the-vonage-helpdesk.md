@@ -47,7 +47,7 @@ First up, we need to download the repository. Type the following into the comman
 git clone git@github.com:Vonage-Community/sample-messages_voice-php-helpdesk.git
 ```
 
-Now, we should have the application in a new folder. Next up, we install the PHP dependencies. Do this by navigating into the folder (i.e. `sample-messages_voice-php-helpdesk`) and running Composer:
+Now, we should have the application in a new folder. Next up, we install the PHP dependencies. Do this by navigating into the folder (i.e., `cd sample-messages_voice-php-helpdesk`) and running Composer:
 
 ```bash
 composer install
