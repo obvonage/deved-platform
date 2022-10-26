@@ -222,7 +222,7 @@ Now our site is starting to take shape! We have a top-level and sidebar navigati
 
 Let's go ahead and add in all the pages that we just created: 
 
-Create the following files called `roadmap.md, feedback.md, introduction.md and getting-started.md` in the `docs` folder and give them a header with the same name. 
+Create the following files called `roadmap.md`, `feedback.md`, `introduction.md` and `getting-started.md` in the `docs` folder and give them a header with the same name. 
 
 For example, `# Roadmap` would be entered inside the `roadmap.md` file. Do that for all the files. 
 
