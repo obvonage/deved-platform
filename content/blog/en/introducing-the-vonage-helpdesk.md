@@ -93,23 +93,23 @@ ngrok http 8080
 
 \`\``
 
-You will have a URL to tunnel into your application. The last thing to do here is to set up your keys - navigate to your Vonage dashboard, create a new application and enable SMS. Once this is completed, you can tell Vonage where the incoming data should be routed: in this case, back to our local app. Edit your application in the dashboard so you can add your local app's callback address. The form should look like this:
+You should get back a new URL to tunnel into your application. The last thing to do here is to set up your keys - navigate to your Vonage dashboard, create a new application and enable SMS. Once this is done you can tell Vonage where incoming data should be routed: in this case, back to our local app. Edit your application in the dashboard, so that you can add the callback address for your local app. The form should look like this:
 
 ![](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-24-at-12.07.16.png)
 
-The important part here is to use your Ngrok URL, followed by \`tickets/webhook\`, which is a route defined in the Laravel application. You will also need to purchase a Vonage number to hook it up to the newly created application.
+The important part here is to use your Ngrok URL, followed by `tickets/webhook`, which is a route defined in the Laravel application. You will also need to purchase a Vonage number to hook it up to the newly created application.
 
-OK, we should all be set. Open a browser and navigate to `localhost`, and hopefully, you should see the splash screen:
+OK, we should all be set. Open a browser and navigate to `localhost` and hopefully, you should see the splash screen:
 
 ![Splash screen for helpdesk with Vonage logo](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-20-at-11.17.47.png)
 
 ### The Ticket System
 
-So, what have we got? The Vonage Helpdesk emulates a ticketing system where customers all have an account and can create a ticket, choosing a communication medium. Admins can then view the tickets and respond to them. The application will take the users' provided phone number and use that for ticket responses from the admin on the web application side.
+So, what have we got? The Vonage Helpdesk emulates a ticketing system where customers all have an account and can create a ticket, choosing a communication medium of choice. Admins can then view the tickets, and respond to them. The application will take the users' provided phone number and use that for ticket responses from the admin on the web application side.
 
 ### How does it do that? Part 1: SMS
 
-You can log in already now as the superuser (the seeded user is \`admin@vonage.com\` and the password is \`password\` - hey, it's a concept app so by all means change it to a not-awful password!). Now we need a new "customer" user.
+You can log in now as the superuser (the seeded user is `admin@vonage.com` and the password is `password` - hey, it's a concept app, so by all means change it to a not-awful password!). Now we need a new "customer" user.
 
 On the splash screen, navigate to the top right-hand link to register. We're going to be looking at SMS interactions, so we're going to choose 'SMS' as the communication method. Make sure you choose a working phone number.
 
@@ -123,7 +123,7 @@ OK! Time to create a new ticket. Hit 'New Ticket' and fill out the details like 
 
 ![creating a new ticket in the dashboard](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.01.png)
 
-For reference, \`In-App Messaging\` is for using the [Conversation API](https://developer.vonage.com/conversation/overview) for realtime messaging, which we're not doing in this article, so leave that unchecked. Once you create the ticket, after hitting submit you'll be taken to the new ticket:
+For reference, `In-App Messaging` is for using the [Conversation API](https://developer.vonage.com/conversation/overview) for realtime messaging, which we're not doing in this article, so leave that unchecked. Once you create the ticket, after hitting submit you'll be taken to the new ticket:
 
 ![newly created ticket with email. channel source and message](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.18.png)
 
@@ -135,7 +135,7 @@ This is where things get interesting. Once you respond, the application checks w
 
 ### Under The Hood
 
-So, what is the code doing? Database-wise we have tables for `tickets`, `users`, and \`ticket_entries\`, all wired together. Each `ticket_entry` contains a user and ticket reference. Each update created locally first works out whether to send out a notification:
+So, what is the code doing? Database-wise we have tables for `tickets`, `users`, and `ticket_entries`, all wired together. Each `ticket_entry` contains a user and ticket reference. Each update created locally first works out whether to send out a notification:
 
 ```php
         $validatedRequestData = $request->validate([
