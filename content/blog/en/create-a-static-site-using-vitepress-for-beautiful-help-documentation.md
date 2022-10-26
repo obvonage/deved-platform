@@ -283,7 +283,7 @@ This renders as:
 
 ### Syntax Highlighting in Code Blocks
 
-Syntax Highlighting in Code Blocks is supported in a variety of ways. See this example of how you can highlight a line in a code block. 
+Syntax Highlighting in Code Blocks is supported in a variety of ways. See this example of how you can highlight a line in a code block:
 
 ```js{4}
 export default {
