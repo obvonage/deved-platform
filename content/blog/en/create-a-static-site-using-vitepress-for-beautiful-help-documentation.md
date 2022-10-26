@@ -132,7 +132,6 @@ You should now have a server running, and it typically runs on the following loc
 
 Congrats! Our app is running now, and you can already notice some of the features and functionality we received using VitePress.
 
-Features such as:
 
 * Responsive site with animations
 * Build using the 'Mobile-first' philosophy
