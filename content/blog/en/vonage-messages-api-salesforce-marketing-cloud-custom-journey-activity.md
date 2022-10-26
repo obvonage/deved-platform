@@ -1,7 +1,8 @@
 ---
-title: Vonage Messages API Salesforce Marketing Cloud Custom Journey Activity
+title: Create a Vonage Messages API Activity with Salesforce Marketing Cloud
 description: Learn about a new starter template for creating a Vonage Messages
   API activity in the Salesforce Marketing Cloud Journey Builder
+thumbnail: /content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/heroku_salesforce_messagesapi.png
 author: kitt-phi
 published: true
 published_at: 2022-10-19T19:03:44.449Z
@@ -18,7 +19,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-
 ## Introduction
 
 Today, I will introduce a starter template for creating a Vonage Messages API activity in the Salesforce Marketing Cloud Journey Builder using Heroku. The custom activity allows you to send marketing campaign messages using Vonage Messages API and Salesforce Marketing Cloud Contacts (Attribute Group in Contact Builder).
@@ -74,7 +74,7 @@ Today, I will introduce a starter template for creating a Vonage Messages API ac
 * Click next and leave Data Retention Policy settings to Yes.
 * Enter fields as shown in the image below. 
 
-![Create New Data Extension](/content/blog/vonage-messages-api-salesforce-marketing-cloud-custom-journey-activity/da-field.png "da-field.png")
+![Create New Data Extension](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/da-field.png "da-field.png")
 
 * Set emailAddress to data type EmailAddress and as the `Primary Key`.
 * Set toNumber to data type `Phone`.
@@ -85,15 +85,15 @@ Today, I will introduce a starter template for creating a Vonage Messages API ac
 
 * Navigate to the Data Extension you created > Records > Import> Browse, select the file `SAMPLE.csv` and click Next. 
 
-![Import Into Data Extension](/content/blog/vonage-messages-api-salesforce-marketing-cloud-custom-journey-activity/import-de1.png "import-de1.png")
+![Import Into Data Extension](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/import-de1.png "import-de1.png")
 
 * Keep the default `Map by Header Row` and click Next. 
 
-![Upload File](/content/blog/vonage-messages-api-salesforce-marketing-cloud-custom-journey-activity/import-de2.png "import-de2.png")
+![Upload File](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/import-de2.png "import-de2.png")
 
 * Lastly, click Import and close the modal. 
 
-![Configure Mapping](/content/blog/vonage-messages-api-salesforce-marketing-cloud-custom-journey-activity/import-de3.png "import-de3.png")
+![Configure Mapping](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/import-de3.png "import-de3.png")
 
 * You must refresh and navigate the Data Extension > Records to see the CSV data we just imported.
 
@@ -104,7 +104,7 @@ Today, I will introduce a starter template for creating a Vonage Messages API ac
 * Click on Link Data Extension, navigate to Data Extensions, and select your Data Extension.
 * Link the Data Extension by selecting `Contact Key` for the Customer Data and `emailAddress` for your Data Extension, then click Save when done. 
 
-![Link Data Extension](/content/blog/vonage-messages-api-salesforce-marketing-cloud-custom-journey-activity/link-da.png "link-da.png")
+![Link Data Extension](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/link-da.png "link-da.png")
 
 ### Configure Vonage Messages Activity
 
@@ -162,7 +162,7 @@ Edit `/public/js/customActivity.js`
 
 * On the left pane in Entry Sources, drag `Data Extension` to `Start with an Entry Source`.
 
-![Journey Builder - Entry Source](/content/blog/vonage-messages-api-salesforce-marketing-cloud-custom-journey-activity/da-and-journey.png "da-and-journey.png")
+![Journey Builder - Entry Source](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/da-and-journey.png "da-and-journey.png")
 
 * Click on the dragged Data Extension icon and select Data Extension.
 * Select your Data Extension, click Summary, and then click Done.
@@ -180,7 +180,7 @@ Back in the package, you dragged `Vonage SFMC`. You can send either an SMS or Wh
 
 Marketing Cloud uses Data Binding using the Mustache syntax. E.g. `{{Contact.Attribute.DATA_EXTENSION_NAME.firstName}}`
 
-![Vonage SFMC](/content/blog/vonage-messages-api-salesforce-marketing-cloud-custom-journey-activity/journey-sms.png "journey-sms.png")
+![Vonage SFMC](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/journey-sms.png "journey-sms.png")
 
 * Click Done once you pasted the line.
 
@@ -190,7 +190,7 @@ Marketing Cloud uses Data Binding using the Mustache syntax. E.g. `{{Contact.Att
 * Select WhatsApp. The WhatsApp Template message has two parameters. `{{1}}` is the `{{Contact.Attribute.DATA_EXTENSION_NAME.firstName}}`and `{{2}}` is the `client-ref`.
 * The Client Ref will be the second parameter for the WhatsApp Template.
 
-![Vonage SFMC](/content/blog/vonage-messages-api-salesforce-marketing-cloud-custom-journey-activity/journey-wa.png "journey-wa.png")
+![Vonage SFMC](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/journey-wa.png "journey-wa.png")
 
 Finish the steps below to send the message.
 
@@ -234,4 +234,3 @@ As you can see, we can use Salesforce Marketing Cloud to leverage Vonage Message
 To take this further, you can use [Vonage AI Studio](https://studio.docs.ai.vonage.com/) to form engaging conversation from Inbound replies. You can also add multiple Data Extensions to a [Contact Builder](https://help.salesforce.com/s/articleView?id=sf.mc_cab_contact_builder.htm&type=5) Attribute Group and link them, which would allow you to send messages like this: e.g. Hello {{Contact.Attribute.DATA_EXT_1.FirstName}}. Join us at this event {{Contact.Attribute.DATA_EXT_2.EventName}}.
 
 If you have questions or feedback, join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack) or reach the author via [email](mailto:kitt.phi@vonage.com) or [LinkedIn](https://www.linkedin.com/in/kitt-phi-22a875136/). If you'd like access to a [GitHub repository](https://github.com/nexmo-se/vonage-sfmc-blog) for this project, then feel free to email me with the link above. Then you could fork and clone the repository to explore further. I hope you enjoyed this and find it useful. Thanks for reading!
-
