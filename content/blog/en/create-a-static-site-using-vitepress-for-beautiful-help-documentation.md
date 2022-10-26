@@ -181,7 +181,7 @@ export default {
 
 This will provide a default title and description for the site, which search engines will index.
 
-Next, we'll configure our top-level navigation bar to have two  additional items for our **Roadmap** and ways for our users to **Feedback**. Add the following to your `vitepress/config.js` file after the `description` field.
+Next, we'll configure our top-level navigation bar to have two additional items for our **Roadmap** and ways for our users to **Feedback**. Add the following to your `vitepress/config.js` file after the `description` field.
 
 ```javascript
 themeConfig: {
