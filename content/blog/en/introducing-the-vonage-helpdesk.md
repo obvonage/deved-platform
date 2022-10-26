@@ -93,7 +93,7 @@ ngrok http 8080
 
 \`\``
 
-You should get back a new URL to tunnel into your application. The last thing to do here is to set up your keys - navigate to your Vonage dashboard, create a new application and enable SMS. Once this is done you can tell Vonage where incoming data should be routed: in this case, back to our local app. Edit your application in the dashboard, so that you can add the callback address for your local app. The form should look like this:
+You will have a URL to tunnel into your application. The last thing to do here is to set up your keys - navigate to your Vonage dashboard, create a new application and enable SMS. Once this is completed, you can tell Vonage where the incoming data should be routed: in this case, back to our local app. Edit your application in the dashboard so you can add your local app's callback address. The form should look like this:
 
 ![](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-24-at-12.07.16.png)
 
