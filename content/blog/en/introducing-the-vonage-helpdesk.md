@@ -85,7 +85,7 @@ npm run dev
 
 In order to connect the application to Vonage's servers, we'll need a tunnel to our application. You can do this by using [ngrok](https://ngrok.com/), a neat little tool for doing just this. It's also worth noting there is actually a PHP-written tool from [Beyond Code](https://beyondco.de/) called [Expose](https://expose.dev/docs/introduction) that does the same thing, so well worth a look.
 
-Start the ngrok process like so:
+Start the Ngrok process like so:
 
 \`\``bash
 
