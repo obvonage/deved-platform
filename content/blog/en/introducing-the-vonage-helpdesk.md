@@ -35,11 +35,11 @@ Vonage Helpdesk is a PHP web application built in [Laravel 9](https://laravel.co
 
 * A Windows, Linux, or Mac machine that can run Docker v20+ (the current version)
 * PHP v8.0+
-* NodeJS v17+
+* [NodeJS v17+](https://nodejs.org/en/download/)
 * npm v8.5+
-* Composer v2+
-* Git installed
-* A Vonage account in credit
+* [Composer v2+](https://getcomposer.org/doc/00-intro.md)
+* [Git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [A Vonage account in credit](https://ui.idp.vonage.com/ui/auth/registration)
 
 First up, we need to download the repository. Type the following into the command line:
 
