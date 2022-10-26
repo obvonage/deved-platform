@@ -32,7 +32,7 @@ Let's jump into a popular one called, [VitePress](https://vitepress.vuejs.org/).
 
 ## A Primer on VitePress
 
-VitePress is [VuePress'](https://vuepress.vuejs.org/) little brother, and it is built on top of [Vite](https://vitejs.dev/). For those that don't know, Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects, so it might make sense to pair it with a static site generator such as VitePress. One of the original problems with VuePress was that it was a Webpack app, and it took a lot of time to spin up a dev server for just a simple doc. VitePress solves these problems with a nearly instant server start, an on-demand compilation that only compiles the page being served, and lightning-fast HMR. Let's get started!
+VitePress is [VuePress'](https://vuepress.vuejs.org/) little brother, and it is powered by   [Vite](https://vitejs.dev/) and [Vue.js](https://vuejs.org/). For those that don't know, Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects, so it might make sense to pair it with a static site generator such as VitePress. Vue.js is a progressive JavaScript framework for building web user interfaces. One of the original problems with VuePress was that it was a Webpack app, and it took a lot of time to spin up a dev server for just a simple doc. VitePress solves these problems with a nearly instant server start, an on-demand compilation that only compiles the page being served, and lightning-fast HMR. Let's get started!
 
 ## Starting From Zero to a Working Static Site
 
@@ -43,7 +43,7 @@ mkdir static-starter
 cd static-starter
 ```
 
-Then, initialize it with [Yarn](https://classic.yarnpkg.com/). If you don't have Yarn installed, you can install it on the  [downloads page](https://classic.yarnpkg.com/lang/en/docs/install/). 
+Then, initialize it with [Yarn](https://classic.yarnpkg.com/) or [NPM](https://www.npmjs.com/). For this example, we'll be using Yarn. If you don't have Yarn installed, you can install it on the  [downloads page](https://classic.yarnpkg.com/lang/en/docs/install/). For those using NPM, the VitePress documentation is located [here](https://www.npmjs.com/package/vitepress).
 
 ```shell
 yarn init
@@ -52,7 +52,7 @@ yarn init
 You will be asked a series of questions, and you can either fill in the details here or leave them blank, as I did.
 
 ```
-C:\Users\mbcru\source\static-starter>yarn init
+yarn init
 yarn init v1.22.19
 question name (static-starter):
 question version (1.0.0):
@@ -121,7 +121,7 @@ That will allow us to have different profiles depending on the situation.
 You can deploy the server by running `yarn docs:dev` as shown below. 
 
 ```text
-C:\Users\mbcru\source\static-starter>yarn docs:dev
+yarn docs:dev
 yarn run v1.22.19
 $ vitepress dev docs
 vitepress v1.0.0-alpha.21
