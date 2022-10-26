@@ -305,22 +305,22 @@ export default {
 
 ## Deploying Your App
 
-Now that we've developed our static site, and added pages to it along with a rich navigation bar, let's deploy our app. You can do so by running the following command `npm run docs:build`.
+Now that we've developed our static site, and added pages to it along with a rich navigation bar, let's deploy our app. You can do so by running the following command `yarn docs:build`.
 
 If everything works properly, then you'll see the following:
 
 ```
-C:\Users\mbcru\source\static-starter>npm run docs:build
-
-> static-starter@1.0.0 docs:build
-> vitepress build docs
-
+yarn docs:build
+yarn run v1.22.19
+$ vitepress build docs
 vitepress v1.0.0-alpha.21
 ✓ building client + server bundles...
-⠋ rendering pages...(node:17664) ExperimentalWarning: The Fetch API is an experimental feature. This feature could change at any time
+⠋ rendering pages...(node:3164) ExperimentalWarning: The Fetch API is an experimental feature. This feature could change at any time
 (Use `node --trace-warnings ...` to show where the warning was created)
 ✓ rendering pages...
-build complete in 7.54s.
+build complete in 8.29s.
+Done in 8.97s.
+
 ```
 
 The rendered files will default go to your project page under   `dist`. For example, my files were rendered here: `C:\Users\mbcru\source\static-starter\docs\.vitepress\dist`
