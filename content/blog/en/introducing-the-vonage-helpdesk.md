@@ -168,7 +168,7 @@ So, what is the code doing? Database-wise we have tables for `tickets`, `users`,
             }
 ```
 
-The important line here is the comparison: if it's not my ticket, I need to send a notification out. It pulls out the notification method from the ticket entry and, if it is `SMS`, it uses the [native PHP Vonage SDK integration with Laravel](https://github.com/Vonage/vonage-laravel) to boot up a new Client, autoconfigured and then uses the Messages API to fire off an SMS Notification.
+The important line here is the comparison: I need to send a notification out if it's not my ticket. It pulls out the notification method from the ticket entry. If it is SMS, it uses [the native PHP Vonage SDK integration with Laravel](https://github.com/Vonage/vonage-laravel) to boot up a new Client, autoconfigured. It then uses the Messages API to fire off an SMS Notification.
 
 At the other end, when the customer replies to the text, Vonage sends a webhook to our app and the `IncomingSmsController` handles it:
 
