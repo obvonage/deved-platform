@@ -20,7 +20,13 @@ replacement_url: ""
 ---
 ## Introduction
 
-I've always been a fan of static site generators as a way to create an HTML website based on text (typically in Markdown) with community-theming support. This allows you to spend more time writing content than managing the infrastructure for a content management system (CMS) like WordPress, which requires a database and a front-end UI to enter content. If I could sum up my three reasons why I like static site generators, it would be: Performance (pages are pre-rendered), the ability to have themes, and they don't require code to run on the server side. Let's jump into a popular one called, [VitePress](https://vitepress.vuejs.org/).
+I've always been a fan of static site generators as a way to create an HTML website based on text (typically in Markdown) with community-theming support. This allows you to spend more time writing content than managing the infrastructure for a content management system (CMS) like WordPress, which requires a database and a front-end UI to enter content. If I could sum up my three reasons why I like static site generators, it would be: 
+
+* Performance (pages are pre-rendered)
+* The ability to have themes
+* They don't require code to run on the server side 
+
+Let's jump into a popular one called, [VitePress](https://vitepress.vuejs.org/). 
 
 ![VitePress Home Page](/content/blog/create-a-static-site-using-vitepress-for-beautiful-help-documentation/vitepressmain.png "vitepressmain.png")
 
