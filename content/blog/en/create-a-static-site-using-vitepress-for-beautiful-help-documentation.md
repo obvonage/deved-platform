@@ -136,7 +136,7 @@ You should now have a server running, and it typically runs on the following loc
 
 ![First Launch of VitePress](/content/blog/create-a-static-site-using-vitepress-for-beautiful-help-documentation/helloworld.gif "helloworld.gif")
 
-Congrats! Our app is running now, and you can already notice some of the features and functionality we received using VitePress.
+Congrats! Our app is running now, and you can already notice some of the features and functionality we received using VitePress, such as:
 
 
 * Responsive site with animations
