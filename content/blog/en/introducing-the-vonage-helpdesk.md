@@ -59,7 +59,7 @@ Laravel Sail should have been pulled into the `vendor` folder, so providing you 
 ./vendor/bin/sail up
 ```
 
-\### Migrations, Seeders and Vite
+### Migrations, Seeders, and Vite
 
 Next up we need to run the database migrations:
 
