@@ -26,7 +26,7 @@ I've always been a fan of static site generators as a way to create a fully stat
 
 ## A Primer on VitePress
 
-VitePress is [VuePress'](https://vuepress.vuejs.org/) little brother, and it is built on top of [Vite](https://vitejs.dev/). For those that don't know, Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects, so it might make sense to pair it with a static site generator such as VitePress. One of the original problems with VuePress was that it was a Webpack app, and it took a lot of time to spin up a dev server for just a simple doc. VitePress solves these problems with nearly instant server start, an on-demand compilation that only compiles the page being served, and lightning-fast HMR. Let's get started!
+VitePress is [VuePress'](https://vuepress.vuejs.org/) little brother, and it is built on top of [Vite](https://vitejs.dev/). For those that don't know, Vite is a build tool that aims to provide a faster and leaner development experience for modern web projects, so it might make sense to pair it with a static site generator such as VitePress. One of the original problems with VuePress was that it was a Webpack app, and it took a lot of time to spin up a dev server for just a simple doc. VitePress solves these problems with a nearly instant server start, an on-demand compilation that only compiles the page being served, and lightning-fast HMR. Let's get started!
 
 ## Starting From Zero to a Working Static Site
 
