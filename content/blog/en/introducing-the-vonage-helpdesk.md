@@ -188,5 +188,5 @@ It has a limitation for now, in that it matches the incoming phone number to pul
 
 ### Coming Next...
 
-We're not done yet by a country mile! Keep an eye out for more articles in the series as we add to the app, including Voice capabilities using Deepgram, realtime updates using Laravel Livewire, and building out the test suite with PEST.
+We're not done yet by a country mile! Keep an eye out for more articles in the series as we add to the app, including Voice capabilities using Deepgram, real-time updates using Laravel Livewire, and building out the test suite with PEST.
 ```
