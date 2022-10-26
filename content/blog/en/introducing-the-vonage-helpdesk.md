@@ -111,7 +111,7 @@ So, what have we got? The Vonage Helpdesk emulates a ticketing system where cust
 
 You can log in now as the superuser (the seeded user is `admin@vonage.com` and the password is `password` - hey, it's a concept app, so by all means change it to a not-awful password!). Now we need a new "customer" user.
 
-On the splash screen, navigate to the top right-hand link to register. We're going to be looking at SMS interactions, so we're going to choose 'SMS' as the communication method. Make sure you choose a working phone number.
+On the splash screen, navigate to the top right-hand link to register. We will be looking at SMS interactions so we will choose 'SMS' as the communication method. Make sure you select a working phone number.
 
 ![Filled out helpdesk sign up form](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-10.42.18.png)
 
