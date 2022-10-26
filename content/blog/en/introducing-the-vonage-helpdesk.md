@@ -67,7 +67,7 @@ Next up, we need to run the database migrations:
 ./vendor/bin/sail artisan migrate
 ```
 
-Our application needs a super user to login, so we run the database seeder:
+Our application needs a super user to log in, so we run the database seeder:
 
 ```bash
 ./vendor/bin/sail artisan db:seed
