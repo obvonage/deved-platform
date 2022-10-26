@@ -139,7 +139,7 @@ Congrats! Our app is running now, and you can already notice some of the feature
 
 ## Adding More Pages and Understanding the File Structure
 
-Let's add another page the end user can navigate once the site loads. First, create a file named `another-page.md` inside the `docs` folder. Add the following text to the contents of the file `# Another Page`. 
+Let's add another page the end user can navigate to once the site loads. First, create a file named `another-page.md` inside the `docs` folder. Add the following text to the contents of the file `# Another Page`. 
 
 Now your `docs` folder should look like this.
 
