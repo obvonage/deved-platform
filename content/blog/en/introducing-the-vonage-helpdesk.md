@@ -97,7 +97,7 @@ You should get back a new URL to tunnel into your application. The last thing to
 
 ![](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-24-at-12.07.16.png)
 
-The important part here is to use your ngrok URL, followed by \`tickets/webhook\` which is a route defined in the Laravel application. You will also need to purchase a Vonage number in order to hook it up to the application that has just been created.
+The important part here is to use your Ngrok URL, followed by \`tickets/webhook\`, which is a route defined in the Laravel application. You will also need to purchase a Vonage number to hook it up to the newly created application.
 
 OK, we should all be set. Open a browser and navigate to `localhost` and hopefully, you should see the splash screen:
 
