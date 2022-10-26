@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-The most significant shift we see in web applications is the requirement for multichannel communications. It isn't enough anymore for your e-commerce site to have *just* a "Contact Us" page, where you can email while also having a semi-instant messager like Hotjar popup on the screen. Now, you can choose ahead of the curve by changing or promoting the medium by which you communicate with customers; an example is that an email conversation can be switched to a live WhatsApp chat or automated voice call queues that connect with real (human) agents.
+The biggest shift that we are seeing in web applications is the requirement for multi-channel communications. It isn't enough anymore for your e-commerce site to have *just* a "Contact Us" page, where you can email while also having a popup semi-instant messager like Hotjar. Now, you can choose to be ahead of the curve by changing or promoting the medium by which you communicate with customers; an example being that an email conversation can be switched to a live WhatsApp chat, or automated voice call queues that connect with real (human) agents.
 
 It's time we demonstrated how these channels work, so without further ado (for my PHP developers), I would like to introduce *The Vonage Helpdesk*. In this article I'll show you how to fire it up locally and then dig into how the SMS aspect of the app works to start us off.
 
@@ -27,7 +27,7 @@ Some time ago, we had a concept web application called Deskmo. This is a new rei
 
 ### What is it written in?
 
-Vonage Helpdesk is a PHP web application built in Laravel 9. It uses Laravel's Sail for portability, so you have a fully Dockerized app (goodbye, system-level dependencies!) that uses MySQL as the database.
+Vonage Helpdesk is a PHP web application built in [Laravel 9](https://laravel.com/docs/9.x). It uses Laravel's [Sail](https://laravel.com/docs/9.x/sail) for portability, so you have a fully Dockerized app (goodbye, system-level dependencies!) that uses [MySQL](https://www.mysql.com/) as the database.
 
 ### Installing
 
@@ -59,7 +59,7 @@ Laravel Sail should have been pulled into the `vendor` folder, so providing you 
 ./vendor/bin/sail up
 ```
 
-### Migrations, Seeders, and Vite
+\### Migrations, Seeders and Vite
 
 Next up we need to run the database migrations:
 
@@ -73,7 +73,7 @@ Our application needs a super user to login, so we run the database seeder:
 ./vendor/bin/sail artisan db:seed
 ```
 
-Because the application uses Laravel Breeze scaffolding for authentication out-of-the box, we'll need to run the Vite development server outside of your Docker containers to compile your JavaScript (this now comes with Laravel pre-configured). To run Vite, open a new terminal in your application folder and run the following:
+Because the application uses [Laravel Breeze scaffolding](https://laravel.com/docs/9.x/starter-kits#laravel-breeze) for authentication out-of-the box, we'll need to run the [Vite](https://vitejs.dev/) development server outside of your Docker containers to compile your JavaScript (this now comes with Laravel pre-configured). To run Vite, open a new terminal in your application folder and run the following:
 
 ```bash
 npm run dev
@@ -83,7 +83,7 @@ npm run dev
 
 \### Hook up the app via. Ngrok
 
-In order to connect the application to Vonage's servers, we'll need a tunnel to our application. You can do this by using ngrok, a neat little tool for doing just this. It's also worth noting there is actually a PHP-written tool from Beyond Code called Expose that does the same thing, so well worth a look.
+In order to connect the application to Vonage's servers, we'll need a tunnel to our application. You can do this by using [ngrok](https://ngrok.com/), a neat little tool for doing just this. It's also worth noting there is actually a PHP-written tool from [Beyond Code](https://beyondco.de/) called [Expose](https://expose.dev/docs/introduction) that does the same thing, so well worth a look.
 
 Start the ngrok process like so:
 
@@ -123,7 +123,7 @@ OK! Time to create a new ticket. Hit 'New Ticket' and fill out the details like 
 
 ![creating a new ticket in the dashboard](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.01.png)
 
-For reference, \`In-App Messaging\` is for using the Conversations API for realtime messaging, which we're not doing in this article, so leave that unchecked. Once you create the ticket, after hitting submit you'll be taken to the new ticket:
+For reference, \`In-App Messaging\` is for using the [Conversation API](https://developer.vonage.com/conversation/overview) for realtime messaging, which we're not doing in this article, so leave that unchecked. Once you create the ticket, after hitting submit you'll be taken to the new ticket:
 
 ![newly created ticket with email. channel source and message](/content/blog/introducing-the-laravel-vonage-helpdesk/screenshot-2022-10-21-at-11.23.18.png)
 
@@ -166,9 +166,9 @@ So, what is the code doing? Database-wise we have tables for `tickets`, `users` 
                 $client = app(Client::class);
                 $client->messages()->send($sms);
             }
-
 ```
-The important line here is the comparison: if it's not my ticket, I need to send a notification out. It pulls out the notification method from the ticket entry and, if it is `SMS`, it uses the native PHP Vonage SDK integration with Laravel to boot up a new Client, autoconfigured and then uses the Messages API to fire off an SMS Notification.
+
+The important line here is the comparison: if it's not my ticket, I need to send a notification out. It pulls out the notification method from the ticket entry and, if it is `SMS`, it uses the [native PHP Vonage SDK integration with Laravel](https://github.com/Vonage/vonage-laravel) to boot up a new Client, autoconfigured and then uses the Messages API to fire off an SMS Notification.
 
 At the other end, when the customer replies to the text, Vonage sends a webhook to our app and the `IncomingSmsController` handles it:
 
@@ -189,3 +189,4 @@ It has a limitation for now, in that it matches the incoming phone number to pul
 ### Coming Next...
 
 We're not done yet by a country mile! Keep an eye out for more articles in the series as we add to the app, including Voice capabilities using Deepgram, realtime updates using Laravel Livewire, and building out the test suite with PEST.
+```
