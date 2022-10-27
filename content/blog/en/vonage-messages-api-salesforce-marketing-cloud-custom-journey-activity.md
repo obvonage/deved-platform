@@ -1,12 +1,12 @@
 ---
-title: Create a Vonage Messages API Activity with Salesforce Marketing Cloud
+title: Build a Vonage Message Custom Activity with Salesforce Marketing Cloud
 description: Learn about a new starter template for creating a Vonage Messages
   API activity in the Salesforce Marketing Cloud Journey Builder
-thumbnail: /content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/heroku_salesforce_messagesapi.png
+thumbnail: /content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/heroku_salesforce_messagesapi.png
 author: kitt-phi
 published: true
-published_at: 2022-10-19T19:03:44.449Z
-updated_at: 2022-10-19T19:03:44.580Z
+published_at: 2022-10-27T08:39:42.846Z
+updated_at: 2022-10-27T08:39:44.860Z
 category: tutorial
 tags:
   - message-api
@@ -22,6 +22,10 @@ replacement_url: ""
 ## Introduction
 
 Today, I will introduce a starter template for creating a Vonage Messages API activity in the Salesforce Marketing Cloud Journey Builder using Heroku. The custom activity allows you to send marketing campaign messages using Vonage Messages API and Salesforce Marketing Cloud Contacts (Attribute Group in Contact Builder).
+
+In this post, I will walk you through the creation of the activity step by step. I have also put together a short video that you can learn how to integrate Vonage Communication APIs into Salesforce Marketing Cloud to build a contextual customer journey with different channels. 
+
+<youtube id="AyD3gk1RDFk"></youtube>
 
 ## Getting Started
 
@@ -74,7 +78,7 @@ Today, I will introduce a starter template for creating a Vonage Messages API ac
 * Click next and leave Data Retention Policy settings to Yes.
 * Enter fields as shown in the image below. 
 
-![Create New Data Extension](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/da-field.png "da-field.png")
+![Create New Data Extension](/content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/da-field.png "da-field.png")
 
 * Set emailAddress to data type EmailAddress and as the `Primary Key`.
 * Set toNumber to data type `Phone`.
@@ -85,15 +89,15 @@ Today, I will introduce a starter template for creating a Vonage Messages API ac
 
 * Navigate to the Data Extension you created > Records > Import> Browse, select the file `SAMPLE.csv` and click Next. 
 
-![Import Into Data Extension](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/import-de1.png "import-de1.png")
+![Import Into Data Extension](/content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/import-de1.png "import-de1.png")
 
 * Keep the default `Map by Header Row` and click Next. 
 
-![Upload File](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/import-de2.png "import-de2.png")
+![Upload File](/content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/import-de2.png "import-de2.png")
 
 * Lastly, click Import and close the modal. 
 
-![Configure Mapping](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/import-de3.png "import-de3.png")
+![Configure Mapping](/content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/import-de3.png "import-de3.png")
 
 * You must refresh and navigate the Data Extension > Records to see the CSV data we just imported.
 
@@ -104,7 +108,7 @@ Today, I will introduce a starter template for creating a Vonage Messages API ac
 * Click on Link Data Extension, navigate to Data Extensions, and select your Data Extension.
 * Link the Data Extension by selecting `Contact Key` for the Customer Data and `emailAddress` for your Data Extension, then click Save when done. 
 
-![Link Data Extension](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/link-da.png "link-da.png")
+![Link Data Extension](/content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/link-da.png "link-da.png")
 
 ### Configure Vonage Messages Activity
 
@@ -158,11 +162,11 @@ Edit `/public/js/customActivity.js`
 * Rename the Journey, e.g., your Heroku App name.
 * Select Multi-Step Journey and then click the Create button hidden at the bottom.
 
-![Journey Builder](/content/blog/vonage-messages-api-salesforce-marketing-cloud-custom-journey-activity/journey-builder-1.png "journey-builder-1.png")
+![Journey Builder](/content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/journey-builder-1.png "journey-builder-1.png")
 
 * On the left pane in Entry Sources, drag `Data Extension` to `Start with an Entry Source`.
 
-![Journey Builder - Entry Source](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/da-and-journey.png "da-and-journey.png")
+![Journey Builder - Entry Source](/content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/da-and-journey.png "da-and-journey.png")
 
 * Click on the dragged Data Extension icon and select Data Extension.
 * Select your Data Extension, click Summary, and then click Done.
@@ -180,7 +184,7 @@ Back in the package, you dragged `Vonage SFMC`. You can send either an SMS or Wh
 
 Marketing Cloud uses Data Binding using the Mustache syntax. E.g. `{{Contact.Attribute.DATA_EXTENSION_NAME.firstName}}`
 
-![Vonage SFMC](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/journey-sms.png "journey-sms.png")
+![Vonage SFMC](/content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/journey-sms.png "journey-sms.png")
 
 * Click Done once you pasted the line.
 
@@ -190,7 +194,7 @@ Marketing Cloud uses Data Binding using the Mustache syntax. E.g. `{{Contact.Att
 * Select WhatsApp. The WhatsApp Template message has two parameters. `{{1}}` is the `{{Contact.Attribute.DATA_EXTENSION_NAME.firstName}}`and `{{2}}` is the `client-ref`.
 * The Client Ref will be the second parameter for the WhatsApp Template.
 
-![Vonage SFMC](/content/blog/create-a-vonage-messages-api-activity-with-salesforce-marketing-cloud/journey-wa.png "journey-wa.png")
+![Vonage SFMC](/content/blog/build-a-vonage-message-custom-activity-with-salesforce-marketing-cloud/journey-wa.png "journey-wa.png")
 
 Finish the steps below to send the message.
 
