@@ -56,7 +56,7 @@ No-Code is a software development approach where the builder uses drag-and-drop 
 
 If you're stuck on the fence wondering what an organization's return on investment is with these platforms, consider the following.
 
-* Native mobile apps and PWAs - Instead of investing in traditional programming languages for the latest mobile devices (such as iOS and Android), you could use a low-code solution to build a mobile applications to deliver rich user experiences with cross-platform apps for every user, device, and operating system.
+* Native mobile apps and PWAs - Instead of investing in traditional programming languages for the latest mobile devices (such as iOS and Android), you could use a low-code solution to build a mobile application to deliver rich user experiences with cross-platform apps for every user, device, and operating system.
 * Customer and employee portals - Again, instead of investing in a software development team that understands the latest in HTML5 standards, JavaScript, and CSS, you could use a low-code solution to quickly build portals and tailor functionality to specific experiences for external and internal users.
 * Virtual or Voice agent - Suppose you want to create an application that users dial into, and they can retrieve credit card balances. Would you need a software development team to do that? No, you could take advantage of the AI Studio, a No-Code and Low-Code conversation designer that empowers developers and non-developers alike to design, create and deploy Virtual Agents that operate in natural language. 
 
