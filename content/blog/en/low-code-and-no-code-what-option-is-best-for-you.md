@@ -20,17 +20,17 @@ replacement_url: ""
 ---
 ## Introduction
 
-I started my journey into computer science as a software developer for a Fortune 500 company many years ago. Throughout the years, I was able to experience the good (and the bad) of relying on a software development team to build and update apps. Fast forward to today, I've been hearing more and more about Low-Code and No-Code development platforms, such as Vonage's own [AI Studio](https://www.vonage.com/communications-apis/ai-studio/?icmp=l3nav|l3nav_gototheaistudiooverviewpage_novalue), and decided that it was time to take a closer look. In this post, you'll learn about the pros and cons of Low-Code and No-Code development platforms and why Vonage decided to go down that route with their latest conversational AI platform called AI Studio. This tool handles complex interactions between businesses and customers, lowering operational costs and significantly improving service levels.
+I started my journey into computer science as a software developer for a Fortune 500 company many years ago. Throughout the years, I was able to experience the good (and the bad) of relying on a software development team to build and update apps. Fast forward to today, I've been hearing more and more about Low-Code and No-Code development platforms, such as Vonage's own [AI Studio](https://www.vonage.com/communications-apis/ai-studio/?icmp=l3nav|l3nav_gototheaistudiooverviewpage_novalue), and decided that it was time to take a closer look. In this post, you'll learn about the pros and cons of Low-Code and No-Code development platforms and explore a new product that Vonage built called AI Studio. This tool handles complex interactions between businesses and customers, lowering operational costs and significantly improving service levels.
 
 Let's break this down. 
 
 ## What are Low-Code and No-Code development platforms?
 
-Low-Code and No-Code development platforms are visual software development environments that allow business and traditionally non-technical users to drag and drop application components to build an app without writing any code. They typically have little to no coding knowledge. In contrast, a professional software developer might use an Integrated Development Environment (IDE) (such as Visual Studio) or an Editor (such as Visual Studio Code) to build an application with code and a solid understanding of computer science programming concepts. Keep in mind that both approaches allow you to create an application of various complexities, and both should be considered equal as it all depends on your business use case.
+Low-Code and No-Code development platforms are visual software development environments that allow business and non-technical users to *typically* drag and drop application components to build an app without writing any code. They typically have little to no coding knowledge. In contrast, a professional software developer might use an Integrated Development Environment (IDE) (such as Visual Studio) or an Editor (such as Visual Studio Code) to build an application with code and a solid understanding of computer science programming concepts. Keep in mind that both approaches allow you to create an application of various complexities, and both should be considered equal as it all depends on your business use case.
 
 ## What is Low-code?
 
-Low-code refers to a software development approach that might require users to do some level of coding, which is traditionally much less than a professional software developer. While they may use drag-and-drop capabilities to build their apps, they may extend the application with short and simple code snippets. Such as formatting a date in JavaScript or splitting the first name out of a string that includes the first or last name. They could also involve writing simple database queries (such as selecting the top row in a database based on an id).
+Low-code refers to a software development approach that might require users to do some level of coding, which is traditionally much less than a technical software developer. While they may use drag-and-drop capabilities to build their apps, they may extend the application with short and simple code snippets. Such as formatting a date in JavaScript or splitting the first name out of a string that includes the first or last name. They could also involve writing simple database queries (such as selecting the top row in a database based on an id).
 
 ## What is No-Code?
 
@@ -42,14 +42,14 @@ No-Code is a software development approach where the builder uses drag-and-drop 
 
 * Targets: Developers
 * Coding Experience: Very little (could search for code samples to use)
-* App Complexity: You can extend the "out-of-the-box" functionality of the application
+* App Complexity: You can extend the "out-of-the-box" functionality of the application and maintenance is easier
 * They are primarily used for Rapid Application Development.
 
 ### No-Code
 
 * Targets: Business Users
 * Coding Experience: None
-* App Complexity: Stuck with the "out-of-the-box" features/functionality
+* App Complexity: Limited with the "out-of-the-box" features/functionality
 * They are primarily used for Self-service applications that can be maintained in-house.
 
 ## Use cases of Low-Code and No-Code development platform
