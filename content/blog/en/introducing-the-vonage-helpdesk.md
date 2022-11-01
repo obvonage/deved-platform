@@ -2,10 +2,11 @@
 title: Introducing the Laravel Vonage Helpdesk
 description: "The best way of showing Vonage APIs in action is through examples:
   welcome to our PHP App!"
+thumbnail: /content/blog/introducing-the-laravel-vonage-helpdesk/laravel-vonage-helpdesk.png
 author: james-seconde
 published: true
-published_at: 2022-10-17T18:30:04.957Z
-updated_at: 2022-10-17T18:30:04.990Z
+published_at: 2022-11-01T09:59:56.351Z
+updated_at: 2022-11-01T09:59:58.343Z
 category: tutorial
 tags:
   - php
