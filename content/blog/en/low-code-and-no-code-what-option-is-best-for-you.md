@@ -29,9 +29,13 @@ Let's break this down.
 
 Low-Code and No-Code development platforms are visual software development environments that allow business and non-technical users to *typically* drag and drop application components to build an app without writing any code. They typically have little to no coding knowledge. In contrast, a professional software developer might use an Integrated Development Environment (IDE) (such as Visual Studio) or an Editor (such as Visual Studio Code) to build an application with code and a solid understanding of computer science programming concepts. Keep in mind that both approaches allow you to create an application of various complexities, and both should be considered equal as it all depends on your business use case.
 
+![What is Low-code?](/content/blog/low-code-and-no-code-what-option-is-best-for-you/low-code-1-.png "What is Low-code?")
+
 ## What is Low-code?
 
 Low-code refers to a software development approach that might require users to do some level of coding, which is traditionally much less than a technical software developer. While they may use drag-and-drop capabilities to build their apps, they may extend the application with short and simple code snippets. Such as formatting a date in JavaScript or splitting the first name out of a string that includes the first or last name. They could also involve writing simple database queries (such as selecting the top row in a database based on an id).
+
+![What is No-code?](/content/blog/low-code-and-no-code-what-option-is-best-for-you/no-code-1-.png "What is No-code?")
 
 ## What is No-Code?
 
@@ -75,6 +79,6 @@ For a software development team, this app would traditionally need to be tailore
 
 ## Wrap-up
 
-Now that you understand Low-Code and No-Code, and the benefits and use cases, I'd like to pass the question off to you. What Low-Code and No-Code platforms are you utilizing today, and what kind of app are you trying to build? If you are trying to develop a conversational designer, then we'd love for you to give [Vonage AI Studio]( https://www.vonage.com/communications-apis/ai-studio/?icmp=l3nav|l3nav_gototheaistudiooverviewpage_novalue) a try! 
+Now that you understand Low-Code and No-Code, and the benefits and use cases, I'd like to pass the question off to you. What Low-Code and No-Code platforms are you utilizing today, and what kind of app are you trying to build? If you are trying to develop a conversational designer, then we'd love for you to give [Vonage AI Studio](https://www.vonage.com/communications-apis/ai-studio/?icmp=l3nav|l3nav_gototheaistudiooverviewpage_novalue) a try! 
 
 Sound off in the [Vonage Developer Slack](https://developer.vonage.com/community/slack) or send me a Tweet on [Twitter](https://twitter.com/mbcrump), and I will get back to you. Thanks again for reading, and I will catch you on the next one!
