@@ -1,16 +1,17 @@
 ---
-title: "Low-code and No-code: What option is best for you?"
+title: "Low-Code and No-Code: What Option Is Best for You?"
 description: This post hopes to clear up the difference between Low-code and
   No-code and will help you in deciding what approach is best for you.
+thumbnail: /content/blog/low-code-and-no-code-what-option-is-best-for-you/low-code_no-code.png
 author: michael-crump
 published: true
-published_at: 2022-10-26T17:01:24.979Z
-updated_at: 2022-10-26T17:01:25.041Z
+published_at: 2022-11-03T09:34:19.693Z
+updated_at: 2022-11-03T09:34:20.765Z
 category: inspiration
 tags:
   - ai-studio
-  - lowcode
-  - nocode
+  - low-code
+  - no-code
 comments: true
 spotlight: false
 redirect: ""
