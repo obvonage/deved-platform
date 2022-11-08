@@ -24,6 +24,8 @@ On 26th October 2022 an awesome group of developers and friends descended on Dab
 
 At the start of the evening we welcomed some of Team Vonage to the stage to tell guests more about what we do, with Chris Tankersley kicking us off with a warm welcome and a general overview of the Vonage APIs. Chris was then joined by special guest Laurence Bargery, CTO of Accurx, to discuss how they are using our client SDK for in-app Voice application as a pilot project. They handed the mic over to Vonage’s Zachary Powell and Ashley Arthur, who shared how Vonage moved its Client SDKs to Kotlin MultiPlatform and saved the world (kind of). 
 
+![Chris Tankersley at DevCity](/content/blog/devcity-came-to-london-and-here’s-what-went-down/chris_talk.jpg)
+
 Content is a hugely important part of DevCity, and we were thrilled to be able to share just a little of what Vonage is working on with new faces and old friends too. 
 
 ## We Enjoyed Awesome Food and Drink
