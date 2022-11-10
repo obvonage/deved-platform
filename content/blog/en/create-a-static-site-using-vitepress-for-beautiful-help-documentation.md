@@ -2,15 +2,16 @@
 title: Create a Static Site using VitePress for Beautiful Help Documentation
 description: Learn how to use VitePress to create beautiful help documentation!
   No server required!
+thumbnail: /content/blog/create-a-static-site-using-vitepress-for-beautiful-help-documentation/vitepress.png
 author: michael-crump
 published: true
-published_at: 2022-10-21T19:52:48.314Z
-updated_at: 2022-10-21T19:52:48.381Z
+published_at: 2022-11-10T11:05:14.883Z
+updated_at: 2022-11-10T11:05:15.700Z
 category: inspiration
 tags:
   - apis
   - staticsite
-  - ""
+  - vitepress
 comments: true
 spotlight: false
 redirect: ""
