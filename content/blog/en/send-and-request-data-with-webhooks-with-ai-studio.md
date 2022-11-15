@@ -100,7 +100,7 @@ Press the **Tester** button at the top right of the screen, select **Inbound cal
 
 ![Testing our Webhook call](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/ai-studio-tester.png "ai-studio-tester.png")
 
-## Adding the WebHook
+## Adding the Webhook
 
 Scroll down from the **Nodes** menu until you get to **Integrations**, and select **Webhook** and drag and drop that onto your canvas. 
 
