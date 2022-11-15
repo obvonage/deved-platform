@@ -134,7 +134,7 @@ Now, if you press **Resend request**, you will get a proper response, as shown b
 
 ![Resent Webhook Request](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/successful-response.png "successful-response.png")
 
-## Setting up Parameters to do something with the data returned.
+## Setting up Parameters to Do Something With the Data Returned
 
 Now that we can call a WebHook from AI Studio and return data, we will use **Parameters** to extract and utilize specific information from the user’s input. For example, To collect a user's information (i.e., PIN or Account Balance), you need to define a parameter that will store the information so that it can be accessed later. 
 
