@@ -25,7 +25,7 @@ replacement_url: ""
 
 We will build a Virtual Agent for a fictitious bank called the **Bank of the People**. In this scenario, a customer could call a phone number, and the system would verify their identity by validating a pin number associated with their account. Once the system validates that the PIN they entered is correct, they will have access to their account. They could then ask questions such as "What is their account balance" and get a verbal reply from the Virtual Agent. To make things easier to test, we will use the built-in AI Studio test tool and have the Virtual Agent dial our personal phone number. Let's begin.
 
-## Setting up the WebHook
+## Setting up the Webhook
 
 To begin, we will need a place to store our customer data to access it from AI Studio. A great place to create a fake online REST server is  <https://my-json-server.typicode.com/>. You only need to create a JSON file on GitHub and point to that repo using the following syntax: my-json-server.typicode.com/`user/repo/`. Let's walk through this step-by-step:
 
