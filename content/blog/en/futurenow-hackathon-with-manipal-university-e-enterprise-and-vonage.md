@@ -17,6 +17,13 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+\
+On November 5th and 6th, Vonage partnered with e& enterprise and Manipal Academy of Higher Education (MAHE), Dubai Campus for the FutureNow Hackathon. The hackathon invited students from MAHE’s Computer Science program to compete in a 24 hour technical competition.
+
+The hackathon kicked off with a workshop by Vonage Developer Advocate Benjamin Aronov. He gave an overview of Vonage APIs and then did a hands-on demo, building a WhatsApp agent using the Studio AI platform. Students learned about AI Studio’s drag and drop interface, powerful NLU engine, and how it can connect with outside services with API calls.The students were then challenged to leverage AI driven Communication APIs to help organizations improve their relationships with customers. 9 teams submitted solutions using the Vonage AI Studio platform. The winning team was \_\_\_\__. We asked the team more about their project and aspirations for a future working in technology.\
+\
+\
+\
 Jaison Thomas
 
 Brandon Savio Rodrigues
