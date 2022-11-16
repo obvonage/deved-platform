@@ -9,8 +9,8 @@ updated_at: 2022-09-22T09:16:36.715Z
 category: inspiration
 tags:
   - ai-studio
-  - lowcode
-  - nocode
+  - low-code
+  - noc-ode
 comments: true
 spotlight: false
 redirect: ""
