@@ -27,7 +27,7 @@ Imagine having to create a login page for a bank where a customer uses a phone n
 
 Let’s see how we can create an OTP-based JWT (JSON Web Token) authentication in Java. We’ll use the Spring Boot framework and the Vonage Verify API.
 
-Learn more about JWT [here](https://developer.vonage.com/getting-started/concepts/authentication#json-web-tokens)
+Learn more about JWT [here](https://developer.vonage.com/getting-started/concepts/authentication#json-web-tokens).
 
 ## Vonage API Account
 
