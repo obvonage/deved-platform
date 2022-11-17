@@ -679,7 +679,7 @@ Here we have three API endpoints.
 
 If no `Authorization` header is present in the request or an invalid token is provided, it will throw an error, `unauthorized user.`
 
-![Without Authorization](/content/blog/otp-based-jwt-authentication-in-spring-boot-with-vonage-verify-api/with_authorization.png)
+![Without Authorization](/content/blog/otp-based-jwt-authentication-in-spring-boot-with-vonage-verify-api/without_authorization.png)
 
 ### `/api/login/init`
 
