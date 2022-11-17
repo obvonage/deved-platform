@@ -4,7 +4,7 @@
   "image_url": "/content/images/prashant_yadav.jpg",
   "name": "Prashant Yadav",
   "twitter": "learnersbucket",
-  "spotlight": false,
+  "spotlight": true,
   "title": "Developer Spotlight Author",
   "noteworthy": false,
   "team": false,
