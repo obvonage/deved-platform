@@ -33,7 +33,7 @@ Learn more about JWT [here](https://developer.vonage.com/getting-started/concept
 
 Before we begin using the API, we will need a [Vonage API account](https://ui.idp.vonage.com/ui/auth/registration).
 
-![Vonage API dashboard](https://learnersbucket.com/wp-content/uploads/2022/09/vonage1.png)
+![Vonage API dashboard](/content/blog/otp-based-jwt-authentication-in-spring-boot-with-vonage-verify-api/vonage1.png)
 
 Once we have our **API key** and **API secret**, we will use them for the [Verify API](https://dashboard.nexmo.com/getting-started/verify).
 
@@ -45,9 +45,7 @@ We’ll create a new [Spring application](https://www.jetbrains.com/help/idea/yo
 
 Add the following to the `build.gradle` file.
 
-
 ```gradle
-
 repositories {
 
 mavenCentral()
@@ -59,17 +57,13 @@ dependencies {
 implementation 'com.vonage:client:7.1.0'
 
 }
-
 ```
 
 ### Maven
 
 Add the following to our project's POM file.
 
-
-
 ```xml
-
 <dependency>
 
 <groupId>com.vonage</groupId>
@@ -79,39 +73,35 @@ Add the following to our project's POM file.
 <version>7.1.0</version>
 
 </dependency>
-
-
 ```
-
 
 ## Implementation Overview
 
 Now that we are done setting up, we can dive into development. This OTP login authentication with JWT can be completed in three steps:
 
- 1. JWT Creation 
- 2. Filter User Requests
- 3. Access API Functionality 
+1. JWT Creation 
+2. Filter User Requests
+3. Access API Functionality 
 
-### JWT Creation 
+### JWT Creation
 
 We will use a token-based authorization mechanism in which, once the user is successfully authenticated, we will generate a new token with an expiry period and return it to the user.
 
 The user will have to pass this token in each request to prove their identity and further access the applications that need authorization.
 
-###  Filter User Requests
+### Filter User Requests
 
 Every time we receive a token in the request, we must verify it and tell Spring Security that the user is authorized and can access the restricted endpoints. We will need a filter for each request.
 
-### Access API Functionality 
+### Access API Functionality
 
 We will use three different API routes to complete the authentication. Each serves a unique purpose:
 
- - Get the user's phone number to send the OTP
- - Verify the OTP and return the JWT token to the user
- - General endpoint for testing
+* Get the user's phone number to send the OTP
+* Verify the OTP and return the JWT token to the user
+* General endpoint for testing
 
 Let us see how each of these can be implemented separately.
-
 
 ## Handling the JWT encryption
 
@@ -124,19 +114,16 @@ Using the same **SECRET_KEY**, we can decrypt the token to get the payload and u
 To handle JWT, we will use the `io.jsonwebtoken::jjwt` package.
 
 ```gradle
-
 dependencies{
 
 implementation 'io.jsonwebtoken:jjwt:0.9.1'
 
 }
-
 ```
 
 Create a `JWTUtils` class under the `util` package and add the following code.
 
 ```java
-
 package com.example.vonage.auth.utils;
 
 import io.jsonwebtoken.Claims;
@@ -223,7 +210,6 @@ Create a new Java class named `JWTFilter` inside the `filters` package and add t
 This will hold the logic to extract the token from the request and validate it. If authorized, set the context that the user is authenticated.
 
 ```java
-
 package com.example.vonage.auth.filters;
 
 import com.example.vonage.auth.utils.JWTUtil;
@@ -291,8 +277,6 @@ filterChain.doFilter(request, response);
 }
 
 }
-
-
 ```
 
 From each request, we are getting the `Authorization` header and extracting the token from it after the text `Bearer`, which is why we are getting the substring after the first seven characters (including one space after the word `Bearer`).
@@ -306,12 +290,9 @@ Because we have only used the **phone number** as an identifier, there is no cro
 To get the authentication context, we have extended the `AbstractAuthenticationToken` and have provided a unique key and secret.
 
 ```java
-
 AuthenticationFilter apiToken = new AuthenticationFilter("abc", "xyz", AuthorityUtils.createAuthorityList());
 
 SecurityContextHolder.getContext().setAuthentication(apiToken);
-
-
 ```
 
 `abc` and `xyz` can be replaced with a unique identifying pair such as  `phone number` and `email`.
@@ -319,7 +300,6 @@ SecurityContextHolder.getContext().setAuthentication(apiToken);
 Create a new Java class named `AuthenticationFilter` under the `filters` package to get the Authenticated context.
 
 ```Java
-
 package com.example.vonage.auth.filters;
 
 import org.springframework.security.authentication.AbstractAuthenticationToken;
@@ -379,8 +359,6 @@ return apiKey;
 }
 
 }
-
-
 ```
 
 Once the authorization is done, we will pass on the request further `filterChain.doFilter(request, response);`
@@ -392,7 +370,6 @@ Let's update the Spring Security config to handle the same.
 Create a new Java class named `WebSecurityConfig` under the `config` package and add the following code.
 
 ```java
-
 package com.example.vonage.auth.config;
 
 import com.example.vonage.auth.error.AuthError;
@@ -468,8 +445,6 @@ configurer
 }
 
 }
-
-
 ```
 
 Here we have configured the `cors` and `csrf` to make the API work and added our `jwtFilter` before any internal spring security filter.
@@ -485,7 +460,6 @@ At the end, we have added a common error class to handle the error and provide c
 Create a Java class named `AuthError` under the `error` package and add the following code.
 
 ```java
-
 package com.example.vonage.auth.error;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -527,10 +501,7 @@ response.setContentType("application/json");
 }
 
 }
-
-
 ```
-
 
 ## Define controllers for the restricted and unrestricted routes
 
@@ -541,7 +512,6 @@ Our filter and token validation are now in place. Let's listen to the request an
 Create a java class named 'AuthService' under the `services` package.
 
 ```java
-
 package com.example.vonage.auth.services;
 
 import com.example.vonage.auth.utils.JWTUtil;
@@ -603,12 +573,9 @@ return "Verification failed: " + response.getErrorText();
 }
 
 }
-
-
 ```
 
 `AuthService` will have two methods: init and verify.
-
 
 `init` accepts the phone number as a parameter and sends the OTP to that phone number. The response will return a `request_id` that will be used with OTP for validation.
 
@@ -625,7 +592,6 @@ No authorization is required to access these routes.
 Create a Java class named 'Auth' under the `controllers` package and add the following code.
 
 ```java
-
 package com.example.vonage.auth.controllers;
 
 import com.example.vonage.auth.services.AuthService;
@@ -673,8 +639,6 @@ return authService.verify(identifier, request_id, otp);
 }
 
 }
-
-
 ```
 
 #### Other (Restricted)
@@ -684,7 +648,6 @@ Authorization is required to access this route.
 Create a Java class named 'Hello' under the `controllers` package and add the following code.
 
 ```java
-
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -706,8 +669,6 @@ return "hello world";
 }
 
 }
-
-
 ```
 
 ## Testing
@@ -718,30 +679,32 @@ Here we have three API endpoints.
 
 If no `Authorization` header is present in the request or an invalid token is provided, it will throw an error, `unauthorized user.`
 
-![Without Authorization](https://learnersbucket.com/wp-content/uploads/2022/10/Screenshot-2022-10-16-at-11.58.25-AM.png)
+![Without Authorization](/content/blog/otp-based-jwt-authentication-in-spring-boot-with-vonage-verify-api/without_authorization.png)
 
 ### `/api/login/init`
 
 It accepts the phone number in URL-encoded format and returns the request-id after sending the OTP.
 
-![Init the OTP request](https://learnersbucket.com/wp-content/uploads/2022/10/Screenshot-2022-10-16-at-11.16.18-AM.png)
+![Init the OTP request](/content/blog/otp-based-jwt-authentication-in-spring-boot-with-vonage-verify-api/otp_request.png)
 
 ### `/api/login/verify`
 
 It accepts the phone number, request-id, and OTP in URL-encoded format and returns the JWT token after sending the OTP.
 
-![Verify the OTP](https://learnersbucket.com/wp-content/uploads/2022/10/Screenshot-2022-10-16-at-11.17.09-AM.png)
+![Verify the OTP](/content/blog/otp-based-jwt-authentication-in-spring-boot-with-vonage-verify-api/verify_otp.png)
 
 ### `/api/hello` with Authorization
 
 In the request header, pass `Authorization : Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5MDA0NzU4NTM0IiwiZXhwIjoxNjYzOTYxMzIwLCJpYXQiOjE2NjM5MjUzMjB9.fY2536Zuz2KNzinZvWU5CNZ6K1p_wOu0pkEbwqP8gbg`
 
-![With Authorization](https://learnersbucket.com/wp-content/uploads/2022/10/Screenshot-2022-10-16-at-11.17.33-AM.png)
+![With Authorization](/content/blog/otp-based-jwt-authentication-in-spring-boot-with-vonage-verify-api/with_authorization.png)
+
 ## Conclusion
+
 Now that we have created a two-step login flow with phone number and OTP, our next step might be to add two-factor authentication where we can re-verify the same user by making a call to the phone number using the [Vonage Voice API](https://dashboard.nexmo.com/getting-started/voice). 
 
 Vonage has an interesting set of [APIs](https://developer.vonage.com/tools) available that can be used to take your product to the next level and provide a better user experience.
 
 Engagement from the community is always welcome. Join Vonage on [GitHub](https://github.com/Vonage) for code examples and the [Community Slack](https://developer.vonage.com/community/slack) for queries at any time. Send us a [tweet](https://twitter.com/vonagedev) and let us know about the interesting problem you solved using Vonage API.
 
-You can also reach out to me on [Twitter](https://twitter.com/LearnersBucket) or through my blog [learnersbucket.com](https://learnersbucket.com). 
+You can also reach out to me on [Twitter](https://twitter.com/LearnersBucket) or through my blog [learnersbucket.com](https://learnersbucket.com).
