@@ -2,6 +2,7 @@
 title: OTP-Based (JWT) Authentication in Spring Boot With Vonage Verify API
 description: "Create an OTP-based login using Vonage Verify API with JWT
   authentication in Spring Boot "
+thumbnail: /content/blog/otp-based-jwt-authentication-in-spring-boot-with-vonage-verify-api/jwt-authentication_spring-boot_verify-api.png
 author: prashant-yadav
 published: true
 published_at: 2022-11-17T09:47:16.320Z
