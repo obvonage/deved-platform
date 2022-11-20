@@ -18,13 +18,11 @@ replacement_url: ""
 ---
 ## Another Video API, But Why?
 
-Remember a not-so-distant past, in which video calls were cumbersome and awkward? Remember the need for external webcams? Remember when the promise of business calls amounted to one boardroom of people in suits talking to another boardroom of people in suits? Those days are over. Not only are folks having video calls with friends, family, and colleagues, but they're also preferring to meet businesses through video. According to Vonage's 2021 [Global Customer Engagement Report](https://www.vonage.com/resources/publications/global-customer-engagement-report/), 56% of consumers opt to video chat with businesses. In fact, there's been a 300% growth in the number of respondents who chose video chat as the number one channel for talking to companies. People are expecting a seamless, connected customer experience that includes video conferencing in a company’s toolbelt.
+Remember a not-so-distant past, in which video calls were cumbersome and awkward? Remember the need for external webcams? Remember when the promise of business calls amounted to one boardroom of people in suits talking to another boardroom of people in suits? Those days are over. Not only are folks having video calls with friends, family, and colleagues, but they're also preferring to meet businesses through video. According to Vonage's 2022 [Global Customer Engagement Report](https://www.vonage.com/resources/publications/global-customer-engagement-report/), daily video chat use for business communications will double this year. And consumers are increasingly using businesses' own applications to do this. People are expecting a seamless, connected customer experience that includes video conferencing in a company’s toolbelt. 
 
 ![Example of a Meetings API Room ](/content/blog/meetings-api-is-here/video-menu.png "Example of a Meetings API Room")
 
-
-
-We built the Meetings API to meet this need. Just as video conferencing used to be cumbersome for users, it was even more painful for companies to integrate with their software. WebRTC is complicated. It's been around quite a while but it's still not easy to get going or scale. Vonage APIs help abstract the complicated parts of WebRTC without sacrificing performance or functionality. In addition to Vonage's other Video products ([VBC](https://www.vonage.co.uk/unified-communications), [Video API](https://tokbox.com/developer/guides/basics/), [Video Express](https://tokbox.com/developer/video-express/)), Meetings API offers another simplified, Low-Code option for companies who want to control their video experience and are looking for something in between Video SaaS & fully customizable APIs.
+We built the Meetings API to meet this need. Just as video conferencing used to be cumbersome for users, it was even more painful for companies to integrate with their software. WebRTC is complicated. It's been around quite a while but it's still not easy to get going or scale for growth. Vonage APIs help abstract the complicated parts of WebRTC without sacrificing performance or functionality. In contrast to Vonage's other in-app Video products ([Video API](https://tokbox.com/developer/guides/basics/) and [Video Express](https://tokbox.com/developer/video-express/)), Meetings API started out as a full-featured video conference application–Vonage Meetings, part of the Vonage Business Communications ([VBC](https://www.vonage.co.uk/unified-communications)) suite–and became an API. This means that businesses have a simplified, Low-Code option, packed with all the conferencing capabilities of a complete application. It’s for companies who want an easier way to own their video experience, something in between an off-the-shelf application and a full API.
 
 Simply put, Meetings API was built around experience. Customers now expect a video experience. Developers now expect a simple experience. Meetings API meets both these expectations.
 
@@ -69,17 +67,13 @@ The Meetings API powers the VBC application and thus is capable of handling all 
 
   * Healthcare applications can securely use Meetings API and assure HIPAA compliance
 
-
-
 ![Preview of Meetings API With Spanish Internationalization](/content/blog/meetings-api-is-here/screen-shot-2022-11-14-at-17.49.50.png "Preview of Meetings API With Spanish Internationalization")
-
-
 
 ## Code Simplicity
 
 The Meetings API allows developers to "drop-in" a full video experience into their application. Just send the right request to the API and it will return the information about the room it has created.
 
-To use the API, you need to authorize the request with a JSON Web Token (JWT). Use the [JWT Generator](https://developer.vonage.com/jwt) to create a JWT using the Application ID and Private Token mentioned above.
+To use the API, you need to authorize the request with a JSON Web Token (JWT). Use the [JWT Generator](https://developer.vonage.com/jwt) to create a JWT using the Application ID and Private Key of your application. This can be found in your Vonage [Developer Dashboard](https://dashboard.nexmo.com/) ﻿by navigating to the application you are building.
 
 For further details about JWTs, please see [Vonage Authentication](https://developer.vonage.com/concepts/guides/authentication).
 
@@ -93,7 +87,7 @@ Sample request to create an instant room:
 
 ```
 curl -X POST 'https://api-eu.vonage.com/beta/meetings/rooms'
--H 'Authorization: Bearer XXXXX'
+-H 'Authorization: Bearer $YOUR_JWT_GOES_HERE'
 -H 'content-type: application/json'
 -d '{ "display_name":"New Meeting Room" }'
 ```
@@ -104,22 +98,20 @@ Sample request to create a long term room:
 
 ```
 curl -X POST 'https://api-eu.vonage.com/beta/meetings/rooms'
--H 'Authorization: Bearer XXXXX'
+-H 'Authorization: Bearer $YOUR_JWT_GOES_HERE'
 -H 'content-type: application/json'
 -d '{ "display_name":"New Meeting Room", "type": "long_term", "expires_at": "2022-04-28T14:20:20.462Z", }'
 ```
 
-
-
 #### Recording Configuration
 
-Currently, the only configuration available for rooms are recording option by passing the additional `recording_options` object. You can decide if the session will be recorded with the `auto_record` boolean. Additionally, you can choose to only record the video of the room's owner (host) with the `record_only_owner` boolean.
+Rooms are configurable by passing the additional `recording_options` object. You can decide if the session will be recorded with the `auto_record` boolean. Additionally, you can choose to only record the video of the room's owner (host) with the `record_only_owner` boolean.
 
 An example of how to pass these options:
 
 ```
 curl -X POST 'https://api-eu.vonage.com/beta/meetings/rooms'
--H 'Authorization: Bearer XXXXX'
+-H 'Authorization: Bearer $YOUR_JWT_GOES_HERE'
 -H 'Content-Type: application/json' 
 -d '{
       "display_name":"New Meeting Room",
@@ -129,8 +121,6 @@ curl -X POST 'https://api-eu.vonage.com/beta/meetings/rooms'
       }
     }'
 ```
-
-
 
 ### Successful Room Response
 
@@ -167,8 +157,6 @@ An example of an instant room response:
 }
 ```
 
-
-
 ### Website Embed
 
 A meeting created through the API can be embedded into your website or application. To do this, generate the meeting link and create an iFrame using that link:
@@ -186,8 +174,6 @@ This is currently supported for both desktop and mobile applications using the f
 Feature functionality depends on display sizes. See full functionality [here](https://developer.vonage.com/meetings/overview#website-and-app-embed).
 
 You will also need to send an [email request to the Meetings API team](mailto:meetings-api@vonage.com) to whitelabel the domain of the website the iFrame is used in.
-
-
 
 ## Advanced Capabilities
 
