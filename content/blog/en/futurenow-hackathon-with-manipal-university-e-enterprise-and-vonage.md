@@ -17,22 +17,25 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+![FutureNow Hackathon participants and staff](/content/blog/futurenow-hackathon-with-manipal-university-e-enterprise-and-vonage/manipal-hackathon.jpeg "FutureNow Hackathon participants and staff")
+
+
+
+## About the Hackathon
+
 \
 On November 5th and 6th, Vonage partnered with e& enterprise and Manipal Academy of Higher Education (MAHE), Dubai Campus for the FutureNow Hackathon. The hackathon invited students from MAHE’s Computer Science program to compete in a 24 hour technical competition.
 
-The hackathon kicked off with a workshop by Vonage Developer Advocate Benjamin Aronov. He gave an overview of Vonage APIs and then did a hands-on demo, building a WhatsApp agent using the Studio AI platform. Students learned about AI Studio’s drag and drop interface, powerful NLU engine, and how it can connect with outside services with API calls.The students were then challenged to leverage AI driven Communication APIs to help organizations improve their relationships with customers. 9 teams submitted solutions using the Vonage AI Studio platform. The winning team was \_\_\_\__. We asked the team more about their project and aspirations for a future working in technology.\
+The hackathon kicked off with a workshop by Vonage Developer Advocate Benjamin Aronov. He gave an overview of Vonage APIs and then did a hands-on demo, building a WhatsApp agent using the Studio AI platform. Students learned about AI Studio’s drag and drop interface, powerful NLU engine, and how it can connect with outside services with API calls.\
 \
 \
-\
-Jaison Thomas
+The students were then challenged to leverage AI-driven Communication APIs to help organizations improve their relationships with customers. 9 teams submitted solutions using the Vonage AI Studio platform. The winning team was quadKernals. 
 
-Brandon Savio Rodrigues
-
-Saina Ejaz
-
-Shreesh Chaturvedi
+We asked the team more about their project and aspirations for a future working in technology.
 
 
+
+## A﻿n Interview with quadKernals
 
 #### Okay, so first just remind me your names and what your role in the team was
 
@@ -41,8 +44,6 @@ Shreesh Chaturvedi
 \[Saina + Brandon] creating the sync between the video and audio of JIFFs. So I created the JIFFs, and then we had to basically sync the JIFS with the audio along with the mapping of the keywords to the Jiff. So depending on which keyword comes in, it maps it to a particular action. So we basically had four GIFs, and we had to map it to that. Another thing that Sonia did was she actually graphic design each of the states for Domino, and that's pretty much it. So the artwork was custom
 
 \[Brandon] I made the text to speech interface work. It used to loop and loop and go on, and I fixed that. 
-
-
 
 #### Are you all studying computer science? Yes. Okay, and let's just go one by one. But, like, what is your dream kind of job role after you finish your degree? What are you interested in doing? 
 
@@ -54,11 +55,13 @@ Shreesh Chaturvedi
 
 \[Shreesh] My dream is to become a cybersecurity specialist, and as of now. We haven't had a lot of subjects that deeply interest us in cybersecurity. It's just like the base, and then we just leave it and leave us out. But I'm hoping to deepen my knowledge into cybersecurity and one day be a specialist. To defend, not attack. 
 
-
-
 #### So very quickly, just, like, in three lines, say what the project that you. 
 
-\[Jaison] We built a project called Domino. It’s a video interface for your chat application. We created a bot that was a bunch of GIFs and we mapped text to various outputs and actions. So according to what kind of text you would say, it would do the related action. So a “hi” would be a wave. When you’re talking , the bot would look like it was listening. When it was speaking, it would use the talking GIF. And if it didn’t understand something it would have a confused face. 
+\[Jaison] We built a project called Domino. It’s a video interface for your chat application. We created a bot that was a bunch of GIFs and we mapped text to various outputs and actions. So according to what kind of text you would say, it would do the related action. So a “hi” would be a wave. When you’re talking, the bot would look like it was listening. When it was speaking, it would use the talking GIF. And if it didn’t understand something it would have a confused face.
+
+ 
+
+<youtube id="Dai2ZxVOm7s"></youtube>
 
 #### What problem does it solve?
 
@@ -80,8 +83,6 @@ And it was really easy to create the chatbot. To create the bot was a lot easier
 
 We wanted to create a SQL database but because of time constraints we used my-json-server to create a JSON object as a database and put it on GitHub and then use my-json-server to serve up that data. 
 
-
-
 Our frontend was HTML and Vanilla JS. And with JavaScript we call the APIs, get back the JSON responses and then show it in the frontend. So the entire flow would be:
 
 1. User sends a message
@@ -89,17 +90,11 @@ Our frontend was HTML and Vanilla JS. And with JavaScript we call the APIs, get 
 3. Then we give the response to our Text-To-Speech function to speak
 4. And we would tell the talking bot which action to perform according to what was said
 
-
-
 #### Any specific feature in AI Studio surprised you?
 
 \[Jaison] Just how good the intents were. I had the query of “what event am I at?” so that’s for the location. So I added as the expression, “where is this location?”. And you could instead ask another keyword for it, like “destination”. And it wouldn’t struggle for it. It would realize, “oh yeah destination is there and where is is there” so it must be another location intent. And it would be able to pull context like that which was really, really cool. 
 
-
-
 \[Saina] The suggestions for expressions were really accurate. After you put in one, you get a lot of suggestions that have somehow recognized what you are looking for. It’s really good. 
-
-
 
 #### What’s Next For You As A Group and Individually?
 
@@ -110,3 +105,5 @@ We have our [University Tech Fest](https://technovanzadxb.web.app/html/index.htm
 \[Jaison] Only a few months left for me until graduation. And the job market doesn’t look so great. But I have to start the job hunt. And also applying for Masters programs in Machine Learning and Systems Engineering.
 
 \[Saina] Definitely a Masters in Machine Learning and Artificial Intelligence. I’m also finishing in a few months with Jaison.
+
+## S﻿tay in the Loop
