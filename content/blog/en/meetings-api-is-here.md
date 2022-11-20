@@ -100,7 +100,7 @@ curl -X POST 'https://api-eu.vonage.com/beta/meetings/rooms'
 
 2. A Long Term Room, which remains alive until the specified expiration date (the maximum is one year). This room is typically linked to a recurring meeting, person, or resource.
 
-Sample request to create an instant room:
+Sample request to create a long term room:
 
 ```
 curl -X POST 'https://api-eu.vonage.com/beta/meetings/rooms'
