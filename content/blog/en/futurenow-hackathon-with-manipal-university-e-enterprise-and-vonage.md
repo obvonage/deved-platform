@@ -37,7 +37,7 @@ We asked the team more about their project and aspirations for a future working 
 
 ## A﻿n Interview with quadKernals
 
-#### Okay, so first just remind me your names and what your role in the team was
+#### What were the different roles in the team? Who did what?
 
 \[Jaison + Shreesh] created the APIs along with Srish to interact with the one inch AI agents. Okay. So we learned how to interact with the Http AI agent. So that is the creating the session and then accessing the session and sending messages back and forth. And we also created the event access management system that is on the AI agent side.
 
@@ -107,3 +107,7 @@ We have our [University Tech Fest](https://technovanzadxb.web.app/html/index.htm
 \[Saina] Definitely a Masters in Machine Learning and Artificial Intelligence. I’m also finishing in a few months with Jaison.
 
 ## S﻿tay in the Loop
+
+To find out which upcoming developer events the Vonage Developer Relations team will be at, check out our Developer Community [page](https://developer.vonage.com/community).
+
+Looking for other Vonage developers? Join the conversation on our [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
