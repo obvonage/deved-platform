@@ -42,13 +42,13 @@ We asked the team more about their project and aspirations for a future working 
 
 ### What is your dream job after you finish your Computer Science degree?
 
-**Brandon:** “Well, I would like to be a software engineer. But I would like to be more independent, like creating my own projects for myself. A little bit of a freelancer. I think I would like to be a full stack developer, but mainly my focus would be on the back end.”
+**Shreesh:** “Well, I would like to be a software engineer. But I would like to be more independent, like creating my own projects for myself. A little bit of a freelancer. I think I would like to be a full stack developer, but mainly my focus would be on the back end.”
 
 **Jaison:** “The job that pays the most. But in all seriousness, I got into CS to build solutions that impact a lot of people. Because you could do that with computers, which you basically couldn't do with many other fields. People have been building applications that billions of people use. So being someone who can scale applications and at that level, that's what I want to do. So system architecture. I enjoyed our Networking course.”
 
 **Saina:** “So I'm really interested in AI and ML. So we have just started our minors in that. And I want to do masters in artificial intelligence and machine learning. So that's the next step because I want to get a deeper understanding of all the neural networks and contribute some of my own products to it. We see the research papers and the articles that come out, and it all seems really interesting to me.”
 
-**Shreesh:** “My dream is to become a cybersecurity specialist. I'm hoping to deepen my knowledge into cybersecurity and one day be a specialist. To defend, not attack.”
+**Brandon:** “My dream is to become a cybersecurity specialist. I'm hoping to deepen my knowledge into cybersecurity and one day be a specialist. To defend, not attack.”
 
 ### W﻿hat did you build for the hackathon?
 
@@ -64,7 +64,7 @@ We went for event assistance as a usecase. When [GITEX](https://www.gitex.com/) 
 
 ### What did you learn while building Domino?
 
-**Brandon:** “I learned a lot of web development, which wasn’t really my specialty. I learned how to deal with the REST API requests and responses. And how we can use data to build new requests dynamically. Because the user text is not limited as the NLU allows them to enter answers naturally.”
+**Shreesh:** “I learned a lot of web development, which wasn’t really my specialty. I learned how to deal with the REST API requests and responses. And how we can use data to build new requests dynamically. Because the user text is not limited as the NLU allows them to enter answers naturally.”
 
 **Jaison:** “What I had to do this time was go through the documentation very well. I couldn’t just copy an existing tutorial. Going through the documentation and figuring out how the APIs work. That was a new experience for me. Usually I don’t spend so long to understand how an API works. I enjoyed doing that. 
 
@@ -93,7 +93,7 @@ Our frontend was HTML and Vanilla JS. And with JavaScript we called the APIs, ge
 
 We have our [University Tech Fest](https://technovanzadxb.web.app/html/index.html) coming up in a couple of weeks. And we wanted to make an interface for people to communicate over a plain WhatsApp bot. But now we can create an interactive way so people can find what they’re looking for at Tech Fest.
 
-**Brandon**: “I still have 3 years to go until graduation. Trying to participate in more activities to get real world experience, like this hackathon. And maybe win a couple more!”
+**Shreesh**: “I still have 3 years to go until graduation. Trying to participate in more activities to get real world experience, like this hackathon. And maybe win a couple more!”
 
 **Jaison:** “Only a few months left for me until graduation. And the job market doesn’t look so great. But I have to start the job hunt. And also applying for Masters programs in Machine Learning and Systems Engineering.”
 
