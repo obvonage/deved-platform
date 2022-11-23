@@ -6,7 +6,7 @@ author: chuck-reeves
 published: true
 published_at: 2022-11-23T10:10:48.204Z
 updated_at: 2022-11-23T10:10:49.976Z
-category: announcement
+category: release
 tags:
   - node
 comments: true
