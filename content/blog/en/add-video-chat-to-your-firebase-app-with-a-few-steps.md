@@ -1,0 +1,63 @@
+---
+title: Add Video Chat to Your Firebase App With a Few Steps
+description: Learn how you can add multiparty video chats to your Firebase
+  application using the Vonage Video Express extension.
+author: dwanehemmings
+published: true
+published_at: 2022-11-23T21:54:32.371Z
+updated_at: 2022-11-23T21:54:32.411Z
+category: announcement
+tags:
+  - video
+  - firebase
+  - extension
+comments: true
+spotlight: false
+redirect: ""
+canonical: ""
+outdated: false
+replacement_url: ""
+---
+# Video Express?
+
+[Video Express](https://tokbox.com/developer/video-express/) was built on top of the Vonage Video API to help make creating a multiparty video conference application quicker. This JavaScript library abstracts some of the nitty-gritty details such as keeping track of publishers and subscribers along with optimizations into a “room”.
+
+# Firebase?
+
+[Firebase](https://firebase.google.com/) is an app development platform offering services like hosting, authentication, real-time databases, analytics, and many more. It is backed by the Google Cloud Platform.
+
+# Firebase x Vonage Video Express extension?
+
+Firebase announced [Extensions](https://extensions.dev/) which help developers "build an app quickly and easily". Vonage Video Express also wants to shorten the time it takes to add video chat to an application. So we created and released an [extension](https://extensions.dev/extensions/vonage/firestore-vonage-video-express).
+
+# How it works.
+
+After installing the extension in a Firebase application, when a developer creates a room in Cloud Firestore, the extension will use Cloud Functions to generate the credentials needed to participate in the video chat via Vonage Video Express.
+
+# Getting Started.  
+
+On the Vonage side, you’ll need to have an account, and a project, and enable the Video Express add-on. Details can be found in the [Video Express documentation](https://tokbox.com/developer/video-express/)
+
+For Firebase, an account and project will also be required. In that project, both Cloud Functions and Cloud Firestore must be enabled.
+
+There are a couple of ways to start the installation of the [Vonage Video Express extension](https://extensions.dev/extensions/vonage/firestore-vonage-video-express).
+
+Using the Firebase CLI, in your Firebase project directory, run the following:
+
+```
+firebase ext:install vonage/firestore-vonage-video-express --project=projectId_or_alias
+```
+
+By following this link to the [Firebase Console](https://console.firebase.google.com/project/_/extensions/install?ref=vonage/firestore-vonage-video-express), you’ll be able to select the project you want to install the extension.
+
+Next, you’ll enter some information (selecting deployment location, Vonage credentials, etc) and accept some terms to set up the extension.
+
+Then the extension will start installing into the project. That’s it!
+
+# But wait... There’s more!
+
+We also include a [sample application](https://github.com/Vonage/vonage-firebase-extensions/tree/main/demos) to demonstrate the extension in action. There’s a link under the “How this extension works” tab of the extension’s page to test it out in your project. Just enter the config object and it’s up and running.
+
+# Giving it a try?
+
+As always, we welcome any questions, comments, and feedback. Definitely want to hear about your experience with the extension. Feel free to post in our [Community Slack Channel](https://developer.vonage.com/community/slack). If you are on Twitter, follow the [VonageDev](https://twitter.com/vonagedev) account to get the latest updates.
