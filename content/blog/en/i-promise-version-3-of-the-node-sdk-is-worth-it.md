@@ -1,10 +1,11 @@
 ---
 title: Announcing the Vonage Node SDK v3.0.0
 description: v3.0. of the NodeJS SDK, brings new improvements and long "await"ed features
+thumbnail: /content/blog/announcing-the-vonage-node-sdk-v3-0-0/node_sdk-updates.png
 author: chuck-reeves
-published: false
-published_at: 2022-11-21T15:40:57.452Z
-updated_at: 2022-11-21T15:40:57.464Z
+published: true
+published_at: 2022-11-23T10:10:48.204Z
+updated_at: 2022-11-23T10:10:49.976Z
 category: announcement
 tags:
   - node
