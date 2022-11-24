@@ -2,14 +2,15 @@
 title: FutureNow Hackathon With Manipal University, e& enterprise, and Vonage
 description: A recap of the 2022 hackathon at Manipal University with a demo of
   AI Studio, a Low Code tool from Vonage.
+thumbnail: /content/blog/futurenow-hackathon-with-manipal-university-e-enterprise-and-vonage/futurenow-hackathon.png
 author: benjamin-aronov
 published: true
-published_at: 2022-11-15T19:02:51.896Z
-updated_at: 2022-11-15T19:02:51.929Z
+published_at: 2022-11-24T12:03:17.217Z
+updated_at: 2022-11-24T12:03:18.252Z
 category: event
 tags:
   - ai-studio
-  - ""
+  - hackathon
 comments: true
 spotlight: false
 redirect: ""
@@ -21,11 +22,10 @@ replacement_url: ""
 
 ## About the Hackathon
 
-\
 On November 5th and 6th, Vonage partnered with [e& enterprise](https://www.eandenterprise.com/) and [Manipal Academy](https://www.manipaldubai.com/) of Higher Education (MAHE), Dubai Campus for the FutureNow Hackathon. The hackathon invited students from MAHE’s Computer Science program to compete in a 24-hour technical competition.
 
-The hackathon kicked off with a workshop by Vonage Developer Advocate Benjamin Aronov. He gave an overview of Vonage APIs and then did a hands-on demo, building a WhatsApp agent using the [AI Studio ](https://studio.docs.ai.vonage.com/)platform. Students learned about AI Studio’s drag-and-drop interface, powerful NLU engine, and how it can connect with outside services with API calls.\
-\
+The hackathon kicked off with a workshop by Vonage Developer Advocate Benjamin Aronov. He gave an overview of Vonage APIs and then did a hands-on demo, building a WhatsApp agent using the [AI Studio ](https://studio.docs.ai.vonage.com/)platform. Students learned about AI Studio’s drag-and-drop interface, powerful NLU engine, and how it can connect with outside services with API calls.
+
 The students were then challenged to leverage AI-driven Communication APIs to help organizations improve their customer relationships. Nine teams submitted solutions using the Vonage AI Studio platform. The winning team was quadKernals, made up of Brandon Savio Rodrigues, Jaison Thomas, Saina Ejaz, and Shreesh Chaturvedi.
 
 We asked the team more about their project and aspirations for a future working in technology.
