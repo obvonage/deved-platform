@@ -101,7 +101,7 @@ We have our [University Tech Fest](https://technovanzadxb.web.app/html/index.htm
 
 > C﻿heck out [Jaison](https://www.linkedin.com/in/jaison-thomas-57734822b/) on LinkedIn if you're hiring software engineers!
 
-![The quadKernals team accepting their victory trophy.](/content/blog/futurenow-hackathon-with-manipal-university-e-enterprise-and-vonage/manipal_university_winning_team.jpeg "The quadKernals team accepting their victory trophy.")
+![The quadKernals team accepting their victory trophy.](/content/blog/futurenow-hackathon-with-manipal-university-e-enterprise-and-vonage/img_4452.jpg "The quadKernals team accepting their victory trophy.")
 
 ## S﻿tay in the Loop
 
