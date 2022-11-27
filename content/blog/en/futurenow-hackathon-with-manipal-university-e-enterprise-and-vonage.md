@@ -38,7 +38,7 @@ We asked the team more about their project and aspirations for a future working 
 
 **Saina:** “Brandon and I created the sync between the video and audio of GIFs. I created the GIFs, and then we had to basically sync the GIFS with the audio along with the mapping of the keywords to the GIF. So depending on which keyword comes in, it maps it to a particular action. So we basically had four GIFs and we had to map it to that.”
 
-**Brandon:** “I made the text-to-speech interface work. It used to loop and loop and go on, and I fixed that. Another thing that Sonia did was design each of the states for Domino, so the artwork was custom.”
+**Brandon:** “I made the text-to-speech interface work. It used to loop and loop and go on, and I fixed that. Another thing that Saina did was design each of the states for Domino, so the artwork was custom.”
 
 ### What is your dream job after you finish your Computer Science degree?
 
