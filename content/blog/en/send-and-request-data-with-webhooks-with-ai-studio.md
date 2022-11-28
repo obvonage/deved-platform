@@ -50,11 +50,11 @@ Once the customer dials the Bank's phone number, we'll use the **phone** number 
 
 ## Integrating the [Webhook](https://studio.docs.ai.vonage.com/voice/nodes/integrations/webhook)
 
-I assume at this point you have already created an AI Studio project that uses an **Inbound** call. If you haven't already, then please follow this [guide](https://studio.docs.ai.vonage.com/voice/get-started). Scroll down from the **Nodes** menu until you get to **Integrations**, and select **Webhook** and drag and drop that onto your canvas. 
+At this point, you have already created an AI Studio project that uses an **Inbound** call. If you still need to, then please follow this [guide](https://studio.docs.ai.vonage.com/voice/get-started). Scroll down from the **Nodes** menu until you get to **Integrations**, select **Webhook**, and drag and drop that onto your canvas. 
 
 ![Integrations Dialog](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/integrations.png "integrations.png")
 
-Click on the newly created Webhook event as you will need to provide your endpoint URL. 
+Click on the newly created Webhook event, as you will need to provide your endpoint URL. 
 
 Since we will query based on the phone number, we'll use the following hardcoded URL (which points to a specific phone number): `https://my-json-server.typicode.com/mbcrump/ai-studio-api/customers?phone=14259999999`. Once you've added it, then press [**Test request**](https://studio.docs.ai.vonage.com/voice/nodes/integrations/webhook#how-to-test-the-webhook-node) as shown below. 
 
