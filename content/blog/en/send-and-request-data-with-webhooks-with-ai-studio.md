@@ -19,21 +19,17 @@ replacement_url: ""
 ---
 ## Introduction
 
-[Vonage AI Studio](https://www.vonage.com/communications-apis/ai-studio/?icmp=l3nav%7Cl3nav_gototheaistudiooverviewpage_novalue) is a Low-Code / No-Code conversational AI platform that helps businesses handle complex customer interactions through voice and text. It starts with a friendly user interface where you can drag and drop modules to build a conversational Virtual Agent that your customers can use. One feature often overlooked is the ability to get data from a third-party source such as a Webhook. For a refresher, a Webhook is triggered by some event, such as pushing code to a repository. When that event occurs, the source site makes an HTTP request to the URL configured for the webhook and returns data typically formatted in JSON. In this blog post, we'll retrieve data from a Webhook in AI Studio, and once you get the hang of it, you can replace our Webhook with your own!
+[Vonage AI Studio](https://www.vonage.com/communications-apis/ai-studio/?icmp=l3nav%7Cl3nav_gototheaistudiooverviewpage_novalue) is a Low-Code / No-Code conversational AI platform that helps businesses handle complex customer interactions through voice and text. As you begin to create virtual agents with AI Studio, it won't take long before you'll need to retrieve data from a third-party source such as a Webhook. In this blog post, you'll learn: 
 
-## What are we going to build?
+* How to retrieve data from a Webhook in AI Studio from a REST Endpoint
+* How to store the data as a parameter (for later use)
+* Examples of conditional statements to perform operations with the data
 
-We will build a Virtual Agent for a fictitious bank called the **Bank of the People**. In this scenario, a customer could call a phone number, and the system would verify their identity by validating a pin number associated with their account. Once the system validates that the PIN they entered is correct, they will have access to their account. They could then ask questions such as "What is their account balance" and get a verbal reply from the Virtual Agent. To make things easier to test, we will use the built-in AI Studio test tool and have the Virtual Agent dial our personal phone number. Let's begin.
+In order to understand how to interact with a Webhook in AI Studio, we'll use a scenario in which a bank would like to validate a customer's identity by matching a pin number with the number retrieved from a Webhook. 
 
-## Setting up the Webhook
+## Understanding the Payload Data
 
-To begin, we will need a place to store our customer data to access it from AI Studio. A great place to create a fake online REST server is  <https://my-json-server.typicode.com/>. You only need to create a JSON file on GitHub and point to that repo using the following syntax: my-json-server.typicode.com/`user/repo/`. Let's walk through this step-by-step:
-
-1. Create a repository on GitHub and make a note of the following: `(<your-username>/<your-repo>)`
-2. Create a db.json file. You can use [mine](https://github.com/mbcrump/ai-studio-api/blob/main/db.json) as an example. 
-3. Now go to the following URL: `https://my-json-server.typicode.com/<your-username>/<your-repo>` to access your server. 
-
-If you'd prefer to use mine, then you can. For example, we can access the `customer's` table with the following URL: `https://my-json-server.typicode.com/mbcrump/ai-studio-api/customers`. Below is a snippet of what data is returned:
+Below is a snippet of what data is returned in our sample payload:
 
 ```json
 [
@@ -49,70 +45,26 @@ If you'd prefer to use mine, then you can. For example, we can access the `custo
 ]
 ```
 
-We'll be using this endpoint to retrieve data for the application, such as **Phone** number, **Name**, **Balance**, and **PIN**. 
+Once the customer dials the Bank's phone number, we'll use the **phone** number to look up the correct value for the **pin** via this Webhook. 
 
-In this scenario, once the customer dials the Bank's phone number, we'll use the phone number to look up the correct value for the PIN via this Webhook. We'll use a query to get specific details from the `customer's` table, such as `https://my-json-server.typicode.com/mbcrump/ai-studio-api/customers?phone=14259999999`, where we pass in the phone number as a parameter.
 
-## Getting Started
+## Integrating the [Webhook](https://studio.docs.ai.vonage.com/voice/nodes/integrations/webhook)
 
-Now that we have a Webhook created, we will access it by building an application in [AI Studio](https://www.vonage.com/communications-apis/ai-studio/?icmp=l3nav%7Cl3nav_gototheaistudiooverviewpage_novalue) . Log in and press the button to **Create an Agent**. You will see an option asking what type of Agent you would like to create.
-
-![The Agent Creation Screen](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/agent-creation.png "agent-creation.png")
-
-To begin, select the **Telephony** agent and press **Next** to create an agent that will interact over the telephone.
-
-We will need to fill in some details here:
-
-* Region: Where will your Agent be typically used - The USA or in Europe
-* Agent Name: Give your Agent a unique name that is meaningful to you. In our case, we will use BankOfThePeople.
-* API Key: This shows the API Key associated with your account.
-  Language: Select the language of your Agent.
-* Language: Select the language of your Agent.
-* Voices: Select any voice that you like.
-* Time Zone: Choose the time zone where your Agent will operate.
-
-After completing the form, mine looks like this:
-
-![The Agent Creation Form Completed](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/agent-creation-completed.png "agent-creation-completed.png")
-
-Next, there is the option to choose a template. Since we want to learn how to do this from scratch, we'll select **Start from Scratch** and press **Next**.
-
-![The Agent Start From Scratch Template](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/agent-start-from-scratch.png "agent-start-from-scratch.png")
-
-Finally, we need to select an event that will trigger our agent. In this case, we'll choose **Inbound call** as a customer would dial our number to get information on their account.
-
-Next, you will see the main user interface of AI Studio! There is a node in the center of your screen called **START** with a checkmark in **Record Call**, as shown below.
-
-![The Start Screen of AI Studio](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/ai-studio-startscreen.png "ai-studio-startscreen.png")
-
-## Building the App
-
-The conversational flow starts here and has to be connected to other nodes for the Virtual Agent to know what to do next.
-We will begin by dragging and dropping a **Speak** Conversation Node onto the canvas and entering a Welcome Message such as "Welcome to Bank of the People!". Once complete, press Enter, and remember to press **Save & Exit**.
-
-![The Send Message Node](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/send-message-1.png "send-message-1.png")
-
-Next, we need to connect the **Speak 1** Node to the **START** node. 
-
-![Connecting the Speak 1 Node with the Start Node](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/connect-nodes.png "connect-nodes.png")
-
-Press the **Tester** button at the top right of the screen, select **Inbound call** as the event, then **Start phone call** and enter your phone number, then your agent will call your phone and repeat the Welcome Message! How cool is that? 
-
-![Testing our Webhook call](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/ai-studio-tester.png "ai-studio-tester.png")
-
-## Adding the Webhook
-
-Scroll down from the **Nodes** menu until you get to **Integrations**, and select **Webhook** and drag and drop that onto your canvas. 
+I assume at this point you have already created an AI Studio project that uses an **Inbound** call. If you haven't already, then please follow this [guide](https://studio.docs.ai.vonage.com/voice/get-started). Scroll down from the **Nodes** menu until you get to **Integrations**, and select **Webhook** and drag and drop that onto your canvas. 
 
 ![Integrations Dialog](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/integrations.png "integrations.png")
 
-Once you open it, you will need to provide your endpoint URL. Since we will query based on our phone number, we'll use the following hardcoded URL (which points to a specific phone number): `https://my-json-server.typicode.com/mbcrump/ai-studio-api/customers?phone=14259999999`. Once you've added it, then press **Test request** as shown below. 
+Click on the newly created Webhook event as you will need to provide your endpoint URL. 
+
+Since we will query based on the phone number, we'll use the following hardcoded URL (which points to a specific phone number): `https://my-json-server.typicode.com/mbcrump/ai-studio-api/customers?phone=14259999999`. Once you've added it, then press [**Test request**](https://studio.docs.ai.vonage.com/voice/nodes/integrations/webhook#how-to-test-the-webhook-node) as shown below. 
+
+> If you'd like to learn more about the Chatbot Tester, then click [here](https://studio.docs.ai.vonage.com/ai-studio/chatbot-tester).
 
 ![Testing our Webhook call](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/test-webhook-1.png "test-webhook-1.png")
 
 If you see a status of 200, that means the request returned successfully (You can see in the **Response** the information we got back based on this user's phone number (which was hardcoded).
 
-While this data was hardcoded in the query URL, how does AI Studio pass this information based on the number that is called in? This is where we'll use one of the predefined system parameters called **CALLER_PHONE_NUMBER,** as shown below.
+While this data was hardcoded in the query URL, how does AI Studio pass this information based on the number that is called in? This is where we'll use one of the predefined [system parameters](https://studio.docs.ai.vonage.com/properties-1/parameters#system-parameters) called **CALLER_PHONE_NUMBER,** as shown below.
 
 ![Testing our Webhook call](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/system_parameters.png "system_parameters.png")
 
@@ -134,7 +86,7 @@ Now, if you press **Resend request**, you will get a proper response, as shown b
 
 ![Resent Webhook Request](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/successful-response.png "successful-response.png")
 
-## Setting up Parameters to Do Something With the Data Returned
+## [Setting up Parameters to Do Something With the Data Returned](https://studio.docs.ai.vonage.com/properties-1/parameters)
 
 Now that we can call a WebHook from AI Studio and return data, we will use **Parameters** to extract and utilize specific information from the user’s input. For example, To collect a user's information (i.e., PIN or Account Balance), you need to define a parameter that will store the information so that it can be accessed later. 
 
@@ -167,11 +119,11 @@ We'll collect the **balance** and **PIN** while we are here.
 
 After you add them, your screen should look like the following: 
 
-![Response Mapping](./Images/response-mapping-1.png "response-mapping-1.png")
+![Response Mapping](.//content/blog/send-and-request-data-with-webhooks-with-ai-studio/response-mapping-1.png "response-mapping-1.png")
 
 Once complete, do not forget to press **Save & Exit**. 
 
-We will use a **Collect Input** node to ask the user for their PIN. Go ahead and drag and drop the node from the **Conversation** menu. 
+We will use a [**Collect Input**](https://studio.docs.ai.vonage.com/voice/nodes/basic/collect-input) node to ask the user for their PIN. Go ahead and drag and drop the node from the **Conversation** menu. 
 
 ![Collect Input Node](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/collect-input.png "collect-input.png")
 
@@ -183,7 +135,7 @@ Now we will connect the **Webhook 1** to the **Collect Input 1** node as shown b
 
 ![Connect Webhook Collect Input](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/connect-webhook-collect-input.png "connect-webhook-collect-input.png")
 
-Drag and drop a **Condition 1** node from the **Conversation** menu. Click on "Default" inside the note and press **Create Condition**. 
+Drag and drop a [**Condition**](https://studio.docs.ai.vonage.com/voice/nodes/basic/conditions) node from the **Conversation** menu. Click on "Default" inside the note and press **Create Condition**. 
 
 As shown below, we will create a condition that checks if the **Input Number** they entered matches the **PIN** from our Webhook.
 
@@ -197,15 +149,11 @@ Drag and drop two more **Speak** Conversation Nodes onto the canvas. For the **S
 
 For the **Speak 3** node, enter the message, "I'm sorry that was not correct." where `$name` is the parameter that we defined earlier. Once complete, press Enter and do not forget to press **Save & Exit**. 
 
-Finally, add an **End call** node onto the canvas. 
+Finally, add an [**End call**](https://studio.docs.ai.vonage.com/voice/nodes/actions/end-call) node onto the canvas. 
 
 Now you need to connect the **Condition 1** (New Condition) to **Speak 2** and **Condition 1** (Default) to **Speak 3**. Then connect **Speak 2** and **Speak 3** to the **End Call 1** node, as shown below. 
 
 ![Final Result](/content/blog/send-and-request-data-with-webhooks-with-ai-studio/final-result.png "final-result.png")
-
-You'd want to add an entry to the `db.json` file we created earlier with your phone number if you're going to try it on a physical device. 
-
-If you'd prefer to use my sample phone number, you can test the Virtual Agent with the following steps: 
 
 Press the **Tester** button at the top right of the screen, then select **Inbound call** as the event, then **Start chat**. You'll need to set the initial parameters as we did earlier for the **CALLER_PHONE_NUMBER** and set it to `14259999999`. 
 
