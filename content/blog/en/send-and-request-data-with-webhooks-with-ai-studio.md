@@ -19,13 +19,13 @@ replacement_url: ""
 ---
 ## Introduction
 
-[Vonage AI Studio](https://www.vonage.com/communications-apis/ai-studio/?icmp=l3nav%7Cl3nav_gototheaistudiooverviewpage_novalue) is a Low-Code / No-Code conversational AI platform that helps businesses handle complex customer interactions through voice and text. As you begin to create virtual agents with AI Studio, it won't take long before you'll need to retrieve data from a third-party source such as a Webhook. In this blog post, you'll learn: 
+[Vonage AI Studio](https://www.vonage.com/communications-apis/ai-studio/?icmp=l3nav%7Cl3nav_gototheaistudiooverviewpage_novalue) is a Low-Code / No-Code conversational AI platform that helps businesses handle complex customer interactions through voice and text. As you create virtual agents with AI Studio, it won't take long before you need to retrieve data from a third-party source such as a Webhook. In this blog post, you'll learn: 
 
 * How to retrieve data from a Webhook in AI Studio from a REST Endpoint
 * How to store the data as a parameter (for later use)
 * Examples of conditional statements to perform operations with the data
 
-In order to understand how to interact with a Webhook in AI Studio, we'll use a scenario in which a bank would like to validate a customer's identity by matching a pin number with the number retrieved from a Webhook. 
+To understand how to interact with a Webhook in AI Studio, we'll use a scenario where a bank would like to validate a customer's identity by matching a pin number with the number retrieved from a Webhook. 
 
 ## Understanding the Payload Data
 
