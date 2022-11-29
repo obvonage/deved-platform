@@ -42,7 +42,7 @@ For Firebase, an account and project will also be required. In that project, bot
 
 There are a couple of ways to start the installation of the [Vonage Video Express extension](https://extensions.dev/extensions/vonage/firestore-vonage-video-express).
 
-Using the Firebase CLI, in your Firebase project directory, run the following:
+Using the Firebase CLI in your Firebase project directory, run the following:
 
 ```
 firebase ext:install vonage/firestore-vonage-video-express --project=projectId_or_alias
