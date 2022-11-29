@@ -1,6 +1,6 @@
 ---
-title: Send and Request Data with Webhooks with AI Studio
-description: Learn how to Send and Request Data with Webhooks with AI Studio
+title: Send and Request Data With Webhooks With AI Studio
+description: Learn how to send and request data with webhooks with Vonage AI Studio
 thumbnail: /content/blog/send-and-request-data-with-webhooks-with-ai-studio/send-request-data_webhooks_ai-studio.png
 author: michael-crump
 published: true
