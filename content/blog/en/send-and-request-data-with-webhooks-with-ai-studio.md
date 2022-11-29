@@ -1,15 +1,15 @@
 ---
 title: Send and Request Data with Webhooks with AI Studio
 description: Learn how to Send and Request Data with Webhooks with AI Studio
+thumbnail: /content/blog/send-and-request-data-with-webhooks-with-ai-studio/send-request-data_webhooks_ai-studio.png
 author: michael-crump
 published: true
-published_at: 2022-11-07T03:19:11.707Z
-updated_at: 2022-11-07T03:19:11.883Z
+published_at: 2022-11-29T11:09:10.243Z
+updated_at: 2022-11-29T11:09:11.171Z
 category: tutorial
 tags:
   - rest
-  - aistudio
-  - ""
+  - ai-studio
 comments: true
 spotlight: false
 redirect: ""
