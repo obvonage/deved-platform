@@ -28,7 +28,7 @@ replacement_url: ""
 
 # Firebase x Vonage Video Express extension?
 
-Firebase announced [Extensions](https://extensions.dev/) which help developers "build an app quickly and easily". Vonage Video Express also wants to shorten the time it takes to add video chat to an application. So we created and released an [extension](https://extensions.dev/extensions/vonage/firestore-vonage-video-express).
+Firebase announced [Extensions](https://extensions.dev/) that help developers "build an app quickly and easily." Vonage Video Express also wants to shorten the time it takes to add video chat to an application. So we created and released an [extension](https://extensions.dev/extensions/vonage/firestore-vonage-video-express).
 
 # How it works.
 
