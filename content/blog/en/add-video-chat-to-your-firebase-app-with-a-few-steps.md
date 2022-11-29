@@ -50,7 +50,7 @@ firebase ext:install vonage/firestore-vonage-video-express --project=projectId_o
 
 By following this link to the [Firebase Console](https://console.firebase.google.com/project/_/extensions/install?ref=vonage/firestore-vonage-video-express), you’ll be able to select the project you want to install the extension.
 
-Next, you’ll enter some information (selecting deployment location, Vonage credentials, etc) and accept some terms to set up the extension.
+Next, you’ll enter some information (selecting deployment location, Vonage credentials, etc.) and accept some terms to set up the extension.
 
 Then the extension will start installing into the project. That’s it!
 
