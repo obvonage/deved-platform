@@ -56,7 +56,7 @@ Then the extension will start installing into the project. That’s it!
 
 # But wait... There’s more!
 
-We also include a [sample application](https://github.com/Vonage/vonage-firebase-extensions/tree/main/demos) to demonstrate the extension in action. There’s a link under the “How this extension works” tab of the extension’s page to test it out in your project. Just enter the config object and it’s up and running.
+We also include a [sample application](https://github.com/Vonage/vonage-firebase-extensions/tree/main/demos) to demonstrate the extension in action. There’s a link under the “How this extension works” tab of the extension’s page to test it out in your project. Just enter the config object, and it’s up and running.
 
 # Giving it a try?
 
