@@ -24,7 +24,7 @@ replacement_url: ""
 
 # Firebase?
 
-[Firebase](https://firebase.google.com/) is an app development platform offering services like hosting, authentication, real-time databases, analytics, and many more. It is backed by the Google Cloud Platform.
+[Firebase](https://firebase.google.com/) is an application development platform that offers hosting, authentication, real-time databases, analytics, and many more services. It is backed by Google.
 
 # Firebase x Vonage Video Express extension?
 
