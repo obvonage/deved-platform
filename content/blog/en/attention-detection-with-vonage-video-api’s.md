@@ -1,5 +1,5 @@
 ---
-title: Attention Detection with Vonage Video API’s
+title: Attention Detection with Vonage Video API
 description: A Node tutorial showing how to integrate the Vonage Video API with
   TensorFlow's MediaPipe face detection model to detect attention detection,
   using javascript.
