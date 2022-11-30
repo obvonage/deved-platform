@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 # Video Express?
 
-[Video Express](https://tokbox.com/developer/video-express/) was built on top of the Vonage Video API to help make creating a multiparty video conference application quicker. This JavaScript library abstracts some of the nitty-gritty details such as keeping track of publishers and subscribers along with optimizations into a “room”.
+[Video Express](https://tokbox.com/developer/video-express/) was built on top of the Vonage Video API to help quickly create a multiparty video conference application. This JavaScript library abstracts some nitty-gritty details, such as keeping track of publishers and subscribers, and applies optimizations into a “room.”
 
 # Firebase?
 
