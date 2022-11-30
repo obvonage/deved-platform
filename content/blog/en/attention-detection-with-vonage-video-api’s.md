@@ -19,6 +19,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+*This article was written in collaboration with [Talha Hasan](https://developer.vonage.com/blog/authors/talha-hasan)*
+
 # I﻿ntroduction
 
 In today’s world more and more of our interactions are going online. Over the past few years, online classes and meetings have become a normal part of life. While this transition has had numerous benefits, it has also created interesting issues to be tackled. One such issue is ensuring user attention.
