@@ -76,7 +76,7 @@ Based on these two angles, we can provide the users with an overall attention sc
 
 We’ll be using TensorFlow’s MediaPipe [face detection mode](https://google.github.io/mediapipe/solutions/face_mesh.html#models)l to obtain the face landmarks. The reason we use MediaPipe is that it provides 3-dimensional landmarks out of the box, using machine learning to infer the depth of the facial surface without the need for a depth sensor.
 
-![Face landmarks visualization from MediaPipe](/content/blog/attention-detection-with-vonage-video-api’s/face_mesh_android_gpu-1-.gif "Face landmarks visualization from MediaPipe")
+![Face landmarks visualization from MediaPipe](/content/blog/attention-detection-with-vonage-video-api/face_mesh_android_gpu-1-.gif "Face landmarks visualization from MediaPipe")
 
 You can learn more about MediaPipe [here](https://google.github.io/mediapipe/solutions/face_mesh.html)
 
