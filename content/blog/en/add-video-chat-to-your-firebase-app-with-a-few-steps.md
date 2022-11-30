@@ -36,7 +36,7 @@ After installing the extension in a Firebase application, when a developer creat
 
 # Getting Started.  
 
-On the Vonage side, you’ll need to have an account, and a project, and enable the Video Express add-on. Details can be found in the [Video Express documentation](https://tokbox.com/developer/video-express/)
+On the Vonage side, you’ll need to have an account and a project created as well as enable the Video Express add-on. For information on how to do this, please consult the [Video Express documentation](https://tokbox.com/developer/video-express/)
 
 For Firebase, an account and project will also be required. In that project, both Cloud Functions and Cloud Firestore must be enabled.
 
