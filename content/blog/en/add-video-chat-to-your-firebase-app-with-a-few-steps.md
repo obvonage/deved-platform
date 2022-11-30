@@ -60,4 +60,4 @@ We also include a [sample application](https://github.com/Vonage/vonage-firebase
 
 # Giving it a try?
 
-As always, we welcome any questions, comments, and feedback. Definitely want to hear about your experience with the extension. Feel free to post in our [Community Slack Channel](https://developer.vonage.com/community/slack). If you are on Twitter, follow the [VonageDev](https://twitter.com/vonagedev) account to get the latest updates.
+As always, we welcome any questions, comments, and feedback. We want to hear about your experience with the extension. Feel free to post in our [Community Slack Channel](https://developer.vonage.com/community/slack). If you are on Twitter, follow the [VonageDev](https://twitter.com/vonagedev) account to receive the latest updates.
