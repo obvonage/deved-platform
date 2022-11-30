@@ -27,8 +27,6 @@ Using attention detection technology can have a big impact in areas like the edu
 
 Today we’ll be building a Video Conferencing application with Vonage Video API that leverages Face Landmark detection to calculate a participant's attention score.
 
-
-
 # **Prerequisites**
 
 * Vonage API Key and Secret
@@ -47,7 +45,7 @@ Now we need to setup our Vonage API Key and Secret. Let’s start off by copying
 
 `cp .envcopy .env`
 
-Now all you need to do is replace the `TOKBOX_API_KEY` and `TOKBOX_SECRET` in the .env file to your credentials. You can find your API Key and Secret on the project page of your Vonage Video API [Account](<https://tokbox.com/account>).
+Now all you need to do is replace the `TOKBOX_API_KEY` and `TOKBOX_SECRET` in the .env file to your credentials. You can find your API Key and Secret on the project page of your Vonage Video API [Account](https://tokbox.com/account).
 
 ```
 # enter your TokBox api key after the '=' sign below
@@ -63,13 +61,11 @@ You can start the app with:
 
 > All of the code we talk about in this blog can be found in the \`public/js/app.js\` file.
 
-
-
 # How Attention Detection Works
 
 To calculate the attention of the user, we will first have to obtain the face landmarks of the user in 3-dimensional space. Once we have obtained these, we can calculate the pose of the user’s face in 3-dimension, specifically, we can calculate the yaw, pitch, and roll (see diagram below) of the user’s face using some trigonometry. For simplicity, we will only be interested in the yaw and pitch.
 
-![The yaw, pitch and roll angles in the human head motion.](/content/blog/attention-detection-with-vonage-video-api’s/46a877a98c1af6eae4a547a5248a315f.png "The yaw, pitch and roll angles in the human head motion")
+![The yaw, pitch and roll angles in the human head motion.](/content/blog/attention-detection-with-vonage-video-api/46a877a98c1af6eae4a547a5248a315f.png "The yaw, pitch and roll angles in the human head motion")
 
 \
 Based on these two angles, we can provide the users with an overall attention score.
@@ -81,8 +77,6 @@ We’ll be using TensorFlow’s MediaPipe [face detection mode](https://google.g
 ![Face landmarks visualization from MediaPipe](/content/blog/attention-detection-with-vonage-video-api’s/face_mesh_android_gpu-1-.gif "Face landmarks visualization from MediaPipe")
 
 You can learn more about MediaPipe [here](https://google.github.io/mediapipe/solutions/face_mesh.html)
-
-
 
 # Calculating the Pitch and Yaw
 
@@ -195,8 +189,6 @@ session.signal(
   }
 );
 ```
-
-
 
 This chunk of code may look intimidating but in reality, all we’re doing is running the facial landmark library on the current frame of the publisher, running our `getScore` algorithm on the angles between certain points on the detected face, and then broadcasting the attention score to all participants.
 
