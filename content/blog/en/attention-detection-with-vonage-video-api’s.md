@@ -117,11 +117,11 @@ const getScore = (degree) => {
 \
 We then take the product of the two scores to get the final attention scoring of the user. Once we have the overall attention score, we then categorize the attention to allow users to easily visualize their attention level. We break down this categorization into 4 different categories ranging from no concentration to high concentration. You can see the procedure to calculate the overall attention level:
 
-![Pseudocode for our function to evaluate concentration level.](/content/blog/attention-detection-with-vonage-video-api’s/procedure-conc-level.png "Pseudocode for our function to evaluate concentration level.")
+![Pseudocode for our function to evaluate concentration level.](/content/blog/attention-detection-with-vonage-video-api/procedure-conc-level.png "Pseudocode for our function to evaluate concentration level.")
 
 And the categories for attentiveness are below:
 
-![Attention score categorization.](/content/blog/attention-detection-with-vonage-video-api’s/attention-span-score.png "Attention score categorization")
+![Attention score categorization.](/content/blog/attention-detection-with-vonage-video-api/attention-span-score.png "Attention score categorization")
 
 It’s important to note that these diagrams represent a theoretical algorithm to calculate the attention score. In reality, you may wish to tweak a few things such as the attention span score categories. One such change that we made in our application is that instead of adding the `yaw_score` and the `pitch_score` we chose to multiply them to get us a nice linear progression of attention score.
 
