@@ -21,7 +21,7 @@ replacement_url: ""
 ---
 *This article was written in collaboration with [Talha Hasan](https://developer.vonage.com/blog/authors/talha-hasan)*
 
-# I﻿ntroduction
+## I﻿ntroduction
 
 In today’s world more and more of our interactions are going online. Over the past few years, online classes and meetings have become a normal part of life. While this transition has had numerous benefits, it has also created interesting issues to be tackled. One such issue is ensuring user attention.
 
@@ -29,7 +29,7 @@ Using attention detection technology can have a big impact in areas like the edu
 
 Today we’ll be building a Video Conferencing application with Vonage Video API that leverages Face Landmark detection to calculate a participant's attention score.
 
-# **Prerequisites**
+## **Prerequisites**
 
 * Vonage API Key and Secret
 * [Node](https://nodejs.org/en/) 8.6.2+
@@ -63,7 +63,7 @@ You can start the app with:
 
 > All of the code we talk about in this blog can be found in the \`public/js/app.js\` file.
 
-# How Attention Detection Works
+## How Attention Detection Works
 
 To calculate the attention of the user, we will first have to obtain the face landmarks of the user in 3-dimensional space. Once we have obtained these, we can calculate the pose of the user’s face in 3-dimension, specifically, we can calculate the yaw, pitch, and roll (see diagram below) of the user’s face using some trigonometry. For simplicity, we will only be interested in the yaw and pitch.
 
@@ -72,7 +72,7 @@ To calculate the attention of the user, we will first have to obtain the face la
 \
 Based on these two angles, we can provide the users with an overall attention score.
 
-# Obtaining the Face Landmarks
+## Obtaining the Face Landmarks
 
 We’ll be using TensorFlow’s MediaPipe [face detection mode](https://google.github.io/mediapipe/solutions/face_mesh.html#models)l to obtain the face landmarks. The reason we use MediaPipe is that it provides 3-dimensional landmarks out of the box, using machine learning to infer the depth of the facial surface without the need for a depth sensor.
 
@@ -80,7 +80,7 @@ We’ll be using TensorFlow’s MediaPipe [face detection mode](https://google.g
 
 You can learn more about MediaPipe [here](https://google.github.io/mediapipe/solutions/face_mesh.html)
 
-# Calculating the Pitch and Yaw
+## Calculating the Pitch and Yaw
 
 In order to calculate the pitch, we use the 468 facial landmarks (**[provided by the face mesh library](https://google.github.io/mediapipe/solutions/face_mesh.html#models)**) corresponding to the top and bottom of the user’s face in the y and z planes. Similarly, for yaw, we use landmarks corresponding to the outside corners of the user’s eyes in the x and z planes.
 
@@ -94,7 +94,7 @@ const angle = {
 };
 ```
 
-# Scoring User Attention
+## Scoring User Attention
 
 We now need to use the pitch and yaw that we calculated to assign some kind of an attention score to the user. The approach that we’ll use in our case is influenced by “[Attention Span Prediction Using Head-Pose Estimation With Deep Neural Networks](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9570335)”, published in IEEE Access.
 
@@ -125,7 +125,7 @@ And the categories for attentiveness are below:
 
 It’s important to note that these diagrams represent a theoretical algorithm to calculate the attention score. In reality, you may wish to tweak a few things such as the attention span score categories. One such change that we made in our application is that instead of adding the `yaw_score` and the `pitch_score` we chose to multiply them to get us a nice linear progression of attention score.
 
-# Integrating with Vonage Video API
+## Integrating with Vonage Video API
 
 To save CPU/GPU of each participant, instead of having each participant run the face mesh analysis for each participant on their machine, let’s have everyone in the call be responsible for their own attention score metrics. So we’ll initialize the algorithm in the `session.publish` endpoint:
 
@@ -196,7 +196,7 @@ This chunk of code may look intimidating but in reality, all we’re doing is ru
 
 Once the attention score is signaled we need to make sure we’re handling it on the receiving end and do with it as we please. You could display it as a real-time UI (like we did in this project) or store it in a data store that can be used to map attention metrics over the duration of the call. The possibilities are endless!
 
-# C﻿onclusion
+## C﻿onclusion
 
 Attention is a key factor for gauging conversations, speeches, lectures, and just about any interaction between people. We have now learned how to estimate it using face mesh analysis and integrate it into our video calls. This estimate can be further improved via more data sources such as getting iris movement, multiple face recognition, etc.
 
