@@ -58,6 +58,10 @@ Then the extension will start installing into the project. That’s it!
 
 We also include a [sample application](https://github.com/Vonage/vonage-firebase-extensions/tree/main/demos) to demonstrate the extension in action. There’s a link under the “How this extension works” tab of the extension’s page to test it out in your project. Just enter the config object, and it’s up and running.
 
+# Video
+
+If you are more of a visual person, here is a video walkthrough of installing the Vonage Video Express extension into a Firebase application.
+
 # Giving it a try?
 
 As always, we welcome any questions, comments, and feedback. We want to hear about your experience with the extension. Feel free to post in our [Community Slack Channel](https://developer.vonage.com/community/slack). If you are on Twitter, follow the [VonageDev](https://twitter.com/vonagedev) account to receive the latest updates.
