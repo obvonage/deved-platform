@@ -16,6 +16,10 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+**Meetings API is now in GA!**\
+\
+Vonage Unified Communications Applications like Vonage Business Communications (VBC) and Vonage Contact Center (VCC) are already built on the Meetings API so you can trust the API to be completely stable and rigorously tested. Find pricing for MeetingsAPI[here](https://developer.vonage.com/meetings/overview#pricing)
+
 ## Another Video API, But Why?
 
 Remember a not-so-distant past, in which video calls were cumbersome and awkward? Remember the need for external webcams? Remember when the promise of business calls amounted to one boardroom of people in suits talking to another boardroom of people in suits? Those days are over. Not only are folks having video calls with friends, family, and colleagues, but they're also preferring to meet businesses through video. According to Vonage's 2022 [Global Customer Engagement Report](https://www.vonage.com/resources/publications/global-customer-engagement-report/), daily video chat use for business communications will double this year. And consumers are increasingly using businesses' own applications to do this. People are expecting a seamless, connected customer experience that includes video conferencing in a company’s toolbelt. 
@@ -215,12 +219,6 @@ Example payload for a new meeting joiner:
   "is_host": true
 }
 ```
-
-## Vonage Video Beta Program
-
-Are you ready to start using the Meetings API? Become a Beta User and get 3 months free! Apply for the program by filling out this [form](https://docs.google.com/forms/d/e/1FAIpQLSfBxjpYnL3Y98KmJRFn9s8hvMW7XQj6wbtpQrXJMp70JTQC-A/viewform).
-
-As part of the Beta Users Program, you will receive your first three months for free, limited to 50K participant minutes and 25K recording minutes per month. After the promotional period, regular charges will apply.
 
 ## Join the Conversation
 
