@@ -16,9 +16,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-**Meetings API is now in GA!**\
-\
-Vonage Unified Communications Applications like Vonage Business Communications (VBC) and Vonage Contact Center (VCC) are already built on the Meetings API so you can trust the API to be completely stable and rigorously tested. Find pricing for MeetingsAPI[here](https://developer.vonage.com/meetings/overview#pricing)
+**Meetings API is now in GA!**
+
+Vonage Unified Communications Applications like Vonage Business Communications (VBC) and Vonage Contact Center (VCC) are already built on the Meetings API so you can trust the API to be completely stable and rigorously tested. Find pricing for Meetings API [here](https://developer.vonage.com/meetings/overview#pricing).
 
 ## Another Video API, But Why?
 
