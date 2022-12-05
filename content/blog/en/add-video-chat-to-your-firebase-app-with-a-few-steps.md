@@ -2,10 +2,11 @@
 title: Add Video Chat to Your Firebase App With a Few Steps
 description: Learn how you can add multiparty video chats to your Firebase
   application using the Vonage Video Express extension.
+thumbnail: /content/blog/add-video-chat-to-your-firebase-app-with-a-few-steps/videochat_firebaseapp.png
 author: dwanehemmings
 published: true
-published_at: 2022-11-23T21:54:32.371Z
-updated_at: 2022-11-23T21:54:32.411Z
+published_at: 2022-12-05T09:38:24.032Z
+updated_at: 2022-12-05T09:38:24.913Z
 category: announcement
 tags:
   - video
@@ -34,7 +35,7 @@ Firebase announced [Extensions](https://extensions.dev/) that help developers "b
 
 After installing the extension in a Firebase application, when a developer creates a room in Cloud Firestore, the extension will use Cloud Functions to generate the credentials needed to participate in the video chat via Vonage Video Express.
 
-# Getting Started.  
+# Getting Started.
 
 On the Vonage side, you’ll need to have an account and a project created as well as enable the Video Express add-on. For information on how to do this, please consult the [Video Express documentation](https://tokbox.com/developer/video-express/)
 
@@ -61,6 +62,8 @@ We also include a [sample application](https://github.com/Vonage/vonage-firebase
 # Video
 
 If you are more of a visual person, here is a video walkthrough of installing the Vonage Video Express extension into a Firebase application.
+
+<youtube id="ZCLo47Toc40"></youtube>
 
 # Giving it a try?
 
