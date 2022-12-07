@@ -1,7 +1,8 @@
 ---
-title: "Startup Spotlight Series: Let's meet Zenhome"
+title: "Startup Spotlight Series: Let's Meet Zenhome"
 description: In this edition of the Vonage Startup Spotlight, meet Paris based
   tech startup Zenhome
+thumbnail: /content/blog/startup-spotlight-series-lets-meet-zenhome/meet-brickeo.png
 author: filippos-kyprianou
 published: true
 published_at: 2022-12-07T11:02:00.940Z
