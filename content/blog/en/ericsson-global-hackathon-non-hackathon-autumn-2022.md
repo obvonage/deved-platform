@@ -65,6 +65,6 @@ Emil Zhang, Jianshao Wu, Xiaocong Zhong, and Zhipeng Kong decided to innovate ar
 
 Ingit Kumar Saxena and Diksha Sharma B proposed an innovative idea about incident notifications and experimented with Vonage APIs for this purpose. When concentrating on exploring the APIs, they noticed that they are easy to use and that the documentation is user-friendly. While experimenting, they learned that Vonage has many other APIs available "We got to explore many other APIs, like the ones related to video and verification, which can also be used in other use cases."
 
-**Hackathons/Non-Hackathons give us all endless possibilities to do things we are passionate about with like-minded people. They provide us with time to innovate, time to experiment, time to concentrate, and time to learn.\*\*** This may be something for you to consider as well!\*\*
+**Hackathons/Non-Hackathons give us all endless possibilities to do things we are passionate about with like-minded people. They provide us with time to innovate, time to experiment, time to concentrate, and time to learn.** This may be something for you to consider as well!
 
 Learn more about Ericsson's Hackathon culture by watching [a video](https://www.youtube.com/watch?v=FYEpBHNvL_U), hearing Hackathon stories from our colleagues, or reading [a blog post.](https://www.ericsson.com/en/blog/2020/7/hackathon-culture)
