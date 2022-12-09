@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-## What is DevCity  
+## What is DevCity
 
 We started in San Francisco, brought the [bingo party to London](https://developer.vonage.com/blog/22/11/08/devcity-came-to-london-and-here-is-what-went-down) and now we are hugely excited to bring the Vonage DevCity magic to Paris! Just in time for the festive season, the Vonage Developer Relations team are packing their bags and traveling to the French capital for three days of content, networking and fun. And you’re invited to join us! We’re giving away 300 tickets to apidays Paris* (each worth €599), so read on to find out how you can get involved at Cité des Sciences et de L’industrie on 14th, 15th and 16th December 2022. 
 
@@ -32,7 +32,7 @@ Vonage is a Gold Sponsor of the conference, which means we have a great exhibiti
 
 Elsewhere at the conference we are running two content sessions;
 
-* Vonage Developer Advocate Benjamin Aronov will be running a workshop titled ‘NoCode, LowCode, Boss Mode: Reimagining User Experience with AI Studio’. Whether for inbound or outbound customer engagement, after this workshop you'll walk away ready to build your first AI Studio agent.
+* Vonage Developer Advocate [Benjamin Aronov](https://developer.vonage.com/blog/authors/benjamin-aronov) will be running a workshop titled ‘NoCode, LowCode, Boss Mode: Reimagining User Experience with AI Studio’. Whether for inbound or outbound customer engagement, after this workshop you'll walk away ready to build your first AI Studio agent.
 
 14th December, 16:55, Stage 7
 
