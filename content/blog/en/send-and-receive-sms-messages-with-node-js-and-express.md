@@ -23,7 +23,7 @@ replacement_url: ""
 
 The [Vonage Messages API](https://developer.vonage.com/messages/overview) allows you to send and receive messages over SMS, MMS, Facebook Messenger, Viber, and WhatsApp. So you can communicate with your customers on whichever channel they love most. In this article, we'll focus on how to send and receive SMS messages with [Node.js](https://nodejs.org/) and [Express](https://expressjs.com/).
 
-To begin, we'll perform the most straightforward implementation of the API and send an SMS message with Node.js and the [Vonage Messages API](https://developer.vonage.com/messages/overview). Next, we'll build a Webhook that can receive SMS messages (sent from your phone) using Express and perform an action once the message has been received. Finally, we'll wrap up a couple of steps that you can take to extend the application.
+To begin, we'll perform the most straightforward implementation of the API and send an SMS message with Node.js and the [Vonage Messages API](https://developer.vonage.com/messages/overview). Next, we'll build a Webhook that can receive SMS messages (sent from your phone) using Express and perform an action once the message has been received. Finally, we'll wrap up a couple of steps that you can take to extend the application. Keep in mind that the documentation for the Messages API can be found [here](https://developer.vonage.com/api/messages-olympus?theme=dark).
 
 ## Prerequisites
 
@@ -82,13 +82,12 @@ Finally, link one or more of your virtual numbers to this application. Any messa
 Create a new folder where you'd like to store the source code for the application that we are creating. Once complete, type `npm init` to initialize a new Node.js application. Finally, create an `index.js` file and initialize the Vonage node library installed earlier.
 
 ```javascript
-const { Vonage } = require('@vonage/server-sdk')
-const { SMS } = require('@vonage/messages/dist/classes/SMS/SMS');
+const { Vonage } = require('@vonage/server-sdk');
 
 const vonage = new Vonage({
- applicationId: VONAGE_APPLICATION_ID,
- privateKey: VONAGE_APPLICATION_PRIVATE_KEY_PATH
-})
+  applicationId: VONAGE_APPLICATION_ID,
+  privateKey: VONAGE_APPLICATION_PRIVATE_KEY_PATH
+});
 ```
 
 Replace the **VONAGE_APPLICATION_ID** with the **Application ID** provided for the Vonage application you created. Replace the **VONAGE_APPLICATION_PRIVATE_KEY_PATH** with the path to the private key that was automatically downloaded for you. Note: I copied my `private.key` file to the root of my application and can access it by specifying that the **privateKey** is equal to `'./private.key'`
@@ -100,11 +99,17 @@ For SMS, we'll need to specify a recipient and sender. Finally, the `content` ob
 ```javascript
 const text = "👋Hello from Vonage";
 
-vonage.messages.send(
-  new SMS(text, TO_NUMBER, FROM_NUMBER)
- )
-  .then(resp => console.log(resp.message_uuid))
-  .catch(err => console.error(err));
+vonage.messages
+  .send({
+    text: text,
+    message_type: "text",
+    to: TO_NUMBER,
+    from: FROM_NUMBER,
+    channel: "sms",
+  })
+  .then((resp) => console.log(resp.message_uuid))
+  .catch((err) => console.error(err));
+
 ```
 
 Replace `TO_NUMBER` with the destination phone number as a string and add your assigned phone number to the `FROM_NUMBER` field, then run the code with:
@@ -132,24 +137,23 @@ Let's create a new file for this and call it `server.js`. This can live in the s
 We'll create a basic `express` application that uses the JSON parser from `express` and sets the `urlencoded` option to `true`. Let's fill out the `server.js` file we created. We'll use port 3000 for the server to listen to, and we already have ngrok running on port 3000.
 
 ```javascript
-const express = require('express') 
- 
-const {	 
-  json,	  
-  urlencoded	 
-} = express	 
- 
-const app = express()	 
- 
-app.use(json())	 
- 
-app.use(urlencoded({	 
-  extended: true	 
-}))	 
- 
-app.listen(3000, () => {	 
- console.log('Server listening at http://localhost:3000')	 
-})
+const express = require("express");
+
+const { json, urlencoded } = express;
+
+const app = express();
+
+app.use(json());
+
+app.use(
+  urlencoded({
+    extended: true,
+  })
+);
+
+app.listen(3000, () => {
+  console.log("Server listening at http://localhost:3000");
+});
 ```
 
 ### Create Webhook for the Inbound URL
@@ -157,10 +161,10 @@ app.listen(3000, () => {
 We will create a POST request handler for `/webhooks/inbound` for the inbound URL, and we'll log the request body to the console. Because Vonage has a retry mechanism, it will keep resending the message if the URL doesn't respond with `200 OK`, so we'll send back a `200` status.
 
 ```javascript
-app.post('/webhooks/inbound', (req, res) => {
- console.log(req.body);
+app.post("/webhooks/inbound", (req, res) => {
+  console.log(req.body);
 
- res.status(200).end();
+  res.status(200).end();
 });
 ```
 
