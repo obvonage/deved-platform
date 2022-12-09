@@ -2,10 +2,11 @@
 title: Ericsson Global Hackathon / Non-Hackathon | Autumn 2022
 description: Learn about the Ericsson Global Hackathon / Non-Hackathon that
   occurred in Autumn 2022
+thumbnail: /content/blog/ericsson-global-hackathon-non-hackathon-autumn-2022/ericsson-global-hackathon.png
 author: outi-väättänen
 published: true
-published_at: 2022-12-08T21:04:54.893Z
-updated_at: 2022-12-08T21:04:54.951Z
+published_at: 2022-12-13T21:04:54.893Z
+updated_at: 2022-12-13T21:04:54.951Z
 category: event
 tags:
   - hackathon
