@@ -19,9 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-**Ericsson Global Hackathon / Non-Hackathon – Autumn 2022**
-
-Ericsson's Hackathon slogan is "Time to innovate, time to experiment, time to concentrate, time to learn,"andour Autumn Hackathon truly embodied it!
+Ericsson's Hackathon slogan is "Time to innovate, time to experiment, time to concentrate, time to learn," and our Autumn Hackathon truly embodied it!
 
 **Time to innovate**
 
@@ -46,8 +44,6 @@ Our slogan indicates that Hackathons are also learning opportunities. Of course,
 Vinoth Somasundaram and Vikram S B innovated a solution where it is possible to crowdsource traffic violations, roadblocks, and accidents from Good Samaritans who want to contribute to society.
 
 ![Pictured Vinoth Somasundaram and Vikram S B](/content/blog/ericsson-global-hackathon-non-hackathon-autumn-2022/vikram-vinoth.png "Pictured Vinoth Somasundaram and Vikram S B")
-
-Vinoth Somasundaram and Vikram S B
 
 While doing that, Vinoth and Vikram wanted to experiment with the Vonage AI Studio. How did they come up with the experiment? "The AI studio – conversation designer caught our eyes. It was cool – as we know the pain of building AI conversation in earlier days using NLP and how bad it is without a good training set. AI studio was cool; initially, we could not think of any catchy enterprise use cases. But soon, we started thinking about something that could simplify crowdsourcing with a tangible business and societal impact. We believe the messenger applications like WhatsApp or Telegram will become the new Super APP. We aimed to demonstrate that the developer community can easily build value-added products using this ecosystem and monetize, which is a clear win-win."
 
