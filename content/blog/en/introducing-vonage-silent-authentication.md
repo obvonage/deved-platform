@@ -1,6 +1,7 @@
 ---
 title: Introducing Vonage Silent Authentication
 description: Want to speed up your users' authentication flow using GSM? Vonage does that.
+thumbnail: /content/blog/introducing-vonage-silent-authentication/silent-authentication.png
 author: james-seconde
 published: true
 published_at: 2022-12-12T15:50:13.134Z
@@ -99,4 +100,4 @@ Whoops! We've got a rejection, this person isn't who they say they are!
 
 ## **Stay Tuned**
 
-Silent Authentication marks the start of a series of products we'll be working on since we were acquired by Ericsson this year. Drop us a line if you want to start using Silent Authentication to activate developer preview, and in the meantime - we've got some nifty products we're excited about in 2023. Happy Holidays!
+Silent Authentication marks the start of a series of products we'll be working on since we were acquired by Ericsson this year. [You can register with us](https://www.vonage.com/communications-apis/verify/) if you want to start using Silent Authentication to activate developer preview, and in the meantime - we've got some nifty products we're excited about in 2023. Happy Holidays!
