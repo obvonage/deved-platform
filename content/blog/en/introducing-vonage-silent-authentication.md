@@ -16,7 +16,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Vonage are excited to be bringing Silent Authentication into our Verify API! In this article, we'll walk through what it is, what it does, and how to use it. So, to get started, we'll answer the following:
+Vonage is excited to bring Silent Authentication into our Verify API! In this article, we'll walk through what it is, what it does, and how to use it. So, to get started, we'll answer the following:
 
 ## **What is Silent Authentication?**
 
