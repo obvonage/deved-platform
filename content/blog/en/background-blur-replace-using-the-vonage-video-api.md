@@ -16,9 +16,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-It goes without saying that virtual meetings have a different vibe from in-person meetings. One of many reasons for this is a lack of a shared environment. Since everyone's location (and thus, what's going on in their background) is different, it can be a source of distraction for participants. 
+It goes without saying that virtual meetings have a different vibe from in-person meetings. One of many reasons for this is a lack of a shared environment. Since everyone's location (and thus, what's going on in their background) is different, it can be a source of distraction for participants. Moreover, participants may want to protect their privacy during video calls without having to relocate, which may not always be practical.
 
-One solution is to blur the background of participants so that their face is in focus. This retains their natural background environment whilst reducing the detail to make it less distracting. Another solution is to replace the background with another image, which can then be applied to some or all participants. The advantage of this approach is that an appropriate background setting can be used depending on the tone and nature of the meeting.
+One solution is to blur the background of participants so that their face is in focus. This retains their natural background environment whilst reducing the detail to make it less distracting. Another solution is to replace the background with another image, which can then be applied to some or all participants. The advantage of this approach is that an appropriate background setting can be used depending on the tone and nature of the meeting. For example, if a video call is a meeting between people from different organizations, a logo or standardized background can be applied to each of the organization’s representatives, for clarity.
 
 Both of these solutions can be easily applied to your Vonage video application by adding just a few lines of code. This article will walk you through how to apply these filters with a step-by-step guide using a minimal example.
 
@@ -48,9 +48,9 @@ const sessionId = '';
 const token = '';
 
 function handleError(error) {
-  if (error) {
-    alert(error.message);
-  }
+  if (error) {
+    alert(error.message);
+  }
 }
 
 const session = OT.initSession(apiKey, sessionId);
@@ -58,17 +58,17 @@ const session = OT.initSession(apiKey, sessionId);
 const subscriberOptions = {};
 
 const publisherOptions = {
-  insertMode: 'append',
-  width: '100%',
-  height: '100%',
-  resolution: '1280x720'
+  insertMode: 'append',
+  width: '100%',
+  height: '100%',
+  resolution: '1280x720'
 };
 
 const publisher = OT.initPublisher('publisher', publisherOptions, handleError);
 
 session.on({
-  streamCreated: event => session.subscribe(event.stream, 'subscribers', subscriberOptions, handleError),
-  sessionConnected: event => session.publish(publisher)
+  streamCreated: event => session.subscribe(event.stream, 'subscriber', subscriberOptions, handleError),
+  sessionConnected: event => session.publish(publisher)
 });
 
 session.connect(token, error => handleError(error));
@@ -81,16 +81,16 @@ Load the `index.js` and `index.css` files in `index.html` along with the [OpenTo
 ```html
 <html>
 <head>
-    <title>Vonage Video Background Filter demo</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
-    <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+    <title>Vonage Video Background Filter demo</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 </head>
 <body>
-    <div id="videos">
-        <div id="subscriber"></div>
-        <div id="publisher"></div>
-    </div>
-    <script type="text/javascript" src="index.js"></script>
+    <div id="videos">
+        <div id="subscriber"></div>
+        <div id="publisher"></div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
 ```
@@ -99,40 +99,40 @@ Add the following to your `index.css` file:
 
 ```css
 body, html {
-    background-color: gray;
-    height: 100%;
+    background-color: gray;
+    height: 100%;
 }
 
 #videos {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #subscriber {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
 }
 
 #publisher {
-    position: absolute;
-    width: 640px;
-    height: 480px;
-    bottom: 10px;
-    left: 10px;
-    z-index: 100;
-    border: 3px solid white;
-    border-radius: 3px;
+    position: absolute;
+    width: 640px;
+    height: 480px;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+    border: 3px solid white;
+    border-radius: 3px;
 }
 ```
 
-Now if you open `index.html` with a browser and allow access to your webcam and microphone, you should see your camera video feed. If this is not the case, please check your code and Token / Session ID / API Key values. You can get more insight into what the issue might be from the browser's developer console (usually accessed by pressing F12).
+Now if you open `index.html` with a browser and allow access to your webcam and microphone, you should see your camera video feed. Please check your code and Token / Session ID / API Key values if this is not the case. You can get more insight into the issue from the browser's developer console (usually accessed by pressing F12).
 
 ## Adding Video Effects
 
@@ -141,10 +141,10 @@ We can add filters to our video using the `videoFilter` option. This can be appl
 ```javascript
 // Add background blur, if supported
 if (OT.hasMediaProcessorSupport()) {
-  publisherOptions.videoFilter = {
-    type: 'backgroundBlur',
-    blurStrength: 'low'
-  };
+  publisherOptions.videoFilter = {
+    type: 'backgroundBlur',
+    blurStrength: 'low'
+  };
 }
 ```
 
@@ -152,8 +152,8 @@ If your application logic requires the filter to be applied at a later point (fo
 
 ```javascript
 publisher.applyVideoFilter({
-  type: 'backgroundBlur',
-  blurStrength: 'high'
+  type: 'backgroundBlur',
+  blurStrength: 'high'
 });
 ```
 
@@ -169,10 +169,10 @@ To change the background, use the following configuration for the `videoFilter`:
 
 ```javascript
 if (OT.hasMediaProcessorSupport()) {
-  publisherOptions.videoFilter = {
-    type: 'backgroundReplacement',
-    backgroundImgUrl: 'https://example.com/image.jpg'
-  };
+  publisherOptions.videoFilter = {
+    type: 'backgroundReplacement',
+    backgroundImgUrl: 'https://example.com/image.jpg'
+  };
 }
 ```
 
@@ -189,3 +189,5 @@ For more information on using the Publisher and video filters, please see the AP
 You can find the complete code sample used in this demo and try it yourself from [this Glitch application](https://glitch.com/edit/#!/opentok-background-filters). Then, all you need to do is paste in your API Key, Token and Session ID for it to work!
 
 Please feel free to reach out to us on our [Community Slack](https://developer.vonage.com/community/slack) or [Twitter](https://twitter.com/VonageDev) if you have any questions or feedback!
+
+
