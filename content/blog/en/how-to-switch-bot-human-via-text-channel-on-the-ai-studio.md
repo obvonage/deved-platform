@@ -29,47 +29,34 @@ In the voice channel, the conversation can be transferred via the “Route Call�
 
 The **[live agent](https://studio.docs.ai.vonage.com/whatsapp/nodes/actions/live-agent-routing)** node allows your end users to interact with live agents without ever having to leave the conversation; the live agent will also have insight into what the conversation consisted of before the live agent routing was triggered. You can follow up on the entire conversation in the AI Studio Reports to optimize your agent's performance.
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.001.png)
+![Live Agent Routing](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.001.png "Live Agent Routing")
 
 ### Integrate into Slack - Here’s how it works
 
-*Hint Please note that this demo can only support a single session at a time.*
+*Please note that this demo can only support a single session at a time.*
 
 First thing we need to do, is to create our virtual agent in the studio. We will create an agent for the fictional Electronics company 'Awesome Internet Support' in the WhatsApp channel. The virtual agent will help the end-user with his case. When the VA realizes that professional support is needed, it will route the conversation to the support team. They will communicate with the customer over slack while the customer himself will stay in the same WhatsApp conversation.
 
 After creating the Virtual Agent flow and using it to greet the customer and kick off the conversation, we added the exit point for Live Agent routing. This way, we’re calling the Live Agent node.
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.002.png)
+![The Virtual Agent Flow so far](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.002.png "The Virtual Agent Flow so far")
 
 This is where the Live Agent node comes in. We use this node to communicate with the live agent. There are two required webhook URLs you need to fill in. The other endpoints will stay as they are. We’ll ignore the status delivery endpoint in this blog.
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.003.png)
+![Live Agent](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.003.png "Live Agent")
 
-What are these endpoints?
+**What are these endpoints?**
+
 As mentioned, the live-agent node is a generic node that allows you to connect to any 3rd party, because of that, you will have to build the connector between AI studio and your 3rd party (in our case, slack). Hence, we built a connector that is able to route the start conversation request, and the inbound message requests (from your customer to the live representative), and is also able to send the outbound message requests (from your live representative to your customer) and end the conversation.
 
-AI Studio
+![Endpoint flow](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.004.png "Endpoint flow")
 
-Connector
-
-Slack App
-
-Start conversation
-
-Inbound message 
-
-Outbound Message
-
-End Conversation
-
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.004.png)
-
-How did we do it?
+**How did we do it?**
 
 First, let’s create the connector.
 For this demo, we used Nest.JS framework to easily build the API of the connector. We built two endpoints for handling studio requests -
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.005.png)
+![Code for Start and Message Endpoint](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.005.png "Code for Start and Message Endpoint")
 
 Both of them are Post endpoints, and we extract the information we need from each one of them. The start endpoint body contains information such as the session id, the whole conversation transcription so far, all the system parameters, and also other parameters that you chose from the live agent drawer.
 
@@ -80,105 +67,84 @@ In the next step, we will transfer the data from our connector to slack.
 In order to do that, we follow slack's API documentation [here](https://api.slack.com/start). 
 For our basic demo, we created a new application in slack and we used the Incoming Webhooks features to send messages to our slack application:
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.006.png)
+![Slack Permissions](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.006.png "Slack Permissions")
 
 We route the webhook to a slack channel we created ( vgai-live-agent-test ) - and we call this webhook from our connector, we did it as a result of the start conversation request and also for the inbound message requests. It should look something like that:
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.007.png)
+![Route the WebHook to a Channel](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.007.png "Route the WebHook to a Channel")
 
 The text is the message you want to send.
 
 In order to allow the live representative to manage the conversation with the customer and to communicate with him using slack we added a new feature to the slack app, and we created slash commands. One for sending messages, and the second for closing the conversation of the customer with the live representative.
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.008.png)
+![Create a New Command](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.008.png "Create a New Command")
 
 We added two more endpoints to the connector:
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.009.png)
+![An Additional 2 EndPoints](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.009.png "An Additional 2 EndPoints")
 
-The slack/message endpoint is connected to the /vgai-message command
-And the slack/end endpoint is connected to the /vgai-complete command 
+* The slack/message endpoint is connected to the /vgai-message command.
+* The slack/end endpoint is connected to the /vgai-complete command.  
 
 In this demo, we send text messages back to the user, so it should look like this:
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.010.png)
+![Send Text Messages back to the User](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.010.png "Send Text Messages back to the User")
 
 Now after we did the integration to start the conversation and  send messages from the customer to the live representative:
 
-AI Studio
-
-Connector
-
-Slack App
-
-https://…./studio/start
-
-https://hooks.slack…
-
-https://…./studio/message
-
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.011.png)
+![Integration 1](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/integration1.png "Integration 1")
 
 And we also managed to do send messages back to the customer and close the conversation:
 
-AI Studio
+![Integration 2](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/integration2.png "Integration 2")
 
-Connector
-
-Slack App
-
-Slash Commands
-
-/vgai-message
-/vgai-complete
-
-https://studio-ap….
-
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.012.png)
-
-We can now test it end-to-end:
+**We can now test it end-to-end**
 
 The customer complains about the wifi and the VA decides that professional IT support is needed:
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.013.png)
+![Customer Scenario](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.013.png "Customer Scenario")
 
 At this point, the Live Agent Node, triggers the start conversation endpoint of the connector. The connector triggers a webhooks to the slack application, the live representative is able to see the conversation with the VA, and any additional information we want to choose:
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.014.png)
+![Transcription](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.014.png "Transcription")
 
 Now the live representative will be able to communicate with the customer using the slash command /vgai-message
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.015.png)
+![Live Representative Communicating](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.015.png "Live Representative Communicating")
 
 And the customer will receive the message on his WhatsApp channel:
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.016.png)
+
+![WhatsApp Message that the customer will receive](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.016.png "WhatsApp Message that the customer will receive")
 
 And both will be able to communicate with each other, using their own channels:
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.017.png)
+![Communicating with their own channels](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.017.png "Communicating with their own channels")
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.018.png)
+![Communicating with their own channels part 2](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.018.png "Communicating with their own channels part 2")
 
 Now, in the moment the live representative will run the /vgai-complete command, it will close the connection the VA will be able to take over again:
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.019.png)
+![Live Representative running the command](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.019.png "Live Representative running the command")
 
 The VA that take control of the conversation:
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.020.png)
+![VA taking control of the conversation](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.020.png "VA taking control of the conversation")
 
 The entire conversation can be recorded and viewed for optimization purposes in the Call Reports Tab on the AI Studio. 
 
-![](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.021.png)
+![Everything can be recorded in AI Studio](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.021.png "Everything can be recorded in AI Studio")
 
 ### Three more Pro tips before we go:
 
-1. *Additional settings in the live agent node:*
-2. *Choose if we want to display the conversation with the Live Agent*
-3. *Choose what parameters we want to transfer the connector on the start conversation endpoint*
-4. *Set up how long we’ll wait to the live agent response*
+*1. *Additional settings in the live agent node:* 
 
-**\*2. Best Practice -** Make sure you notify your end user they are being routed to a live agent before handing over the conversation. You can do so using the **Send Message** node.* 
+![Additional settings in the live agent node](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.022.png "Additional settings in the live agent node")
+
+* Choose if we want to display the conversation with the Live Agent
+* Choose what parameters we want to transfer the connector on the start conversation endpoint
+* Set up how long we’ll wait to the live agent response
+
+*2. Best Practice -** Make sure you notify your end user they are being routed to a live agent before handing over the conversation. You can do so using the **Send Message** node.* 
 
 *3. If you want to **send media to the live agent** you can do this only on the WhatsApp channel. Please refer to the list of support media types below:-*
 
