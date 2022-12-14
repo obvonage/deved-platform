@@ -54,7 +54,7 @@ Providing you have not hit throttle limits and the authorisation token is correc
 { "request_id": "c11236f4-00bf-4b89-84ba-88b25df97315" }
 ```
 
-This is where we now rely on callbacks - the webhook responses showing the status of the request will be pushed to the URL specified in your Vonage Dashboard. If the request is verified for use, you will get an event callback with the following payload:
+This is where we now rely on callbacks - the webhook responses showing the status of the request will be pushed to your Vonage application's events callback URL, defined in the Applications Dashboard. If the request is verified for use, you will get an event callback with the following payload:
 
 ```json
  {
