@@ -70,7 +70,7 @@ This is where we now rely on callbacks - the webhook responses showing the statu
 }
 ```
 
-At this stage, it is possible that the request will fail for reasons such as an error in the network. In this case, the Verify workflow will fall back to the SMS OTP process.
+At this stage, it is possible that the request will fail for reasons such as an error in the network. In this case, the Verify workflow will fall back to the next available channel to use sequentially - we've not specified another channel so it will fail. You might want to fall back to SMS OTP - in which case you'd add that channel in the first request in the workflow array.
 
 You now have a valid Silent Authentication URL to hit, contained in the `check_url` field. Until the request expires or is cancelled by you, the URL will perform a Silent Authentication check. If you hit this URL and it is valid, you'll get a callback to your defined events URL like so:
 
