@@ -43,7 +43,7 @@ We'll demonstrate this workflow using cURL. First off, we'll want to make a call
 
 ```bash
 curl -X POST -H "Content-Type: application/json" \
--d '{"workflow": {"channel": "silent_auth", "to": "447700900000"}}' \
+-d '{"brand": "Vonage", "workflow": {"channel": "silent_auth", "to": "447700900000"}}' \
 -H "Authorization: Bearer ZHNmZHNnc2Q="
 https://api.vonage.com/v2/verify
 ```
