@@ -65,7 +65,7 @@ This is where we now rely on callbacks - the webhook responses showing the statu
   "status": "action_pending",
   "action": {
     "type":"check",
-    "check_url": "https://eu.api.silent.auth/phone_check/v0.1/checks/c11236f4-00bf-4b89-84ba-88b25df97315/redirect"
+    "check_url": "https://eu.api.silentauth.com/phone_check/v0.1/checks/c11236f4-00bf-4b89-84ba-88b25df97315/redirect"
   }
 }
 ```
