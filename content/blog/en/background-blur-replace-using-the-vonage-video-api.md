@@ -26,7 +26,7 @@ Both of these solutions can be easily applied to your Vonage video application b
 
 Credentials will be needed for the demo application to work. Log into or create a [Vonage Video account](https://www.tokbox.com/account) and then click 'Projects' in the left menu. You can select a previous custom project or create a new one. Navigate to your project - the page will look something like this:
 
-![OpenTok project page](/content/blog/background-blur-replace/opentok-project.png)
+![OpenTok project page](/content/blog/how-to-avoid-awkward-conversations-about-your-home-during-video-calls/opentok-project.jpeg)
 
 Make a note of the Project API Key. Scroll down to the "Project Tools" section (near the bottom of the page), and click "Create Session ID". Copy this, and paste it into the next section to generate a token. For the role, select "Publisher", and the expiration time to 24 hours (or however long you need the session). You will need the Project API Key, Session ID, and Token for this exercise.
 
@@ -189,5 +189,3 @@ For more information on using the Publisher and video filters, please see the AP
 You can find the complete code sample used in this demo and try it yourself from [this Glitch application](https://glitch.com/edit/#!/opentok-background-filters). Then, all you need to do is paste in your API Key, Token and Session ID for it to work!
 
 Please feel free to reach out to us on our [Community Slack](https://developer.vonage.com/community/slack) or [Twitter](https://twitter.com/VonageDev) if you have any questions or feedback!
-
-
