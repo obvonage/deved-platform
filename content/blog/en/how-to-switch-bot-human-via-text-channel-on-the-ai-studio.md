@@ -1,15 +1,15 @@
 ---
-title: How to switch bot <> human via text channel on the AI Studio
+title: How to Switch Bot <> Human via Text Channel on the AI Studio
 description: Learn how to hand over the conversation to a human representative using Slack.
 author: michael-crump
 published: true
-published_at: 2022-12-14T16:44:27.171Z
-updated_at: 2022-12-14T16:44:27.228Z
+published_at: 2022-12-15T12:42:26.446Z
+updated_at: 2022-12-15T12:42:27.492Z
 category: tutorial
 tags:
   - ai-studio
-  - lowcode
-  - nocode
+  - low-code
+  - no-code
 comments: true
 spotlight: false
 redirect: ""
@@ -17,8 +17,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-## How to switch bot <> human via text channel on the AI Studio
-
 [Vonage AI Studio](https://www.vonage.com/communications-apis/ai-studio/) provides businesses with a Low-Code/No-Code conversational AI platform for managing complex customer interactions.
 
 Regardless of the conversation flow you are creating, you might want to add the ability for human representatives to intervene and take over if need be. As a former Conversation Designer, we strongly urge every business to add this escalation option to their conversation flows. Permitting an elegant fallback option to support cases where the agent might not be able to handle the user’s query or the end user requests to talk to a human is crucial in keeping a healthy Net Promoter Score and overall customer satisfaction. 
@@ -136,7 +134,7 @@ The entire conversation can be recorded and viewed for optimization purposes in 
 
 ### Three more Pro tips before we go:
 
-*1. *Additional settings in the live agent node:* 
+*1.* Additional settings in the live agent node:* 
 
 ![Additional settings in the live agent node](/content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/aspose.words.0ef49ade-cd00-4a1a-b8af-8fc6c18cf754.022.png "Additional settings in the live agent node")
 
@@ -144,7 +142,7 @@ The entire conversation can be recorded and viewed for optimization purposes in 
 * Choose what parameters we want to transfer the connector on the start conversation endpoint
 * Set up how long we’ll wait to the live agent response
 
-*2. Best Practice -** Make sure you notify your end user they are being routed to a live agent before handing over the conversation. You can do so using the **Send Message** node.* 
+*2. Best Practice - **Make sure you notify your end user they are being routed to a live agent before handing over the conversation. You can do so using the** Send Message\*\* node.* 
 
 *3. If you want to **send media to the live agent** you can do this only on the WhatsApp channel. Please refer to the list of support media types below:-*
 
