@@ -1,7 +1,8 @@
 ---
 title: How to Switch Bot <> Human via Text Channel on the AI Studio
 description: Learn how to hand over the conversation to a human representative using Slack.
-author: michael-crump
+thumbnail: /content/blog/how-to-switch-bot-human-via-text-channel-on-the-ai-studio/ai-studio_live-agent-switch.png
+author: luisa-onnebrink
 published: true
 published_at: 2022-12-15T12:42:26.446Z
 updated_at: 2022-12-15T12:42:27.492Z
