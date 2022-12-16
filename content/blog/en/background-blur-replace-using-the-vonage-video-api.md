@@ -16,13 +16,13 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-It goes without saying that virtual meetings have a different vibe from in-person meetings. One of many reasons for this is a lack of a shared environment. Since everyone's location (and thus, what's going on in their background) is different, it can be a source of distraction for participants. Moreover, participants may want to protect their privacy during video calls without having to relocate, which may not always be practical.
+Virtual meetings have a different vibe from in-person meetings. One of the many reasons for this is the need for a shared environment. Since everyone's location (and thus, what's going on in their background) is different, it can distract participants. Moreover, participants may want to protect their privacy during video calls without relocating, which may only sometimes be practical.
 
-One solution is to blur the background of participants so that their face is in focus. This retains their natural background environment whilst reducing the detail to make it less distracting. Another solution is to replace the background with another image, which can then be applied to some or all participants. The advantage of this approach is that an appropriate background setting can be used depending on the tone and nature of the meeting. For example, if a video call is a meeting between people from different organizations, a logo or standardized background can be applied to each of the organization’s representatives, for clarity.
+One solution is to blur the background of participants so that their face is in focus. Doing so retains their natural background environment while reducing the detail to make it less distracting. Another solution is to replace the background with another image, which can then be applied to some or all participants. The advantage of this approach is that an appropriate background setting can be used depending on the tone and nature of the meeting. For example, if a video call is a meeting between people from different organizations, a logo or standardized background can be applied to each organization’s representatives for clarity.
 
 Both of these solutions can be easily applied to your Vonage video application by adding just a few lines of code. This article will walk you through how to apply these filters with a step-by-step guide using a minimal example.
 
-## Pre-requisites
+## Prerequisites
 
 Credentials will be needed for the demo application to work. Log into or create a [Vonage Video account](https://www.tokbox.com/account) and then click 'Projects' in the left menu. You can select a previous custom project or create a new one. Navigate to your project - the page will look something like this:
 
@@ -32,7 +32,7 @@ Make a note of the Project API Key. Scroll down to the "Project Tools" section (
 
 ## Create a Skeleton App
 
-Create a directory to work in and navigate to it. Then create the application files, like so:
+Create a directory to work in and navigate to it. Then create the application files like so:
 
 ```sh
 mkdir opentok-bg-filters
@@ -132,7 +132,7 @@ body, html {
 }
 ```
 
-Now if you open `index.html` with a browser and allow access to your webcam and microphone, you should see your camera video feed. Please check your code and Token / Session ID / API Key values if this is not the case. You can get more insight into the issue from the browser's developer console (usually accessed by pressing F12).
+Now, if you open `index.html` with a browser and allow access to your webcam and microphone, you should see your camera video feed. Please check your code and Token / Session ID / API Key values if this is not the case. You can get more insight into the issue from the browser's developer console (usually accessed by pressing F12).
 
 ## Adding Video Effects
 
@@ -182,7 +182,7 @@ Note that you cannot use both image replacement and background blur together. If
 
 ## Next Steps
 
-Now that you have a working example, you can customise the appearance by editing `index.css` if you wish, and build further logic into your application. For a production application, you will need to automate the acquisition of your API Key, Token, and Session ID from the server. Check out our [tutorials](https://tokbox.com/developer/tutorials/web/basic-video-chat/#next) for further reading.
+Now that you have a working example, you can customize the appearance by editing `index.css` if you wish and build further logic into your application. For a production application, you will need to automate the acquisition of your API Key, Token, and Session ID from the server. Check out our [tutorials](https://tokbox.com/developer/tutorials/web/basic-video-chat/#next) for further reading.
 
 For more information on using the Publisher and video filters, please see the API reference for [Publisher](https://tokbox.com/developer/sdks/js/reference/Publisher.html#applyVideoFilter). You can find the supported publisher option parameters in the `OT.initPublisher` method [documentation](https://tokbox.com/developer/sdks/js/reference/OT.html#initPublisher).
 
