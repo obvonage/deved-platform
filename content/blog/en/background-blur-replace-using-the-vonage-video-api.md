@@ -1,5 +1,5 @@
 ---
-title: How to Avoid Awkward Conversations About Your Home During Video Calls
+title: Blurring for Clarity: Avoid Awkward Conversations About Your Home
 description: Learn how to apply background blur & replace in your Vonage Video applications
 author: sina-madani
 published: true
