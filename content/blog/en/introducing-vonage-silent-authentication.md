@@ -4,8 +4,8 @@ description: Want to speed up your users' authentication flow using GSM? Vonage 
 thumbnail: /content/blog/introducing-vonage-silent-authentication/silent-authentication.png
 author: james-seconde
 published: true
-published_at: 2022-12-12T15:50:13.134Z
-updated_at: 2022-12-12T15:50:13.179Z
+published_at: 2022-12-16T07:26:48.108Z
+updated_at: 2022-12-16T07:26:49.237Z
 category: announcement
 tags:
   - verify-api
