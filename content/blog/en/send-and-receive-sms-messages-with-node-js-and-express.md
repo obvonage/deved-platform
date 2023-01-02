@@ -3,10 +3,11 @@ title: Send and Receive SMS Messages With Node.js and Express
 description: An in-depth tutorial that demonstrates how to send SMS text
   messages and receive replies using the Vonage APIs, Node.js and the Express
   framework.
+thumbnail: /content/blog/send-and-receive-sms-messages-with-node-js-and-express/node-js_express_sms.png
 author: michael-crump
 published: true
-published_at: 2022-12-08T22:12:22.461Z
-updated_at: 2022-12-08T22:12:22.541Z
+published_at: 2023-01-05T22:12:22.461Z
+updated_at: 2023-01-05T22:12:22.541Z
 category: tutorial
 tags:
   - javascript
