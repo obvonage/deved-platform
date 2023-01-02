@@ -1,20 +1,15 @@
 ---
-title: Blurring for Clarity: Avoid Awkward Conversations About Your Home
+title: "Blurring for Clarity: Avoid Awkward Conversations About Your Home"
 description: Learn how to apply background blur & replace in your Vonage Video applications
+thumbnail: /content/blog/blurring-for-clarity-avoid-awkward-conversations-about-your-home/background-blur.png
 author: sina-madani
 published: true
-published_at: 2022-12-07T10:54:26.180Z
-updated_at: 2022-12-07T10:54:26.204Z
+published_at: 2023-01-03T10:56:58.636Z
+updated_at: 2023-01-03T10:56:58.657Z
 category: tutorial
 tags:
-  - video-api
   - javascript
-comments: true
-spotlight: false
-redirect: ""
-canonical: ""
-outdated: false
-replacement_url: ""
+  - video-api
 ---
 Virtual meetings have a different vibe from in-person meetings. One of the many reasons for this is the need for a shared environment. Since everyone's location (and thus, what's going on in their background) is different, it can distract participants. Moreover, participants may want to protect their privacy during video calls without relocating, which may only sometimes be practical.
 
@@ -48,9 +43,9 @@ const sessionId = '';
 const token = '';
 
 function handleError(error) {
-  if (error) {
-    alert(error.message);
-  }
+  if (error) {
+    alert(error.message);
+  }
 }
 
 const session = OT.initSession(apiKey, sessionId);
@@ -58,17 +53,17 @@ const session = OT.initSession(apiKey, sessionId);
 const subscriberOptions = {};
 
 const publisherOptions = {
-  insertMode: 'append',
-  width: '100%',
-  height: '100%',
-  resolution: '1280x720'
+  insertMode: 'append',
+  width: '100%',
+  height: '100%',
+  resolution: '1280x720'
 };
 
 const publisher = OT.initPublisher('publisher', publisherOptions, handleError);
 
 session.on({
-  streamCreated: event => session.subscribe(event.stream, 'subscriber', subscriberOptions, handleError),
-  sessionConnected: event => session.publish(publisher)
+  streamCreated: event => session.subscribe(event.stream, 'subscriber', subscriberOptions, handleError),
+  sessionConnected: event => session.publish(publisher)
 });
 
 session.connect(token, error => handleError(error));
@@ -81,16 +76,16 @@ Load the `index.js` and `index.css` files in `index.html` along with the [OpenTo
 ```html
 <html>
 <head>
-    <title>Vonage Video Background Filter demo</title>
-    <link href="index.css" rel="stylesheet" type="text/css">
-    <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+    <title>Vonage Video Background Filter demo</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
 </head>
 <body>
-    <div id="videos">
-        <div id="subscriber"></div>
-        <div id="publisher"></div>
-    </div>
-    <script type="text/javascript" src="index.js"></script>
+    <div id="videos">
+        <div id="subscriber"></div>
+        <div id="publisher"></div>
+    </div>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
 ```
@@ -99,36 +94,36 @@ Add the following to your `index.css` file:
 
 ```css
 body, html {
-    background-color: gray;
-    height: 100%;
+    background-color: gray;
+    height: 100%;
 }
 
 #videos {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #subscriber {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
 }
 
 #publisher {
-    position: absolute;
-    width: 640px;
-    height: 480px;
-    bottom: 10px;
-    left: 10px;
-    z-index: 100;
-    border: 3px solid white;
-    border-radius: 3px;
+    position: absolute;
+    width: 640px;
+    height: 480px;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+    border: 3px solid white;
+    border-radius: 3px;
 }
 ```
 
@@ -141,10 +136,10 @@ We can add filters to our video using the `videoFilter` option. This can be appl
 ```javascript
 // Add background blur, if supported
 if (OT.hasMediaProcessorSupport()) {
-  publisherOptions.videoFilter = {
-    type: 'backgroundBlur',
-    blurStrength: 'low'
-  };
+  publisherOptions.videoFilter = {
+    type: 'backgroundBlur',
+    blurStrength: 'low'
+  };
 }
 ```
 
@@ -152,8 +147,8 @@ If your application logic requires the filter to be applied at a later point (fo
 
 ```javascript
 publisher.applyVideoFilter({
-  type: 'backgroundBlur',
-  blurStrength: 'high'
+  type: 'backgroundBlur',
+  blurStrength: 'high'
 });
 ```
 
@@ -169,10 +164,10 @@ To change the background, use the following configuration for the `videoFilter`:
 
 ```javascript
 if (OT.hasMediaProcessorSupport()) {
-  publisherOptions.videoFilter = {
-    type: 'backgroundReplacement',
-    backgroundImgUrl: 'https://example.com/image.jpg'
-  };
+  publisherOptions.videoFilter = {
+    type: 'backgroundReplacement',
+    backgroundImgUrl: 'https://example.com/image.jpg'
+  };
 }
 ```
 
