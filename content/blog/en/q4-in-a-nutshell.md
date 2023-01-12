@@ -1,7 +1,7 @@
 ---
-title: Q4 in a Nutshell
+title: Q4 2022 in a Nutshell
 description: Let's have a look at the product updates and feature releases in Q4 2022
-thumbnail: /content/blog/q4-in-a-nutshell/quaterly-releases_q4_22.png
+thumbnail: /content/blog/q4-2022-in-a-nutshell/quaterly-releases_q4_22.png
 author: diana-pham-1
 published: true
 published_at: 2023-01-12T09:58:59.136Z
